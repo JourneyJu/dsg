@@ -1,0 +1,231 @@
+version: '3.8'
+
+services:
+  # ============================================================================
+  # 基础搜索服务
+  # ============================================================================
+  basic-search:
+    build:
+      context: ..
+      dockerfile: services/apps/basic-search/docker/Dockerfile
+    container_name: basic-search
+    ports:
+      - "8163:8163"
+    environment:
+      # 配置路径
+      - CONFIG_PATH=/opt/basic-search/config/config.yaml
+      # OAuth 配置
+      - OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID:-default-client-id}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET:-default-client-secret}
+      # 用户组织信息
+      - USER_ORG_CODE=${USER_ORG_CODE:-default-org-code}
+      - USER_ORG_NAME=${USER_ORG_NAME:-default-org-name}
+      # GOPRIVATE 环境变量
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/basic-search/dev-config/config.docker.yaml:/opt/basic-search/config/config.yaml:ro
+      - basic-search-logs:/opt/basic-search/logs
+    networks:
+      - dsg-network
+    depends_on:
+      opensearch:
+        condition: service_healthy
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8163/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ============================================================================
+  # OpenSearch - 搜索引擎
+  # ============================================================================
+  opensearch:
+    build:
+      context: ./docker/opensearch
+      dockerfile: Dockerfile
+    image: dsg-opensearch:2.17.1
+    container_name: opensearch
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    environment:
+      - discovery.type=single-node
+      - plugins.security.disabled=true
+      - OPENSEARCH_INITIAL_ADMIN_PASSWORD=OpenSearch2024!@#
+      - "OPENSEARCH_JAVA_OPTS=-Xms512m -Xmx512m"
+    volumes:
+      - opensearch-data:/usr/share/opensearch/data
+    networks:
+      - dsg-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:9200/_cluster/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # ============================================================================
+  # Kafka - 消息队列
+  # ============================================================================
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 3000
+    volumes:
+      - zookeeper-data:/var/lib/zookeeper/data
+      - zookeeper-log:/var/lib/zookeeper/log
+    networks:
+      - dsg-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "nc -z localhost 2181 || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.0
+    container_name: kafka
+    ports:
+      - "9092:9092"
+      - "31000:31000"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      # 启用 SASL/PLAIN 认证
+      KAFKA_ADVERTISED_LISTENERS: SASL_PLAINTEXT://kafka:9092,SASL_PLAINTEXT_HOST://localhost:31000
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_PLAINTEXT_HOST:SASL_PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: SASL_PLAINTEXT
+      # SASL 配置
+      KAFKA_SASL_ENABLED_MECHANISMS: PLAIN
+      KAFKA_SASL_MECHANISM_INTER_BROKER_PROTOCOL: PLAIN
+      # JAAS 配置（仅用于 Kafka Server，不影响 Zookeeper 连接）
+      KAFKA_OPTS: -Djava.security.auth.login.config=/etc/kafka/kafka_server_jaas.conf -Dzookeeper.sasl.client=false
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+      KAFKA_NUM_PARTITIONS: 3
+    volumes:
+      - kafka-data:/var/lib/kafka/data
+      - ./docker/kafka/kafka_server_jaas.conf:/etc/kafka/kafka_server_jaas.conf:ro
+      - ./docker/kafka/healthcheck.sh:/usr/local/bin/kafka-healthcheck.sh:ro
+    networks:
+      - dsg-network
+    depends_on:
+      - zookeeper
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "/usr/local/bin/kafka-healthcheck.sh || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+
+  # ============================================================================
+  # Hydra - OAuth2 服务
+  # ============================================================================
+  hydra-migrate:
+    image: oryd/hydra:v2.2.0
+    container_name: hydra-migrate
+    command: migrate sql -e --yes
+    environment:
+      - DSN=memory
+    networks:
+      - dsg-network
+    restart: "no"
+
+  hydra:
+    image: oryd/hydra:v2.2.0
+    container_name: hydra
+    ports:
+      - "4444:4444" # Public port
+      - "4445:4445" # Admin port
+    command: serve all --dev
+    environment:
+      - DSN=memory
+      - URLS_SELF_ISSUER=http://hydra:4444
+      - URLS_CONSENT=http://localhost:9020/consent
+      - URLS_LOGIN=http://localhost:9020/login
+    networks:
+      - dsg-network
+    depends_on:
+      - hydra-migrate
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:4445/health/ready || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # Redis - 缓存服务（如果配置中有使用）
+  # ============================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes
+    volumes:
+      - redis-data:/data
+    networks:
+      - dsg-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ============================================================================
+  # 可选：Kafka UI - 用于管理和监控 Kafka
+  # ============================================================================
+  kafka-ui:
+    image: provectuslabs/kafka-ui:latest
+    container_name: kafka-ui
+    ports:
+      - "8080:8080"
+    environment:
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+    networks:
+      - dsg-network
+    depends_on:
+      - kafka
+    restart: unless-stopped
+    profiles:
+      - tools # 使用 profile 控制是否启动
+
+# ============================================================================
+# 网络配置
+# ============================================================================
+networks:
+  dsg-network:
+    driver: bridge
+    name: dsg-network
+
+# ============================================================================
+# 数据卷配置
+# ============================================================================
+volumes:
+  basic-search-logs:
+    name: basic-search-logs
+  opensearch-data:
+    name: opensearch-data
+  kafka-data:
+    name: kafka-data
+  redis-data:
+    name: redis-data
+  zookeeper-data:
+    name: zookeeper-data
+  zookeeper-log:
+    name: zookeeper-log
