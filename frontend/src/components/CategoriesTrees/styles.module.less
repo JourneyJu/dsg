@@ -1,0 +1,171 @@
+.treeWrapper {
+    overflow: hidden;
+    height: 100%;
+
+    .viewModeWrapper {
+        // margin: 24px 0 16px 16px;
+        padding: 18px 20px 0;
+
+        :global {
+            .any-fabric-ant-select-selection-item {
+                font-weight: 550;
+            }
+        }
+
+        .modeTitle {
+            display: inline-block;
+            height: 32px;
+            padding: 0 11px;
+            color: rgb(0 0 0);
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 32px;
+        }
+    }
+
+    .treeSearch {
+        margin: 0 20px 16px;
+    }
+
+    .treeNodeWrapper {
+        // 74+32+16+24
+        height: calc(100% - 146px);
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .dirTab {
+        :global {
+            .any-fabric-ant-tabs-nav-wrap {
+                padding: 0 16px;
+            }
+
+            .any-fabric-ant-tabs-tab {
+                padding: 20px 0 16px;
+            }
+        }
+    }
+
+    .all {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 10px;
+    }
+
+    .treeNode {
+        display: flex;
+        height: 32px;
+        align-items: center;
+        color: rgb(0 0 0 / 85%);
+        cursor: pointer;
+        font-size: 14px;
+
+        &:hover {
+            background-color: #f5f5f5;
+        }
+
+        .arrow {
+            margin-right: 6px;
+            color: rgb(0 0 0 / 65%);
+            font-size: 12px;
+            transform: rotate(0deg);
+            transition: all 0.1s linear 0s;
+        }
+
+        .expandArrow {
+            transform: rotate(90deg);
+            transition: all 0.1s linear 0s;
+        }
+
+        .rightContent {
+            display: flex;
+            overflow: hidden;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            margin-left: 6px;
+
+            .nodeName {
+                color: rgb(0 0 0 / 85%);
+                font-weight: 400;
+                .ellipsis-mixin();
+            }
+
+            .selectedNodeName {
+                color: #000;
+                font-weight: 600;
+            }
+
+            .operate {
+                display: flex;
+                flex-grow: 0;
+                flex-shrink: 0;
+                margin-right: 14px;
+                margin-left: 10px;
+
+                .iconWrapper {
+                    width: 24px;
+                    height: 24px;
+                    line-height: 24px;
+                    text-align: center;
+
+                    &:hover {
+                        background-color: rgba(0 0 0 / 4%);
+                    }
+
+                    .operateIcon {
+                        color: #000;
+                    }
+
+                    .allAddIcon {
+                        margin-top: 2px;
+                    }
+                }
+
+                :global {
+                    .any-fabric-ant-dropdown-menu-title-content {
+                        margin-left: 8px;
+                    }
+                }
+
+                .moreOperate {
+                    :global {
+                        .any-fabric-ant-dropdown-menu-title-content {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .selectedTreeNode {
+        background-color: rgb(18 110 227 / 6%);
+
+        &:hover {
+            background-color: rgb(18 110 227 / 6%);
+        }
+    }
+
+    .disableTreeNode {
+        cursor: not-allowed;
+    }
+
+    .listLoading {
+        margin-top: 100px;
+    }
+
+    :global {
+        .any-fabric-ant-tree-node-content-wrapper {
+            width: calc(100% - 40px);
+        }
+
+        .any-fabric-ant-tree .any-fabric-ant-tree-treenode {
+            padding-right: 6px !important;
+        }
+
+        .any-fabric-ant-tree {
+            height: calc(100vh - 215px);
+        }
+    }
+}

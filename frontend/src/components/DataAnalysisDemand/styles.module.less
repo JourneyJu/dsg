@@ -1,0 +1,86 @@
+.UploadAttachment {
+    .fileDesc {
+        display: flex;
+        height: 22px;
+        color: @text-color-third;
+        font-size: 12px;
+        line-height: 22px;
+
+        .fileOrder {
+            margin-top: -3px;
+            margin-right: 3px;
+            font-size: 32px;
+        }
+    }
+
+    .uploadWrapper {
+        margin-top: 12px;
+
+        .uploadBtn {
+            font-size: 12px;
+
+            .uploadIcon {
+                font-size: 14px;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .filterWrapper {
+        display: flex;
+        width: 512px;
+        height: 36px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px 16px;
+        margin-top: 16px;
+        background-color: rgb(246 249 255);
+        border-radius: 4px;
+
+        .fileAndIcon {
+            display: flex;
+            align-items: center;
+
+            .fileIcon {
+                margin-right: 10px;
+                color: @primary-color;
+            }
+
+            .fileName {
+                width: 416px;
+                margin-left: 8px;
+                color: rgb(0 0 0 / 85%);
+                .ellipsis-mixin();
+
+                &:hover {
+                    color: @primary-color;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .deleteIcon {
+            color: rgb(0 0 0 / 25%);
+        }
+    }
+}
+
+.basic-item() {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .label {
+        width: 130px;
+        flex-shrink: 0;
+        margin-right: 16px;
+        color: rgba(0 0 0/ 45%);
+    }
+
+    .value {
+        flex: 1;
+        color: rgba(0 0 0/ 85%);
+        word-break: break-all;
+    }
+}

@@ -1,0 +1,39 @@
+.common-anchor {
+    position: relative;
+    flex-shrink: 0;
+    margin-left: 16px;
+}
+
+.custom-input {
+    width: 200px;
+}
+
+.custom-input-error {
+    border-color: #ff4d4f !important;
+
+    :global {
+        .any-fabric-ant-input {
+            border-color: #ff4d4f !important;
+            box-shadow: none !important;
+        }
+
+        // 异常状态下的悬浮和聚焦
+        .any-fabric-ant-input,
+        .any-fabric-ant-input:hover {
+            border-color: #ff7875 !important;
+            box-shadow: none !important;
+        }
+
+        .any-fabric-ant-input,
+        .any-fabric-ant-input:focus-within {
+            border-color: #ff4d4f !important;
+            box-shadow: none !important;
+        }
+    }
+
+    .custom-input-error-icon {
+        color: #ff4d4f;
+        cursor: pointer;
+        font-size: 14px;
+    }
+}

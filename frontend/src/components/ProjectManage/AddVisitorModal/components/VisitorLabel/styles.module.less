@@ -1,0 +1,34 @@
+.visitor-label {
+    display: flex;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+    color: rgba(0 0 0 / 85%);
+    white-space: nowrap;
+    word-break: keep-all;
+
+    &-icon {
+        margin-right: 8px;
+        font-size: 16px;
+    }
+
+    &-titleWrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-title {
+        overflow: hidden;
+        // max-width: calc(100% - 18px);
+        font-size: 14px;
+        text-overflow: ellipsis;
+    }
+
+    &-path {
+        max-width: 300px;
+        color: rgba(0 0 0 / 45%);
+
+        .ellipsis-mixin();
+    }
+}

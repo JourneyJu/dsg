@@ -1,0 +1,211 @@
+.container {
+    // 数据操作统计组件容器样式
+    width: 100%;
+    height: 100%;
+}
+
+// CardLayout 组件样式
+.colContainer {
+    padding: 0 8px;
+}
+
+.cardBordered {
+    border: 1px solid #d9d9d9;
+}
+
+// StatisticCard 组件样式
+.statisticCard {
+    text-align: center;
+}
+
+.statisticDescription {
+    margin-top: 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+// StatsHeader 组件样式
+.statsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    margin-bottom: 16px;
+}
+
+// DataQueryStats 组件样式
+.dataQueryContainer {
+    width: 100%;
+
+    .contentItemCardWrapper {
+        margin-bottom: 16px;
+    }
+
+    // 调用概览
+    .callOverviewWrapper {
+        display: grid;
+        align-items: center;
+        margin-bottom: 16px;
+        gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+// DataVerifyStats 组件样式
+.dataVerifyContainer {
+    width: 100%;
+
+    .contentItemCardWrapper {
+        margin-bottom: 16px;
+    }
+}
+
+// DataAssocStats 组件样式
+.dataAssocContainer {
+    width: 100%;
+
+    .contentItemAssocCountWrapper {
+        display: flex;
+        height: 200px;
+        align-items: center;
+        justify-content: center;
+
+        .countWrapper {
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .textWrapper {
+                display: flex;
+                align-items: baseline;
+                column-gap: 4px;
+
+                .text {
+                    color: #1890ff;
+                    font-size: 36px;
+                    font-weight: 550;
+                }
+            }
+        }
+    }
+}
+
+.dateRangePicker {
+    width: 250px;
+}
+
+.cardDataLabelWrapper {
+    display: flex;
+    height: 120px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 6px 16px -8px rgb(70 88 126 / 30%);
+
+    .cardDataLabelContainer {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: 4px;
+
+        .countContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 8px;
+
+            .count {
+                color: #1890ff;
+                font-size: 24px;
+                font-weight: 550;
+            }
+
+            .unit {
+                font-size: 14px;
+            }
+        }
+
+        .label {
+            color: rgb(0 0 0 / 85%);
+            font-size: 16px;
+            font-weight: 550;
+        }
+
+        .ratio {
+            display: flex;
+            align-items: center;
+            color: rgb(0 0 0 / 55%);
+            column-gap: 4px;
+            font-size: 14px;
+
+            .icon {
+                color: rgb(255 77 79 / 100%);
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+.contentLayoutContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 16px;
+    row-gap: 16px;
+
+    .title {
+        display: flex;
+        height: 40px;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+
+        .titleText {
+            color: rgb(0 0 0 / 85%);
+            font-size: 18px;
+            font-weight: 550;
+        }
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    &-white {
+        background: #fff;
+        box-shadow: 0 0 48px 16px rgb(70 88 126 / 3%),
+            0 0 28px 0 rgb(70 88 126 / 12%), 0 0 16px -8px rgb(70 88 126 / 8%);
+        row-gap: 20px;
+    }
+
+    &-gray {
+        background: #eff8fd;
+    }
+}
+
+.itemCardContainer {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 16px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 6px 16px -8px rgb(70 88 126 / 30%);
+    row-gap: 16px;
+
+    .itemCardTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .itemCardTitleText {
+            color: rgb(0 0 0 / 85%);
+            font-size: 16px;
+            font-weight: 550;
+        }
+    }
+}

@@ -1,0 +1,105 @@
+.userWrap {
+    display: flex;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    margin-bottom: 24px;
+    // cursor: pointer;
+
+    .userIcon {
+        width: 52px;
+        height: 52px;
+        padding-top: 8px;
+        margin-right: 16px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 36px;
+    }
+
+    .userIconDisabled {
+        cursor: not-allowed;
+    }
+
+    .userWrapper {
+        flex: 1;
+        .ellipsis-mixin();
+    }
+
+    .userName {
+        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 550;
+
+        .userText {
+            display: inline-block;
+            width: calc(100% - 120px);
+            .ellipsis-mixin();
+        }
+
+        .platform {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            gap: 4px;
+            line-height: 24px;
+        }
+    }
+
+    .depInfo {
+        .ellipsis-mixin();
+
+        color: rgb(0 0 0 / 85%);
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    .roleInfo {
+        display: flex;
+        height: 64px;
+        flex-wrap: wrap;
+
+        .tag {
+            // max-width: 184px;
+            height: 24px;
+            margin-top: 8px;
+            background-color: #fff;
+            border-radius: 2px;
+            color: rgb(0 0 0 / 85%);
+            font-size: 12px;
+            .ellipsis-mixin();
+        }
+
+        .expandBtn {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            margin-right: 0;
+            cursor: pointer;
+            word-break: keep-all;
+
+            .expandText {
+                margin-right: 4px;
+            }
+        }
+    }
+}
+
+.tagWrap {
+    max-height: 216px;
+    overflow-y: auto;
+
+    & > span {
+        display: block;
+        width: fit-content;
+        max-width: 400px;
+        margin-top: 8px;
+        margin-right: 0;
+        .ellipsis-mixin();
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+}

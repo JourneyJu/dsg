@@ -1,0 +1,612 @@
+.titleLabel {
+    margin-bottom: 10px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 550;
+}
+
+.drmbHome {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: #f0f2f6;
+    background-image: url('../../assets/homePage/drmbHomeBg.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-y: auto;
+
+    .homeContent {
+        display: flex;
+        min-width: 1224px;
+        padding: 24px;
+        gap: 16px;
+
+        .contentLeft {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            flex-shrink: 0;
+            gap: 16px;
+
+            .secLineMenu {
+                display: flex;
+                gap: 16px;
+            }
+        }
+
+        .contentRight {
+            position: relative;
+            display: flex;
+            width: 24%;
+            min-width: 360px;
+            max-width: 454px;
+            flex-direction: column;
+            gap: 16px;
+
+            & > div.contentBlock {
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                padding: 20px;
+                background: #fff;
+                border-radius: 4px;
+                // box-shadow: 0 5px 12px 4px rgb(0 0 0 / 5%);
+            }
+
+            .platform {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 16px;
+                font-weight: 550;
+                line-height: 24px;
+            }
+
+            .rightLabel {
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 8px;
+                gap: 0 16px;
+
+                .rightLabelWrap {
+                    display: flex;
+                    flex: 1;
+                    align-items: center;
+                    padding: 8px 10px;
+                    border-radius: 4px;
+
+                    &:hover {
+                        background-color: rgb(239 240 243 / 100%);
+                    }
+
+                    .rightLabelIcon {
+                        width: 40px;
+                        height: 40px;
+                        padding-top: 8px;
+                        margin-right: 16px;
+                    }
+
+                    .rightLabelItem {
+                        display: flex;
+                        width: calc(50% - 8px);
+                        flex-direction: column;
+                        cursor: pointer;
+
+                        .rightLabelText {
+                            color: rgb(0 0 0 / 65%);
+                        }
+
+                        .rightLabelVal {
+                            font-size: 16px;
+                            font-weight: 550;
+                        }
+                    }
+
+                    .rightLabelItemDisabled {
+                        cursor: not-allowed;
+                    }
+                }
+            }
+
+            .personalCenter {
+                width: 100%;
+                padding: 9px 0;
+                margin-bottom: 24px;
+                background: rgb(18 110 227 / 100%);
+                border-radius: 4px;
+                color: #fff;
+                cursor: pointer;
+                text-align: center;
+
+                &:hover {
+                    background: rgb(18 110 227 / 80%);
+                }
+            }
+
+            .personalCenterDisabled {
+                cursor: not-allowed;
+
+                &:hover {
+                    opacity: 0.45;
+                }
+            }
+        }
+
+        .secMenuBox {
+            display: flex;
+            width: 100%;
+            gap: 16px;
+            text-align: center;
+
+            .secMenu {
+                width: calc(25% - 12px);
+                padding: 24px;
+                padding-bottom: 0;
+                margin-bottom: 16px;
+                background: #f6f7fb;
+                border-radius: 4px;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgb(18 110 227 / 8%);
+                }
+
+                .secTitle {
+                    margin-bottom: 16px;
+                    font-weight: 550;
+
+                    .icon {
+                        margin-right: 4px;
+                        font-size: 18px;
+                        transform: rotate(90deg);
+                    }
+                }
+
+                .secMenuItem {
+                    width: 100%;
+                    padding: 11px 0;
+                    margin-bottom: 16px;
+                    background: #fff;
+                    border-radius: 4px;
+                    // box-shadow: 0 0 6px 1px rgb(0 0 0 / 10%);
+
+                    &:hover {
+                        background: rgb(18 110 227 / 8%);
+                    }
+                }
+            }
+        }
+    }
+
+    .recentUse {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .recUseCard {
+            width: calc(50% - 8px);
+            padding: 8px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+
+            &:hover {
+                background-color: rgb(0 0 0 / 4%);
+            }
+        }
+    }
+
+    .shortcutMenu {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        .shortcutMenuCard {
+            width: calc(50% - 8px);
+
+            // display: flex;
+            // padding: 16px;
+            // border: 1px solid #e0e0e0;
+            // border-radius: 4px;
+            // cursor: pointer;
+
+            // &.disable {
+            //     border-color: #d9d9d9;
+            //     background: #f5f5f5;
+            //     cursor: not-allowed;
+            //     opacity: 0.45;
+
+            //     &:hover {
+            //         border-color: #d9d9d9;
+            //     }
+            // }
+
+            // &:hover {
+            //     border-color: #126ee3;
+            // }
+
+            // .iconBox {
+            //     display: flex;
+            //     width: 40px;
+            //     height: 40px;
+            //     align-items: center;
+            //     justify-content: center;
+            //     margin-right: 16px;
+            //     border-radius: 4px;
+
+            //     .icon {
+            //         color: #fff;
+            //         font-size: 20px;
+            //     }
+            // }
+
+            // .cardDesc {
+            //     color: rgb(0 0 0 / 65%);
+            //     font-size: 12px;
+            // }
+        }
+    }
+}
+
+.cardMenu {
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 16px 24px;
+    background: #fff;
+    border-radius: 4px;
+    // box-shadow: 0 5px 12px 4px rgb(0 0 0 / 5%);
+    transition: all 0.3s;
+
+    &.cardMenuVertical {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 0;
+
+        .cardHeader {
+            display: flex;
+            justify-content: center;
+        }
+
+        .cardContent {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cardMenuItem {
+            width: 100%;
+        }
+    }
+
+    &.disable {
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        .card_tooltip {
+            display: block;
+        }
+
+        .card_enter {
+            display: flex;
+            align-items: center;
+            color: #126ee3;
+            gap: 4px;
+        }
+    }
+
+    .cardHeader {
+        position: relative;
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .cardContent {
+        // display: flex;
+        // width: 100%;
+        // flex-wrap: wrap;
+        // gap: 16px;
+
+        display: grid;
+
+        /* Space between grid items */
+        width: 100%;
+        // grid-template-columns: repeat(5, 1fr);
+
+        /* Creates 5 equal columns */
+        gap: 8px;
+    }
+
+    .cardMenuItem {
+        display: flex;
+        // width: calc(20% - 12.8px);
+        height: 38px;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: left;
+        padding: 0 8px;
+        // background: #f6f7fb;
+        border-radius: 4px;
+        color: rgb(0 0 0 / 85%);
+        cursor: pointer;
+
+        &:hover {
+            background: #eff0f3;
+        }
+
+        &.disable {
+            color: rgb(0 0 0 / 65%);
+            cursor: not-allowed;
+            // background: #fafafa;
+            opacity: 0.6;
+
+            &:hover {
+                background-color: transparent;
+            }
+
+            > a {
+                color: #126ee3;
+                cursor: not-allowed;
+            }
+        }
+
+        .gradientSvgIconWrap {
+            width: 24px;
+            height: 24px;
+            padding-top: 4px;
+            background: rgb(24 144 255 / 8%);
+            border-radius: 2px;
+        }
+    }
+
+    .card_tooltip {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+        background: #fff;
+        border-radius: 4px;
+        // box-shadow: 0 3px 6px -4px rgb(0 0 0 / 12%),
+        //     0 6px 16px 0 rgb(0 0 0 / 8%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+
+        .arrow {
+            position: absolute;
+            left: calc(50% - 5px);
+            width: 10px;
+            height: 10px;
+            background: #fff;
+            transform: translateY(-5px) rotate(-135deg);
+        }
+
+        .tipText {
+            padding: 4px 8px;
+            color: rgb(0 0 0 / 85%);
+        }
+    }
+
+    .card_enter {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: none;
+    }
+}
+
+.cardVerticalMenuContainer {
+    position: relative;
+    width: 25%;
+    padding-top: 0;
+    box-shadow: none;
+
+    .cardHeader {
+        position: relative;
+        width: 100%;
+        height: 165px;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        cursor: pointer;
+        text-align: center;
+
+        .cardHeaderBg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgb(217 217 217 / 50%);
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                // box-shadow: 0 9px 16px 4px rgb(0 0 0 / 5%);
+                transform: scale(1.03);
+            }
+        }
+
+        & > span {
+            margin-bottom: 10px;
+            font-size: 72px;
+        }
+    }
+
+    .cardContent {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        .cardMenuItemWrap {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background: #eff0f3;
+            }
+
+            &.disable {
+                cursor: not-allowed;
+            }
+        }
+
+        .cardMenuItem {
+            width: 100%;
+            min-width: 140px;
+            height: 38px;
+            box-sizing: border-box;
+            padding: 0 8px;
+
+            &:hover {
+                background: none;
+            }
+
+            &::before {
+                display: inline-block;
+                width: 6px;
+                height: 6px;
+                margin-right: 16px;
+                background-color: rgb(0 0 0 / 30%);
+                border-radius: 50%;
+                content: '';
+            }
+
+            &.disable::before {
+                background-color: rgb(0 0 0 / 15%);
+            }
+
+            & > span {
+                overflow: hidden;
+                width: calc(100% - 30px);
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .cardMenuIcon {
+        position: absolute;
+        z-index: 1;
+        top: 64px;
+        right: -12px;
+        color: rgb(138 144 165 / 85%);
+        font-size: 24px;
+    }
+
+    &:nth-last-child(1) .cardMenuIcon {
+        display: none;
+    }
+}
+
+.quickMenuCard {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+
+    &:hover {
+        .quickMenuCardBg {
+            transform: scale(1.15);
+        }
+    }
+
+    &:nth-child(1) .quickMenuContent {
+        background: rgb(0 148 255 / 65%);
+    }
+
+    &:nth-child(2) .quickMenuContent {
+        background: linear-gradient(
+            180deg,
+            rgb(190 165 255 / 19.5%),
+            rgb(144 108 255 / 19.5%) 100%
+        );
+    }
+
+    &:nth-child(3) .quickMenuContent {
+        background: linear-gradient(
+            rgb(20 203 176 / 65%) 0%,
+            rgb(67 228 206 / 65%) 100%
+        );
+    }
+
+    &:nth-child(4) .quickMenuContent {
+        background: linear-gradient(
+            rgb(88 127 255 / 65%) 0%,
+            rgb(120 164 255 / 65%) 100%
+        );
+    }
+
+    .quickMenuContent {
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+
+        .contentMask {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(
+                rgb(0 0 0 / 0%) 40%,
+                rgb(0 0 0.35 / 35%) 100%
+            );
+        }
+
+        .cardMenuIcon {
+            width: 36px;
+            height: 36px;
+            padding-top: 8px;
+            margin-bottom: 8px;
+            background-color: #fff;
+            border-radius: 50%;
+            font-size: 20px;
+        }
+
+        .cardMenuText {
+            color: #fff;
+            font-size: 14px;
+            font-style: normal;
+            line-height: 22px;
+            text-align: center;
+            text-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+        }
+    }
+
+    .quickMenuCardBg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .developingBadge {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        padding: 0 6px;
+        background-color: rgb(0 0 0 / 50%);
+        border-radius: 0 4px 0 0;
+        color: #fff;
+        font-size: 12px;
+        line-height: 22px;
+    }
+}

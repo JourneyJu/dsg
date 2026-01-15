@@ -1,0 +1,220 @@
+.dataAnalysis {
+    display: flex;
+    // overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+    padding: 22px 20px 16px;
+}
+
+.dataAnalysisTable {
+    display: flex;
+    height: 0;
+    flex: 1;
+    flex-direction: column;
+
+    .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        .leftOperate {
+            display: flex;
+            align-items: center;
+
+            :global {
+                .any-fabric-ant-btn {
+                    padding: 0 8px;
+                    color: rgb(0 0 0 / 65%);
+
+                    > i {
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            &-title {
+                padding-left: 12px;
+                border-left: 3px solid #126ee3;
+                color: rgb(0 0 0 / 85%);
+                font-size: 14px;
+                font-weight: 550;
+            }
+        }
+    }
+
+    .sort-title {
+        margin-bottom: 16px;
+        color: rgb(0 0 0 / 85%);
+        font-size: 14px;
+        font-weight: 550;
+    }
+
+    .sub_title {
+        color: rgba(0 0 0 / 45%);
+    }
+}
+
+.statusFilter {
+    display: flex;
+    align-items: center;
+
+    .selectStatus {
+        color: rgb(0 0 0 / 65%);
+        cursor: pointer;
+    }
+
+    .selectStatusActive {
+        color: @primary-color;
+    }
+}
+
+.twoLine {
+    display: flex;
+    flex-direction: column;
+
+    .the_one_line,
+    .the_two_line {
+        .ellipsis-line(1);
+    }
+
+    .the_two_line {
+        color: rgba(0 0 0 / 45%);
+    }
+
+    .a_name {
+        &:hover {
+            color: #126ee3;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
+
+.multiColumnWrapper {
+    .titleWrapper {
+        display: flex;
+        align-items: center;
+
+        .columnTitle {
+            .ellipsis-mixin();
+
+            color: rgb(0 0 0 / 85%);
+            cursor: pointer;
+
+            &:hover,
+            &:active {
+                color: #3a8ff0;
+            }
+        }
+
+        .auditStatus {
+            flex: 0;
+            border: none;
+            margin-left: 8px;
+
+            .reasonIcon {
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .columnSubTitle {
+        color: rgb(0 0 0 / 45%);
+        font-size: 12px;
+        .ellipsis-mixin();
+    }
+}
+
+.statusView {
+    display: flex;
+    align-items: center;
+
+    .dot {
+        width: 8px;
+        height: 8px;
+        flex-shrink: 0;
+        border-radius: 50%;
+    }
+
+    .text {
+        margin-right: 4px;
+        margin-left: 8px;
+        color: rgb(0 0 0 / 85%);
+        font-size: 14px;
+        .ellipsis-mixin();
+    }
+}
+
+.revocate-form {
+    .text-area {
+        height: 130px;
+    }
+}
+
+.catalog-data-table {
+    .name-container {
+        display: flex;
+        align-items: center;
+
+        .view-icon {
+            margin-right: 9px;
+            font-size: 20px;
+        }
+
+        .name-info {
+            width: 130px;
+
+            .business-name {
+                .ellipsis-mixin();
+            }
+
+            .technical-name {
+                color: rgb(0 0 0 / 45%);
+                font-size: 12px;
+                .ellipsis-mixin();
+            }
+        }
+    }
+
+    .filter-icon {
+        margin-left: 4px;
+        cursor: pointer;
+    }
+}
+
+.dropdown-container {
+    width: 200px;
+    height: 155px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 9px 28px 8px rgb(0 0 0 / 5%), 0 3px 6px -4px rgb(0 0 0 / 12%),
+        0 6px 16px 0 rgb(0 0 0 / 8%);
+
+    .dropdown-header {
+        display: flex;
+        height: 40px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+
+    .checkbox-group-container {
+        padding: 0 12px;
+    }
+
+    .dropdown-vertical-checkbox {
+        :global {
+            .any-fabric-ant-checkbox-wrapper {
+                display: flex;
+                height: 26px;
+                align-items: center;
+                margin-top: 8px;
+
+                .any-fabric-ant-checkbox {
+                    margin-top: -5px;
+                }
+            }
+        }
+    }
+}

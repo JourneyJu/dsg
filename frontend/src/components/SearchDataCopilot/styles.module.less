@@ -1,0 +1,46 @@
+.fixedButton {
+    position: fixed;
+    z-index: 1000;
+    top: calc(50% + 6px);
+    right: 12px;
+    display: flex;
+    width: 44px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.copilotDrawer {
+    :global(.ant-drawer-body) {
+        padding: 0;
+    }
+}
+
+.copilotContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.loadingContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorContainer {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+}

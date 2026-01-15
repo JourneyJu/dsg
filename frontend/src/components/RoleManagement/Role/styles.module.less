@@ -1,0 +1,70 @@
+.role {
+    display: flex;
+    height: 100%;
+    flex: 1;
+    flex-direction: column;
+    row-gap: 16px;
+
+    &.roleInGroup {
+        width: 60%;
+    }
+
+    .operateWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .tableWrapper {
+        display: flex;
+        flex-direction: column;
+
+        &.bordered {
+            border: 1px solid rgb(0 0 0 / 15%);
+            border-radius: 4px;
+        }
+
+        .pagination {
+            margin: 16px 0;
+        }
+    }
+
+    .tableRow {
+        .nameWrapper {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+        }
+
+        .name {
+            .ellipsis-mixin();
+
+            &:hover {
+                color: #126ee3;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .rolesWrapper {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .tagRole {
+            padding: 1px 8px 2px;
+            background: rgb(214 221 237 / 25%);
+            border-radius: 2px;
+            color: #6b798d;
+            .ellipsis-mixin();
+        }
+
+        .tagCount {
+            padding: 1px 8px 2px;
+            margin-left: 4px;
+            background: rgb(214 221 237 / 25%);
+            border-radius: 2px;
+            color: #6b798d;
+        }
+    }
+}

@@ -1,0 +1,352 @@
+.overViewContainer {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 24px 20px;
+    background-color: #eff2f6;
+    overflow-y: auto;
+    row-gap: 16px;
+
+    .overViewHeader {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .overViewTitle {
+            color: rgba(0 0 0 / 85%);
+            font-size: 14px;
+            font-weight: 550;
+        }
+    }
+
+    .overViewContent {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+    }
+}
+
+.workOrderContainer {
+    display: grid;
+    width: 100%;
+    height: 120px;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.workOrderCard {
+    display: flex;
+    height: 124px;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 2px;
+
+    .workOrderCardTitle {
+        color: #78839f;
+        font-size: 14px;
+        font-weight: 550;
+    }
+
+    .workOrderCardValue {
+        color: rgb(0 0 0 / 85%);
+        font-size: 30px;
+        font-weight: 550;
+    }
+
+    .workOrderCardValueLine {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+
+        .workOrderCardValueLineItem {
+            display: flex;
+            align-items: center;
+            column-gap: 4px;
+
+            .workOrderCardValueLineItemTitle {
+                color: #78839f;
+                font-size: 14px;
+                font-weight: 550;
+            }
+
+            .workOrderCardValueLineItemValue {
+                color: rgb(0 0 0 / 85%);
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.dataQualityContainer {
+    display: flex;
+    height: 660px;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 2px;
+    row-gap: 16px;
+
+    .dataQualityTitle {
+        flex-shrink: 0;
+        color: rgb(0 0 0 / 85%);
+        font-weight: 550;
+    }
+
+    .dataQualityContent {
+        display: grid;
+        width: 100%;
+        flex-shrink: 0;
+        gap: 16px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .g2Container {
+        position: relative;
+        height: 0;
+        flex: 1;
+
+        .g2 {
+            height: 100%;
+        }
+
+        .leftLineTitle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #78839f;
+            font-size: 12px;
+        }
+
+        .rightLineTitle {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #78839f;
+            font-size: 12px;
+        }
+    }
+}
+
+.dataQualityCard {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    padding: 20px;
+    background: #f7f9fd;
+    border-radius: 2px;
+
+    .dataQualityCardTitle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #78839f;
+    }
+
+    .dataQualityCardValue {
+        color: rgb(0 0 0 / 85%);
+        font-size: 30px;
+        font-weight: 550;
+    }
+}
+
+.titleLabel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 16px;
+
+    .titleIcon {
+        width: 4px;
+        height: 16px;
+        flex-shrink: 0;
+        background: #126ee3;
+    }
+
+    .titleLabelContent {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        column-gap: 4px;
+
+        .titleLabelTitle {
+            color: rgb(0 0 0 / 85%);
+        }
+
+        .titleLabelDescription {
+            color: #78839f;
+        }
+    }
+
+    .rightNode {
+        min-width: 0; // 关键：允许在 flex 中按容器收缩
+        max-width: 100%;
+        flex: 0 1 auto;
+    }
+}
+
+.dataProcessViewContainer {
+    display: flex;
+    height: 780px;
+    flex-direction: column;
+    padding: 20px;
+    background: #fff;
+    border-radius: 2px;
+    row-gap: 16px;
+
+    .dataProcessViewTitle {
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        color: rgb(0 0 0 / 85%);
+        column-gap: 4px;
+        font-weight: 550;
+    }
+
+    .dataProcessViewContent {
+        display: grid;
+        width: 100%;
+        flex-shrink: 0;
+        gap: 16px;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .tabLabel {
+        display: inline-block;
+        max-width: 200px;
+        .ellipsis-mixin();
+    }
+
+    :global {
+        .any-fabric-ant-tabs-tab {
+            padding: 0;
+        }
+
+        .any-fabric-ant-tabs > .any-fabric-ant-tabs-nav,
+        .any-fabric-ant-tabs > div > .any-fabric-ant-tabs-nav {
+            margin: 0;
+        }
+    }
+
+    .dataProcessViewTable {
+        height: 0;
+        flex: 1;
+
+        :global {
+            .any-fabric-ant-table-thead > tr > th {
+                border: 1px solid #fff;
+                background: #d7e3fd;
+            }
+
+            .any-fabric-ant-table-container
+                table
+                > thead
+                > tr:first-child
+                th:last-child {
+                background: #fff;
+            }
+        }
+    }
+}
+
+.dataAssessmentLabel {
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+
+    .dataAssessmentLabelValue {
+        color: #78839f;
+    }
+
+    .dataAssessmentLabelTip {
+        display: flex;
+        width: 16px;
+        height: 16px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 12px;
+    }
+}
+
+.dataAssessment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 12px;
+}
+
+.qualityDepartmentContainer {
+    display: flex;
+    height: 574px;
+    flex-direction: column;
+    row-gap: 16px;
+
+    .searchContainer {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .searchInput {
+            width: 200px;
+        }
+    }
+}
+
+.qualityLoadingAndEmptyContainer {
+    display: flex;
+    height: 574px;
+    align-items: center;
+    justify-content: center;
+}
+
+.processViewModalContainer {
+    display: flex;
+    height: 574px;
+    column-gap: 16px;
+
+    .processViewModalContent {
+        position: relative;
+        display: flex;
+        min-width: 0;
+        height: 100%;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        background: #f7f9fd;
+        border-radius: 2px;
+
+        .processViewModalContentContent {
+            width: 100%;
+            height: 200px;
+        }
+
+        .processViewModalContentTitle {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: #78839f;
+        }
+    }
+}
+
+.resultTableDetailContainer {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 574px;
+    align-items: center;
+    justify-content: center;
+
+    .resultTableDetailContent {
+        width: 100%;
+        height: 340px;
+    }
+
+    .processViewModalContentTitle {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}

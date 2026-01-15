@@ -1,0 +1,164 @@
+.data-get-overview {
+    height: 100%;
+    padding: 20px;
+    background: #eff2f6;
+    overflow-y: auto;
+
+    &-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        > div:first-child {
+            color: rgb(0 0 0 / 85%);
+            font-size: 14px;
+            font-weight: 550;
+            line-height: 20px;
+            text-align: left;
+        }
+    }
+
+    &-loader {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.modalContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 16px;
+
+    .tableEmpty {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modalContentTable {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+
+        .modalContentTableHeader {
+            display: flex;
+            height: 40px;
+            justify-content: flex-end;
+            margin-bottom: 8px;
+        }
+
+        .modalContentTableContent {
+            height: 0;
+            flex: 1;
+        }
+    }
+}
+
+:global {
+    .any-fabric-ant-select-tree-node-content-wrapper {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.pie-card-update {
+    padding: 0;
+}
+
+.pie-card-item {
+    height: 280px;
+}
+
+.footer-wrapper {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+
+    &-item {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        color: #78839f;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 20px;
+        text-align: left;
+
+        span {
+            color: #78839f;
+            font-size: 12px;
+            font-style: normal;
+            line-height: 20px;
+            text-align: left;
+            white-space: nowrap;
+
+            &:nth-child(2) {
+                overflow: hidden;
+                width: 0;
+                flex: 1;
+                margin-left: 8px;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+.front-end-item {
+    height: 160px;
+}
+
+.resource-type-item {
+    height: 202px;
+    background: #f7f9fd;
+    border-radius: 0;
+}
+
+.card-wrapper {
+    height: 280px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 2px;
+
+    &-title {
+        margin-bottom: 16px;
+        color: rgb(0 0 0 / 85%);
+        font-size: 14px;
+        font-weight: 550;
+        line-height: 22px;
+        text-align: left;
+    }
+}
+
+.empty-card {
+    display: flex;
+    width: 100%;
+    height: 280px;
+    flex-direction: column;
+    padding: 20px 20px 12px;
+    background: #fff;
+    border-radius: 2px;
+
+    &-header {
+        color: rgb(0 0 0 / 85%);
+        font-size: 14px;
+        font-weight: 550;
+        line-height: 22px;
+        text-align: left;
+    }
+
+    &-content {
+        display: flex;
+        height: 0;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+    }
+}

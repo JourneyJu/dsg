@@ -1,0 +1,125 @@
+.departmentMutiSelect {
+    :global {
+        .any-fabric-ant-select-item {
+            min-height: 36px;
+            align-items: center;
+            padding: 0 12px;
+            line-height: 36px;
+        }
+    }
+
+    .treeListWrap {
+        display: flex;
+        overflow: auto;
+        max-height: 256px;
+        overflow-anchor: none;
+    }
+
+    .treeList {
+        display: flex;
+        width: max-content;
+        flex: 1;
+        flex-direction: column;
+    }
+
+    .checkWrap {
+        display: flex;
+        height: 36px;
+        align-items: center;
+        padding-left: 8px;
+        border-top: 1px solid #d9d9d9;
+        cursor: default;
+
+        .checkName {
+            margin-left: 4px;
+            color: rgb(0 0 0 / 65%);
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    .treeItem {
+        display: flex;
+        height: 36px;
+        align-items: center;
+        padding-right: 12px;
+
+        &:hover {
+            background: #f5f5f5;
+        }
+
+        .arrow {
+            display: flex;
+            width: 18px;
+            height: 100%;
+            align-items: center;
+            padding-right: 6px;
+            color: rgb(0 0 0 / 65%);
+            cursor: pointer;
+            font-size: 12px;
+
+            &.collapsed {
+                transition: all 0.3s;
+            }
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            align-items: center;
+
+            .icon {
+                margin-right: 6px;
+            }
+
+            .name {
+                border: 1px solid transparent;
+                margin-right: 4px;
+                color: rgb(0 0 0 / 85%);
+                line-height: 32px;
+                white-space: nowrap;
+                word-break: keep-all;
+            }
+        }
+    }
+
+    .treeItem_selected {
+        background: #e6f5ff;
+
+        &:hover {
+            background: #e6f5ff;
+        }
+    }
+
+    .searchItem {
+        display: flex;
+        min-height: 36px;
+        flex-direction: column;
+        justify-content: center;
+
+        &-top {
+            display: flex;
+            height: 28px;
+
+            .icon {
+                margin-right: 6px;
+            }
+
+            .name {
+                border: 1px solid transparent;
+                color: rgb(0 0 0 / 85%);
+                line-height: 32px;
+                .ellipsis-line(1);
+            }
+        }
+
+        .path {
+            height: 22px;
+            margin-left: 22px;
+            color: rgb(0 0 0 / 45%);
+            font-size: 12px;
+            line-height: 22px;
+            .ellipsis-line(1);
+        }
+    }
+}

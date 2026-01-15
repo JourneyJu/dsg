@@ -1,0 +1,38 @@
+.menuWrapper {
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+
+    :global {
+        .any-fabric-ant-menu-item {
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+
+            &:hover {
+                background-color: #eff0f3;
+            }
+
+            .any-fabric-ant-menu-item-icon {
+                font-size: 20px;
+            }
+        }
+
+        .any-fabric-ant-menu:not(.any-fabric-ant-menu-horizontal)
+            .any-fabric-ant-menu-item-selected {
+            background-color: #ecf5ff;
+        }
+
+        .any-fabric-ant-menu-vertical .any-fabric-ant-menu-item::after,
+        .any-fabric-ant-menu-vertical-left .any-fabric-ant-menu-item::after,
+        .any-fabric-ant-menu-vertical-right .any-fabric-ant-menu-item::after,
+        .any-fabric-ant-menu-inline .any-fabric-ant-menu-item::after {
+            border-right: none;
+        }
+    }
+
+    .menuTitle {
+        padding: 16px 20px;
+        font-weight: 550;
+    }
+}

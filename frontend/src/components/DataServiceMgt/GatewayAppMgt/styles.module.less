@@ -1,0 +1,113 @@
+.gateway-app-wrapper {
+    height: 100%;
+    padding: 0 24px;
+
+    .title {
+        margin-top: 24px;
+        margin-bottom: 12px;
+        font-weight: 550;
+    }
+
+    .operate {
+        margin-bottom: 12px;
+    }
+
+    .ip-addr-wrapper {
+        .ip-addr {
+            max-width: 130px;
+            height: 24px;
+            padding: 0 8px;
+            background-color: rgba(214 221 237 / 25%);
+            border-radius: 2px;
+            color: #6b798d;
+            line-height: 24px;
+            .ellipsis-mixin();
+        }
+
+        .ip-addr-length {
+            height: 24px;
+            padding: 0 4px;
+            background-color: rgba(214 221 237 / 25%);
+            color: #6b798d;
+            line-height: 24px;
+        }
+    }
+}
+
+.register-form {
+    .app-form-item {
+        margin-bottom: 10px;
+    }
+
+    .app-link {
+        margin-bottom: 16px;
+    }
+
+    .app-description {
+        height: 84px;
+        resize: none;
+    }
+
+    .app-flag-form-item {
+        margin-bottom: 2px;
+    }
+}
+
+.details-container {
+    .app-name {
+        margin-bottom: 24px;
+        font-size: 20px;
+        font-weight: 550;
+    }
+
+    .field-item {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 24px;
+
+        .field-label {
+            width: fit-content;
+            margin-right: 8px;
+            color: rgba(0 0 0 / 45%);
+            font-size: 12px;
+        }
+
+        .field-value {
+            flex: 1;
+            color: rgba(0 0 0 / 85%);
+            word-break: break-all;
+
+            .ip-addr-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+
+                .ip-addr-item {
+                    max-width: 137px;
+                    height: 24px;
+                    padding: 0 8px;
+                    background-color: rgba(214 221 237 / 25%);
+                    border-radius: 4px;
+                    color: rgba(0 0 0 / 65%);
+                    line-height: 24px;
+                    .ellipsis-mixin();
+                }
+            }
+        }
+    }
+
+    :global {
+        .any-fabric-ant-collapse-header {
+            background-color: rgba(0 55 50 / 2%);
+        }
+
+        .any-fabric-ant-collapse-ghost > .any-fabric-ant-collapse-item {
+            border-bottom: none !important;
+        }
+
+        .any-fabric-ant-collapse-content-box {
+            background-color: #fff;
+        }
+    }
+}

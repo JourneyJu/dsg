@@ -1,0 +1,37 @@
+.business-area-wrapper {
+    padding: 24px;
+
+    .title {
+        font-weight: 550;
+    }
+
+    .operate-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+
+    .name-container {
+        display: flex;
+        align-items: center;
+
+        .architecture-type-icon {
+            margin-right: 8px;
+        }
+
+        .parent-path {
+            .ellipsis-mixin();
+        }
+
+        .process-name {
+            .ellipsis-mixin();
+
+            &:hover {
+                color: @primary-color;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.roleManagement {
+    overflow: hidden;
+    height: 100%;
+
+    &.roleManagementInRoleGroup {
+        min-width: 1226px;
+    }
+
+    .roleManagementTabs {
+        margin-top: 2px;
+
+        :global {
+            .any-fabric-ant-tabs-nav {
+                margin-bottom: 0;
+
+                .any-fabric-ant-tabs-nav-wrap {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
+    &-content {
+        height: calc(100vh - 98px);
+        padding: 24px 24px 16px;
+    }
+}

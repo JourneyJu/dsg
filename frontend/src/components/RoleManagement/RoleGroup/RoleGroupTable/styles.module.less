@@ -1,0 +1,74 @@
+.roleGroupTable {
+    display: flex;
+    width: 40%;
+    height: 100%;
+    flex-direction: column;
+    row-gap: 16px;
+
+    .operateWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .tableWrapper {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid rgb(0 0 0 / 15%);
+        border-radius: 4px;
+
+        .pagination {
+            margin-top: 16px;
+        }
+    }
+
+    .tableRow {
+        .twoLine {
+            display: flex;
+            flex-direction: column;
+            color: rgb(0 0 0 / 85%);
+
+            .firstLine,
+            .secondLine {
+                .ellipsis-line(1);
+            }
+
+            .secondLine {
+                color: rgb(0 0 0 / 45%);
+            }
+        }
+
+        .rolesWrapper {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+        .tagRole {
+            padding: 1px 8px 2px;
+            background: rgb(214 221 237 / 25%);
+            border-radius: 2px;
+            color: #6b798d;
+            .ellipsis-mixin();
+        }
+
+        .tagCount {
+            padding: 1px 8px 2px;
+            margin-left: 4px;
+            background: rgb(214 221 237 / 25%);
+            border-radius: 2px;
+            color: #6b798d;
+        }
+    }
+
+    .tableRowSelected {
+        > td {
+            background: #ecf5ff;
+        }
+
+        &:hover {
+            > td {
+                background: #e2f0ff !important;
+            }
+        }
+    }
+}

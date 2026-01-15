@@ -1,0 +1,204 @@
+.auditLog {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+
+    :global {
+        .any-fabric-ant-tabs-top > .any-fabric-ant-tabs-nav {
+            margin-top: 6px;
+            margin-bottom: 0;
+
+            .any-fabric-ant-tabs-nav-wrap {
+                padding-left: 20px;
+            }
+        }
+    }
+
+    &-container {
+        overflow: hidden;
+        flex: 1;
+    }
+}
+
+.managementLog {
+    width: 100%;
+    height: 100%;
+}
+
+.logTable {
+    margin-top: 16px;
+
+    &-top {
+        display: flex;
+        height: 22px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+
+        &-title {
+            height: 22px;
+            color: rgb(0 0 0 / 85%);
+            font-size: 14px;
+            font-weight: 550;
+            line-height: 22px;
+        }
+    }
+
+    .load {
+        width: 100%;
+        margin-top: 104px;
+    }
+
+    .tableRow {
+        .opRow {
+            &:hover {
+                color: #126ee3;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+
+        .disabledRow {
+            color: rgb(0 0 0 / 45%);
+            cursor: not-allowed;
+        }
+    }
+
+    .pagination {
+        margin: 16px -10px 0 0;
+    }
+
+    :global {
+        .tableSelectRow {
+            background: #ecf5ff;
+
+            &:hover {
+                > td {
+                    background: #e2f0ff !important;
+                }
+            }
+        }
+    }
+}
+
+.logDetails {
+    .logDetails_item {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            margin-bottom: 4px;
+            color: rgb(0 0 0 / 45%);
+            font-size: 14px;
+        }
+
+        .content {
+            margin-bottom: 8px;
+            color: rgb(0 0 0 / 85%);
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+    }
+
+    .sub_view_name {
+        display: flex;
+        height: 28px;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 550;
+    }
+
+    .logPolicy {
+        display: flex;
+        height: 28px;
+        align-items: center;
+
+        .logPolicy_name {
+            .ellipsis-mixin();
+        }
+
+        .logPolicy_action {
+            width: 36%;
+        }
+    }
+}
+
+.logFilter {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+
+    &-top {
+        display: flex;
+        height: 54px;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        border-bottom: 1px solid #f5f5f5;
+        color: rgb(0 0 0 / 85%);
+        font-weight: 550;
+
+        :global {
+            .any-fabric-ant-btn:focus {
+                border: 1px solid #ccc;
+                color: rgb(0 0 0 / 85%);
+            }
+        }
+    }
+
+    &-content {
+        overflow: hidden auto;
+        padding: 0 16px;
+        margin: 16px 0;
+
+        :global {
+            .any-fabric-ant-form-item {
+                margin-bottom: 16px;
+            }
+
+            // .rc-virtual-list-holder {
+            //     overflow-y: auto !important;
+            // }
+        }
+
+        .optionWrap {
+            :global {
+                .any-fabric-ant-select-item-group {
+                    color: rgb(0 0 0 / 45%);
+                }
+
+                .any-fabric-ant-select-item-option-grouped {
+                    padding-left: 12px;
+                }
+
+                .any-fabric-ant-select-item {
+                    min-height: 32px;
+                    padding: 0 12px;
+                    line-height: 32px;
+                }
+            }
+        }
+
+        .radioWrap {
+            display: flex;
+            flex-wrap: wrap;
+
+            .radio {
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+.logLevelTag {
+    width: 52px;
+    height: 24px;
+    background: #f4f5f8;
+    border-radius: 12px;
+    color: rgb(0 0 0 / 85%);
+    line-height: 22px;
+    text-align: center;
+}

@@ -1,0 +1,154 @@
+.dataCheckingWrapper {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    flex-direction: column;
+    padding: 0 20px;
+
+    :global {
+        .ant-tabs {
+            flex-shrink: 0;
+        }
+
+        .ant-tabs-content {
+            height: 100%;
+        }
+
+        .ant-tabs-tabpane {
+            height: 100%;
+        }
+    }
+
+    .left {
+        overflow: hidden;
+        height: 100%;
+        background: #fff;
+        border-radius: 2px;
+    }
+
+    .right {
+        display: flex;
+        overflow: hidden;
+        height: 100%;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 2px;
+    }
+
+    .authorizedWrapper {
+        display: flex;
+        overflow: hidden;
+        height: calc(100vh - 149px);
+        flex-direction: column;
+        background: #fff;
+        border-radius: 2px;
+    }
+}
+
+.authorized-resources-container {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 20px;
+
+    .top {
+        display: flex;
+        min-height: 32px;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 16px;
+
+        .top-search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .searchInput {
+            flex-shrink: 0;
+        }
+    }
+
+    .bottom {
+        overflow: hidden;
+        flex: 1;
+    }
+
+    .tableRow {
+        cursor: pointer;
+    }
+
+    // 目录信息容器
+    .catalog-info-container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .catalog-name {
+            overflow: hidden;
+            color: @primary-color;
+            cursor: pointer;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &-offline {
+                color: rgb(0 0 0 / 25%);
+            }
+        }
+
+        .offline-flag {
+            flex-shrink: 0;
+            padding: 0 4px;
+            background: rgba(255 77 79 / 8%);
+            border-radius: 2px;
+            color: #ff4d4f;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+
+    // 技术信息容器
+    .technical-info-container {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        gap: 8px;
+
+        .technical-info {
+            overflow: hidden;
+            flex: 1;
+
+            .technical-name {
+                overflow: hidden;
+                color: @primary-color;
+                font-weight: 500;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .technical-code {
+                overflow: hidden;
+                color: rgb(0 0 0 / 45%);
+                font-size: 12px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .business-name {
+        color: rgb(0 0 0 / 85%);
+    }
+
+    .name-offline {
+        color: rgb(0 0 0 / 25%);
+    }
+}

@@ -1,0 +1,179 @@
+.userManagementWrapper {
+    display: flex;
+    height: 100%;
+
+    .left {
+        height: 100%;
+        padding-top: 16px;
+
+        :global {
+            .any-fabric-ant-tree {
+                height: calc(100vh - 174px);
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        padding: 24px 0 16px 4px;
+        row-gap: 16px;
+
+        .title {
+            font-weight: 550;
+        }
+
+        .operateWrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .tableRow {
+            .name {
+                &:hover {
+                    color: #126ee3;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
+            }
+
+            .rolesWrapper {
+                display: flex;
+                flex-wrap: nowrap;
+            }
+
+            .tagRole {
+                height: 24px;
+                padding: 0 8px;
+                background: rgb(214 221 237 / 25%);
+                border-radius: 2px;
+                color: #6b798d;
+                line-height: 24px;
+                .ellipsis-mixin();
+            }
+
+            .tagCount {
+                height: 24px;
+                padding: 0 8px;
+                margin-left: 8px;
+                background: rgb(214 221 237 / 25%);
+                border-radius: 2px;
+                color: #6b798d;
+                line-height: 24px;
+            }
+        }
+    }
+}
+
+.userDetails {
+    :global {
+        .any-fabric-ant-descriptions-row:last-child {
+            .any-fabric-ant-descriptions-item {
+                padding-bottom: 0;
+            }
+        }
+
+        .any-fabric-ant-descriptions-item {
+            padding-bottom: 16px;
+        }
+    }
+
+    .innerDescriptions {
+        :global {
+            .any-fabric-ant-descriptions-item {
+                padding-bottom: 0;
+
+                .any-fabric-ant-descriptions-item-content {
+                    padding: 8px 0 16px;
+                }
+            }
+
+            .any-fabric-ant-descriptions-row:last-child {
+                .any-fabric-ant-descriptions-item-content {
+                    padding: 8px 0 0;
+                }
+            }
+        }
+    }
+
+    .authTitle {
+        display: flex;
+        height: 20px;
+        margin-bottom: 12px;
+        color: rgb(0 0 0 / 45%);
+        font-size: 12px;
+
+        .authBlock1,
+        .authBlock2 {
+            width: 26px;
+            height: 16px;
+            margin: 2px 4px 2px 0;
+            background: rgb(240 242 246 / 65%);
+            border-radius: 3px;
+        }
+
+        .authBlock2 {
+            background: rgb(89 163 255 / 10%);
+        }
+    }
+}
+
+.roleGroupDetails {
+    :global {
+        .any-fabric-ant-descriptions-row:last-child {
+            .any-fabric-ant-descriptions-item {
+                padding-bottom: 0;
+            }
+        }
+
+        .any-fabric-ant-descriptions-item {
+            padding-bottom: 16px;
+        }
+    }
+}
+
+.roleTag {
+    display: inline-flex;
+    height: 24px;
+    align-items: center;
+    padding: 0 8px;
+    background: rgb(214 221 237 / 25%);
+    border-radius: 3px;
+    color: rgb(0 0 0 / 85%);
+    column-gap: 8px;
+    line-height: 24px;
+
+    .roleName {
+        .ellipsis-line(1);
+    }
+
+    &.canClick {
+        &:hover {
+            cursor: pointer;
+
+            .roleName {
+                color: #126ee3;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.roleAvatar {
+    display: inline-flex;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 550;
+
+    &-roleGroup {
+        border: 1px solid rgb(0 0 0 / 85%);
+        color: #000;
+    }
+}
