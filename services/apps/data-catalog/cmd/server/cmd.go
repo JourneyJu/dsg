@@ -13,7 +13,6 @@ import (
 	"github.com/golang-migrate/migrate/v4"
 	_ "github.com/golang-migrate/migrate/v4/database/mysql"
 	_ "github.com/golang-migrate/migrate/v4/source/file"
-	"github.com/kweaver-ai/dsg/services/apps/data-catalog/cmd/server/docs"
 	"github.com/kweaver-ai/dsg/services/apps/data-catalog/common/form_validator"
 	"github.com/kweaver-ai/dsg/services/apps/data-catalog/common/settings"
 	af_go_config "github.com/kweaver-ai/idrm-go-frame/core/config"
@@ -43,7 +42,7 @@ var (
 		Version: Version,
 	}
 	serveCmd = &cobra.Command{
-		Use:   "serve",
+		Use:   "server",
 		Short: "启动数据目录服务",
 		RunE:  serveCmdRun,
 	}
@@ -181,14 +180,6 @@ func initConfig() *settings.Config {
 	if addr != "" {
 		config.HttpConf.Host = addr
 	}
-
-	if config.SwagConf.Host == "" {
-		config.SwagConf.Host = "127.0.0.1:8000"
-	}
-
-	// 更新swag文档服务配置
-	docs.SwaggerInfo.Host = config.SwagConf.Host
-	docs.SwaggerInfo.Version = config.SwagConf.Version
 
 	return config
 }

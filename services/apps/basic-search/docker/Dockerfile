@@ -57,7 +57,7 @@ WORKDIR /opt/basic-search/
 USER adp
 
 # Expose port
-EXPOSE 13018
+EXPOSE 8163
 
 # 指定启动命令（使用环境变量 CONFIG_PATH）
-ENTRYPOINT [ "./basic-search-server", "serve" ]
+ENTRYPOINT [ "./basic-search-server", "server" ]

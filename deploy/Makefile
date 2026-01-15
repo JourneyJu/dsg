@@ -3,7 +3,7 @@
 ################################################################################
 
 # 服务列表
-SERVICES = basic-search
+SERVICES = basic-search configuration-center data-catalog data-exploration-service auth-service data-subject data-view session task_center
 # 可以添加更多服务: SERVICES = basic-search service-a service-b
 
 # Docker 镜像仓库
@@ -12,7 +12,7 @@ REGISTRY ?= localhost
 VERSION ?= $(shell git describe --tags --always 2>/dev/null || date +%Y%m%d-%H%M%S)
 
 # 项目根目录
-ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+ROOT_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))/..
 
 .PHONY: help
 help:
@@ -37,13 +37,12 @@ build-all:
 		echo "========================================="; \
 		echo "构建服务: $$service"; \
 		echo "========================================="; \
-		cd $(ROOT_DIR)/services/apps/$$service && \
+		cd $(ROOT_DIR) && \
 		docker build \
-			-f docker/Dockerfile \
+			-f services/apps/$$service/docker/Dockerfile \
 			-t $(REGISTRY)/$$service:$(VERSION) \
 			-t $(REGISTRY)/$$service:latest \
-			. && \
-		cd $(ROOT_DIR) || exit 1; \
+			. ; \
 	done
 	@echo "所有服务构建完成！"
 
@@ -73,18 +72,18 @@ clean:
 .PHONY: docker-compose-up
 docker-compose-up:
 	@echo "启动 docker-compose 服务..."
-	cd $(ROOT_DIR)/deploy && docker-compose up -d
+	cd $(ROOT_DIR)/deploy && docker compose up -d
 	@echo "服务启动完成！"
 
 .PHONY: docker-compose-down
 docker-compose-down:
 	@echo "停止 docker-compose 服务..."
-	cd $(ROOT_DIR)/deploy && docker-compose down
+	cd $(ROOT_DIR)/deploy && docker compose down
 	@echo "服务已停止！"
 
 .PHONY: docker-compose-logs
 docker-compose-logs:
-	cd $(ROOT_DIR)/deploy && docker-compose logs -f
+	cd $(ROOT_DIR)/deploy && docker compose logs -f
 
 # 单个服务操作
 .PHONY: build-service
@@ -94,9 +93,10 @@ build-service:
 		exit 1; \
 	fi
 	@echo "构建服务: $(SERVICE)"
-	cd $(ROOT_DIR)/services/apps/$(SERVICE) && \
+	@echo "构建服务: $(SERVICE)"
+	cd $(ROOT_DIR) && \
 	docker build \
-		-f docker/Dockerfile \
+		-f services/apps/$(SERVICE)/docker/Dockerfile \
 		-t $(REGISTRY)/$(SERVICE):$(VERSION) \
 		-t $(REGISTRY)/$(SERVICE):latest \
 		.

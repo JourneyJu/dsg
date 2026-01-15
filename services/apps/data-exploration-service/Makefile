@@ -45,7 +45,39 @@ swag:
 .PHONY: wire
 ## Example: make wire; generate wire dependency
 wire:
-	wire gen ./cmd/server/
+	wire ./cmd/server
+
+.PHONY: build
+## Example: make build; build the Go service binary
+build:
+	@mkdir -p bin
+	@echo "Building data-exploration-service..."
+	@CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/data-exploration-service-server ./cmd
+	@echo "Build completed: bin/data-exploration-service-server"
+
+.PHONY: build-linux
+## Example: make build-linux; build the Go service binary for Linux
+build-linux:
+	@mkdir -p bin
+	@echo "Building data-exploration-service for Linux..."
+	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/data-exploration-service-server-linux ./cmd
+	@echo "Build completed: bin/data-exploration-service-server-linux"
+
+.PHONY: start
+## Example: make start; start the service with default config (requires build first)
+start:
+	@if [ ! -f ./bin/data-exploration-service-server ]; then \
+		echo "Binary not found, building first..."; \
+		$(MAKE) build; \
+	fi
+	@echo "Starting data-exploration-service..."
+	@./bin/data-exploration-service-server server --conf cmd/server/config/ --addr :8281
+
+.PHONY: start-dev
+## Example: make start-dev; build and start the service
+start-dev: build
+	@echo "Starting data-exploration-service..."
+	@./bin/data-exploration-service-server server --conf cmd/server/config/ --addr :8281
 
 .PHONY: model
 ## Example: make model dsn=xxx tables=xxx; generate gorm models

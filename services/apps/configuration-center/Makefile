@@ -45,7 +45,39 @@ swag:
 .PHONY: wire
 ## Example: make wire; generate wire dependency
 wire:
-	wire gen ./cmd/server/
+	wire ./cmd/server
+
+.PHONY: build
+## Example: make build; build the Go service binary
+build:
+	@mkdir -p bin
+	@echo "Building configuration-center-server..."
+	@CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/configuration-center-server ./cmd/server
+	@echo "Build completed: bin/configuration-center-server"
+
+.PHONY: build-linux
+## Example: make build-linux; build the Go service binary for Linux
+build-linux:
+	@mkdir -p bin
+	@echo "Building configuration-center-server for Linux..."
+	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/configuration-center-server-linux ./cmd/server
+	@echo "Build completed: bin/configuration-center-server-linux"
+
+.PHONY: start
+## Example: make start; start the service with default config (requires build first)
+start:
+	@if [ ! -f ./bin/configuration-center-server ]; then \
+		echo "Binary not found, building first..."; \
+		$(MAKE) build; \
+	fi
+	@echo "Starting configuration-center-server..."
+	@./bin/configuration-center-server --confPath cmd/server/config/
+
+.PHONY: start-dev
+## Example: make start-dev; build and start the service
+start-dev: build
+	@echo "Starting configuration-center-server..."
+	@./bin/configuration-center-server --confPath cmd/server/config/
 
 .PHONY: model
 ## Example: make model dsn=xxx out_dao=true ; generate gin models

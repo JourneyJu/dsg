@@ -27,3 +27,5 @@ build-to-image.sh
 bin
 bin/*
 app
+
+.env2

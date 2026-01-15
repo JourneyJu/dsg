@@ -48,6 +48,38 @@ swag:
 wire:
 	wire gen ./cmd/server/
 
+.PHONY: build
+## Example: make build; build the Go service binary
+build:
+	@mkdir -p bin
+	@echo "Building data-catalog-server..."
+	@CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/data-catalog-server ./cmd/server
+	@echo "Build completed: bin/data-catalog-server"
+
+.PHONY: build-linux
+## Example: make build-linux; build the Go service binary for Linux
+build-linux:
+	@mkdir -p bin
+	@echo "Building data-catalog-server for Linux..."
+	@GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -ldflags "-s -w -X main.Version=${VERSION:-1.0}" -o bin/data-catalog-server-linux ./cmd/server
+	@echo "Build completed: bin/data-catalog-server-linux"
+
+.PHONY: start
+## Example: make start; start the service with dev-config (requires build first)
+start:
+	@if [ ! -f ./bin/data-catalog-server ]; then \
+		echo "Binary not found, building first..."; \
+		$(MAKE) build; \
+	fi
+	@echo "Starting data-catalog-server with dev-config..."
+	@./bin/data-catalog-server serve -conf cmd/server/config/config.yaml
+
+.PHONY: start-dev
+## Example: make start-dev; build and start the service with dev-config
+start-dev: build
+	@echo "Starting data-catalog-server with dev-config..."
+	@./bin/data-catalog-server serve -conf cmd/server/config/config.yaml
+
 .PHONY: model
 ## Example: make model dsn=xxx tables=xxx; generate gorm models
 model:

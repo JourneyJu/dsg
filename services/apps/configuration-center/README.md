@@ -1,436 +1,559 @@
-# Configuration Center - 配置中心
+# Configuration Center Service
 
-[![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?style=flat&logo=go)](https://golang.org)
-[![Gin](https://img.shields.io/badge/Gin-Web%20Framework-green)](https://gin-gonic.com)
-[![GORM](https://img.shields.io/badge/GORM-ORM-blue)](https://gorm.io)
-[![License](https://img.shields.io/badge/License-Enterprise-blue)](LICENSE)
+A comprehensive configuration management service built with Go that provides system configuration, user management, role and permission management, menu management, dictionary management, data source management, and workflow orchestration capabilities with multi-tenant support.
 
-一个企业级配置中心微服务，采用DDD（领域驱动设计）架构，为AnyFabric生态系统提供统一的配置管理、用户权限、流程管理等核心能力。
+## Overview
 
-## 📋 目录
+The Configuration Center Service is a microservice that handles system-wide configuration management, user and role management, permission control, menu configuration, dictionary management, data source configuration, workflow configuration, and provides RESTful APIs for configuration operations, user management, role and permission management, and system administration.
 
-- [项目概述](#项目概述)
-- [功能特性](#功能特性)
-- [技术架构](#技术架构)
-- [快速开始](#快速开始)
-- [环境配置](#环境配置)
-- [API文档](#api文档)
-- [项目结构](#项目结构)
-- [数据库管理](#数据库管理)
-- [开发指南](#开发指南)
-- [部署指南](#部署指南)
+## Features
 
-## 🚀 项目概述
+- **System Configuration Management**:
+  - Configuration key-value management
+  - Third-party service address configuration
+  - Project provider configuration
+  - Business domain level configuration
+  - Data usage type configuration
+  - Timestamp blacklist management
+  - Government data sharing configuration
 
-Configuration Center是一个功能完善的企业级配置中心，提供：
+- **User Management**:
+  - User creation, management, and tracking
+  - User profile management
+  - User role assignment
+  - User permission management
+  - User group management
+  - User authentication and authorization
 
-- 统一的配置管理
-- 细粒度的权限控制
-- 灵活的组织架构管理
-- 完善的流程配置
-- 可扩展的应用授权
+- **Role & Permission Management**:
+  - Role creation and management
+  - Role group management
+  - Permission definition and assignment
+  - Role-permission binding
+  - User-role binding
+  - Scope-based access control
+  - Role icon management
 
-## ✨ 功能特性
+- **Menu Management**:
+  - Menu structure configuration
+  - Menu API binding
+  - Menu permission control
+  - Dynamic menu generation
 
-### 核心功能
+- **Dictionary Management**:
+  - Dictionary definition and management
+  - Dictionary item management
+  - Dictionary validation
+  - Multi-level dictionary support
 
-- **组织架构管理**
-  - 树形组织结构维护
-  - 部门CRUD操作
-  - 第三方部门ID支持
-  - 组织架构同步
+- **Data Source Management**:
+  - Data source registration and configuration
+  - Data source connection management
+  - Data source type support
+  - Connection pool management
 
-- **用户权限管理**
-  - 基于RBAC的权限控制
-  - 用户-角色-权限三层分离
-  - 支持数据范围权限
-  - 动态权限检查
+- **Workflow Configuration**:
+  - Flowchart configuration and management
+  - Flowchart node configuration
+  - Flowchart version management
+  - Workflow orchestration
 
-- **配置管理**
-  - 数据源配置管理
-  - 通用配置(key-value)存储
-  - 业务域层级配置
-  - 配置热更新
+- **Code Generation Rules**:
+  - Code generation rule definition
+  - Rule template management
+  - Code sequence generation
+  - Custom code format support
 
-- **流程管理**
-  - 运营流程配置(flowchart)
-  - 版本管理和变更追踪
-  - 审核流程绑定
-  - 前置机管理
+- **Business Structure Management**:
+  - Business structure definition
+  - Business matters management
+  - Object main business configuration
+  - Business domain configuration
 
-### 业务支撑功能
+- **Information System Management**:
+  - Information system registration
+  - System configuration management
+  - System integration support
 
-- 编码生成规则
-- 数据分级标签
-- 数据脱敏
-- 字典管理
-- 厂商管理
-- 轮播图管理
-- 新闻动态管理
+- **Data Management**:
+  - Data grade classification
+  - Data masking configuration
+  - Data security policies
 
-## 🏗️ 技术架构
+- **Audit & Compliance**:
+  - Audit policy management
+  - Audit process binding
+  - Audit workflow configuration
 
-### 技术栈
+- **Application Management**:
+  - Application registration and management
+  - Application configuration
+  - Application lifecycle management
 
-| 类型 | 技术 |
-|------|------|
-| 语言 | Go 1.22+ |
-| Web框架 | Gin |
-| ORM | GORM |
-| 依赖注入 | Wire |
-| API文档 | Swagger |
-| 监控 | OpenTelemetry |
-| 消息队列 | Kafka/NSQ |
-| 数据库 | MySQL |
-| 缓存 | Redis |
+- **Frontend Configuration**:
+  - Frontend processor configuration
+  - Carousel management
+  - News policy management
+  - SMS configuration
 
-### 架构设计
+- **Address Book**:
+  - Contact management
+  - Organization structure
+  - User directory
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                      Interface Layer                    │
-│                    (对外API接口)                        │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                    Adapter Layer                        │
-│         ┌──────────────┐  ┌──────────────┐             │
-│         │    Driver    │  │    Driven    │             │
-│         │ (对外接口实现)│  │(外部系统封装)│             │
-│         └──────────────┘  └──────────────┘             │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│                   Domain Layer                          │
-│                  (核心业务逻辑)                          │
-└─────────────────────┬───────────────────────────────────┘
-                      │
-┌─────────────────────┴───────────────────────────────────┐
-│              Infrastructure Layer                       │
-│            (数据库、MQ等基础设施)                        │
-└─────────────────────────────────────────────────────────┘
-```
+- **Alarm Management**:
+  - Alarm rule configuration
+  - Alarm policy management
+  - Notification settings
 
-## 🚀 快速开始
+- **Observability**:
+  - OpenTelemetry integration for distributed tracing
+  - Structured logging with Zap
+  - Request/response tracing middleware
+  - Comprehensive audit logging
 
-### 环境要求
+- **API Documentation**:
+  - Swagger/OpenAPI documentation
+  - Auto-generated API docs
+  - Interactive API testing interface
 
-- Go 1.22+
-- MySQL 5.7+
-- Redis 5.0+
-- Docker (可选)
+## Technology Stack
 
-### 安装步骤
+- **Language**: Go 1.24+
+- **Web Framework**: Gin
+- **ORM**: GORM with MySQL driver
+- **Message Queue**: Kafka, NSQ
+- **Cache**: Redis
+- **Dependency Injection**: Google Wire
+- **API Documentation**: Swagger
+- **Observability**: OpenTelemetry
+- **Logging**: Zap
+- **Configuration**: Viper
+- **Database**: MySQL with migration support
+- **Protocol Buffers**: gRPC support
 
-1. **克隆项目**
-```bash
-git clone <repository-url>
-cd configuration-center
-```
-
-2. **安装依赖工具**
-```bash
-make init  # 安装swag和wire
-```
-
-3. **配置环境**
-```bash
-# 配置文件位于 cmd/server/config/config.yaml
-# 确认配置文件的目录都存在
-```
-
-4. **数据库初始化**
-```bash
-# 参考下面的数据库管理部分
-make mu v=1  # 执行初始化迁移
-```
-
-5. **生成代码**
-```bash
-make wire    # 生成依赖注入代码
-make swag    # 生成API文档
-```
-
-6. **启动服务**
-```bash
-go run ./cmd/server/main.go
-```
-
-7. **访问服务**
-- API文档: http://localhost:8133/swagger/index.html
-- 健康检查: http://localhost:8133/health
-
-## ⚙️ 环境配置
-
-### 必需的环境变量
-
-```bash
-# 数据库配置
-MYSQL_HOST=localhost
-MYSQL_USERNAME=root
-MYSQL_PASSWORD=password
-MYSQL_DB=af_configuration
-
-# Redis配置
-REDIS_HOST=localhost:6379
-REDIS_PASSWORD=
-REDIS_DB=0
-
-# OAuth认证
-OAUTH_CLIENT_ID=your_client_id
-OAUTH_CLIENT_SECRET=your_client_secret
-
-# 消息队列（Kafka或NSQ）
-KAFKA_MQ_HOST=localhost:9092
-KAFKA_MQ_USERNAME=
-KAFKA_MQ_PASSWORD=
-```
-
-### 外部服务配置
-
-| 服务 | 默认地址 | 说明 |
-|------|----------|------|
-| OAuth Admin | hydra-admin:4445 | Hydra OAuth2管理服务 |
-| 用户管理 | user-management-public:30980 | 用户管理服务 |
-| 工作流引擎 | ${WORKFLOW_REST_HOST} | 工作流引擎地址 |
-| 虚拟化引擎 | ${VIRTUAL_ENGINE_HOST} | 虚拟化引擎地址 |
-
-## 📚 API文档
-
-### API分组
-
-- **主要业务接口**: `/api/configuration-center/v1/*`
-- **内部服务接口**: `/api/internal/configuration-center/v1/*`
-- **前端专用接口**: `/frontend/*`
-
-### 主要API模块
-
-| 模块 | 路径 | 功能 |
-|------|------|------|
-| 角色管理 | `/roles` | 角色CRUD、权限分配 |
-| 用户管理 | `/users` | 用户CRUD、部门关联 |
-| 组织架构 | `/objects` | 部门管理、组织同步 |
-| 数据源 | `/datasource` | 数据源配置管理 |
-| 流程配置 | `/flowchart-configurations` | 运营流程管理 |
-| 应用授权 | `/apps` | 应用授权管理 |
-
-详细的API文档请访问: http://localhost:8133/swagger/index.html
-
-## 📁 项目结构
+## Project Structure
 
 ```
 configuration-center/
-├── adapter/                  # 适配器层
-│   ├── driver/              # 驱动适配器（对外接口实现）
-│   │   ├── route.go         # 路由配置
-│   │   └── ...              # 各模块API实现
-│   └── driven/              # 被驱动适配器（外部系统封装）
-├── cmd/                     # 命令行入口
-│   └── server/             # 服务启动相关
-│       ├── main.go         # 主入口
-│       └── config/         # 配置文件
-├── common/                  # 公共模块
-│   ├── const/              # 常量定义
-│   ├── utils/              # 工具函数
-│   └── types/              # 类型定义
-├── domain/                  # 领域层（核心业务逻辑）
-│   ├── flowchart/          # 流程管理
-│   ├── user/               # 用户管理
-│   ├── role/               # 角色管理
-│   └── ...                 # 其他业务域
-├── infrastructure/          # 基础设施层
-│   ├── database/           # 数据库实现
-│   ├── cache/              # 缓存实现
-│   └── mq/                 # 消息队列实现
-│   └── repository/
-│       └── db/
-│           └── migration/  # 数据库迁移文件
-├── interface/               # 接口层
-├── migrations/              # 数据库迁移脚本
-│   └── init.sql            # 初始化脚本
-├── assets/                  # 静态资源
-├── Makefile                 # 构建脚本
-├── go.mod                   # Go模块定义
-└── README.md                # 项目说明
+├── adapter/              # Adapter layer (drivers and driven)
+│   ├── driver/          # HTTP handlers and REST API (Gin)
+│   │   ├── user/        # User management endpoints
+│   │   ├── role/        # Role management endpoints
+│   │   ├── permission/  # Permission management endpoints
+│   │   ├── menu/        # Menu management endpoints
+│   │   ├── dict/        # Dictionary management endpoints
+│   │   ├── datasource/  # Data source management endpoints
+│   │   ├── configuration/ # Configuration management endpoints
+│   │   ├── flowchart/   # Workflow configuration endpoints
+│   │   ├── code_generation_rule/ # Code generation rule endpoints
+│   │   ├── business_structure/ # Business structure endpoints
+│   │   ├── info_system/ # Information system endpoints
+│   │   ├── data_grade/  # Data grade endpoints
+│   │   ├── data_masking/ # Data masking endpoints
+│   │   ├── apps/        # Application management endpoints
+│   │   ├── firm/        # Firm/Organization management endpoints
+│   │   ├── front_end_processor/ # Frontend processor endpoints
+│   │   ├── carousels/   # Carousel management endpoints
+│   │   ├── news_policy/ # News policy endpoints
+│   │   ├── audit_policy/ # Audit policy endpoints
+│   │   ├── address_book/ # Address book endpoints
+│   │   ├── alarm_rule/  # Alarm rule endpoints
+│   │   └── middleware/ # HTTP middleware
+│   └── driven/          # External service clients and storage
+│       ├── gorm/        # Database implementation
+│       ├── mq/          # Message queue handlers
+│       ├── rest/         # REST client implementations
+│       ├── thrift/       # Thrift client implementations
+│       ├── workflow/    # Workflow integration
+│       └── callbacks/   # Callback handlers
+├── cmd/                  # Application entry points
+│   └── server/          # Main server application
+│       ├── config/      # Configuration files
+│       ├── docs/        # Swagger documentation
+│       ├── static/      # Static files
+│       ├── app.go       # Application initialization
+│       ├── cdc.go       # Change data capture
+│       └── main.go      # Main entry point
+├── common/               # Shared utilities and middleware
+│   ├── constant/        # Constants
+│   ├── errorcode/       # Error codes
+│   ├── form_validator/  # Form validation
+│   ├── models/          # Common models
+│   ├── settings/        # Configuration settings
+│   ├── trace_util/      # Tracing utilities
+│   ├── user_util/       # User utilities
+│   └── util/            # Utility functions
+├── domain/              # Business logic and domain models
+│   ├── user/            # User domain
+│   ├── role/            # Role domain
+│   ├── role_v2/         # Role v2 domain
+│   ├── role_group/      # Role group domain
+│   ├── permission/      # Permission domain
+│   ├── permissions/     # Permissions domain
+│   ├── menu/            # Menu domain
+│   ├── menu_api/        # Menu API domain
+│   ├── dict/            # Dictionary domain
+│   ├── datasource/      # Data source domain
+│   ├── configuration/   # Configuration domain
+│   ├── flowchart/       # Flowchart domain
+│   ├── code_generation_rule/ # Code generation rule domain
+│   ├── business_structure/ # Business structure domain
+│   ├── business_matters/ # Business matters domain
+│   ├── info_system/     # Information system domain
+│   ├── data_grade/      # Data grade domain
+│   ├── data_masking/    # Data masking domain
+│   ├── apps/            # Application domain
+│   ├── firm/            # Firm domain
+│   ├── front_end_processor/ # Frontend processor domain
+│   ├── carousels/       # Carousel domain
+│   ├── news_policy/     # News policy domain
+│   ├── audit_policy/    # Audit policy domain
+│   ├── audit_process_bind/ # Audit process bind domain
+│   ├── address_book/    # Address book domain
+│   ├── object_main_business/ # Object main business domain
+│   ├── alarm_rule/      # Alarm rule domain
+│   ├── register/        # Registration domain
+│   ├── sms_conf/        # SMS configuration domain
+│   ├── tool/            # Tool domain
+│   └── common/          # Common domain utilities
+├── infrastructure/      # Infrastructure layer
+│   ├── conf/            # Configuration definitions
+│   ├── repository/      # Repository implementations
+│   └── mq/              # Message queue implementations
+├── interface/           # Interface definitions
+│   └── conf/            # Configuration interfaces
+└── migrations/          # Database migrations
+    ├── dm8/             # DM8 database migrations
+    └── mariadb/         # MariaDB/MySQL migrations
 ```
 
-## 数据库管理
+## Prerequisites
 
-数据库无缝升级使用的是[github.com/golang-migrate/migrate](https://github.com/golang-migrate/migrate), 目前使用的是命令方式，在项目的makefile文件中有大部分命令，可以直接使用
+- Go 1.24+ or higher
+- MySQL server (for data storage)
+- Redis (for caching)
+- Kafka or NSQ (for message queue)
+- OAuth2 server (Hydra) for authentication
 
-```shell
-$ make help
-Targets:
-  help                 Show help
-  init                 Example: make init; install the dependence of this project
-  swag                 Example: make swag;  build project with swagger docs
-  wire                 Example: make wire; generate wire dependency
-  run                  Example: make update; pull least code, generate least document, then build a executable file
-  mc                   Example: make mc name=xxx; then create two sql file with version ahead of the file name
-  mu                   Example: make mu v=3;  then execute the sql file which version=3
-  md                   Example: make md v=2; then roll back the version 2
-  mf                   Example: make mf v=3; change the version in database to 3 in force
+## Getting Started
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd services/apps/configuration-center
 ```
 
-### 必需的环境变量
-
-|环境变量| 说明       | 默认值  |
-|----|----|----|
-|MYSQL_HOST| 数据库IP地址  | 127.0.0.1 |
-|MYSQL_PORT| 数据库服务的端口 | 3306 |
-|MYSQL_USERNAME| 数据库用户名   | root |
-|MYSQL_PASSWORD| 数据库密码    | 123 |
-|MYSQL_DB| 具体数据库  | af_configuration |
-
-### 安装migrate工具
-
-[安装文档](https://github.com/golang-migrate/migrate/tree/master/cmd/migrate)；可以去github上找安装文档
-
-### 添加SQL文件
-执行下面命令后，在项目的`infrastructure/repository/db/migration` 文件夹下面生成两个sql文件，然后可以将需要更新的SQL语句写入
-```
-make mc name=add_column
-```
-在`.*.up.sql`里面写上更新的语句， 在`.*.down.sql`里面写上回滚SQL语句
-
-### 执行SQL语句
-```shell
-make mu
-```
-执行下面的命令，将数据更新到最新的版本，如果已经是最新的版本，那么就不执行任何动作，如果想升级到指定的版本，可以添加版本参数
-```shell
-make mu v=3
+2. Install dependencies:
+```bash
+go mod download
 ```
 
-### 版本回退
-执行下面命令，回退version=3 的内容，回退必须执行版本，否则全部回退，版本回退到0
-```shell
-make md v=3
+3. Generate code:
+```bash
+# Generate Wire dependency injection code
+make wire
+
+# Generate Swagger API documentation
+make swag
+
+# Generate Protocol Buffers code
+make protoc
 ```
 
-### 版本更新
-执行下面的命令，数据库版本更新到3
-```shell
+### Configuration
+
+The service uses Viper for configuration management. Configuration files should be placed in `cmd/server/config/` directory.
+
+Key configuration sections:
+- **Server**: HTTP and gRPC server settings (port, timeout, etc.)
+- **Database**: MySQL connection settings
+- **Redis**: Cache settings
+- **Message Queue**: Kafka/NSQ settings
+- **Telemetry**: OpenTelemetry configuration
+- **Logging**: Log level and output settings
+- **OAuth**: OAuth2 client configuration
+- **DepServices**: External service endpoints
+
+Example configuration structure:
+```yaml
+server:
+  http:
+    addr: 0.0.0.0:8133
+    timeout: 1s
+  grpc:
+    addr: 0.0.0.0:9000
+    timeout: 1s
+
+data:
+  database:
+    driver: mysql
+    source: "${DB_USERNAME}:${DB_PASSWORD}@tcp(${DB_HOST}:${DB_PORT})/${DB_NAME}?charset=utf8mb4&parseTime=True&loc=Local"
+  redis:
+    addr: "${REDIS_HOST}"
+    password: "${REDIS_PASSWORD}"
+
+config:
+  oauth:
+    oauthClientID: "${OAUTH_CLIENT_ID}"
+    oauthClientSecret: "${OAUTH_CLIENT_SECRET}"
+    oauthAdminHost: hydra-admin
+    oauthAdminPort: 4445
+  kafkaMQ:
+    host: "${KAFKA_MQ_HOST}"
+    clientID: "af.configuration-center"
+    groupID: "af.configuration-center"
+    sasl:
+      enabled: true
+      username: "${KAFKA_MQ_USENAME}"
+      password: "${KAFKA_MQ_PASSWORD}"
+```
+
+Environment Variables:
+| Variable | Description | Default |
+|----------|-------------|---------|
+| DB_HOST | Database host | - |
+| DB_PORT | Database port | 3306 |
+| DB_USERNAME | Database username | - |
+| DB_PASSWORD | Database password | - |
+| DB_NAME | Database name | - |
+| REDIS_HOST | Redis host | - |
+| REDIS_PASSWORD | Redis password | - |
+| KAFKA_MQ_HOST | Kafka broker address | - |
+| KAFKA_MQ_USENAME | Kafka username | - |
+| KAFKA_MQ_PASSWORD | Kafka password | - |
+| OAUTH_CLIENT_ID | OAuth2 client ID | - |
+| OAUTH_CLIENT_SECRET | OAuth2 client secret | - |
+
+### Building
+
+Build the service binary:
+
+```bash
+# Build for current platform
+make build
+
+# Build for Linux
+make build-linux
+
+# Or directly
+go build -o bin/cc ./cmd/server
+```
+
+The binary will be generated in the `bin/` directory as `cc`.
+
+### Running
+
+Start the service:
+
+```bash
+# Run with Make (builds and starts)
+make start-dev
+
+# Or start with existing binary
+make start
+
+# Or directly
+go run ./cmd/server/main.go --confPath cmd/server/config/ --addr :8133
+```
+
+The service will start on the configured port (default: 8133).
+
+### API Endpoints
+
+The service provides RESTful APIs for various functionalities. Key endpoint categories include:
+
+#### Configuration Management
+- Configuration key-value operations
+- Third-party service address configuration
+- Project provider configuration
+- Business domain level management
+- Data usage type configuration
+
+#### User Management
+- User CRUD operations
+- User profile management
+- User role assignment
+- User permission management
+
+#### Role & Permission Management
+- Role CRUD operations
+- Role group management
+- Permission definition and assignment
+- Role-permission binding
+- User-role binding
+
+#### Menu Management
+- Menu structure configuration
+- Menu API binding
+- Menu permission control
+
+#### Dictionary Management
+- Dictionary CRUD operations
+- Dictionary item management
+- Dictionary validation
+
+#### Data Source Management
+- Data source registration and configuration
+- Data source connection management
+- Connection pool management
+
+#### Workflow Configuration
+- Flowchart configuration and management
+- Flowchart node configuration
+- Flowchart version management
+
+#### Code Generation Rules
+- Code generation rule definition
+- Rule template management
+- Code sequence generation
+
+### API Documentation
+
+After generating Swagger docs, access the API documentation at:
+- Swagger UI: `http://localhost:8133/swagger/index.html`
+- JSON: `http://localhost:8133/swagger/doc.json`
+
+## Development
+
+### Code Generation
+
+```bash
+# Generate Wire dependency injection
+make wire
+
+# Generate Swagger documentation
+make swag
+
+# Generate Protocol Buffers code
+make protoc
+
+# Generate GORM models
+make model dsn="mysql://user:pass@tcp(host:port)/db" out_dao=true
+```
+
+### Database Migration
+
+```bash
+# Set migration environment variables
+export MYSQL_HOST=localhost
+export MYSQL_PORT=3306
+export MYSQL_USERNAME=root
+export MYSQL_PASSWORD=password
+export MYSQL_DB=configuration_center
+
+# Create migration file
+make mc name=create_table
+
+# Execute migration up
+make mu v=1
+
+# Execute migration down
+make md v=1
+
+# Force migration version
 make mf v=3
 ```
 
-## 🛠️ 开发指南
-
-### 开发流程
-
-1. **创建功能分支**
-```bash
-git checkout -b feature/new-feature
-```
-
-2. **开发新功能**
-- 在domain层实现业务逻辑
-- 在adapter层实现API接口
-- 编写单元测试
-
-3. **生成代码**
-```bash
-make wire    # 更新依赖注入
-make swag    # 更新API文档
-```
-
-4. **运行测试**
-```bash
-make test    # 运行单元测试
-make lint    # 代码检查
-```
-
-### 常用命令
+### Running Tests
 
 ```bash
-# 开发相关
-make init          # 安装依赖工具
-make wire          # 生成依赖注入代码
-make swag          # 生成API文档
-make model         # 生成GORM模型
-
-# 数据库相关
-make mc name=xxx   # 创建迁移文件
-make mu v=3        # 执行迁移
-make md v=2        # 回滚迁移
-make mf v=3        # 强制设置版本
-
-# 运行相关
-make run           # 完整启动流程
-make build         # 构建二进制文件
-make docker        # 构建Docker镜像
+go test ./...
 ```
 
-## 🚀 部署指南
+### Code Quality
 
-### Docker部署
+The project follows Go best practices and clean architecture principles. Consider using:
+- `golangci-lint` for code quality checks
+- `go vet` for static analysis
+- `go fmt` for code formatting
 
-1. **构建镜像**
-```bash
-make docker
-```
+## Architecture
 
-2. **运行容器**
-```bash
-docker run -d \
-  --name configuration-center \
-  -p 8133:8133 \
-  -p 9000:9000 \
-  -e MYSQL_HOST=your_mysql_host \
-  -e REDIS_HOST=your_redis_host \
-  configuration-center:latest
-```
+The service follows a clean architecture pattern with clear separation of concerns:
 
-### Kubernetes部署
+- **Domain Layer**: Business logic and domain models
+  - User management, role and permission management
+  - Configuration management, menu management
+  - Dictionary management, data source management
+  - Workflow configuration, code generation rules
 
-参考 `deployments/k8s/` 目录下的部署文件：
+- **Adapter Layer**:
+  - **Driver**: HTTP handlers, REST API endpoints (Gin)
+  - **Driven**: Database implementation, external service clients
 
-```bash
-kubectl apply -f deployments/k8s/
-```
+- **Common**: Shared utilities, middleware, and configurations
 
-### 生产环境建议
+## Configuration Management Features
 
-1. **高可用配置**
-- 使用Kubernetes进行容器编排
-- 配置Redis集群或哨兵模式
-- 配置MySQL主从复制
+The service provides comprehensive configuration management capabilities:
+- Key-value configuration storage
+- Third-party service address management
+- Project provider configuration
+- Business domain level configuration
+- Data usage type configuration
+- Timestamp blacklist management
+- Government data sharing configuration
 
-2. **监控告警**
-- 集成Prometheus监控
-- 配置Grafana可视化
-- 设置告警规则
+## User & Role Management
 
-3. **日志管理**
-- 使用ELK Stack收集日志
-- 配置日志轮转策略
-- 设置日志级别
+The service provides comprehensive user and role management:
+- Multi-tenant user management
+- Role-based access control (RBAC)
+- Permission definition and assignment
+- Role group management
+- Scope-based access control
+- User-role binding management
 
-4. **安全配置**
-- 启用HTTPS
-- 配置防火墙规则
-- 定期更新依赖
+## Message Queue Integration
 
-## 🤝 贡献指南
+The service integrates with Kafka and NSQ for:
+- Asynchronous configuration updates
+- Event-driven architecture
+- Configuration change notifications
+- Reliable message delivery
 
-欢迎贡献代码！请确保：
+## Change Data Capture (CDC)
 
-1. 遵循代码规范
-2. 编写单元测试
-3. 更新文档
-4. 提交Pull Request
+The service supports Change Data Capture for:
+- Real-time database change tracking
+- Event streaming
+- Data synchronization
 
-## 📄 许可证
+## Security Considerations
 
-本项目采用企业许可证，详情请参见 [LICENSE](LICENSE) 文件。
+- OAuth2 authentication via Hydra
+- Role-based access control (RBAC)
+- Permission-based authorization
+- Input validation and sanitization
+- SQL injection prevention via GORM
+- Secure database connections
+- Audit logging for all operations
 
-## 📞 联系我们
+## Monitoring & Observability
 
-如有问题或建议，请通过以下方式联系：
+- OpenTelemetry for distributed tracing
+- Structured logging with correlation IDs
+- Performance metrics collection
+- Health check endpoints
+- Audit tracking for critical operations
+- Change data capture monitoring
 
-- 邮箱: devops@kweaver-ai.cn
-- 内部工单系统
+## Contributing
 
----
+1. Follow existing code style and patterns
+2. Add tests for new features
+3. Update API documentation when adding new endpoints
+4. Run `make swag` to regenerate Swagger docs
+5. Ensure all tests pass before submitting
+6. Follow clean architecture principles
 
-⭐ 如果这个项目对您有帮助，请给我们一个星标！
+## License
+
+See the LICENSE file in the repository root.
+
+## Support
+
+For issues and questions, please contact the development team or create an issue in the repository.

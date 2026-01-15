@@ -36,7 +36,7 @@ var (
 		Version: Version,
 	}
 	serveCmd = &cobra.Command{
-		Use:   "serve",
+		Use:   "server",
 		Short: "启动搜索服务服务",
 		RunE:  serveCmdRun,
 	}

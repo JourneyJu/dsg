@@ -41,7 +41,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets_BusinessLogicEntityInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets_BusinessLogicEntityInfo"
                         }
                     },
                     "400": {
@@ -79,7 +79,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.DataAssetsResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.DataAssetsResp"
                         }
                     },
                     "400": {
@@ -117,7 +117,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets_DepartmentBusinessLogicEntityInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets_DepartmentBusinessLogicEntityInfo"
                         }
                     },
                     "400": {
@@ -157,7 +157,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.StandardizedRateResp"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.StandardizedRateResp"
                             }
                         }
                     },
@@ -205,7 +205,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SearchResult"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SearchResult"
                         }
                     },
                     "400": {
@@ -245,7 +245,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SearchResult"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SearchResult"
                         }
                     },
                     "400": {
@@ -284,7 +284,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SubGraphReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SubGraphReqBodyParam"
                         }
                     }
                 ],
@@ -292,7 +292,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SubGraphRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SubGraphRespParam"
                         }
                     },
                     "400": {
@@ -367,7 +367,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.FrontendCatalogDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.FrontendCatalogDetail"
                         }
                     },
                     "400": {
@@ -452,7 +452,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetCatalogListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetCatalogListRes"
                         }
                     },
                     "400": {
@@ -481,7 +481,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Configuration"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Configuration"
                         }
                     },
                     "400": {
@@ -533,7 +533,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -624,7 +624,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetReportListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetReportListRes"
                         }
                     },
                     "400": {
@@ -676,7 +676,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -715,7 +715,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTaskCatalogListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTaskCatalogListRes"
                         }
                     },
                     "400": {
@@ -747,7 +747,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateListReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateListReq"
                         }
                     }
                 ],
@@ -755,7 +755,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateListRes"
                         }
                     },
                     "400": {
@@ -785,7 +785,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.UpdateTemplateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.UpdateTemplateReq"
                         }
                     }
                 ],
@@ -823,7 +823,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateReq"
                         }
                     }
                 ],
@@ -861,7 +861,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.IDRequired"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.IDRequired"
                         }
                     }
                 ],
@@ -901,7 +901,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateConfigReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateConfigReq"
                         }
                     }
                 ],
@@ -909,7 +909,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Configuration"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Configuration"
                         }
                     },
                     "400": {
@@ -941,7 +941,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateDetailReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateDetailReq"
                         }
                     }
                 ],
@@ -949,7 +949,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateDetailRes"
                         }
                     },
                     "400": {
@@ -981,7 +981,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateNameExistReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateNameExistReq"
                         }
                     }
                 ],
@@ -1040,7 +1040,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ComprehensionDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ComprehensionDetail"
                         }
                     },
                     "400": {
@@ -1077,7 +1077,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ComprehensionUpsertReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ComprehensionUpsertReq"
                         }
                     }
                 ],
@@ -1085,7 +1085,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ComprehensionDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ComprehensionDetail"
                         }
                     },
                     "400": {
@@ -1128,7 +1128,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -1168,7 +1168,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.SearchResult"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.SearchResult"
                         }
                     },
                     "400": {
@@ -1215,7 +1215,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.SearchResult"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.SearchResult"
                         }
                     },
                     "400": {
@@ -1260,7 +1260,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceDetailRes"
                         }
                     },
                     "400": {
@@ -1355,7 +1355,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes"
                         }
                     },
                     "400": {
@@ -1418,7 +1418,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.SearchRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.SearchRes"
                         }
                     },
                     "400": {
@@ -1527,7 +1527,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ListResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ListResp"
                         }
                     },
                     "400": {
@@ -1564,7 +1564,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.CreateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.CreateReq"
                         }
                     }
                 ],
@@ -1572,7 +1572,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDResp"
                         }
                     },
                     "400": {
@@ -1612,7 +1612,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.CheckV2Resp"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.CheckV2Resp"
                             }
                         }
                     },
@@ -1658,7 +1658,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDResp"
                         }
                     },
                     "400": {
@@ -1785,7 +1785,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ListResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ListResp"
                         }
                     },
                     "400": {
@@ -1822,7 +1822,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.CreateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.CreateReq"
                         }
                     }
                 ],
@@ -1830,7 +1830,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.IDResp"
                         }
                     },
                     "400": {
@@ -1868,7 +1868,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.CountResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.CountResp"
                         }
                     },
                     "400": {
@@ -1913,7 +1913,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.DetailResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.DetailResp"
                         }
                     },
                     "400": {
@@ -1959,7 +1959,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ReplyReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ReplyReq"
                         }
                     }
                 ],
@@ -1967,7 +1967,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.IDResp"
                         }
                     },
                     "400": {
@@ -2109,7 +2109,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyListRespItem"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyListRespItem"
                         }
                     },
                     "400": {
@@ -2155,7 +2155,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyDetailResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyDetailResp"
                         }
                     },
                     "400": {
@@ -2216,7 +2216,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ListRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ListRespParam"
                         }
                     },
                     "400": {
@@ -2256,7 +2256,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_model.ApplyScope"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_model.ApplyScope"
                             }
                         }
                     },
@@ -2270,46 +2270,8 @@ const docTemplate = `{
             }
         },
         "/api/data-catalog/v1/category": {
-            "get": {
-                "description": "获取所有类目和类目树",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "open类目管理"
-                ],
-                "summary": "获取所有类目和类目树",
-                "parameters": [
-                    {
-                        "maxLength": 255,
-                        "minLength": 1,
-                        "type": "string",
-                        "example": "keyword",
-                        "description": "关键字查询",
-                        "name": "keyword",
-                        "in": "query"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "成功响应参数",
-                        "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.ListCategoryRespParam"
-                        }
-                    },
-                    "400": {
-                        "description": "失败响应参数",
-                        "schema": {
-                            "$ref": "#/definitions/rest.HttpError"
-                        }
-                    }
-                }
-            },
             "put": {
-                "description": "批量修改类目排序和是否必填",
+                "description": "批量修改类目排序（仅排序）",
                 "consumes": [
                     "application/json"
                 ],
@@ -2329,14 +2291,14 @@ const docTemplate = `{
                         "required": true
                     },
                     {
-                        "description": "请求参数",
+                        "description": "请求参数：仅包含 id、index",
                         "name": "_",
                         "in": "body",
                         "required": true,
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.BatchEditReqParam"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.BatchEditReqParam"
                             }
                         }
                     }
@@ -2347,7 +2309,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
                             }
                         }
                     },
@@ -2385,7 +2347,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryBodyParam"
                         }
                     }
                 ],
@@ -2393,7 +2355,52 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
+                        }
+                    },
+                    "400": {
+                        "description": "失败响应参数",
+                        "schema": {
+                            "$ref": "#/definitions/rest.HttpError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/data-catalog/v1/category/apply-scope-config": {
+            "get": {
+                "description": "获取所有类目及配置（不需要category_id，返回所有类目及配置）",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类目管理"
+                ],
+                "summary": "获取类目-应用范围配置",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "maxLength": 128,
+                        "minLength": 1,
+                        "type": "string",
+                        "name": "keyword",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功响应参数",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.GetResp"
                         }
                     },
                     "400": {
@@ -2448,7 +2455,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.NameExistRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.NameExistRespParam"
                         }
                     },
                     "400": {
@@ -2493,7 +2500,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryInfo"
                         }
                     },
                     "400": {
@@ -2537,7 +2544,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryBodyParam"
                         }
                     }
                 ],
@@ -2545,7 +2552,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
                         }
                     },
                     "400": {
@@ -2588,7 +2595,64 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
+                        }
+                    },
+                    "400": {
+                        "description": "失败响应参数",
+                        "schema": {
+                            "$ref": "#/definitions/rest.HttpError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/data-catalog/v1/category/{category_id}/apply-scope-config": {
+            "put": {
+                "description": "全量覆盖指定类目的模块树配置",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类目管理"
+                ],
+                "summary": "更新类目-应用范围配置",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "类目ID，uuid",
+                        "name": "category_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "请求参数",
+                        "name": "_",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.UpdateReqParam"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功响应参数",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "string"
+                            }
                         }
                     },
                     "400": {
@@ -2634,7 +2698,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.AddTreeReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.AddTreeReqBodyParam"
                         }
                     }
                 ],
@@ -2642,7 +2706,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.TreeRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.TreeRespParam"
                         }
                     },
                     "400": {
@@ -2654,62 +2718,8 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/data-catalog/v1/category/{category_id}/trees-node/trees-node": {
-            "put": {
-                "description": "插入目录分类到父节点下并将子目录分类重新排序",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "tags": [
-                    "类目节点管理"
-                ],
-                "summary": "插入目录分类到父节点下并将子目录分类重新排序",
-                "parameters": [
-                    {
-                        "type": "string",
-                        "description": "token",
-                        "name": "Authorization",
-                        "in": "header",
-                        "required": true
-                    },
-                    {
-                        "type": "string",
-                        "description": "目录ID，uuid",
-                        "name": "category_id",
-                        "in": "path",
-                        "required": true
-                    },
-                    {
-                        "description": "请求参数",
-                        "name": "_",
-                        "in": "body",
-                        "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.RecpderParam"
-                        }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "成功响应参数",
-                        "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
-                        }
-                    },
-                    "400": {
-                        "description": "失败响应参数",
-                        "schema": {
-                            "$ref": "#/definitions/rest.HttpError"
-                        }
-                    }
-                }
-            }
-        },
-        "/api/data-catalog/v1/category/{category_id}/trees-node/trees-node/name-check": {
-            "post": {
+        "/api/data-catalog/v1/category/{category_id}/trees-node/name-check": {
+            "get": {
                 "description": "检测类目树节点名称是否已存在",
                 "consumes": [
                     "application/json"
@@ -2766,7 +2776,61 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.NameExistRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.NameExistRespParam"
+                        }
+                    },
+                    "400": {
+                        "description": "失败响应参数",
+                        "schema": {
+                            "$ref": "#/definitions/rest.HttpError"
+                        }
+                    }
+                }
+            }
+        },
+        "/api/data-catalog/v1/category/{category_id}/trees-node/trees-node": {
+            "put": {
+                "description": "插入目录分类到父节点下并将子目录分类重新排序",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "类目节点管理"
+                ],
+                "summary": "插入目录分类到父节点下并将子目录分类重新排序",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "目录ID，uuid",
+                        "name": "category_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "请求参数",
+                        "name": "_",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.RecpderParam"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "成功响应参数",
+                        "schema": {
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
                         }
                     },
                     "400": {
@@ -2819,7 +2883,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.EditReqaBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.EditReqaBodyParam"
                         }
                     }
                 ],
@@ -2827,7 +2891,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.TreeRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.TreeRespParam"
                         }
                     },
                     "400": {
@@ -2877,7 +2941,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.TreeRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.TreeRespParam"
                         }
                     },
                     "400": {
@@ -2923,7 +2987,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.EditUsingReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.EditUsingReqBodyParam"
                         }
                     }
                 ],
@@ -2931,7 +2995,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam"
                         }
                     },
                     "400": {
@@ -3022,7 +3086,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListItem"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListItem"
                         }
                     },
                     "400": {
@@ -3145,7 +3209,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListItem"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListItem"
                         }
                     },
                     "400": {
@@ -3194,7 +3258,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsDetailRes"
                         }
                     },
                     "400": {
@@ -3223,7 +3287,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsOverviewRes"
                         }
                     },
                     "400": {
@@ -3262,7 +3326,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SaveDataCatalogReqBody"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SaveDataCatalogReqBody"
                         }
                     }
                 ],
@@ -3270,7 +3334,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -3307,7 +3371,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody"
                         }
                     }
                 ],
@@ -3315,7 +3379,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -3354,7 +3418,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp"
                         }
                     },
                     "400": {
@@ -3406,7 +3470,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.CheckRepeatResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.CheckRepeatResp"
                         }
                     },
                     "400": {
@@ -3495,7 +3559,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_DataCatalogResourceListObject"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_DataCatalogResourceListObject"
                         }
                     },
                     "400": {
@@ -3622,7 +3686,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ListResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ListResp"
                         }
                     },
                     "400": {
@@ -3659,7 +3723,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.CreateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.CreateReq"
                         }
                     }
                 ],
@@ -3667,7 +3731,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.IDResp"
                         }
                     },
                     "400": {
@@ -3705,7 +3769,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.CountResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.CountResp"
                         }
                     },
                     "400": {
@@ -3750,7 +3814,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.DetailResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.DetailResp"
                         }
                     },
                     "400": {
@@ -3796,7 +3860,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ReplyReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ReplyReq"
                         }
                     }
                 ],
@@ -3804,7 +3868,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.IDResp"
                         }
                     },
                     "400": {
@@ -3836,7 +3900,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody"
                         }
                     }
                 ],
@@ -3844,7 +3908,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -4021,7 +4085,8 @@ const docTemplate = `{
                             "updated_at",
                             "name",
                             "apply_num",
-                            "published_at"
+                            "published_at",
+                            "online_time"
                         ],
                         "type": "string",
                         "default": "created_at",
@@ -4076,7 +4141,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog_DataCatalog"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog_DataCatalog"
                         }
                     },
                     "400": {
@@ -4166,7 +4231,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreListResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreListResp"
                         }
                     },
                     "400": {
@@ -4217,7 +4282,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreSummaryInfo"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreSummaryInfo"
                             }
                         }
                     },
@@ -4306,7 +4371,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreDetailResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreDetailResp"
                         }
                     },
                     "400": {
@@ -4351,7 +4416,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.CatalogScore"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.CatalogScore"
                         }
                     }
                 ],
@@ -4359,7 +4424,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.IDResp"
                         }
                     },
                     "400": {
@@ -4404,7 +4469,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.CatalogScore"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.CatalogScore"
                         }
                     }
                 ],
@@ -4412,7 +4477,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.IDResp"
                         }
                     },
                     "400": {
@@ -4451,7 +4516,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp"
                         }
                     },
                     "400": {
@@ -4497,7 +4562,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogDetailRes"
                         }
                     },
                     "400": {
@@ -4541,7 +4606,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -4594,7 +4659,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2"
                         }
                     },
                     "400": {
@@ -4702,7 +4767,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogColumnsRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogColumnsRes"
                         }
                     },
                     "400": {
@@ -4741,7 +4806,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogMountListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogMountListRes"
                         }
                     },
                     "400": {
@@ -4780,7 +4845,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogRelationRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogRelationRes"
                         }
                     },
                     "400": {
@@ -4920,7 +4985,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_DataPushModelObject"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_DataPushModelObject"
                         }
                     },
                     "400": {
@@ -4957,7 +5022,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.UpdateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.UpdateReq"
                         }
                     }
                 ],
@@ -4965,7 +5030,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDNameResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDNameResp"
                         }
                     },
                     "400": {
@@ -5002,7 +5067,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.CreateReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.CreateReq"
                         }
                     }
                 ],
@@ -5010,7 +5075,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDNameResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDNameResp"
                         }
                     },
                     "400": {
@@ -5054,7 +5119,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushModelDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushModelDetail"
                         }
                     },
                     "400": {
@@ -5096,7 +5161,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -5136,7 +5201,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AnnualStatisticItem"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AnnualStatisticItem"
                             }
                         }
                     },
@@ -5228,7 +5293,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_AuditListItem"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_AuditListItem"
                         }
                     },
                     "400": {
@@ -5267,7 +5332,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListReq"
                         }
                     }
                 ],
@@ -5275,7 +5340,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -5319,7 +5384,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -5389,7 +5454,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.OverviewResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.OverviewResp"
                         }
                     },
                     "400": {
@@ -5529,7 +5594,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_DataPushScheduleObject"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_DataPushScheduleObject"
                         }
                     },
                     "400": {
@@ -5566,7 +5631,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SchedulePlanReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SchedulePlanReq"
                         }
                     }
                 ],
@@ -5574,7 +5639,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -5687,7 +5752,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.LocalPageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_TaskLogInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.LocalPageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_TaskLogInfo"
                         }
                     },
                     "400": {
@@ -5726,7 +5791,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.BatchUpdateStatusReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.BatchUpdateStatusReq"
                         }
                     }
                 ],
@@ -5734,7 +5799,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDNameResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDNameResp"
                         }
                     },
                     "400": {
@@ -5773,7 +5838,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SwitchReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SwitchReq"
                         }
                     }
                 ],
@@ -5781,7 +5846,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -5813,7 +5878,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetResourceCatalogListReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetResourceCatalogListReq"
                         }
                     }
                 ],
@@ -5821,7 +5886,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetResourceCatalogListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetResourceCatalogListRes"
                         }
                     },
                     "400": {
@@ -5941,7 +6006,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceListRes"
                         }
                     },
                     "400": {
@@ -5986,7 +6051,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceDetailRes"
                         }
                     },
                     "400": {
@@ -6130,7 +6195,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes"
                         }
                     },
                     "400": {
@@ -6159,7 +6224,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetClassifyTreeRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetClassifyTreeRes"
                         }
                     },
                     "400": {
@@ -6191,7 +6256,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ExportReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ExportReq"
                         }
                     }
                 ],
@@ -6254,7 +6319,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetClassifyRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetClassifyRes"
                         }
                     },
                     "400": {
@@ -6356,7 +6421,8 @@ const docTemplate = `{
                     {
                         "enum": [
                             "updated_at",
-                            "name"
+                            "name",
+                            "published_at"
                         ],
                         "type": "string",
                         "default": "updated_at",
@@ -6382,7 +6448,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetFileResourceListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetFileResourceListRes"
                         }
                     },
                     "400": {
@@ -6419,7 +6485,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.CreateFileResourceReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.CreateFileResourceReq"
                         }
                     }
                 ],
@@ -6427,7 +6493,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.IDResp"
                         }
                     },
                     "400": {
@@ -6474,7 +6540,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.PreviewPdfRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.PreviewPdfRes"
                         }
                     },
                     "400": {
@@ -6520,7 +6586,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -6586,7 +6652,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.AuditListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.AuditListRes"
                         }
                     },
                     "400": {
@@ -6631,7 +6697,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.IDResp"
                         }
                     },
                     "400": {
@@ -6676,7 +6742,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.IDResp"
                         }
                     },
                     "400": {
@@ -6722,7 +6788,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetFileResourceDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetFileResourceDetailRes"
                         }
                     },
                     "400": {
@@ -6767,7 +6833,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.UpdateFileResourceReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.UpdateFileResourceReq"
                         }
                     }
                 ],
@@ -6775,7 +6841,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.IDResp"
                         }
                     },
                     "400": {
@@ -6819,7 +6885,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -6893,7 +6959,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetAttachmentListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetAttachmentListRes"
                         }
                     },
                     "400": {
@@ -6936,7 +7002,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.UploadAttachmentRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.UploadAttachmentRes"
                         }
                     },
                     "400": {
@@ -7117,7 +7183,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalogRes"
                         }
                     },
                     "400": {
@@ -7154,7 +7220,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CreateOpenCatalogReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CreateOpenCatalogReq"
                         }
                     }
                 ],
@@ -7162,7 +7228,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CreateOpenCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CreateOpenCatalogRes"
                         }
                     },
                     "400": {
@@ -7228,7 +7294,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.AuditListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.AuditListRes"
                         }
                     },
                     "400": {
@@ -7273,7 +7339,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.IDResp"
                         }
                     },
                     "400": {
@@ -7389,7 +7455,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DataCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DataCatalogRes"
                         }
                     },
                     "400": {
@@ -7427,7 +7493,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.GetOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.GetOverviewRes"
                         }
                     },
                     "400": {
@@ -7473,7 +7539,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalogDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalogDetailRes"
                         }
                     },
                     "400": {
@@ -7518,7 +7584,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.UpdateOpenCatalogReqBody"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.UpdateOpenCatalogReqBody"
                         }
                     }
                 ],
@@ -7526,7 +7592,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.IDResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.IDResp"
                         }
                     },
                     "400": {
@@ -7570,7 +7636,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes"
                         }
                     },
                     "400": {
@@ -7607,7 +7673,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetOverviewRes"
                         }
                     },
                     "400": {
@@ -7677,7 +7743,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewRes"
                         }
                     },
                     "400": {
@@ -7747,7 +7813,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetailRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetailRes"
                         }
                     },
                     "400": {
@@ -7784,7 +7850,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandOverviewRes"
                         }
                     },
                     "400": {
@@ -7854,7 +7920,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetailOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetailOverviewRes"
                         }
                     },
                     "400": {
@@ -7946,7 +8012,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverviewRes"
                         }
                     },
                     "400": {
@@ -7983,7 +8049,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDomainOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDomainOverviewRes"
                         }
                     },
                     "400": {
@@ -8036,7 +8102,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandTaskDetailOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandTaskDetailOverviewRes"
                         }
                     },
                     "400": {
@@ -8157,7 +8223,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.GetDetailsResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.GetDetailsResp"
                         }
                     },
                     "400": {
@@ -8188,7 +8254,7 @@ const docTemplate = `{
                         "name": "_",
                         "in": "body",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportDetailsReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportDetailsReq"
                         }
                     }
                 ],
@@ -8299,7 +8365,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.OverallEvaluationsResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.OverallEvaluationsResp"
                         }
                     },
                     "400": {
@@ -8330,7 +8396,7 @@ const docTemplate = `{
                         "name": "_",
                         "in": "body",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportOverallEvaluationsReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportOverallEvaluationsReq"
                         }
                     }
                 ],
@@ -8361,7 +8427,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.GetRuleResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.GetRuleResp"
                         }
                     },
                     "400": {
@@ -8391,7 +8457,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateRuleReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateRuleReq"
                         }
                     }
                 ],
@@ -8432,7 +8498,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateWhiteListReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateWhiteListReq"
                         }
                     }
                 ],
@@ -8440,7 +8506,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateWhiteListResp"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateWhiteListResp"
                         }
                     },
                     "400": {
@@ -8501,7 +8567,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ListRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ListRespParam"
                         }
                     },
                     "400": {
@@ -8538,7 +8604,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.AddReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.AddReqBodyParam"
                         }
                     }
                 ],
@@ -8546,7 +8612,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.AddRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.AddRespParam"
                         }
                     },
                     "400": {
@@ -8585,7 +8651,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.NameExistReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.NameExistReqBodyParam"
                         }
                     }
                 ],
@@ -8593,7 +8659,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.NameExistRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.NameExistRespParam"
                         }
                     },
                     "400": {
@@ -8640,7 +8706,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ListTreeRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ListTreeRespParam"
                         }
                     },
                     "400": {
@@ -8687,7 +8753,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.GetRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.GetRespParam"
                         }
                     },
                     "400": {
@@ -8733,7 +8799,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.EditReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.EditReqBodyParam"
                         }
                     }
                 ],
@@ -8741,7 +8807,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.EditRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.EditRespParam"
                         }
                     },
                     "400": {
@@ -8786,7 +8852,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.DeleteRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.DeleteRespParam"
                         }
                     },
                     "400": {
@@ -8834,7 +8900,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ReorderReqBodyParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ReorderReqBodyParam"
                         }
                     }
                 ],
@@ -8842,7 +8908,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ReorderRespParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ReorderRespParam"
                         }
                     },
                     "400": {
@@ -8882,7 +8948,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog.AuditUser"
+                                "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog.AuditUser"
                             }
                         }
                     },
@@ -9101,7 +9167,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.StatisticsOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.StatisticsOverviewRes"
                         }
                     },
                     "400": {
@@ -9130,7 +9196,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.TotalOverviewRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.TotalOverviewRes"
                         }
                     },
                     "400": {
@@ -9210,7 +9276,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SearchInfoResourceCatalogsByAdminReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SearchInfoResourceCatalogsByAdminReq"
                         }
                     }
                 ],
@@ -9218,7 +9284,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes"
                         }
                     },
                     "400": {
@@ -9250,7 +9316,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogReq"
                         }
                     }
                 ],
@@ -9258,7 +9324,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes"
                         }
                     },
                     "400": {
@@ -9290,7 +9356,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsReq"
                         }
                     }
                 ],
@@ -9298,7 +9364,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsRes"
                         }
                     },
                     "400": {
@@ -9330,7 +9396,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListReq"
                         }
                     }
                 ],
@@ -9338,7 +9404,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListRes"
                         }
                     },
                     "400": {
@@ -9370,7 +9436,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogReq"
                         }
                     }
                 ],
@@ -9378,7 +9444,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogRes"
                         }
                     },
                     "400": {
@@ -9410,7 +9476,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogReq"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogReq"
                         }
                     }
                 ],
@@ -9418,7 +9484,7 @@ const docTemplate = `{
                     "200": {
                         "description": "成功响应参数",
                         "schema": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogRes"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogRes"
                         }
                     },
                     "400": {
@@ -9436,7 +9502,7 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "filter": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilterForOper"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilterForOper"
                 },
                 "keyword": {
                     "type": "string",
@@ -9455,7 +9521,7 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "filter": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilter"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilter"
                 },
                 "keyword": {
                     "description": "关键字的搜索",
@@ -9480,7 +9546,7 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "filter": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.FilterForOper"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.FilterForOper"
                 },
                 "keyword": {
                     "type": "string",
@@ -9502,7 +9568,7 @@ const docTemplate = `{
                     "description": "搜索的过滤器",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Filter"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Filter"
                         }
                     ]
                 },
@@ -9532,7 +9598,176 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_auth_service.PolicyAction": {
+        "data_view.FieldsRes": {
+            "type": "object",
+            "properties": {
+                "attribute_id": {
+                    "description": "L5属性ID",
+                    "type": "string"
+                },
+                "attribute_name": {
+                    "description": "L5属性名称",
+                    "type": "string"
+                },
+                "attribute_path": {
+                    "description": "路径id",
+                    "type": "string"
+                },
+                "business_name": {
+                    "description": "列业务名称",
+                    "type": "string"
+                },
+                "business_timestamp": {
+                    "description": "是否业务时间字段",
+                    "type": "boolean"
+                },
+                "classfity_type": {
+                    "description": "分类类型(1自动2人工)",
+                    "type": "integer"
+                },
+                "code_table": {
+                    "description": "码表名称",
+                    "type": "string"
+                },
+                "code_table_id": {
+                    "description": "码表ID",
+                    "type": "string"
+                },
+                "code_table_status": {
+                    "description": "码表状态",
+                    "type": "string"
+                },
+                "comment": {
+                    "description": "列注释",
+                    "type": "string"
+                },
+                "data_accuracy": {
+                    "description": "数据精度（仅DECIMAL类型）",
+                    "type": "integer"
+                },
+                "data_length": {
+                    "description": "数据长度",
+                    "type": "integer"
+                },
+                "data_type": {
+                    "description": "数据类型",
+                    "type": "string"
+                },
+                "enable_rules": {
+                    "description": "已开启字段级规则数",
+                    "type": "integer"
+                },
+                "grade_type": {
+                    "description": "分级类型(1自动2人工)",
+                    "type": "integer"
+                },
+                "id": {
+                    "description": "列uuid",
+                    "type": "string"
+                },
+                "index": {
+                    "description": "字段顺序",
+                    "type": "integer"
+                },
+                "is_downloadable": {
+                    "description": "当前用户是否有此字段的下载权限",
+                    "type": "boolean"
+                },
+                "is_nullable": {
+                    "description": "是否为空 (YES/NO)",
+                    "type": "string"
+                },
+                "is_readable": {
+                    "description": "当前用户是否有此字段的读取权限",
+                    "type": "boolean"
+                },
+                "label_icon": {
+                    "description": "标签颜色",
+                    "type": "string"
+                },
+                "label_id": {
+                    "description": "标签ID",
+                    "type": "string"
+                },
+                "label_is_protected": {
+                    "description": "标签是否受数据查询保护",
+                    "type": "boolean"
+                },
+                "label_name": {
+                    "description": "标签名称",
+                    "type": "string"
+                },
+                "label_path": {
+                    "description": "标签路径",
+                    "type": "string"
+                },
+                "original_data_type": {
+                    "description": "原始数据类型",
+                    "type": "string"
+                },
+                "original_name": {
+                    "description": "原始字段名称",
+                    "type": "string"
+                },
+                "primary_key": {
+                    "description": "是否主键",
+                    "type": "boolean"
+                },
+                "reset_before_data_type": {
+                    "description": "重置前数据类型",
+                    "type": "string"
+                },
+                "reset_convert_rules": {
+                    "description": "重置转换规则 （仅日期类型）",
+                    "type": "string"
+                },
+                "reset_data_accuracy": {
+                    "description": "重置数据精度（仅DECIMAL类型）",
+                    "type": "integer"
+                },
+                "reset_data_length": {
+                    "description": "重置数据长度（仅DECIMAL类型）",
+                    "type": "integer"
+                },
+                "simple_type": {
+                    "description": "数据大类型",
+                    "type": "string"
+                },
+                "standard": {
+                    "description": "数据标准名称",
+                    "type": "string"
+                },
+                "standard_code": {
+                    "description": "数据标准code",
+                    "type": "string"
+                },
+                "standard_status": {
+                    "description": "数据标准状态",
+                    "type": "string"
+                },
+                "standard_type": {
+                    "description": "数据标准类型",
+                    "type": "string"
+                },
+                "standard_type_name": {
+                    "description": "数据标准类型名称",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "列视图状态(扫描结果) 0：无变化、1：新增、2：删除",
+                    "type": "string"
+                },
+                "technical_name": {
+                    "description": "列技术名称",
+                    "type": "string"
+                },
+                "total_rules": {
+                    "description": "字段级规则总数",
+                    "type": "integer"
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_auth_service.PolicyAction": {
             "type": "string",
             "enum": [
                 "view",
@@ -9545,7 +9780,7 @@ const docTemplate = `{
                 "PolicyActionDownload"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.BusinessObjectEntity": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.BusinessObjectEntity": {
             "type": "object",
             "properties": {
                 "id": {
@@ -9567,7 +9802,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoReq": {
             "type": "object",
             "properties": {
                 "cate_id": {
@@ -9583,7 +9818,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoResp": {
             "type": "object",
             "required": [
                 "cate_id",
@@ -9615,7 +9850,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.MountDataResources": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.MountDataResources": {
             "type": "object",
             "properties": {
                 "data_resources_ids": {
@@ -9632,7 +9867,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order": {
             "type": "object",
             "required": [
                 "direction",
@@ -9664,7 +9899,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.CategoryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.CategoryInfo": {
             "type": "object",
             "required": [
                 "category",
@@ -9693,7 +9928,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.SubjectInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.SubjectInfo": {
             "type": "object",
             "required": [
                 "subject",
@@ -9717,7 +9952,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.CheckRepeatResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.CheckRepeatResp": {
             "type": "object",
             "required": [
                 "name",
@@ -9738,7 +9973,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDNameResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDNameResp": {
             "type": "object",
             "required": [
                 "id",
@@ -9759,7 +9994,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDRes": {
             "type": "object",
             "properties": {
                 "id": {
@@ -9768,7 +10003,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.IDResp": {
             "type": "object",
             "required": [
                 "id"
@@ -9781,7 +10016,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.InfoBase": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.InfoBase": {
             "type": "object",
             "required": [
                 "info_key",
@@ -9802,7 +10037,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.InfoItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.InfoItem": {
             "type": "object",
             "required": [
                 "info_type"
@@ -9812,7 +10047,7 @@ const docTemplate = `{
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.InfoBase"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.InfoBase"
                     }
                 },
                 "info_type": {
@@ -9823,7 +10058,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.NameIDResp2": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.NameIDResp2": {
             "type": "object",
             "properties": {
                 "id": {
@@ -9833,7 +10068,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets_BusinessLogicEntityInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets_BusinessLogicEntityInfo": {
             "type": "object",
             "required": [
                 "entries",
@@ -9844,7 +10079,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.BusinessLogicEntityInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.BusinessLogicEntityInfo"
                     }
                 },
                 "total_count": {
@@ -9855,7 +10090,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets_DepartmentBusinessLogicEntityInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets_DepartmentBusinessLogicEntityInfo": {
             "type": "object",
             "required": [
                 "entries",
@@ -9866,7 +10101,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.DepartmentBusinessLogicEntityInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.DepartmentBusinessLogicEntityInfo"
                     }
                 },
                 "total_count": {
@@ -9877,7 +10112,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_AuditListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_AuditListItem": {
             "type": "object",
             "required": [
                 "entries",
@@ -9888,7 +10123,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListItem"
                     }
                 },
                 "total_count": {
@@ -9899,7 +10134,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_DataPushModelObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_DataPushModelObject": {
             "type": "object",
             "required": [
                 "entries",
@@ -9910,7 +10145,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushModelObject"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushModelObject"
                     }
                 },
                 "total_count": {
@@ -9921,7 +10156,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_DataPushScheduleObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_DataPushScheduleObject": {
             "type": "object",
             "required": [
                 "entries",
@@ -9932,7 +10167,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushScheduleObject"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushScheduleObject"
                     }
                 },
                 "total_count": {
@@ -9943,7 +10178,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_DataCatalogResourceListObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_DataCatalogResourceListObject": {
             "type": "object",
             "required": [
                 "entries",
@@ -9954,7 +10189,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataCatalogResourceListObject"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataCatalogResourceListObject"
                     }
                 },
                 "total_count": {
@@ -9965,7 +10200,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.PageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog_DataCatalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.PageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog_DataCatalog": {
             "type": "object",
             "required": [
                 "entries",
@@ -9976,7 +10211,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalog"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalog"
                     }
                 },
                 "total_count": {
@@ -9987,7 +10222,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.CountResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.CountResp": {
             "type": "object",
             "properties": {
                 "pending_num": {
@@ -10004,7 +10239,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.CreateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.CreateReq": {
             "type": "object",
             "required": [
                 "catalog_id",
@@ -10030,7 +10265,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.DetailBasicInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.DetailBasicInfo": {
             "type": "object",
             "properties": {
                 "catalog_code": {
@@ -10085,14 +10320,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.DetailResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.DetailResp": {
             "type": "object",
             "properties": {
                 "basic_info": {
                     "description": "目录反馈基本信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.DetailBasicInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.DetailBasicInfo"
                         }
                     ]
                 },
@@ -10100,12 +10335,12 @@ const docTemplate = `{
                     "description": "反馈处理记录，回复信息从处理记录中取",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.LogEntry"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.LogEntry"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.IDResp": {
             "type": "object",
             "required": [
                 "id"
@@ -10118,7 +10353,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ListItem": {
             "type": "object",
             "properties": {
                 "catalog_code": {
@@ -10177,7 +10412,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ListResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ListResp": {
             "type": "object",
             "required": [
                 "entries",
@@ -10188,7 +10423,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ListItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ListItem"
                     }
                 },
                 "total_count": {
@@ -10199,7 +10434,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.LogEntry": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.LogEntry": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -10224,7 +10459,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_catalog_feedback.ReplyReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_catalog_feedback.ReplyReq": {
             "type": "object",
             "required": [
                 "reply_content"
@@ -10238,7 +10473,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.AddTreeReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.AddTreeReqBodyParam": {
             "type": "object",
             "required": [
                 "name",
@@ -10268,23 +10503,22 @@ const docTemplate = `{
                     "description": "父类别ID，为0或不传时，为在一级目录下新增",
                     "type": "string",
                     "example": "664c3791-297e-44da-bfbb-2f1b82f3b672"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "selected": {
+                    "type": "boolean"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.BatchEditReqParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.BatchEditReqParam": {
             "type": "object",
             "required": [
                 "id",
                 "index"
             ],
             "properties": {
-                "apply_scope_info": {
-                    "description": "应用范围",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_model.ApplyScope"
-                    }
-                },
                 "id": {
                     "description": "类目ID",
                     "type": "string",
@@ -10294,15 +10528,10 @@ const docTemplate = `{
                     "description": "排序",
                     "type": "integer",
                     "example": 1
-                },
-                "required": {
-                    "description": "是否必填， true必填， false不必填",
-                    "type": "boolean",
-                    "example": true
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategorRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategorRespParam": {
             "type": "object",
             "properties": {
                 "id": {
@@ -10312,7 +10541,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryBodyParam": {
             "type": "object",
             "required": [
                 "name"
@@ -10333,7 +10562,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryInfo": {
             "type": "object",
             "required": [
                 "created_at",
@@ -10349,7 +10578,7 @@ const docTemplate = `{
                     "description": "应用范围",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_model.ApplyScope"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_model.ApplyScope"
                     }
                 },
                 "created_at": {
@@ -10388,7 +10617,7 @@ const docTemplate = `{
                 "tree_node": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryTreeSummaryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryTreeSummaryInfo"
                     }
                 },
                 "type": {
@@ -10415,7 +10644,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryTreeSummaryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryTreeSummaryInfo": {
             "type": "object",
             "required": [
                 "id",
@@ -10428,7 +10657,7 @@ const docTemplate = `{
                     "description": "当前TreeNode的子Node列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryTreeSummaryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.CategoryTreeSummaryInfo"
                     }
                 },
                 "id": {
@@ -10459,10 +10688,16 @@ const docTemplate = `{
                     "description": "目录类别父节点ID",
                     "type": "string",
                     "example": "bb96c1f2-5c07-4a01-99a0-e65d25f8f8e1"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "selected": {
+                    "type": "boolean"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.EditReqaBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.EditReqaBodyParam": {
             "type": "object",
             "required": [
                 "name"
@@ -10486,10 +10721,16 @@ const docTemplate = `{
                     "description": "数据Owner的uuid",
                     "type": "string",
                     "example": "664c3791-297e-44da-bfbb-2f1b82f3b672"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "selected": {
+                    "type": "boolean"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.EditUsingReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.EditUsingReqBodyParam": {
             "type": "object",
             "properties": {
                 "using": {
@@ -10498,29 +10739,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.ListCategoryRespParam": {
-            "type": "object",
-            "required": [
-                "entries",
-                "total_count"
-            ],
-            "properties": {
-                "entries": {
-                    "description": "对象列表",
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.CategoryInfo"
-                    }
-                },
-                "total_count": {
-                    "description": "当前筛选条件下的对象数量",
-                    "type": "integer",
-                    "minimum": 0,
-                    "example": 3
-                }
-            }
-        },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.NameExistRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.NameExistRespParam": {
             "type": "object",
             "required": [
                 "name",
@@ -10541,7 +10760,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.RecpderParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.RecpderParam": {
             "type": "object",
             "required": [
                 "dest_parent_id",
@@ -10565,7 +10784,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_category.TreeRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category.TreeRespParam": {
             "type": "object",
             "properties": {
                 "id": {
@@ -10575,7 +10794,131 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogOnlineStatus": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.CategorySummary": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "modules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.Item"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "using": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.GetResp": {
+            "type": "object",
+            "properties": {
+                "categories": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.CategorySummary"
+                    }
+                },
+                "total_count": {
+                    "type": "integer"
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.Item": {
+            "type": "object",
+            "required": [
+                "apply_scope_id"
+            ],
+            "properties": {
+                "apply_scope_id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "selected": {
+                    "type": "boolean"
+                },
+                "trees": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.ModuleTree"
+                    }
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.ModuleTree": {
+            "type": "object",
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "nodes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.TreeNode"
+                    }
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.TreeNode": {
+            "type": "object",
+            "properties": {
+                "children": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.TreeNode"
+                    }
+                },
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "parent_id": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "selected": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.UpdateReqParam": {
+            "type": "object",
+            "required": [
+                "category_id",
+                "items"
+            ],
+            "properties": {
+                "category_id": {
+                    "type": "string"
+                },
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_category_apply_scope_config.Item"
+                    }
+                }
+            }
+        },
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogOnlineStatus": {
             "type": "string",
             "enum": [
                 "notline",
@@ -10596,7 +10939,7 @@ const docTemplate = `{
                 "DROS_DOWN_REJECT"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogPublishStatus": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogPublishStatus": {
             "type": "string",
             "enum": [
                 "unpublished",
@@ -10615,7 +10958,7 @@ const docTemplate = `{
                 "DRPS_CHANGE_REJECT"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceType": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceType": {
             "type": "string",
             "enum": [
                 "data_view",
@@ -10628,7 +10971,7 @@ const docTemplate = `{
                 "DataResourceTypeFile"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.SummaryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.SummaryInfo": {
             "type": "object",
             "properties": {
                 "id": {
@@ -10653,7 +10996,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.BusinessLogicEntityInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.BusinessLogicEntityInfo": {
             "type": "object",
             "properties": {
                 "business_domain_id": {
@@ -10673,7 +11016,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.DataAssetsResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.DataAssetsResp": {
             "type": "object",
             "properties": {
                 "business_attributes_count": {
@@ -10703,7 +11046,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.DepartmentBusinessLogicEntityInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.DepartmentBusinessLogicEntityInfo": {
             "type": "object",
             "properties": {
                 "business_logic_entity_count": {
@@ -10723,7 +11066,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_assets.StandardizedRateResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_assets.StandardizedRateResp": {
             "type": "object",
             "properties": {
                 "business_domain_id": {
@@ -10748,7 +11091,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog.AuditUser": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog.AuditUser": {
             "type": "object",
             "properties": {
                 "user_id": {
@@ -10757,7 +11100,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.CatalogScore": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.CatalogScore": {
             "type": "object",
             "required": [
                 "score"
@@ -10772,7 +11115,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.DataCatalogScoreInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.DataCatalogScoreInfo": {
             "type": "object",
             "required": [
                 "catalog_id",
@@ -10822,7 +11165,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.IDResp": {
             "type": "object",
             "properties": {
                 "id": {
@@ -10831,7 +11174,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreCountInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreCountInfo": {
             "type": "object",
             "required": [
                 "count",
@@ -10852,7 +11195,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreDetail": {
             "type": "object",
             "required": [
                 "entries",
@@ -10863,7 +11206,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.UserScoreInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.UserScoreInfo"
                     }
                 },
                 "total_count": {
@@ -10873,7 +11216,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreDetailResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreDetailResp": {
             "type": "object",
             "required": [
                 "average_score",
@@ -10890,7 +11233,7 @@ const docTemplate = `{
                     "description": "用户评分列表",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreDetail"
                         }
                     ]
                 },
@@ -10898,12 +11241,12 @@ const docTemplate = `{
                     "description": "评分统计",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreCountInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreCountInfo"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreListResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreListResp": {
             "type": "object",
             "required": [
                 "entries",
@@ -10914,7 +11257,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.DataCatalogScoreInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.DataCatalogScoreInfo"
                     }
                 },
                 "total_count": {
@@ -10923,7 +11266,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.ScoreSummaryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.ScoreSummaryInfo": {
             "type": "object",
             "required": [
                 "average_score",
@@ -10954,7 +11297,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_catalog_score.UserScoreInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_catalog_score.UserScoreInfo": {
             "type": "object",
             "required": [
                 "catalog_id",
@@ -10992,7 +11335,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Catalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Catalog": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -11003,14 +11346,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.CatalogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.CatalogInfo": {
             "type": "object",
             "properties": {
                 "department_path": {
                     "description": "部门处室",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.SummaryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.SummaryInfo"
                     }
                 },
                 "id": {
@@ -11055,7 +11398,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.CatalogList": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.CatalogList": {
             "type": "object",
             "properties": {
                 "catalog_description": {
@@ -11088,7 +11431,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Choice": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Choice": {
             "type": "object",
             "properties": {
                 "id": {
@@ -11099,7 +11442,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ColumnComment": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ColumnComment": {
             "type": "object",
             "properties": {
                 "ai_comment": {
@@ -11141,7 +11484,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ComprehensionDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ComprehensionDetail": {
             "type": "object",
             "properties": {
                 "audit_advice": {
@@ -11160,7 +11503,7 @@ const docTemplate = `{
                     "description": "数据编目相关信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.CatalogInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.CatalogInfo"
                         }
                     ]
                 },
@@ -11169,7 +11512,7 @@ const docTemplate = `{
                     "additionalProperties": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Choice"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Choice"
                         }
                     }
                 },
@@ -11177,14 +11520,14 @@ const docTemplate = `{
                     "description": "字段注释理解",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ColumnComment"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ColumnComment"
                     }
                 },
                 "comprehension_dimensions": {
                     "description": "数据理解详情",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionConfig"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionConfig"
                     }
                 },
                 "icons": {
@@ -11208,7 +11551,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ComprehensionUpsertReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ComprehensionUpsertReq": {
             "type": "object",
             "required": [
                 "catalog_code",
@@ -11236,14 +11579,14 @@ const docTemplate = `{
                     "description": "字段注释理解",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ColumnComment"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ColumnComment"
                     }
                 },
                 "dimension_configs": {
                     "description": "维度配置详情，属性结构",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ConfigContent"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ConfigContent"
                     }
                 },
                 "operation": {
@@ -11265,7 +11608,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ConfigContent": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ConfigContent": {
             "type": "object",
             "required": [
                 "id"
@@ -11278,7 +11621,7 @@ const docTemplate = `{
                     "description": "子维度,，叶子节点没有Children配置",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ConfigContent"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ConfigContent"
                     }
                 },
                 "content": {
@@ -11290,7 +11633,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Configuration": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Configuration": {
             "type": "object",
             "properties": {
                 "choices": {
@@ -11298,14 +11641,14 @@ const docTemplate = `{
                     "additionalProperties": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Choice"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Choice"
                         }
                     }
                 },
                 "dimension_config": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionConfig"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionConfig"
                     }
                 },
                 "note": {
@@ -11313,13 +11656,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ContentError": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ContentError": {
             "type": "object",
             "additionalProperties": {
                 "type": "string"
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionConfig": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionConfig": {
             "type": "object",
             "required": [
                 "id"
@@ -11333,14 +11676,14 @@ const docTemplate = `{
                     "description": "子维度,，叶子节点没有Children配置",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionConfig"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionConfig"
                     }
                 },
                 "detail": {
                     "description": "具体的配置, 非叶子节点没有该配置",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionDetail"
                         }
                     ]
                 },
@@ -11358,7 +11701,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.DimensionDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.DimensionDetail": {
             "type": "object",
             "properties": {
                 "ai_content": {
@@ -11371,7 +11714,7 @@ const docTemplate = `{
                     "description": "包含的错误",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ContentError"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ContentError"
                         }
                     ]
                 },
@@ -11405,13 +11748,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetCatalogListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetCatalogListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.Catalog"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.Catalog"
                     }
                 },
                 "total_count": {
@@ -11419,13 +11762,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetReportListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetReportListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ReportList"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ReportList"
                     }
                 },
                 "total_count": {
@@ -11433,13 +11776,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTaskCatalogListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTaskCatalogListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.CatalogList"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.CatalogList"
                     }
                 },
                 "template_id": {
@@ -11448,7 +11791,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateConfigReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateConfigReq": {
             "type": "object",
             "required": [
                 "id"
@@ -11460,7 +11803,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateDetailReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateDetailReq": {
             "type": "object",
             "required": [
                 "id"
@@ -11472,7 +11815,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateDetailRes": {
             "type": "object",
             "required": [
                 "name",
@@ -11496,13 +11839,13 @@ const docTemplate = `{
                     "description": "理解模板配置",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateConfig"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateConfig"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateListReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateListReq": {
             "type": "object",
             "properties": {
                 "direction": {
@@ -11545,13 +11888,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.GetTemplateListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.GetTemplateListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateListRes"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateListRes"
                     }
                 },
                 "total_count": {
@@ -11559,7 +11902,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.IDRequired": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.IDRequired": {
             "type": "object",
             "required": [
                 "id"
@@ -11571,7 +11914,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.ReportList": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.ReportList": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -11614,7 +11957,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateConfig": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateConfig": {
             "type": "object",
             "required": [
                 "business_object",
@@ -11686,7 +12029,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateListRes": {
             "type": "object",
             "properties": {
                 "description": {
@@ -11719,7 +12062,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateNameExistReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateNameExistReq": {
             "type": "object",
             "required": [
                 "name"
@@ -11738,7 +12081,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateReq": {
             "type": "object",
             "required": [
                 "name",
@@ -11762,13 +12105,13 @@ const docTemplate = `{
                     "description": "理解模板配置",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateConfig"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateConfig"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.UpdateTemplateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.UpdateTemplateReq": {
             "type": "object",
             "required": [
                 "id",
@@ -11797,13 +12140,13 @@ const docTemplate = `{
                     "description": "理解模板配置",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_comprehension.TemplateConfig"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_comprehension.TemplateConfig"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AnnualStatisticItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AnnualStatisticItem": {
             "type": "object",
             "properties": {
                 "count": {
@@ -11815,7 +12158,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListItem": {
             "type": "object",
             "properties": {
                 "applier_id": {
@@ -11864,7 +12207,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.AuditListReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.AuditListReq": {
             "type": "object",
             "properties": {
                 "direction": {
@@ -11912,7 +12255,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.BatchUpdateStatusReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.BatchUpdateStatusReq": {
             "type": "object",
             "required": [
                 "model_id"
@@ -11926,7 +12269,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.CreateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.CreateReq": {
             "type": "object",
             "required": [
                 "channel",
@@ -12026,7 +12369,7 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SyncModelCheckField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SyncModelCheckField"
                     }
                 },
                 "target_datasource_id": {
@@ -12056,7 +12399,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushModelDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushModelDetail": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -12135,7 +12478,7 @@ const docTemplate = `{
                     "description": "调度计划草稿",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.ScheduleBody"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.ScheduleBody"
                         }
                     ]
                 },
@@ -12163,7 +12506,7 @@ const docTemplate = `{
                     "description": "源端详情",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SourceDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SourceDetail"
                         }
                     ]
                 },
@@ -12171,14 +12514,14 @@ const docTemplate = `{
                     "description": "同步模型字段",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SyncModelField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SyncModelField"
                     }
                 },
                 "target_detail": {
                     "description": "目标端详情",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.TargetDetail"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.TargetDetail"
                         }
                     ]
                 },
@@ -12200,7 +12543,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushModelObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushModelObject": {
             "type": "object",
             "required": [
                 "name",
@@ -12297,7 +12640,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.DataPushScheduleObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.DataPushScheduleObject": {
             "type": "object",
             "required": [
                 "name",
@@ -12393,7 +12736,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.LocalPageResult-devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push_TaskLogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.LocalPageResult-github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push_TaskLogInfo": {
             "type": "object",
             "required": [
                 "entries",
@@ -12405,7 +12748,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.TaskLogInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.TaskLogInfo"
                     }
                 },
                 "id": {
@@ -12429,7 +12772,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.OverviewResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.OverviewResp": {
             "type": "object",
             "properties": {
                 "auditing": {
@@ -12462,7 +12805,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.ScheduleBody": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.ScheduleBody": {
             "type": "object",
             "properties": {
                 "crontab_expr": {
@@ -12491,7 +12834,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SchedulePlanReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SchedulePlanReq": {
             "type": "object",
             "required": [
                 "id"
@@ -12531,7 +12874,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SourceDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SourceDetail": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -12558,6 +12901,13 @@ const docTemplate = `{
                     "description": "源端编码",
                     "type": "string"
                 },
+                "fields": {
+                    "description": "来源表字段信息",
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/data_view.FieldsRes"
+                    }
+                },
                 "table_display_name": {
                     "description": "来源表显示名称，视图的ID",
                     "type": "string"
@@ -12572,7 +12922,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SourceField": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SourceField": {
             "type": "object",
             "properties": {
                 "business_name": {
@@ -12609,7 +12959,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SwitchReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SwitchReq": {
             "type": "object",
             "required": [
                 "id"
@@ -12629,7 +12979,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SyncModelCheckField": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SyncModelCheckField": {
             "type": "object",
             "required": [
                 "data_type",
@@ -12679,7 +13029,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SyncModelField": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SyncModelField": {
             "type": "object",
             "required": [
                 "field_id"
@@ -12721,7 +13071,7 @@ const docTemplate = `{
                     "description": "来源字段信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SourceField"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SourceField"
                         }
                     ]
                 },
@@ -12731,7 +13081,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.TargetDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.TargetDetail": {
             "type": "object",
             "properties": {
                 "db_type": {
@@ -12780,7 +13130,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.TaskLogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.TaskLogInfo": {
             "type": "object",
             "properties": {
                 "end_time": {
@@ -12825,7 +13175,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.UpdateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.UpdateReq": {
             "type": "object",
             "required": [
                 "id",
@@ -12922,7 +13272,7 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_push.SyncModelCheckField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_push.SyncModelCheckField"
                     }
                 },
                 "target_datasource_id": {
@@ -12952,7 +13302,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataCatalogResourceListObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataCatalogResourceListObject": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -13005,7 +13355,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataResource": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataResource": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -13016,7 +13366,7 @@ const docTemplate = `{
                     "description": "子节点",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataResource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataResource"
                     }
                 },
                 "code": {
@@ -13069,14 +13419,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataResourceRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataResourceRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataResource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataResource"
                     }
                 },
                 "total_count": {
@@ -13085,7 +13435,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.GetCountRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.GetCountRes": {
             "type": "object",
             "properties": {
                 "depart_catalog_count": {
@@ -13102,33 +13452,33 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.AuditTypeCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.AuditTypeCount": {
             "type": "object",
             "properties": {
                 "offline": {
                     "description": "下线",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Count"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Count"
                     }
                 },
                 "online": {
                     "description": "上线",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Count"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Count"
                     }
                 },
                 "publish": {
                     "description": "发布",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Count"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Count"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Body": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Body": {
             "type": "object",
             "properties": {
                 "has_content": {
@@ -13163,14 +13513,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogCount": {
             "type": "object",
             "properties": {
                 "auditing": {
                     "description": "审核中",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.AuditTypeCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.AuditTypeCount"
                         }
                     ]
                 },
@@ -13178,7 +13528,7 @@ const docTemplate = `{
                     "description": "通过",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.AuditTypeCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.AuditTypeCount"
                         }
                     ]
                 },
@@ -13186,13 +13536,13 @@ const docTemplate = `{
                     "description": "拒绝",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.AuditTypeCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.AuditTypeCount"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogDetailRes": {
             "type": "object",
             "required": [
                 "code",
@@ -13202,6 +13552,7 @@ const docTemplate = `{
                 "info_system_id",
                 "name",
                 "open_type",
+                "operation_authorized",
                 "publish_flag",
                 "shared_type"
             ],
@@ -13244,7 +13595,7 @@ const docTemplate = `{
                     "description": "自定义类目",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.CategoryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.CategoryInfo"
                     }
                 },
                 "central_department_code": {
@@ -13364,6 +13715,15 @@ const docTemplate = `{
                     ],
                     "example": 1
                 },
+                "operation_authorized": {
+                    "description": "是否可授权运营字段",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
+                },
                 "other_app_scene_classify": {
                     "description": "其他应用场景分类",
                     "type": "string",
@@ -13463,12 +13823,13 @@ const docTemplate = `{
                     "description": "所属主题",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.SubjectInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.SubjectInfo"
                     }
                 },
                 "sync_frequency": {
                     "description": "同步频率",
                     "type": "string",
+                    "maxLength": 128,
                     "example": ""
                 },
                 "sync_mechanism": {
@@ -13497,7 +13858,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogFeedbackCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogFeedbackCount": {
             "type": "object",
             "properties": {
                 "catalog_feedback_statistics": {
@@ -13522,7 +13883,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogShareConditional": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogShareConditional": {
             "type": "object",
             "properties": {
                 "conditional_shared": {
@@ -13539,7 +13900,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogUsingCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogUsingCount": {
             "type": "object",
             "properties": {
                 "data_analysis": {
@@ -13556,7 +13917,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfo": {
             "type": "object",
             "required": [
                 "business_name",
@@ -13633,6 +13994,10 @@ const docTemplate = `{
                     "type": "integer",
                     "example": 1
                 },
+                "info_item_level": {
+                    "description": "信息项分级 自动分级",
+                    "type": "string"
+                },
                 "open_condition": {
                     "description": "开放条件",
                     "type": "string",
@@ -13683,7 +14048,7 @@ const docTemplate = `{
                     "example": "664c3791-297e-44da-bfbb-2f1b82f3b672"
                 },
                 "source_system": {
-                    "description": "InfoItemLevel       int32  ` + "`" + `json:\"info_item_level,omitempty\" binding:\"omitempty,oneof=1 2 3 4\"` + "`" + `       // 信息项分级 1级 2级 3级 4级",
+                    "description": "来源系统",
                     "type": "string"
                 },
                 "source_system_id": {
@@ -13731,7 +14096,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfoDraft": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfoDraft": {
             "type": "object",
             "required": [
                 "business_name",
@@ -13799,6 +14164,10 @@ const docTemplate = `{
                     "type": "string",
                     "example": "1"
                 },
+                "info_item_level": {
+                    "description": "信息项分级 自动分级",
+                    "type": "string"
+                },
                 "open_condition": {
                     "description": "开放条件",
                     "type": "string",
@@ -13849,7 +14218,7 @@ const docTemplate = `{
                     "example": "664c3791-297e-44da-bfbb-2f1b82f3b672"
                 },
                 "source_system": {
-                    "description": "InfoItemLevel       int32  ` + "`" + `json:\"info_item_level,omitempty\" binding:\"omitempty,oneof=1 2 3 4\"` + "`" + `       // 信息项分级 1级 2级 3级 4级",
+                    "description": "来源系统",
                     "type": "string"
                 },
                 "source_system_id": {
@@ -13897,7 +14266,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfoRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfoRes": {
             "type": "object",
             "required": [
                 "business_name",
@@ -13982,6 +14351,10 @@ const docTemplate = `{
                     "type": "integer",
                     "example": 1
                 },
+                "info_item_level": {
+                    "description": "信息项分级 自动分级",
+                    "type": "string"
+                },
                 "open_condition": {
                     "description": "开放条件",
                     "type": "string",
@@ -14035,12 +14408,12 @@ const docTemplate = `{
                     "description": "来源字段名称",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnSourceName"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnSourceName"
                         }
                     ]
                 },
                 "source_system": {
-                    "description": "InfoItemLevel       int32  ` + "`" + `json:\"info_item_level,omitempty\" binding:\"omitempty,oneof=1 2 3 4\"` + "`" + `       // 信息项分级 1级 2级 3级 4级",
+                    "description": "来源系统",
                     "type": "string"
                 },
                 "source_system_id": {
@@ -14104,7 +14477,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnSourceName": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnSourceName": {
             "type": "object",
             "properties": {
                 "business_name": {
@@ -14121,7 +14494,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CompletedRate": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CompletedRate": {
             "type": "object",
             "properties": {
                 "count": {},
@@ -14133,7 +14506,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ComprehensionCatalogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ComprehensionCatalogInfo": {
             "type": "object",
             "properties": {
                 "comprehension_created_time": {
@@ -14170,7 +14543,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Count": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Count": {
             "type": "object",
             "properties": {
                 "count": {
@@ -14187,7 +14560,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DRCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DRCount": {
             "type": "object",
             "properties": {
                 "count": {
@@ -14199,7 +14572,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsDetailEntry": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsDetailEntry": {
             "type": "object",
             "properties": {
                 "api_count": {
@@ -14232,14 +14605,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsDetailRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "部门详情列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsDetailEntry"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsDetailEntry"
                     }
                 },
                 "total_count": {
@@ -14248,7 +14621,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsOverviewEntry": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsOverviewEntry": {
             "type": "object",
             "properties": {
                 "category": {
@@ -14269,18 +14642,18 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsOverviewRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataAssetsOverviewEntry"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataAssetsOverviewEntry"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalog": {
             "type": "object",
             "properties": {
                 "accuracy_score": {
@@ -14311,7 +14684,7 @@ const docTemplate = `{
                     "description": "数据理解需要的字段",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ComprehensionCatalogInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ComprehensionCatalogInfo"
                         }
                     ]
                 },
@@ -14351,6 +14724,10 @@ const docTemplate = `{
                     "description": "id",
                     "type": "string"
                 },
+                "is_import": {
+                    "description": "是否导入",
+                    "type": "boolean"
+                },
                 "name": {
                     "description": "数据资源名称",
                     "type": "string"
@@ -14383,7 +14760,7 @@ const docTemplate = `{
                     "description": "挂载资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Resource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Resource"
                     }
                 },
                 "shared_type": {
@@ -14406,7 +14783,7 @@ const docTemplate = `{
                     "description": "所属主题",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.SubjectInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.SubjectInfo"
                     }
                 },
                 "timeliness_score": {
@@ -14419,7 +14796,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalogCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalogCount": {
             "type": "object",
             "properties": {
                 "catalog_count": {
@@ -14469,7 +14846,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalogWithMount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalogWithMount": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -14490,7 +14867,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewEntries": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewEntries": {
             "type": "object",
             "properties": {
                 "completed_count": {
@@ -14507,13 +14884,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewEntries"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetAggregationOverviewEntries"
                     }
                 },
                 "total_count": {
@@ -14521,7 +14898,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetail": {
             "type": "object",
             "properties": {
                 "api_count": {
@@ -14570,13 +14947,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetailRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetail"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetDepartmentDetail"
                     }
                 },
                 "errors": {
@@ -14590,14 +14967,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataGetOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataGetOverviewRes": {
             "type": "object",
             "properties": {
                 "aggregation": {
                     "description": "归集任务",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.WorkOrderTask"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.WorkOrderTask"
                     }
                 },
                 "api_department_count": {
@@ -14616,14 +14993,14 @@ const docTemplate = `{
                     "description": "基础信息分类 部门",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 },
                 "catalog_subject_group": {
                     "description": "基础信息分类 目录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 },
                 "data_catalog_column_count": {
@@ -14638,14 +15015,14 @@ const docTemplate = `{
                     "description": "目录层级",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataRange"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataRange"
                     }
                 },
                 "data_resource_count": {
                     "description": "数据资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DRCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DRCount"
                     }
                 },
                 "department_count": {
@@ -14718,14 +15095,14 @@ const docTemplate = `{
                     "description": "更新方式",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SyncMechanism"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SyncMechanism"
                     }
                 },
                 "update_cycle": {
                     "description": "更新频率",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.UpdateCycle"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.UpdateCycle"
                     }
                 },
                 "view_aggregation_count": {
@@ -14744,7 +15121,7 @@ const docTemplate = `{
                     "description": "库表分类占比",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ViewOverview"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ViewOverview"
                         }
                     ]
                 },
@@ -14752,12 +15129,12 @@ const docTemplate = `{
                     "description": "基础信息分类 库表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataRange": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataRange": {
             "type": "object",
             "properties": {
                 "count": {
@@ -14769,7 +15146,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataResourceCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataResourceCount": {
             "type": "object",
             "properties": {
                 "api_count": {
@@ -14834,7 +15211,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetail": {
             "type": "object",
             "properties": {
                 "accuracy_score": {
@@ -14891,13 +15268,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetailOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetailOverviewRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetail"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartDetail"
                     }
                 },
                 "total_count": {
@@ -14906,7 +15283,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverview": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverview": {
             "type": "object",
             "properties": {
                 "completed_count": {
@@ -14929,14 +15306,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverviewRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "部门详情列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverview"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDepartTopOverview"
                     }
                 },
                 "total_count": {
@@ -14945,7 +15322,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandDomainOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandDomainOverviewRes": {
             "type": "object",
             "properties": {
                 "catalog_info": {
@@ -14953,13 +15330,13 @@ const docTemplate = `{
                     "additionalProperties": {
                         "type": "array",
                         "items": {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DomainCatalogInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DomainCatalogInfo"
                         }
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandOverviewRes": {
             "type": "object",
             "properties": {
                 "catalog_domain_group": {
@@ -14973,14 +15350,14 @@ const docTemplate = `{
                     "description": "基础信息分类 完成率",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CompletedRate"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CompletedRate"
                     }
                 },
                 "completed_understand": {
                     "description": "基础信息分类 已理解数据目录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 },
                 "department_count": {
@@ -14991,7 +15368,7 @@ const docTemplate = `{
                     "description": "基础信息分类 数据理解部门",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 },
                 "errors": {
@@ -15004,7 +15381,7 @@ const docTemplate = `{
                     "description": "基础信息分类 未理解数据目录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 },
                 "subject_domain_group": {
@@ -15018,7 +15395,7 @@ const docTemplate = `{
                     "description": "理解任务",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Task"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Task"
                     }
                 },
                 "understand_task_count": {
@@ -15046,18 +15423,18 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataUnderstandTaskDetailOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataUnderstandTaskDetailOverviewRes": {
             "type": "object",
             "properties": {
                 "task": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Task"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Task"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DepartmentCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DepartmentCount": {
             "type": "object",
             "properties": {
                 "count": {
@@ -15078,7 +15455,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DomainCatalogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DomainCatalogInfo": {
             "type": "object",
             "properties": {
                 "accuracy_score": {
@@ -15135,7 +15512,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.FrontendCatalogDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.FrontendCatalogDetail": {
             "type": "object",
             "required": [
                 "code",
@@ -15145,6 +15522,7 @@ const docTemplate = `{
                 "info_system_id",
                 "name",
                 "open_type",
+                "operation_authorized",
                 "publish_flag",
                 "shared_type"
             ],
@@ -15187,7 +15565,7 @@ const docTemplate = `{
                     "description": "自定义类目",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.CategoryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.CategoryInfo"
                     }
                 },
                 "central_department_code": {
@@ -15315,6 +15693,15 @@ const docTemplate = `{
                         3
                     ],
                     "example": 1
+                },
+                "operation_authorized": {
+                    "description": "是否可授权运营字段",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
                 },
                 "other_app_scene_classify": {
                     "description": "其他应用场景分类",
@@ -15419,12 +15806,13 @@ const docTemplate = `{
                     "description": "所属主题",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_common_model.SubjectInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_common_model.SubjectInfo"
                     }
                 },
                 "sync_frequency": {
                     "description": "同步频率",
                     "type": "string",
+                    "maxLength": 128,
                     "example": ""
                 },
                 "sync_mechanism": {
@@ -15453,14 +15841,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogColumnsRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogColumnsRes": {
             "type": "object",
             "properties": {
                 "columns": {
                     "description": "关联信息项",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfoRes"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfoRes"
                     }
                 },
                 "total_count": {
@@ -15468,39 +15856,39 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogMountListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogMountListRes": {
             "type": "object",
             "properties": {
                 "mount_resource": {
                     "description": "挂载资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResourceRes"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResourceRes"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogRelationRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogRelationRes": {
             "type": "object",
             "properties": {
                 "catalog_api": {
                     "description": "接口目录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalogWithMount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalogWithMount"
                     }
                 },
                 "catalog_view": {
                     "description": "视图目录",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalogWithMount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalogWithMount"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetDataCatalogTaskResp": {
             "type": "object",
             "properties": {
                 "catalog_id": {
@@ -15553,7 +15941,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetResourceCatalogListReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetResourceCatalogListReq": {
             "type": "object",
             "properties": {
                 "catalog_info_show": {
@@ -15569,18 +15957,18 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.GetResourceCatalogListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.GetResourceCatalogListRes": {
             "type": "object",
             "properties": {
                 "resource_catalogs": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ResourceCatalog"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ResourceCatalog"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResource": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResource": {
             "type": "object",
             "required": [
                 "resource_id",
@@ -15597,7 +15985,7 @@ const docTemplate = `{
                     "description": "请求体",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Body"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Body"
                     }
                 },
                 "request_format": {
@@ -15621,7 +16009,7 @@ const docTemplate = `{
                     "description": "响应体",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Body"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Body"
                     }
                 },
                 "response_format": {
@@ -15645,14 +16033,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResourceRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResourceRes": {
             "type": "object",
             "properties": {
                 "children": {
                     "description": "子节点",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResourceRes"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResourceRes"
                     }
                 },
                 "code": {
@@ -15688,7 +16076,7 @@ const docTemplate = `{
                     "description": "请求体",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Body"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Body"
                     }
                 },
                 "request_format": {
@@ -15707,7 +16095,7 @@ const docTemplate = `{
                     "description": "响应体",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Body"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Body"
                     }
                 },
                 "response_format": {
@@ -15735,7 +16123,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Resource": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Resource": {
             "type": "object",
             "properties": {
                 "resource_count": {
@@ -15748,18 +16136,18 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ResourceCatalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ResourceCatalog": {
             "type": "object",
             "properties": {
                 "catalog": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalog"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalog"
                 },
                 "resource": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource.DataResource"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource.DataResource"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SaveDataCatalogDraftReqBody": {
             "type": "object",
             "required": [
                 "name"
@@ -15807,7 +16195,7 @@ const docTemplate = `{
                 "category_node_ids": {
                     "description": "资源属性分类节点id",
                     "type": "array",
-                    "maxItems": 2,
+                    "maxItems": 10,
                     "uniqueItems": true,
                     "items": {
                         "type": "string"
@@ -15825,7 +16213,7 @@ const docTemplate = `{
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfoDraft"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfoDraft"
                     }
                 },
                 "data_classify": {
@@ -15888,7 +16276,7 @@ const docTemplate = `{
                     "description": "挂接资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResource"
                     }
                 },
                 "name": {
@@ -15911,6 +16299,15 @@ const docTemplate = `{
                         3
                     ],
                     "example": 1
+                },
+                "operation_authorized": {
+                    "description": "是否可授权运营字段",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
                 },
                 "other_app_scene_classify": {
                     "description": "其他应用场景分类",
@@ -16003,6 +16400,7 @@ const docTemplate = `{
                 "sync_frequency": {
                     "description": "同步频率",
                     "type": "string",
+                    "maxLength": 128,
                     "example": ""
                 },
                 "sync_mechanism": {
@@ -16028,7 +16426,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SaveDataCatalogReqBody": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SaveDataCatalogReqBody": {
             "type": "object",
             "required": [
                 "business_matters",
@@ -16037,6 +16435,7 @@ const docTemplate = `{
                 "mount_resources",
                 "name",
                 "open_type",
+                "operation_authorized",
                 "publish_flag",
                 "shared_type",
                 "subject_id"
@@ -16084,7 +16483,7 @@ const docTemplate = `{
                 "category_node_ids": {
                     "description": "资源属性分类节点id",
                     "type": "array",
-                    "maxItems": 2,
+                    "maxItems": 10,
                     "uniqueItems": true,
                     "items": {
                         "type": "string"
@@ -16102,7 +16501,7 @@ const docTemplate = `{
                     "type": "array",
                     "uniqueItems": true,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ColumnInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ColumnInfo"
                     }
                 },
                 "data_classify": {
@@ -16168,7 +16567,7 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.MountResource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.MountResource"
                     }
                 },
                 "name": {
@@ -16191,6 +16590,15 @@ const docTemplate = `{
                         3
                     ],
                     "example": 1
+                },
+                "operation_authorized": {
+                    "description": "是否可授权运营字段",
+                    "type": "integer",
+                    "enum": [
+                        0,
+                        1
+                    ],
+                    "example": 0
                 },
                 "other_app_scene_classify": {
                     "description": "其他应用场景分类",
@@ -16287,6 +16695,7 @@ const docTemplate = `{
                 "sync_frequency": {
                     "description": "同步频率",
                     "type": "string",
+                    "maxLength": 128,
                     "example": ""
                 },
                 "sync_mechanism": {
@@ -16315,11 +16724,11 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.StatisticsOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.StatisticsOverviewRes": {
             "type": "object",
             "properties": {
                 "catalog_count": {
-                    "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogCount"
+                    "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogCount"
                 },
                 "err": {
                     "type": "array",
@@ -16328,12 +16737,12 @@ const docTemplate = `{
                 "feedback_count": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Count"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Count"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup": {
             "type": "object",
             "properties": {
                 "count": {
@@ -16347,7 +16756,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SyncMechanism": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SyncMechanism": {
             "type": "object",
             "properties": {
                 "count": {
@@ -16359,7 +16768,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Task": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Task": {
             "type": "object",
             "properties": {
                 "count": {
@@ -16371,14 +16780,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.TotalOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.TotalOverviewRes": {
             "type": "object",
             "properties": {
                 "catalog_feedback_count": {
                     "description": "目录反馈统计",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogFeedbackCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogFeedbackCount"
                         }
                     ]
                 },
@@ -16386,7 +16795,7 @@ const docTemplate = `{
                     "description": "目录使用统计",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogUsingCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogUsingCount"
                         }
                     ]
                 },
@@ -16394,7 +16803,7 @@ const docTemplate = `{
                     "description": "数据资源目录统计",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataCatalogCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataCatalogCount"
                         }
                     ]
                 },
@@ -16402,7 +16811,7 @@ const docTemplate = `{
                     "description": "数据资源统计",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataResourceCount"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataResourceCount"
                         }
                     ]
                 },
@@ -16410,20 +16819,20 @@ const docTemplate = `{
                     "description": "部门提供目录统计",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DepartmentCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DepartmentCount"
                     }
                 },
                 "share_conditional": {
                     "description": "目录共享统计",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.CatalogShareConditional"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.CatalogShareConditional"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.UpdateCycle": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.UpdateCycle": {
             "type": "object",
             "properties": {
                 "count": {
@@ -16435,26 +16844,26 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.ViewOverview": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.ViewOverview": {
             "type": "object",
             "properties": {
                 "data_range": {
                     "description": "目录层级",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.DataRange"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.DataRange"
                     }
                 },
                 "subject_group": {
                     "description": "基础信息分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.SubjectGroup"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.SubjectGroup"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.WorkOrderTask": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.WorkOrderTask": {
             "type": "object",
             "properties": {
                 "count": {
@@ -16466,7 +16875,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.Classify": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.Classify": {
             "type": "object",
             "properties": {
                 "id": {
@@ -16483,13 +16892,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ClassifyTree": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ClassifyTree": {
             "type": "object",
             "properties": {
                 "children": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ClassifyTree"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ClassifyTree"
                     }
                 },
                 "id": {
@@ -16500,7 +16909,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceColum": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceColum": {
             "type": "object",
             "properties": {
                 "business_name": {
@@ -16517,7 +16926,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceList": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceList": {
             "type": "object",
             "properties": {
                 "certification_level": {
@@ -16555,14 +16964,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceList"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceList"
                     }
                 },
                 "last_sync_time": {
@@ -16575,7 +16984,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ExportReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ExportReq": {
             "type": "object",
             "properties": {
                 "ids": {
@@ -16586,21 +16995,21 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.Filter": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.Filter": {
             "type": "object",
             "properties": {
                 "cate_info_req": {
                     "description": "类目的 ID，过滤属于类目的数据资源目录\n - 未指定、空字符串：不过滤\n - Uncategorized：过滤未分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoReq"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoReq"
                     }
                 },
                 "data_resource_type": {
                     "description": "数据资源的类型，过滤这个类型的数据资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceType"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceType"
                     }
                 },
                 "fields": {
@@ -16621,7 +17030,7 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -16629,14 +17038,14 @@ const docTemplate = `{
                     "description": "排序，不传该参数时：没有keyword时默认以online_at desc \u0026 update desc排序，有keyword时默认以_score desc排序",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order"
                     }
                 },
                 "published_at": {
                     "description": "过滤这个时间范围内发布的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -16644,42 +17053,42 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetClassifyRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetClassifyRes": {
             "type": "object",
             "properties": {
                 "classify": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.Classify"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.Classify"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetClassifyTreeRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetClassifyTreeRes": {
             "type": "object",
             "properties": {
                 "classify_tree": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ClassifyTree"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ClassifyTree"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceColumnListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "信息项对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.ElecLicenceColum"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.ElecLicenceColum"
                     }
                 },
                 "total_count": {
@@ -16687,7 +17096,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.GetElecLicenceDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.GetElecLicenceDetailRes": {
             "type": "object",
             "properties": {
                 "certification_level": {
@@ -16746,7 +17155,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.SearchEntrity": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.SearchEntrity": {
             "type": "object",
             "properties": {
                 "certification_level": {
@@ -16809,14 +17218,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.SearchRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.SearchRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "数据资源列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_elec_licence.SearchEntrity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_elec_licence.SearchEntrity"
                     }
                 },
                 "next_flag": {
@@ -16836,7 +17245,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.AttachmentInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.AttachmentInfo": {
             "type": "object",
             "required": [
                 "created_at",
@@ -16873,7 +17282,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.AuditListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.AuditListRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -16884,7 +17293,7 @@ const docTemplate = `{
                     "description": "workflow申请记录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.WorkflowItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.WorkflowItem"
                     }
                 },
                 "total_count": {
@@ -16893,7 +17302,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.CreateFileResourceReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.CreateFileResourceReq": {
             "type": "object",
             "required": [
                 "department_id",
@@ -16915,7 +17324,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.FileInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.FileInfo": {
             "type": "object",
             "required": [
                 "name",
@@ -16932,7 +17341,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.FileResource": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.FileResource": {
             "type": "object",
             "required": [
                 "attachment_count",
@@ -16957,6 +17366,10 @@ const docTemplate = `{
                 "audit_state": {
                     "description": "审核状态，0 未审核  1 审核中  2 通过  3 驳回",
                     "type": "integer"
+                },
+                "catalog_provider_path": {
+                    "description": "目录提供方（部门路径）",
+                    "type": "string"
                 },
                 "code": {
                     "description": "文件资源编码",
@@ -16996,13 +17409,16 @@ const docTemplate = `{
                     "description": "发布状态 未发布 unpublished、已发布 published",
                     "type": "string"
                 },
+                "published_at": {
+                    "type": "integer"
+                },
                 "updated_at": {
                     "description": "文件资源更新时间",
                     "type": "integer"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetAttachmentListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetAttachmentListRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -17013,7 +17429,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.AttachmentInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.AttachmentInfo"
                     }
                 },
                 "total_count": {
@@ -17022,7 +17438,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetFileResourceDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetFileResourceDetailRes": {
             "type": "object",
             "required": [
                 "code",
@@ -17034,6 +17450,10 @@ const docTemplate = `{
                 "name"
             ],
             "properties": {
+                "catalog_provider_path": {
+                    "description": "目录提供方（部门路径）",
+                    "type": "string"
+                },
                 "code": {
                     "description": "文件资源编码",
                     "type": "string"
@@ -17096,7 +17516,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.GetFileResourceListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.GetFileResourceListRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -17107,7 +17527,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.FileResource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.FileResource"
                     }
                 },
                 "total_count": {
@@ -17116,7 +17536,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.IDResp": {
             "type": "object",
             "properties": {
                 "id": {
@@ -17125,7 +17545,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.PreviewPdfRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.PreviewPdfRes": {
             "type": "object",
             "required": [
                 "href_url",
@@ -17150,7 +17570,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.UpdateFileResourceReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.UpdateFileResourceReq": {
             "type": "object",
             "required": [
                 "department_id",
@@ -17172,7 +17592,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.UploadAttachmentRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.UploadAttachmentRes": {
             "type": "object",
             "required": [
                 "file_failed",
@@ -17190,12 +17610,12 @@ const docTemplate = `{
                     "description": "成功添加的附件信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.FileInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.FileInfo"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_file_resource.WorkflowItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_file_resource.WorkflowItem": {
             "type": "object",
             "required": [
                 "applier_id",
@@ -17257,7 +17677,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.Field": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.Field": {
             "type": "object",
             "required": [
                 "field_name_en",
@@ -17296,7 +17716,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange": {
             "type": "object",
             "properties": {
                 "end": {
@@ -17309,7 +17729,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilter": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilter": {
             "type": "object",
             "properties": {
                 "business_object_id": {
@@ -17323,7 +17743,7 @@ const docTemplate = `{
                     "description": "类目的 ID，过滤属于类目的数据资源目录\n - 未指定、空字符串：不过滤\n - Uncategorized：过滤未分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoReq"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoReq"
                     }
                 },
                 "data_range": {
@@ -17341,7 +17761,7 @@ const docTemplate = `{
                     "description": "数据资源的类型，过滤这个类型的数据资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceType"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceType"
                     }
                 },
                 "fields": {
@@ -17362,7 +17782,7 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -17374,14 +17794,14 @@ const docTemplate = `{
                     "description": "排序，不传该参数时：没有keyword时默认以online_at desc \u0026 update desc排序，有keyword时默认以_score desc排序",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order"
                     }
                 },
                 "published_at": {
                     "description": "过滤这个时间范围内发布的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -17411,13 +17831,13 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilterForOper": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchFilterForOper": {
             "type": "object",
             "properties": {
                 "business_object_id": {
@@ -17431,7 +17851,7 @@ const docTemplate = `{
                     "description": "类目的 ID，过滤属于类目的数据资源目录\n - 未指定、空字符串：不过滤\n - Uncategorized：过滤未分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoReq"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoReq"
                     }
                 },
                 "data_range": {
@@ -17449,7 +17869,7 @@ const docTemplate = `{
                     "description": "数据资源的类型，过滤这个类型的数据资源",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceType"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceType"
                     }
                 },
                 "fields": {
@@ -17478,7 +17898,7 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -17486,7 +17906,7 @@ const docTemplate = `{
                     "description": "上线状态数组",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogOnlineStatus"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogOnlineStatus"
                     }
                 },
                 "only_file_resource": {
@@ -17497,14 +17917,14 @@ const docTemplate = `{
                     "description": "排序，不传该参数时：没有keyword时默认以online_at desc \u0026 update desc排序，有keyword时默认以_score desc排序",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order"
                     }
                 },
                 "published_at": {
                     "description": "过滤这个时间范围内发布的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 },
@@ -17512,7 +17932,7 @@ const docTemplate = `{
                     "description": "发布状态数组",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogPublishStatus"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogPublishStatus"
                     }
                 },
                 "shared_type": {
@@ -17541,13 +17961,13 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.TimeRange"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchResp": {
             "type": "object",
             "required": [
                 "code",
@@ -17563,6 +17983,10 @@ const docTemplate = `{
                 "raw_name"
             ],
             "properties": {
+                "accuracy_score": {
+                    "description": "准确性维度评分，缺省为NULL",
+                    "type": "number"
+                },
                 "actions": {
                     "description": "发起搜索的用户可以对这个数据资源执行的动作的列表",
                     "type": "array",
@@ -17581,13 +18005,21 @@ const docTemplate = `{
                     "description": "类目的信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoResp"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoResp"
                     }
                 },
                 "code": {
                     "description": "带有高亮标记的编码，如果被关键词命中",
                     "type": "string",
                     "example": "SJZYMU20241203/000001"
+                },
+                "completeness_score": {
+                    "description": "完整性维度评分，缺省为NULL",
+                    "type": "number"
+                },
+                "consistency_score": {
+                    "description": "一致性维度评分，缺省为NULL",
+                    "type": "number"
                 },
                 "data_range": {
                     "description": "数据范围",
@@ -17621,8 +18053,12 @@ const docTemplate = `{
                     "description": "字段信息，最多三个字段",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_common.Field"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_common.Field"
                     }
+                },
+                "has_quality_report": {
+                    "description": "是否存在质量报告（可用性标识）",
+                    "type": "boolean"
                 },
                 "id": {
                     "description": "ID",
@@ -17647,7 +18083,7 @@ const docTemplate = `{
                     "description": "挂载的数据资源信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.MountDataResources"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.MountDataResources"
                     }
                 },
                 "name": {
@@ -17665,7 +18101,7 @@ const docTemplate = `{
                     "description": "上线状态",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogOnlineStatus"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogOnlineStatus"
                         }
                     ],
                     "example": "notline"
@@ -17678,7 +18114,7 @@ const docTemplate = `{
                     "description": "发布状态",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_common.DataResourceCatalogPublishStatus"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_common.DataResourceCatalogPublishStatus"
                         }
                     ],
                     "example": "unpublished"
@@ -17713,12 +18149,20 @@ const docTemplate = `{
                     "description": "共享条件",
                     "type": "integer"
                 },
+                "standardization_score": {
+                    "description": "规范性维度评分，缺省为NULL",
+                    "type": "number"
+                },
                 "subject_info": {
                     "description": "所属主题",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.BusinessObjectEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.BusinessObjectEntity"
                     }
+                },
+                "uniqueness_score": {
+                    "description": "唯一性维度评分，缺省为NULL",
+                    "type": "number"
                 },
                 "update_cycle": {
                     "description": "更新频率",
@@ -17730,14 +18174,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.GraphNode": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.GraphNode": {
             "type": "object",
             "properties": {
                 "children": {
                     "description": "当前节点的子节点",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.GraphNode"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.GraphNode"
                     }
                 },
                 "color": {
@@ -17766,14 +18210,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SearchResult": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SearchResult": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "数据资源列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.DataCatalogSearchResp"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.DataCatalogSearchResp"
                     }
                 },
                 "next_flag": {
@@ -17793,7 +18237,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SubGraphReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SubGraphReqBodyParam": {
             "type": "object",
             "required": [
                 "end",
@@ -17814,20 +18258,20 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.SubGraphRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.SubGraphRespParam": {
             "type": "object",
             "properties": {
                 "graph": {
                     "description": "图谱",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_catalog.GraphNode"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_catalog.GraphNode"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.APIType": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.APIType": {
             "type": "string",
             "enum": [
                 "service_register",
@@ -17838,7 +18282,7 @@ const docTemplate = `{
                 "APITypeGenerate"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.CateInfoParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.CateInfoParam": {
             "type": "object",
             "properties": {
                 "cate_id": {
@@ -17854,7 +18298,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus": {
             "type": "string",
             "enum": [
                 "notline",
@@ -17875,7 +18319,7 @@ const docTemplate = `{
                 "DROS_DOWN_REJECT"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus": {
             "type": "string",
             "enum": [
                 "unpublished",
@@ -17894,7 +18338,7 @@ const docTemplate = `{
                 "DRPS_CHANGE_REJECT"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceType": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceType": {
             "type": "string",
             "enum": [
                 "data_view",
@@ -17907,7 +18351,7 @@ const docTemplate = `{
                 "DataResourceTypeIndicator"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Field": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Field": {
             "type": "object",
             "required": [
                 "business_name",
@@ -17946,14 +18390,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Filter": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Filter": {
             "type": "object",
             "properties": {
                 "api_type": {
                     "description": "过滤接口服务的类型",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.APIType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.APIType"
                         }
                     ]
                 },
@@ -17961,7 +18405,7 @@ const docTemplate = `{
                     "description": "资源属性分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.CateInfoParam"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.CateInfoParam"
                     }
                 },
                 "data_owner": {
@@ -17994,7 +18438,7 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.TimeRange"
                         }
                     ]
                 },
@@ -18002,14 +18446,14 @@ const docTemplate = `{
                     "description": "排序，不传该参数时：没有keyword时默认以data_updated_at desc \u0026 table_rows desc排序，有keyword时默认以_score desc排序",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order"
                     }
                 },
                 "published_at": {
                     "description": "过滤这个时间范围内发布的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.TimeRange"
                         }
                     ]
                 },
@@ -18021,20 +18465,20 @@ const docTemplate = `{
                     "description": "数据资源的类型，过滤这个类型的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceType"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.FilterForOper": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.FilterForOper": {
             "type": "object",
             "properties": {
                 "api_type": {
                     "description": "过滤接口服务的类型",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.APIType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.APIType"
                         }
                     ]
                 },
@@ -18042,7 +18486,7 @@ const docTemplate = `{
                     "description": "资源属性分类",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.CateInfoParam"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.CateInfoParam"
                     }
                 },
                 "department_id": {
@@ -18075,7 +18519,7 @@ const docTemplate = `{
                     "description": "过滤这个时间范围内上线的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.TimeRange"
                         }
                     ]
                 },
@@ -18083,21 +18527,21 @@ const docTemplate = `{
                     "description": "上线状态数组",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus"
                     }
                 },
                 "orders": {
                     "description": "排序，不传该参数时：没有keyword时默认以data_updated_at desc \u0026 table_rows desc排序，有keyword时默认以_score desc排序",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.Order"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.Order"
                     }
                 },
                 "published_at": {
                     "description": "过滤这个时间范围内发布的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.TimeRange"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.TimeRange"
                         }
                     ]
                 },
@@ -18105,7 +18549,7 @@ const docTemplate = `{
                     "description": "发布状态数组",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus"
                     }
                 },
                 "subject_domain_id": {
@@ -18116,13 +18560,13 @@ const docTemplate = `{
                     "description": "数据资源的类型，过滤这个类型的数据资源",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceType"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Owner": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Owner": {
             "type": "object",
             "properties": {
                 "owner_id": {
@@ -18136,14 +18580,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.SearchResult": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.SearchResult": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "数据资源列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.SearchResultEntry"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.SearchResultEntry"
                     }
                 },
                 "next_flag": {
@@ -18159,7 +18603,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.SearchResultEntry": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.SearchResultEntry": {
             "type": "object",
             "required": [
                 "code",
@@ -18183,7 +18627,7 @@ const docTemplate = `{
                     "description": "当前用户对此数据资源可以执行的动作",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_auth_service.PolicyAction"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_auth_service.PolicyAction"
                     },
                     "example": [
                         "view"
@@ -18197,7 +18641,7 @@ const docTemplate = `{
                     "description": "类目信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_adapter_driven_basic_search.CateInfoResp"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_adapter_driven_basic_search.CateInfoResp"
                     }
                 },
                 "code": {
@@ -18239,7 +18683,7 @@ const docTemplate = `{
                     "description": "字段信息，最多三个字段",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Field"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Field"
                     }
                 },
                 "has_permission": {
@@ -18292,7 +18736,7 @@ const docTemplate = `{
                     "description": "上线状态",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceOnlineStatus"
                         }
                     ],
                     "example": "notline"
@@ -18305,7 +18749,7 @@ const docTemplate = `{
                     "description": "数据Owner",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.Owner"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.Owner"
                     }
                 },
                 "published_at": {
@@ -18316,7 +18760,7 @@ const docTemplate = `{
                     "description": "发布状态",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourcePublishStatus"
                         }
                     ],
                     "example": "unpublished"
@@ -18357,14 +18801,14 @@ const docTemplate = `{
                     "description": "数据资源的类型",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.DataResourceType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.DataResourceType"
                         }
                     ],
                     "example": "1"
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_frontend_data_resource.TimeRange": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_frontend_data_resource.TimeRange": {
             "type": "object",
             "properties": {
                 "end": {
@@ -18377,7 +18821,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AdminSearchOperationFilterParams": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AdminSearchOperationFilterParams": {
             "type": "object",
             "properties": {
                 "business_process_ids": {
@@ -18391,7 +18835,7 @@ const docTemplate = `{
                     "description": "资源属性分类",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CateInfoParam"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CateInfoParam"
                         }
                     ]
                 },
@@ -18399,7 +18843,7 @@ const docTemplate = `{
                     "description": "上线时间范围",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.TimeRangeVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.TimeRangeVO"
                         }
                     ]
                 },
@@ -18433,7 +18877,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogReq": {
             "type": "object",
             "required": [
                 "action",
@@ -18454,7 +18898,7 @@ const docTemplate = `{
                     "description": "所属信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BelongInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BelongInfoVO"
                         }
                     ]
                 },
@@ -18469,7 +18913,7 @@ const docTemplate = `{
                     "description": "信息项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoItemVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoItemVO"
                     }
                 },
                 "data_range": {
@@ -18507,7 +18951,7 @@ const docTemplate = `{
                     "description": "关联信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelationInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelationInfoVO"
                         }
                     ]
                 },
@@ -18515,7 +18959,7 @@ const docTemplate = `{
                     "description": "共享开放信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
                         }
                     ]
                 },
@@ -18535,31 +18979,31 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AlterInfoResourceCatalogRes": {
             "type": "object",
             "properties": {
                 "invalid_items": {
                     "description": "无效关联项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelatedItemVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelatedItemVO"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AuditQueryFilterParamsVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AuditQueryFilterParamsVO": {
             "type": "object",
             "properties": {
                 "audit_type": {
                     "description": "审核类型",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.EnumAuditTypeParam"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.EnumAuditTypeParam"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BelongInfoVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BelongInfoVO": {
             "type": "object",
             "properties": {
                 "business_process": {
@@ -18567,14 +19011,14 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "department": {
                     "description": "所属部门",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -18582,13 +19026,13 @@ const docTemplate = `{
                     "description": "所属处室",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.OfficeVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.OfficeVO"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity": {
             "type": "object",
             "required": [
                 "id"
@@ -18609,7 +19053,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessFormVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessFormVO": {
             "type": "object",
             "properties": {
                 "business_domain_id": {
@@ -18671,7 +19115,7 @@ const docTemplate = `{
                     "description": "关联信息系统列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "update_at": {
@@ -18684,7 +19128,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessSceneVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessSceneVO": {
             "type": "object",
             "properties": {
                 "type": {
@@ -18697,7 +19141,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CateInfoParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CateInfoParam": {
             "type": "object",
             "required": [
                 "cate_id",
@@ -18714,7 +19158,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogReq": {
             "type": "object",
             "required": [
                 "action",
@@ -18735,7 +19179,7 @@ const docTemplate = `{
                     "description": "所属信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BelongInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BelongInfoVO"
                         }
                     ]
                 },
@@ -18750,7 +19194,7 @@ const docTemplate = `{
                     "description": "信息项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoItemVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoItemVO"
                     }
                 },
                 "data_range": {
@@ -18784,7 +19228,7 @@ const docTemplate = `{
                     "description": "关联信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelationInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelationInfoVO"
                         }
                     ]
                 },
@@ -18792,7 +19236,7 @@ const docTemplate = `{
                     "description": "共享开放信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
                         }
                     ]
                 },
@@ -18800,7 +19244,7 @@ const docTemplate = `{
                     "description": "来源信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SourceInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SourceInfoVO"
                         }
                     ]
                 },
@@ -18820,7 +19264,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.CreateInfoResourceCatalogRes": {
             "type": "object",
             "properties": {
                 "code": {
@@ -18842,12 +19286,12 @@ const docTemplate = `{
                     "description": "无效关联项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelatedItemVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelatedItemVO"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.EnumAuditTypeParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.EnumAuditTypeParam": {
             "type": "string",
             "enum": [
                 "publish",
@@ -18862,7 +19306,7 @@ const docTemplate = `{
                 "AuditTypeParamAlter"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.EnumObjectType": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.EnumObjectType": {
             "type": "string",
             "enum": [
                 "department",
@@ -18887,7 +19331,7 @@ const docTemplate = `{
                 "ObjectTypeBusinessForm"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoItemObject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoItemObject": {
             "type": "object",
             "required": [
                 "field_name_cn",
@@ -18900,7 +19344,7 @@ const docTemplate = `{
                     "description": "关联代码集",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -18908,7 +19352,7 @@ const docTemplate = `{
                     "description": "关联数据元",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -18954,7 +19398,7 @@ const docTemplate = `{
                     "description": "元数据",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.MetadataVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.MetadataVO"
                         }
                     ]
                 },
@@ -18966,7 +19410,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoItemVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoItemVO": {
             "type": "object",
             "required": [
                 "field_name_cn",
@@ -18979,7 +19423,7 @@ const docTemplate = `{
                     "description": "关联代码集",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -18987,7 +19431,7 @@ const docTemplate = `{
                     "description": "关联数据元",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -19029,7 +19473,7 @@ const docTemplate = `{
                     "description": "元数据",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.MetadataVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.MetadataVO"
                         }
                     ]
                 },
@@ -19041,7 +19485,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoResourceCatalogAuditListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoResourceCatalogAuditListItem": {
             "type": "object",
             "properties": {
                 "apply_user_name": {
@@ -19091,12 +19535,12 @@ const docTemplate = `{
                     "description": "关联数据资源目录列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.KeywordField": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.KeywordField": {
             "type": "string",
             "enum": [
                 "name",
@@ -19125,7 +19569,7 @@ const docTemplate = `{
                 "KeywordFieldLabelsCatalogName"
             ]
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.MetadataVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.MetadataVO": {
             "type": "object",
             "required": [
                 "data_type"
@@ -19157,7 +19601,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.OfficeVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.OfficeVO": {
             "type": "object",
             "required": [
                 "id"
@@ -19177,21 +19621,21 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListReq": {
             "type": "object",
             "properties": {
                 "fields": {
                     "description": "关键字匹配匹配指定的字段。未指定时匹配信息资源目录名称、编码、描述、信息项",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.KeywordField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.KeywordField"
                     }
                 },
                 "filter": {
                     "description": "筛选条件",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AuditQueryFilterParamsVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AuditQueryFilterParamsVO"
                         }
                     ]
                 },
@@ -19214,14 +19658,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryInfoResourceCatalogAuditListRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "查询结果列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoResourceCatalogAuditListItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoResourceCatalogAuditListItem"
                     }
                 },
                 "total_count": {
@@ -19230,7 +19674,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsReq": {
             "type": "object",
             "properties": {
                 "department_id": {
@@ -19241,7 +19685,7 @@ const docTemplate = `{
                     "description": "关键字匹配匹配指定的字段。未指定时匹配信息资源目录名称、编码、描述、信息项",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.KeywordField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.KeywordField"
                     }
                 },
                 "info_system_id": {
@@ -19273,20 +19717,20 @@ const docTemplate = `{
                     "description": "排序依据",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SortParams"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SortParams"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.QueryUncatalogedBusinessFormsRes": {
             "type": "object",
             "properties": {
                 "entries": {
                     "description": "查询结果列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessFormVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessFormVO"
                     }
                 },
                 "total_count": {
@@ -19295,7 +19739,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelatedItemVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelatedItemVO": {
             "type": "object",
             "properties": {
                 "data_type": {
@@ -19314,41 +19758,41 @@ const docTemplate = `{
                     "description": "关联项类型",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.EnumObjectType"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.EnumObjectType"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelationInfoVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelationInfoVO": {
             "type": "object",
             "properties": {
                 "data_resource_catalogs": {
                     "description": "关联数据资源目录列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "info_items": {
                     "description": "关联信息项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "info_resource_catalogs": {
                     "description": "关联信息类列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "info_systems": {
                     "description": "关联信息系统列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                     }
                 },
                 "related_business_scenes": {
@@ -19356,7 +19800,7 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessSceneVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessSceneVO"
                     }
                 },
                 "source_business_scenes": {
@@ -19364,26 +19808,26 @@ const docTemplate = `{
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessSceneVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessSceneVO"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SearchInfoResourceCatalogsByAdminReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SearchInfoResourceCatalogsByAdminReq": {
             "type": "object",
             "properties": {
                 "fields": {
                     "description": "关键字匹配匹配指定的字段。未指定时匹配信息资源目录名称、编码、描述、信息项",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.KeywordField"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.KeywordField"
                     }
                 },
                 "filter": {
                     "description": "筛选条件",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.AdminSearchOperationFilterParams"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.AdminSearchOperationFilterParams"
                         }
                     ]
                 },
@@ -19402,7 +19846,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO": {
             "type": "object",
             "required": [
                 "open_type",
@@ -19446,7 +19890,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SortParams": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SortParams": {
             "type": "object",
             "properties": {
                 "direction": {
@@ -19466,7 +19910,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SourceInfoVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SourceInfoVO": {
             "type": "object",
             "required": [
                 "business_form"
@@ -19476,7 +19920,7 @@ const docTemplate = `{
                     "description": "来源业务表",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 },
@@ -19484,13 +19928,13 @@ const docTemplate = `{
                     "description": "来源部门",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BusinessEntity"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BusinessEntity"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.TimeRangeVO": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.TimeRangeVO": {
             "type": "object",
             "properties": {
                 "end": {
@@ -19503,7 +19947,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogReq": {
             "type": "object",
             "required": [
                 "action",
@@ -19523,7 +19967,7 @@ const docTemplate = `{
                     "description": "所属信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.BelongInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.BelongInfoVO"
                         }
                     ]
                 },
@@ -19538,7 +19982,7 @@ const docTemplate = `{
                     "description": "信息项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.InfoItemObject"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.InfoItemObject"
                     }
                 },
                 "data_range": {
@@ -19576,7 +20020,7 @@ const docTemplate = `{
                     "description": "关联信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelationInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelationInfoVO"
                         }
                     ]
                 },
@@ -19584,7 +20028,7 @@ const docTemplate = `{
                     "description": "共享开放信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.SharedOpenInfoVO"
                         }
                     ]
                 },
@@ -19604,19 +20048,19 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.UpdateInfoResourceCatalogRes": {
             "type": "object",
             "properties": {
                 "invalid_items": {
                     "description": "无效关联项列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_info_resource_catalog.RelatedItemVO"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_info_resource_catalog.RelatedItemVO"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.CheckV2Resp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.CheckV2Resp": {
             "type": "object",
             "required": [
                 "res_type"
@@ -19636,12 +20080,12 @@ const docTemplate = `{
                     "description": "该类型资源是否收藏查询结果列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ResFavorCheckRet"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ResFavorCheckRet"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.CreateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.CreateReq": {
             "type": "object",
             "required": [
                 "res_id",
@@ -19670,7 +20114,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ListItem": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -19734,12 +20178,12 @@ const docTemplate = `{
                     "description": "所属主题数组，电子证照目录类型不返回该字段",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.Subject"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.Subject"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ListResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ListResp": {
             "type": "object",
             "required": [
                 "entries",
@@ -19750,7 +20194,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ListItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ListItem"
                     }
                 },
                 "total_count": {
@@ -19761,7 +20205,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.ResFavorCheckRet": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.ResFavorCheckRet": {
             "type": "object",
             "required": [
                 "res_id"
@@ -19785,7 +20229,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.Resources": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.Resources": {
             "type": "object",
             "required": [
                 "res_ids",
@@ -19816,7 +20260,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_my_favorite.Subject": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_my_favorite.Subject": {
             "type": "object",
             "properties": {
                 "id": {
@@ -19833,7 +20277,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.AuditListRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.AuditListRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -19844,7 +20288,7 @@ const docTemplate = `{
                     "description": "workflow申请记录",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.WorkflowItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.WorkflowItem"
                     }
                 },
                 "total_count": {
@@ -19853,7 +20297,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CatalogInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CatalogInfo": {
             "type": "object",
             "required": [
                 "id"
@@ -19869,7 +20313,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CatalogThemeCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CatalogThemeCount": {
             "type": "object",
             "required": [
                 "count",
@@ -19896,7 +20340,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CreateOpenCatalogReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CreateOpenCatalogReq": {
             "type": "object",
             "required": [
                 "catalog_ids",
@@ -19931,7 +20375,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CreateOpenCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CreateOpenCatalogRes": {
             "type": "object",
             "required": [
                 "failed_catalog",
@@ -19942,19 +20386,19 @@ const docTemplate = `{
                     "description": "添加失败的数据目录信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CatalogInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CatalogInfo"
                     }
                 },
                 "success_catalog": {
                     "description": "成功添加的开放目录信息",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CatalogInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CatalogInfo"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DataCatalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DataCatalog": {
             "type": "object",
             "required": [
                 "code",
@@ -19976,7 +20420,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DataCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DataCatalogRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -19987,7 +20431,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DataCatalog"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DataCatalog"
                     }
                 },
                 "total_count": {
@@ -19996,7 +20440,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DepartmentCatalogCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DepartmentCatalogCount": {
             "type": "object",
             "required": [
                 "count",
@@ -20018,7 +20462,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.GetOverviewRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.GetOverviewRes": {
             "type": "object",
             "required": [
                 "auditing_catalog_count",
@@ -20037,7 +20481,7 @@ const docTemplate = `{
                     "description": "开放目录主题数量",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.CatalogThemeCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.CatalogThemeCount"
                     }
                 },
                 "catalog_total_count": {
@@ -20048,26 +20492,26 @@ const docTemplate = `{
                     "description": "部门提供目录数量TOP10",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.DepartmentCatalogCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.DepartmentCatalogCount"
                     }
                 },
                 "new_catalog_count": {
                     "description": "近一年开放目录新增数量(按月统计)",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.NewOpenCatalogCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.NewOpenCatalogCount"
                     }
                 },
                 "type_catalog_count": {
                     "description": "资源类型开放目录数量",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.TypeCatalogCount"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.TypeCatalogCount"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.IDResp": {
             "type": "object",
             "properties": {
                 "id": {
@@ -20076,7 +20520,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.NewOpenCatalogCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.NewOpenCatalogCount": {
             "type": "object",
             "required": [
                 "count",
@@ -20093,7 +20537,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalog": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalog": {
             "type": "object",
             "required": [
                 "audit_state",
@@ -20141,7 +20585,7 @@ const docTemplate = `{
                     "description": "ResourceType         int8   ` + "`" + `json:\"resource_type\" binding:\"required\"` + "`" + `           // 资源类型 1逻辑视图 2 接口",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_data_resource_catalog.Resource"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_data_resource_catalog.Resource"
                     }
                 },
                 "source_department": {
@@ -20158,7 +20602,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalogDetailRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalogDetailRes": {
             "type": "object",
             "required": [
                 "catalog_id",
@@ -20220,7 +20664,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalogRes": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalogRes": {
             "type": "object",
             "required": [
                 "entries",
@@ -20231,7 +20675,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.OpenCatalog"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.OpenCatalog"
                     }
                 },
                 "total_count": {
@@ -20240,7 +20684,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.TypeCatalogCount": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.TypeCatalogCount": {
             "type": "object",
             "required": [
                 "count",
@@ -20262,7 +20706,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.UpdateOpenCatalogReqBody": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.UpdateOpenCatalogReqBody": {
             "type": "object",
             "required": [
                 "open_type"
@@ -20289,7 +20733,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_open_catalog.WorkflowItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_open_catalog.WorkflowItem": {
             "type": "object",
             "required": [
                 "applier_id",
@@ -20337,7 +20781,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.CountResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.CountResp": {
             "type": "object",
             "properties": {
                 "pending_num": {
@@ -20354,7 +20798,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.CreateReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.CreateReq": {
             "type": "object",
             "required": [
                 "feedback_desc",
@@ -20383,7 +20827,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.DetailBasicInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.DetailBasicInfo": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -20449,14 +20893,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.DetailResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.DetailResp": {
             "type": "object",
             "properties": {
                 "basic_info": {
                     "description": "目录反馈基本信息",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.DetailBasicInfo"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.DetailBasicInfo"
                         }
                     ]
                 },
@@ -20464,12 +20908,12 @@ const docTemplate = `{
                     "description": "反馈处理记录，回复信息从处理记录中取",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.LogEntry"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.LogEntry"
                     }
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.IDResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.IDResp": {
             "type": "object",
             "required": [
                 "id"
@@ -20482,7 +20926,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ListItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ListItem": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -20552,7 +20996,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ListResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ListResp": {
             "type": "object",
             "required": [
                 "entries",
@@ -20563,7 +21007,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ListItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ListItem"
                     }
                 },
                 "total_count": {
@@ -20574,7 +21018,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.LogEntry": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.LogEntry": {
             "type": "object",
             "properties": {
                 "created_at": {
@@ -20599,7 +21043,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_res_feedback.ReplyReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_res_feedback.ReplyReq": {
             "type": "object",
             "required": [
                 "reply_content"
@@ -20613,7 +21057,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_statistics.OverviewResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_statistics.OverviewResp": {
             "type": "object",
             "properties": {
                 "id": {
@@ -20637,7 +21081,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_statistics.ServiceResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_statistics.ServiceResp": {
             "type": "object",
             "properties": {
                 "business_time": {
@@ -20660,7 +21104,7 @@ const docTemplate = `{
                     "type": "integer"
                 },
                 "type": {
-                    "description": "tinyint 对应为 int8",
+                    "description": "TINYINT 对应为 int8",
                     "type": "integer"
                 },
                 "week": {
@@ -20669,7 +21113,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config": {
             "type": "object",
             "properties": {
                 "logical_operator": {
@@ -20686,7 +21130,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportDetail": {
             "type": "object",
             "properties": {
                 "acceptance_time": {
@@ -20763,7 +21207,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportDetailsReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportDetailsReq": {
             "type": "object",
             "required": [
                 "file_name"
@@ -20773,7 +21217,7 @@ const docTemplate = `{
                     "description": "导出数据",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportDetail"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportDetail"
                     }
                 },
                 "end_date": {
@@ -20790,7 +21234,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportOverallEvaluation": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportOverallEvaluation": {
             "type": "object",
             "properties": {
                 "acceptance_time": {
@@ -20835,7 +21279,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportOverallEvaluationsReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportOverallEvaluationsReq": {
             "type": "object",
             "required": [
                 "file_name"
@@ -20845,7 +21289,7 @@ const docTemplate = `{
                     "description": "导出数据",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.ExportOverallEvaluation"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.ExportOverallEvaluation"
                     }
                 },
                 "end_date": {
@@ -20862,13 +21306,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.GetDetailsResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.GetDetailsResp": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.SystemOperationDetail"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.SystemOperationDetail"
                     }
                 },
                 "total_count": {
@@ -20877,14 +21321,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.GetRuleResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.GetRuleResp": {
             "type": "object",
             "properties": {
                 "green_card": {
                     "description": "绿牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -20892,7 +21336,7 @@ const docTemplate = `{
                     "description": "正常更新",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -20900,7 +21344,7 @@ const docTemplate = `{
                     "description": "红牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -20908,13 +21352,13 @@ const docTemplate = `{
                     "description": "黄牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.OverallEvaluation": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.OverallEvaluation": {
             "type": "object",
             "properties": {
                 "acceptance_time": {
@@ -20963,13 +21407,13 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.OverallEvaluationsResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.OverallEvaluationsResp": {
             "type": "object",
             "properties": {
                 "entries": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.OverallEvaluation"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.OverallEvaluation"
                     }
                 },
                 "total_count": {
@@ -20978,7 +21422,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.SystemOperationDetail": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.SystemOperationDetail": {
             "type": "object",
             "properties": {
                 "acceptance_time": {
@@ -21059,14 +21503,14 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateRuleReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateRuleReq": {
             "type": "object",
             "properties": {
                 "green_card": {
                     "description": "绿牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -21074,7 +21518,7 @@ const docTemplate = `{
                     "description": "正常更新",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -21082,7 +21526,7 @@ const docTemplate = `{
                     "description": "红牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 },
@@ -21090,13 +21534,13 @@ const docTemplate = `{
                     "description": "黄牌",
                     "allOf": [
                         {
-                            "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.Config"
+                            "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.Config"
                         }
                     ]
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateWhiteListReq": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateWhiteListReq": {
             "type": "object",
             "properties": {
                 "data_update": {
@@ -21109,7 +21553,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_system_operation.UpdateWhiteListResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_system_operation.UpdateWhiteListResp": {
             "type": "object",
             "properties": {
                 "form_view_id": {
@@ -21118,7 +21562,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.AddReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.AddReqBodyParam": {
             "type": "object",
             "required": [
                 "mgm_dep_id",
@@ -21160,7 +21604,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.AddRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.AddRespParam": {
             "type": "object",
             "required": [
                 "id"
@@ -21173,7 +21617,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.DeleteRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.DeleteRespParam": {
             "type": "object",
             "required": [
                 "id"
@@ -21186,7 +21630,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.EditReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.EditReqBodyParam": {
             "type": "object",
             "required": [
                 "name"
@@ -21207,7 +21651,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.EditRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.EditRespParam": {
             "type": "object",
             "required": [
                 "id"
@@ -21220,7 +21664,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.GetRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.GetRespParam": {
             "type": "object",
             "required": [
                 "category_id",
@@ -21300,7 +21744,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ListRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ListRespParam": {
             "type": "object",
             "required": [
                 "entries",
@@ -21311,7 +21755,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SubNode"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SubNode"
                     }
                 },
                 "total_count": {
@@ -21322,7 +21766,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ListTreeRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ListTreeRespParam": {
             "type": "object",
             "required": [
                 "entries",
@@ -21333,7 +21777,7 @@ const docTemplate = `{
                     "description": "对象列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SummaryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SummaryInfo"
                     }
                 },
                 "total_count": {
@@ -21344,7 +21788,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.NameExistReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.NameExistReqBodyParam": {
             "type": "object",
             "required": [
                 "name"
@@ -21369,7 +21813,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.NameExistRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.NameExistRespParam": {
             "type": "object",
             "required": [
                 "name",
@@ -21390,7 +21834,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ReorderReqBodyParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ReorderReqBodyParam": {
             "type": "object",
             "required": [
                 "dest_parent_id"
@@ -21408,7 +21852,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.ReorderRespParam": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.ReorderRespParam": {
             "type": "object",
             "required": [
                 "id"
@@ -21421,7 +21865,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SubNode": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SubNode": {
             "type": "object",
             "required": [
                 "expansion",
@@ -21433,7 +21877,7 @@ const docTemplate = `{
                     "description": "当前TreeNode的子Node列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SubNode"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SubNode"
                     }
                 },
                 "expansion": {
@@ -21455,7 +21899,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SummaryInfo": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SummaryInfo": {
             "type": "object",
             "required": [
                 "category_id",
@@ -21481,7 +21925,7 @@ const docTemplate = `{
                     "description": "当前TreeNode的子Node列表",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_domain_tree_node.SummaryInfo"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_domain_tree_node.SummaryInfo"
                     }
                 },
                 "created_at": {
@@ -21542,7 +21986,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyDetailResp": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyDetailResp": {
             "type": "object",
             "properties": {
                 "apply_created_at": {
@@ -21581,7 +22025,7 @@ const docTemplate = `{
                     "description": "关联信息-仅返回关联信息系统和标签",
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_common_models_response.InfoItem"
+                        "$ref": "#/definitions/github_com_kweaver-ai_dsg_services_apps_data-catalog_common_models_response.InfoItem"
                     }
                 },
                 "asset_name": {
@@ -21615,7 +22059,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyListRespItem": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_gorm_my.AssetApplyListRespItem": {
             "type": "object",
             "properties": {
                 "apply_days": {
@@ -21676,7 +22120,7 @@ const docTemplate = `{
                 }
             }
         },
-        "devops_KweaverAI_cn_KweaverAIDevOps_AnyFabric__git_data-catalog_infrastructure_repository_db_model.ApplyScope": {
+        "github_com_kweaver-ai_dsg_services_apps_data-catalog_infrastructure_repository_db_model.ApplyScope": {
             "type": "object",
             "properties": {
                 "apply_scope_id": {

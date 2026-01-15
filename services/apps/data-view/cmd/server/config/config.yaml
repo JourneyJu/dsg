@@ -1,0 +1,125 @@
+server:
+  name: "data_view"
+  http:
+    addr: 0.0.0.0:8123
+    timeout: 1s
+  grpc:
+    addr: 0.0.0.0:8223
+    timeout: 1s
+
+doc:
+  host: "${DOC_HOST}"
+  version: "1.0"
+
+depServices:
+  userMgmPrivate: "${USER_MANAGE_HOST}"
+  hydraAdmin: "${HYDRA_HOST}"
+  hydraPublic: "${HYDRA_PUBLIC_HOST}"
+  businessGroomingHost: "${BUSINESS_GROOMING_HOST}"
+  configurationCenterHost: "${CONFIGURATION_CENTER_HOST}"
+  virtualizationEngineHost: "${VIRTUAL_ENGINE_HOST}"
+  afSailorServiceHost: "${AF_SAILOR_SERVICE_HOST}"
+  metadataHost: "${METADATA_HOST}"
+  authServiceHost: "${AUTH_SERVICE_HOST}"
+  dataSubjectHost: "${DATA_SUBJECT_HOST}"
+  standardizationBackendHost: "${STANDARDIZATION_BACKEND_HOST}"
+  dataExploreHost: "${DATA_EXPLORE_HOST}"
+  sceneAnalysisHost: "${SCENE_ANALYSIS_HOST}"
+  mdlDataModelHost: "${MDL_DATA_MODEL_HOST}"
+  mdlUniqueryHost: "${MDL_UNIQUERY_HOST}"
+  mqType: "${MQ_TYPE}"
+  kafkaMQ:
+    host: "${KAFKA_MQ_HOST}"
+    sasl:
+      enabled: true
+      username: "${KAFKA_MQ_USENAME}"
+      password: "${KAFKA_MQ_PASSWORD}"
+    producer:
+      sendBufSize: 1024
+      recvBufSize: 1024
+  nsq:
+    type: nsq
+    host: "${NSQ_HOST}"
+    port: "${NSQ_PORT}"
+    httpHost: "${NSQ_HTTP_HOST}"
+    httpPort: "${NSQ_HTTP_PORT}"
+    lookupdHost: "${NSQ_LOOKUPD_HOST}"
+    lookupdPort: "${NSQ_LOOKUPD_PORT}"
+
+telemetry:
+  traceUrl: "${TRACE_URL}"
+  logLevel: "${LOG_LEVEL}"
+  logUrl: "${LOG_URL}"
+  serverName: "${SERVER_NAME}"
+  serverVersion: "${SERVER_VERSION}"
+  traceEnabled: "${TRACE_ENABLED}"
+  auditUrl: "${AUDIT_URL}"
+  auditEnabled: "${AUDIT_ENABLED}"
+
+database:
+  dbtype: "${DB_TYPE}"
+  host: "${DB_HOST}"
+  port: "${DB_PORT}"
+  username: "${DB_USERNAME}"
+  password: "${DB_PASSWORD}"
+  database: "${DB_NAME}"
+  max-idle-connections: 5
+  max-open-connections: 50
+  max-connection-idle-time: 300
+  max-connection-life-time: 900
+  loglevel: 2
+  isdebug: true
+  tableprefix: t_
+
+redisConfig:
+  host: "${REDIS_HOST}"
+  password: "${REDIS_PASSWORD}"
+  database: ${REDIS_DB}
+  minIdleConns: ${REDIS_MIN_IDLE_CONNS}
+
+exploration:
+  completionDefaultOvertime: "${COMPLETION_DEFAULT_OVER_TIME}"
+
+config:
+  SyntheticDataCache:
+    ExpirationTime: ${SYNTHETIC_DATA_CACHE}
+
+
+logs:
+  - name: data_view
+    default: true
+    enable_caller: true
+    stacktrace_level: error
+    development: false
+    cores:
+      - destination: /data/logs/info.log        #日志输出地址
+        rotate_size: 100MB                      #文件分割尺寸
+        core_type: file                         #core类型，file, stdout两种
+        enable_color: false                     #是否开启输出颜色
+        output_format: json                     #日志输出的格式, json, console
+        log_level: debug                        #该日志流的等级
+      - destination: /data/logs/error.log
+        rotate_size: 100MB
+        core_type: file
+        output_format: json
+        log_level: error
+      - destination: console
+        core_type: stdout
+        output_format: console
+        enable_color: true
+        log_level: info
+  - name: data_view_request
+    default: false
+    enable_caller: true
+    development: false
+    cores:
+      - destination: /data/logs/http_request.log
+        rotate_size: 100MB
+        core_type: file
+        output_format: json
+        log_level: info
+      - destination: console
+        core_type: stdout
+        output_format: console
+        enable_color: true
+        log_level: info

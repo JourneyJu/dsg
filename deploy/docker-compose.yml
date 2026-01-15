@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # ============================================================================
   # 基础搜索服务
@@ -166,6 +164,31 @@ services:
       retries: 5
 
   # ============================================================================
+  # MariaDB - 数据库服务
+  # ============================================================================
+  mariadb:
+    image: mariadb:10.11
+    container_name: mariadb
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-dsg}
+      MYSQL_USER: ${MYSQL_USER:-dsg}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-dsg123}
+    volumes:
+      - mariadb-data:/var/lib/mysql
+    networks:
+      - dsg-network
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD:-root123}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ============================================================================
   # Redis - 缓存服务（如果配置中有使用）
   # ============================================================================
   redis:
@@ -186,13 +209,364 @@ services:
       retries: 5
 
   # ============================================================================
+  # 配置中心服务
+  # ============================================================================
+  configuration-center:
+    build:
+      context: ..
+      dockerfile: services/apps/configuration-center/docker/Dockerfile
+    container_name: configuration-center
+    ports:
+      - "8133:8133"
+    environment:
+      - CONFIG_PATH=/opt/configuration-center/config/config.yaml
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_MQ_HOST=kafka:9092
+      - KAFKA_MQ_USENAME=admin
+      - KAFKA_MQ_PASSWORD=admin123
+      - OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID:-default-client-id}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET:-default-client-secret}
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/configuration-center/cmd/server/config/config.yaml:/opt/configuration-center/config/config.yaml:ro
+      - configuration-center-logs:/opt/configuration-center/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 数据目录服务
+  # ============================================================================
+  data-catalog:
+    build:
+      context: ..
+      dockerfile: services/apps/data-catalog/docker/Dockerfile
+    container_name: data-catalog
+    ports:
+      - "8153:8153"
+    environment:
+      - CONFIG_PATH=/opt/data-catalog/config/config.yaml
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_MQ_HOST=kafka:9092
+      - KAFKA_MQ_USENAME=admin
+      - KAFKA_MQ_PASSWORD=admin123
+      - HYDRA_HOST=hydra:4445
+      - HYDRA_PUBLIC_HOST=hydra:4444
+      - CONFIGURATION_CENTER_HOST=configuration-center:8133
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/data-catalog/cmd/server/config/config.yaml:/opt/data-catalog/config/config.yaml:ro
+      - data-catalog-logs:/opt/data-catalog/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 数据探索服务
+  # ============================================================================
+  data-exploration-service:
+    build:
+      context: ..
+      dockerfile: services/apps/data-exploration-service/docker/Dockerfile
+    container_name: data-exploration-service
+    ports:
+      - "8281:8281"
+    environment:
+      - CONFIG_PATH=/opt/data-exploration-service/config/config.yaml
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_URI=kafka:9092
+      - KAFKA_USERNAME=admin
+      - KAFKA_PASSWORD=admin123
+      - KAFKA_MECHANISM=PLAIN
+      - CONFIGURATION_CENTER_HOST=configuration-center:8133
+      - HYDRA_HOST_PRIVATE=hydra:4445
+      - HYDRA_HOST_PUBLIC=hydra:4444
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/data-exploration-service/cmd/server/config/config.yaml:/opt/data-exploration-service/config/config.yaml:ro
+      - data-exploration-service-logs:/opt/data-exploration-service/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 认证服务
+  # ============================================================================
+  auth-service:
+    build:
+      context: ..
+      dockerfile: services/apps/auth-service/docker/Dockerfile
+    container_name: auth-service
+    ports:
+      - "8155:8155"
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_URI=kafka:9092
+      - KAFKA_USERNAME=admin
+      - KAFKA_PASSWORD=admin123
+      - KAFKA_MECHANISM=PLAIN
+      - HYDRA_ADMIN=hydra:4445
+      - CONFIGURATION_CENTER=configuration-center:8133
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/auth-service/cmd/server/config/config.yaml:/opt/auth-service/config/config.yaml:ro
+      - auth-service-logs:/opt/auth-service/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 数据主题服务
+  # ============================================================================
+  data-subject:
+    build:
+      context: ..
+      dockerfile: services/apps/data-subject/docker/Dockerfile
+    container_name: data-subject
+    ports:
+      - "8134:8134"
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_MQ_HOST=kafka:9092
+      - KAFKA_MQ_USENAME=admin
+      - KAFKA_MQ_PASSWORD=admin123
+      - CONFIGURATION_CENTER_HOST=configuration-center:8133
+      - HYDRA_ADMIN=hydra:4445
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/data-subject/cmd/server/config/config.yaml:/opt/data-subject/config/config.yaml:ro
+      - data-subject-logs:/opt/data-subject/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 数据视图服务
+  # ============================================================================
+  data-view:
+    build:
+      context: ..
+      dockerfile: services/apps/data-view/docker/Dockerfile
+    container_name: data-view
+    ports:
+      - "8123:8123"
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - REDIS_DB=0
+      - KAFKA_MQ_HOST=kafka:9092
+      - KAFKA_MQ_USENAME=admin
+      - KAFKA_MQ_PASSWORD=admin123
+      - CONFIGURATION_CENTER_HOST=configuration-center:8133
+      - HYDRA_HOST=hydra:4445
+      - HYDRA_PUBLIC_HOST=hydra:4444
+      - USER_MANAGE_HOST=user-management-private:30980
+      - AUTH_SERVICE_HOST=auth-service:8155
+      - DATA_SUBJECT_HOST=data-subject:8134
+      - DATA_EXPLORE_HOST=data-exploration-service:8281
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/data-view/cmd/server/config/config.yaml:/opt/data-view/config/config.yaml:ro
+      - data-view-logs:/opt/data-view/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 会话服务
+  # ============================================================================
+  session:
+    build:
+      context: ..
+      dockerfile: services/apps/session/docker/Dockerfile
+    container_name: session
+    ports:
+      - "8000:8000"
+    environment:
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - REDIS_CONNECT_TYPE=direct
+      - REDIS_DB=0
+      - OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID:-default-client-id}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET:-default-client-secret}
+      - HYDRA_PUBLIC_HOST=hydra:4444
+      - HYDRA_ADMIN_HOST=hydra:4445
+      - CONFIGURATION_CENTER_HOST=configuration-center:8133
+      - USER_MANAGE_HOST=user-management-private:30980
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/session/cmd/server/config/config.yaml:/opt/session/config/config.yaml:ro
+      - session-logs:/opt/session/logs
+    networks:
+      - dsg-network
+    depends_on:
+      redis:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
+  # 任务中心服务
+  # ============================================================================
+  task-center:
+    build:
+      context: ..
+      dockerfile: services/apps/task_center/docker/Dockerfile
+    container_name: task-center
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=mariadb
+      - DB_PORT=3306
+      - DB_USERNAME=${MYSQL_USER:-dsg}
+      - DB_PASSWORD=${MYSQL_PASSWORD:-dsg123}
+      - DB_NAME=${MYSQL_DATABASE:-dsg}
+      - DB_TYPE=mysql
+      - REDIS_HOST=redis:6379
+      - REDIS_PASSWORD=
+      - KAFKA_URI=kafka:9092
+      - KAFKA_USERNAME=admin
+      - KAFKA_PASSWORD=admin123
+      - KAFKA_MECHANISM=PLAIN
+      - OAUTH_CLIENT_ID=${OAUTH_CLIENT_ID:-default-client-id}
+      - OAUTH_CLIENT_SECRET=${OAUTH_CLIENT_SECRET:-default-client-secret}
+      - HYDRA_HOST=hydra:4445
+      - CONFIG_CENTER_HOST=configuration-center:8133
+      - GOPRIVATE=github.com/kweaver-ai/*
+    volumes:
+      - ../services/apps/task_center/cmd/server/config/config.yaml:/opt/task-center/config/config.yaml:ro
+      - task-center-logs:/opt/task-center/logs
+    networks:
+      - dsg-network
+    depends_on:
+      mariadb:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      kafka:
+        condition: service_started
+      hydra:
+        condition: service_started
+      configuration-center:
+        condition: service_started
+    restart: unless-stopped
+
+  # ============================================================================
   # 可选：Kafka UI - 用于管理和监控 Kafka
   # ============================================================================
   kafka-ui:
     image: provectuslabs/kafka-ui:latest
     container_name: kafka-ui
     ports:
-      - "8080:8080"
+      - "8081:8080"
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9092
@@ -219,12 +593,30 @@ networks:
 volumes:
   basic-search-logs:
     name: basic-search-logs
+  configuration-center-logs:
+    name: configuration-center-logs
+  data-catalog-logs:
+    name: data-catalog-logs
+  data-exploration-service-logs:
+    name: data-exploration-service-logs
+  auth-service-logs:
+    name: auth-service-logs
+  data-subject-logs:
+    name: data-subject-logs
+  data-view-logs:
+    name: data-view-logs
+  session-logs:
+    name: session-logs
+  task-center-logs:
+    name: task-center-logs
   opensearch-data:
     name: opensearch-data
   kafka-data:
     name: kafka-data
   redis-data:
     name: redis-data
+  mariadb-data:
+    name: mariadb-data
   zookeeper-data:
     name: zookeeper-data
   zookeeper-log:

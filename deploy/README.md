@@ -1,4 +1,4 @@
-# Basic-Search 服务 Docker Compose 部署指南
+# DSG 多服务 Docker Compose 部署指南
 
 ## 快速开始
 
@@ -6,29 +6,24 @@
 
 ```bash
 # 从项目根目录执行
-./script/start-go-services.sh
+./script/restart-go-services.sh
 ```
-
-脚本会自动：
-- ✅ 扫描 `services/apps/` 目录下的所有 Go 服务（通过 go.mod 识别）
-- ✅ 检查 Docker 和 Docker Compose 环境
-- ✅ 提供多种启动模式选择
-- ✅ 显示服务状态和访问地址
 
 ### 2. 手动启动所有服务
 
 ```bash
 cd deploy
-docker compose up -d
+make build-all
+make docker-compose-up
 ```
 
-### 2. 查看服务状态
+### 3. 查看服务状态
 
 ```bash
 docker-compose ps
 ```
 
-### 3. 查看日志
+### 4. 查看日志
 
 ```bash
 # 查看所有服务日志
@@ -36,20 +31,13 @@ docker-compose logs -f
 
 # 查看特定服务日志
 docker-compose logs -f basic-search
-docker-compose logs -f opensearch
-docker-compose logs -f kafka
+docker-compose logs -f configuration-center
 ```
 
-### 4. 停止所有服务
+### 5. 停止所有服务
 
 ```bash
 docker-compose down
-```
-
-### 5. 停止并删除数据卷
-
-```bash
-docker-compose down -v
 ```
 
 ## 服务说明
@@ -58,7 +46,22 @@ docker-compose down -v
 
 - **basic-search** (端口: 8163)
   - 基础搜索服务
-  - 健康检查: http://localhost:8163/health
+- **configuration-center** (端口: 8133)
+  - 配置中心服务
+- **data-catalog** (端口: 8153)
+  - 数据目录服务
+- **data-exploration-service** (端口: 8281)
+  - 数据探索服务
+- **auth-service** (端口: 8155)
+  - 权限服务
+- **data-subject** (端口: 8123)
+  - 数据主题服务
+- **data-view** (端口: 8123 HTTP, 8223 gRPC)
+  - 逻辑视图服务
+- **session** (端口: 8113)
+  - 会话服务
+- **task_center** (端口: 8143)
+  - 任务中心服务
 
 ### 依赖服务
 
@@ -113,12 +116,15 @@ docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
 
 ## 配置文件
 
-服务配置文件位于：
-- `../services/apps/basic-search/dev-config/config.yaml`
+服务配置文件通常位于服务目录下的 `cmd/server/config/config.yaml`，例如：
+- `../services/apps/basic-search/cmd/server/config/config.yaml`
+- `../services/apps/configuration-center/cmd/server/config/config.yaml`
 
-修改配置后需要重启服务：
+修改配置后需要重新构建并重启服务：
 
 ```bash
+cd deploy
+make build-service SERVICE=basic-search
 docker-compose restart basic-search
 ```
 
