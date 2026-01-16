@@ -142,9 +142,9 @@ depServices:
   anyData:
     url: https://10.4.132.124:8444
     accountType: email
-    user: af@aishu.cn
-    password: RWlzb28uS2FudC4hQCMx
-    searchServiceID: 16385748c9b94b9faa58c7ed13dada1f
+    user: 
+    password: 
+    searchServiceID: 
   openai:
     url: https://anyfabric-dev.openai.azure.com/
     key: 01823c5e56174144bdd9b4dfdf83c826
