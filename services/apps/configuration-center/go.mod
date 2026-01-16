@@ -22,7 +22,7 @@ require (
 	github.com/jinzhu/copier v0.4.0
 	github.com/json-iterator/go v1.1.12
 	github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.2
-	github.com/kweaver-ai/idrm-go-common v0.1.3
+	github.com/kweaver-ai/idrm-go-common v0.1.4-0.20260116114715-ade1abba654c
 	github.com/kweaver-ai/idrm-go-frame v0.1.3
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/mozillazg/go-pinyin v0.20.0
