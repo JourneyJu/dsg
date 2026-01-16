@@ -10,6 +10,8 @@ use (
 	./services/apps/session
 	./services/apps/task_center
 	./services/apps/data-view
+	./services/apps/data-application-service
+	./services/apps/data-application-gateway
 )
 
 replace gitee.com/tdxmkf123/gorm-driver-dameng => ./local_patches/gorm-driver-dameng

@@ -35,6 +35,12 @@ build/
 .env.local
 .env.*.local
 dev.env
+*.env
+
+# Development configuration (not committed to Git)
+**/dev-config/
+dev-config/
+**/dev-config/**/*
 
 # Log files
 *.log

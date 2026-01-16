@@ -50,6 +50,9 @@ COPY --from=builder --chown=$UID:$GID /build/cmd/server/config/config.yaml /opt/
 # 创建日志目录并设置权限
 RUN mkdir -p /opt/configuration-center/logs && chown -R $UID:$GID /opt/configuration-center/logs
 
+# 复制静态资源文件（menu.json等）
+COPY --from=builder --chown=$UID:$GID /build/cmd/server/static /opt/configuration-center/cmd/server/static
+
 # 指定工作目录
 WORKDIR /opt/configuration-center/
 
