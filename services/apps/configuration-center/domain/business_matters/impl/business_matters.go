@@ -110,7 +110,7 @@ func (u *businessMattersUseCase) NameRepeat(ctx context.Context, req *business_m
 }
 
 func (u *businessMattersUseCase) GetBusinessMattersList(ctx context.Context, req *business_matters.ListReqQuery) (*business_matters.ListRes, error) {
-	// 判断是不是长沙数据局的，如果是从approval_items标准读取，不是从business_matters读取
+	// 判断是不是xx数据局的，如果是从approval_items标准读取，不是从business_matters读取
 	isCssjj, err := u.configurationRepo.GetByName(ctx, "cssjj")
 	if err != nil {
 		log.WithContext(ctx).Error("Get configuration DatabaseError", zap.Error(err))
@@ -123,7 +123,7 @@ func (u *businessMattersUseCase) GetBusinessMattersList(ctx context.Context, req
 }
 
 func (u *businessMattersUseCase) listLocal(ctx context.Context, req *business_matters.ListReqQuery) (*business_matters.ListRes, error) {
-	// 判断是不是长沙数据局的，如果是从approval_items标准读取，不是从business_matters读取
+	// 判断是不是xx数据局的，如果是从approval_items标准读取，不是从business_matters读取
 	var count int64
 	var businessMatterses []*model.BusinessMatter
 	businessMatterses, count, err := u.businessMattersRepo.List(ctx, req)
@@ -187,7 +187,7 @@ func (u *businessMattersUseCase) listLocal(ctx context.Context, req *business_ma
 }
 
 func (u *businessMattersUseCase) listThird(ctx context.Context, req *business_matters.ListReqQuery) (*business_matters.ListRes, error) {
-	// 判断是不是长沙数据局的，如果是从approval_items标准读取，不是从business_matters读取
+	// 判断是不是xx数据局的，如果是从approval_items标准读取，不是从business_matters读取
 	var count int64
 	var businessMatterses []*model.CssjjBusinessMatter
 	businessMatterses, count, err := u.businessMattersRepo.ListThird(ctx, req)
@@ -238,7 +238,7 @@ func (u *businessMattersUseCase) listThird(ctx context.Context, req *business_ma
 }
 
 func (u *businessMattersUseCase) GetListByIds(ctx context.Context, ids string) ([]*business_matters.BusinessMatterBriefList, error) {
-	// 判断是不是长沙数据局的，如果是从approval_items标准读取，不是从business_matters读取
+	// 判断是不是xx数据局的，如果是从approval_items标准读取，不是从business_matters读取
 	var businessMatterses []*model.BusinessMatter
 	isCssjj, err := u.configurationRepo.GetByName(ctx, "cssjj")
 	if err != nil {

@@ -89,8 +89,8 @@ export enum ServiceType {
     APPLICATIONSERVICE = 'applicationService',
     LOGICVIEW = 'data_view',
     LICENSE = 'license',
-    CSSJJ_APPSVC = 'cssjj_app_svc', // 长沙数据据项目独有，新增了一个叫 应用服务 的 Tab 2025-07-14
-    CSSJJ_SPATIALSVC = 'cssjj_Spatial_svc', // 长沙数据据项目独有，新增了一个叫 空间地理服务 的 Tab 2025-09-29
+    CSSJJ_APPSVC = 'cssjj_app_svc', // xx数据据项目独有，新增了一个叫 应用服务 的 Tab 2025-07-14
+    CSSJJ_SPATIALSVC = 'cssjj_Spatial_svc', // xx数据据项目独有，新增了一个叫 空间地理服务 的 Tab 2025-09-29
     AISERVICE = 'aiService', // AI服务
 }
 

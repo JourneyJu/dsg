@@ -216,7 +216,7 @@ const Feedback: React.FC<IFeedback> = ({ open, onClose, applyId, onOk }) => {
                                     <Input.TextArea
                                         className={styles['feedback-textarea']}
                                         placeholder={__(
-                                            '示例：在“湘易办”长沙旗舰店和“我的长沙” APP 上， 8000 余项政务服务事项实现了“减证办”“免证办”，惠及 2204 余万人次，累计服务调用超 6.23 亿次。',
+                                            '示例：在“湘易办”xx旗舰店和“我的xx” APP 上， 8000 余项政务服务事项实现了“减证办”“免证办”，惠及 2204 余万人次，累计服务调用超 6.23 亿次。',
                                         )}
                                         maxLength={300}
                                     />

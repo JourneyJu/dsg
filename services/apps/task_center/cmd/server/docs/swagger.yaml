@@ -2002,7 +2002,7 @@ definitions:
         type: integer
       description:
         description: 项目描述
-        example: 长沙自建房屋统计
+        example: xx自建房屋统计
         maxLength: 255
         minLength: 0
         type: string
@@ -2017,7 +2017,7 @@ definitions:
         type: array
       name:
         description: 项目名称
-        example: 长沙自建房屋统计
+        example: xx自建房屋统计
         maxLength: 128
         minLength: 0
         type: string
@@ -2151,7 +2151,7 @@ definitions:
         type: integer
       description:
         description: 项目描述
-        example: 长沙自建房屋统计
+        example: xx自建房屋统计
         maxLength: 255
         minLength: 0
         type: string
@@ -2174,7 +2174,7 @@ definitions:
         type: array
       name:
         description: 项目名称
-        example: 长沙自建房屋统计
+        example: xx自建房屋统计
         type: string
       owner_id:
         description: 项目负责人id，uuid（36）

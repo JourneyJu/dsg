@@ -1730,7 +1730,7 @@ const docTemplate = `{
                     "type": "string"
                 },
                 "department": {
-                    "description": "管理部门:长沙市数据资源管理局",
+                    "description": "管理部门:xx市数据资源管理局",
                     "type": "string"
                 },
                 "expire": {

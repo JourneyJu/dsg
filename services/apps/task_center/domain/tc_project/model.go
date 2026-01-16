@@ -16,8 +16,8 @@ import (
 // ProjectReqModel create project request model
 type ProjectReqModel struct {
 	ID          string `json:"-"`                                                                                         // 不用填
-	Name        string `json:"name" binding:"trimSpace,required,VerifyXssString"  example:"长沙自建房屋统计"`                     //项目名称
-	Description string `json:"description" binding:"trimSpace,min=0,max=255,VerifyXssString"  example:"长沙自建房屋统计"`         //项目描述
+	Name        string `json:"name" binding:"trimSpace,required,VerifyXssString"  example:"xx自建房屋统计"`                     //项目名称
+	Description string `json:"description" binding:"trimSpace,min=0,max=255,VerifyXssString"  example:"xx自建房屋统计"`         //项目描述
 	Image       string `json:"image"  binding:"omitempty,uuid" example:"4a5a3cc0-0169-4d62-9442-62214d8fcd8d"`            // 图片id，uuid（36）
 	FlowID      string `json:"flowchart_id"  binding:"required,uuid" example:"4a5a3cc0-0169-4d62-9442-62214d8fcd8d"`      // 流水线id，uuid（36）
 	FlowVersion string `json:"flowchart_version"  binding:"required,uuid" example:"4a5a3cc0-0169-4d62-9442-62214d8fcd8d"` //流水版本id，uuid（36）
@@ -131,8 +131,8 @@ func (p *ProjectReqModel) GenRoles() []string {
 // ProjectEditModel update project request model
 type ProjectEditModel struct {
 	ID             string          `json:"-"   binding:"required" example:"4a5a3cc0-0169-4d62-9442-62214d8fcd8d"`                          // 路径参数：项目id，uuid（36）
-	Name           string          `json:"name" binding:"trimSpace,required,min=0,max=128,VerifyXssString"  example:"长沙自建房屋统计"`            //项目名称
-	Description    string          `json:"description" binding:"trimSpace,min=0,max=255,VerifyXssString"   example:"长沙自建房屋统计"`             //项目描述
+	Name           string          `json:"name" binding:"trimSpace,required,min=0,max=128,VerifyXssString"  example:"xx自建房屋统计"`            //项目名称
+	Description    string          `json:"description" binding:"trimSpace,min=0,max=255,VerifyXssString"   example:"xx自建房屋统计"`             //项目描述
 	Image          *string         `json:"image" binding:"omitempty,verifyUuidNotRequired" example:"4a5a3cc0-0169-4d62-9442-62214d8fcd8d"` // 图片id，uuid（36）
 	Status         string          `json:"status"      binding:"omitempty,oneof=ready ongoing completed"  example:"ready"`                 //项目状态，不填或者枚举 "ready" "ongoing" "completed"
 	Priority       string          `json:"priority"    binding:"omitempty,oneof=common emergent urgent"  example:"common"`                 //项目优先级，不填或者枚举 "common" "emergent" "urgent"

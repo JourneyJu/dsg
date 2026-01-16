@@ -120,7 +120,7 @@ type BaseItem struct {
 	CertificationLevel   string             `json:"certification_level"`    // 发证级别
 	HolderType           string             `json:"holder_type"`            // 证照主体
 	Expire               string             `json:"expire"`                 // 有效期
-	Department           string             `json:"department"`             // 管理部门:长沙市数据资源管理局
+	Department           string             `json:"department"`             // 管理部门:xx市数据资源管理局
 	IndustryDepartmentID string             `json:"industry_department_id"` // 行业类别id
 	IndustryDepartment   string             `json:"industry_department"`    // 行业类别:市场监督
 	UpdatedAt            time.Time          `json:"updated_at,omitempty"`   // 数据更新时间

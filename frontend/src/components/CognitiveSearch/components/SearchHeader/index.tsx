@@ -189,7 +189,7 @@ function SearchHeader() {
                                 zIndex: 50,
                             }}
                             placeholder={__(
-                                '您可以这样搜索：查找闵行区外来人口相关的表',
+                                '您可以这样搜索：查找xx区外来人口相关的表',
                             )}
                             showIcon={false}
                             value={keyword}

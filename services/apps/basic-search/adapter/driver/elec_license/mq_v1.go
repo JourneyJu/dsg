@@ -112,7 +112,7 @@ type IndexMsqBody struct {
 	CertificationLevel   string             `json:"certification_level" binding:"omitempty"`       // 发证级别
 	HolderType           string             `json:"holder_type" binding:"omitempty"`               // 证照主体
 	Expire               string             `json:"expire" binding:"omitempty"`                    // 有效期
-	Department           string             `json:"department" binding:"omitempty"`                // 管理部门:长沙市数据资源管理局
+	Department           string             `json:"department" binding:"omitempty"`                // 管理部门:xx市数据资源管理局
 	IndustryDepartmentID string             `json:"industry_department_id" binding:"omitempty"`    // 行业类别id
 	IndustryDepartment   string             `json:"industry_department" binding:"omitempty"`       // 行业类别:市场监督
 }

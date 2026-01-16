@@ -265,7 +265,7 @@ func (u *ServiceDomain) ServiceGetFrontend(ctx context.Context, req *dto.Service
 	hasRole := len(innerRoles) > 0
 	//不是内部角色的，不允许查看所有资源
 	if !hasRole {
-		// 判断是否为长沙数据局项目
+		// 判断是否为xx数据局项目
 		cssjj, err := u.IsCSSJJ(ctx)
 		if err != nil {
 			return nil, err
@@ -278,7 +278,7 @@ func (u *ServiceDomain) ServiceGetFrontend(ctx context.Context, req *dto.Service
 		}
 
 		if cssjj {
-			// 长沙数据局项目，无论是否启用数据资源目录，都支持接口上下线
+			// xx数据局项目，无论是否启用数据资源目录，都支持接口上下线
 			exist, err = u.serviceRepo.IsServiceIDInStatusesExist(ctx, req.ServiceID, enum.ConsideredAsOnlineStatuses)
 		} else if isEnable {
 			//启用数据资源目录
@@ -1612,7 +1612,7 @@ func (u *ServiceDomain) ServiceSelectOptions(ctx context.Context) (resp *dto.Opt
 	// 	return nil, err
 	// }
 
-	// // 判断是否为长沙数据局项目
+	// // 判断是否为xx数据局项目
 	// cssjj, err := u.IsCSSJJ(ctx)
 	// if err != nil {
 	// 	return nil, err
@@ -1632,7 +1632,7 @@ func (u *ServiceDomain) ServiceSelectOptions(ctx context.Context) (resp *dto.Opt
 	}
 
 	// if cssjj {
-	// 	// 长沙数据局项目，无论是否启用数据资源目录，都支持接口上下线
+	// 	// xx数据局项目，无论是否启用数据资源目录，都支持接口上下线
 	// 	isBindOnline, isBindOffline, err := u.auditProcessBindRepo.QueryAuditProcessBindInfo(ctx)
 	// 	if err != nil {
 	// 		return nil, err
@@ -1663,7 +1663,7 @@ func (u *ServiceDomain) ServiceSelectOptions(ctx context.Context) (resp *dto.Opt
 	return
 }
 
-// IsCSSJJ 返回是否为长沙数据局项目
+// IsCSSJJ 返回是否为xx数据局项目
 func (u *ServiceDomain) IsCSSJJ(ctx context.Context) (bool, error) {
 	cv, err := u.configurationCenterRepo.GetConfigValue(ctx, microservice.ConfigValueKeyCSSJJ)
 	if err != nil {

@@ -640,7 +640,7 @@ export enum ClassifyConfigType {
 }
 /**
  * @param operateType 接口用途：编辑、新建、详情、重名校验
- * @param type isTemplateConfig:规则模板;cssjj:是否长沙环境;default:原来标品接口
+ * @param type isTemplateConfig:规则模板;cssjj:是否xx环境;default:原来标品接口
  * @description 用于获取编辑、新建、详情、重名校验接口，根据不同环境，使用三套接口
  */
 export const getRuleActionMap = (

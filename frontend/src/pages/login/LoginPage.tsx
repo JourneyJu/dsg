@@ -3,7 +3,7 @@ import OAuthLogin from '@/components/OAuthLogin'
 
 function LoginPage() {
     useEffect(() => {
-        document.title = '长沙市数据资源管理平台'
+        document.title = 'xx市数据资源管理平台'
     }, [])
 
     return <OAuthLogin />

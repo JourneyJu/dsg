@@ -70,7 +70,7 @@ const AuditPolicy: React.FC<IConfirm> = () => {
                         'tag-management',
                     ].includes(item.key)
                 }
-                // 长沙项目，过滤掉data-requirement，显示city-demand
+                // xx项目，过滤掉data-requirement，显示city-demand
                 return item.key !== 'data-requirement'
             })
     }, [using, governmentSwitch.on, platform])

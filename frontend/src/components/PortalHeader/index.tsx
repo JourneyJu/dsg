@@ -82,7 +82,7 @@ const PortalHeader = ({ darkMode = false, style }: IPortalHeader) => {
                                 ? oemConfig['darklogo.png']
                                 : oemConfig['logo.png']
                         }`}
-                        alt="长沙市数据资源管理平台"
+                        alt="xx市数据资源管理平台"
                         aria-hidden
                         className={classnames(styles.img)}
                         onClick={handleClickHeaderImg}

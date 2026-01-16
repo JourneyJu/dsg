@@ -452,7 +452,7 @@ func (s *ServiceController) ServiceListFrontend(c *gin.Context) {
 		req.Direction = "desc"
 	}
 
-	// 判断是否为长沙数据局项目
+	// 判断是否为xx数据局项目
 	cssjj, err := s.domain.IsCSSJJ(c)
 	if err != nil {
 		c.Writer.WriteHeader(http.StatusInternalServerError)
@@ -469,7 +469,7 @@ func (s *ServiceController) ServiceListFrontend(c *gin.Context) {
 	}
 
 	if cssjj {
-		// 长沙数据局项目，无论是否启用数据资源目录，都支持接口上下线
+		// xx数据局项目，无论是否启用数据资源目录，都支持接口上下线
 		req.Status = enum.LineStatusOnLine
 	} else if isEnable {
 		//启用数据资源目录

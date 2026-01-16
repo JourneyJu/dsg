@@ -95,7 +95,7 @@ export const DocumentTitleProvider = ({
     const [{ cssjj }] = useGeneralConfig()
 
     useEffect(() => {
-        const TAG = cssjj ? '' : '长沙市数据资源管理平台'
+        const TAG = cssjj ? '' : 'xx市数据资源管理平台'
         let path = getInnerUrl(currentPath)
 
         if (path?.endsWith('/')) {

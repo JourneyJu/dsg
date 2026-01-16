@@ -3,7 +3,7 @@
 ################################################################################
 
 # 服务列表
-SERVICES = basic-search configuration-center data-catalog data-exploration-service auth-service data-subject data-view session task_center
+SERVICES = basic-search configuration-center data-catalog data-exploration-service auth-service data-subject data-view session task_center data-application-service data-application-gateway
 # 可以添加更多服务: SERVICES = basic-search service-a service-b
 
 # Docker 镜像仓库

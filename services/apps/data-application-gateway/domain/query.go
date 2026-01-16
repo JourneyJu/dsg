@@ -150,7 +150,7 @@ func (u *QueryDomain) Query(c context.Context, req *dto.QueryReq, cssjj string) 
 	}
 
 	if cssjj == "true" {
-		//todo 长沙鉴权逻辑
+		//todo xx鉴权逻辑
 		if err := u.cssjjAuth(c, req, service); err != nil {
 			return 0, nil, err
 		}
@@ -234,7 +234,7 @@ func (u *QueryDomain) Query(c context.Context, req *dto.QueryReq, cssjj string) 
 	return length, res, queryErr
 }
 
-// 长沙鉴权逻辑
+// xx鉴权逻辑
 func (u *QueryDomain) cssjjAuth(c context.Context, req *dto.QueryReq, service *model.ServiceAssociations) (err error) {
 	var xTifSignature, xTifTimestamp, xTifNonce string
 	var ok bool
@@ -303,7 +303,7 @@ func (u *QueryDomain) cssjjAuth(c context.Context, req *dto.QueryReq, service *m
 	return nil
 }
 
-// 长沙签名校验逻辑
+// xx签名校验逻辑
 func checkSign(secret, timestamp, nonce, sign string) (bool, map[string]string) {
 	ts, err := strconv.ParseInt(timestamp, 10, 64)
 	if err != nil {

@@ -174,7 +174,7 @@ export const delRescCatlgData = [
     },
     {
         id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: '长沙ee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
+        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
         is_auto_related: true,
     },
     {
@@ -191,7 +191,7 @@ export const delRescCatlgData = [
     },
     {
         id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: '长沙ee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
+        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
     },
     {
         id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
@@ -207,7 +207,7 @@ export const delRescCatlgData = [
     },
     {
         id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: '长沙ee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
+        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
     },
     {
         id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
@@ -226,7 +226,7 @@ export const delInfoCatlgData = [
     },
     {
         id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: '长沙',
+        name: 'xx',
     },
     {
         id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',

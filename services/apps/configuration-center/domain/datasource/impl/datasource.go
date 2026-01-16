@@ -115,7 +115,7 @@ func (uc *dataSourceUseCase) CreateDataSource(ctx context.Context, req *domain.C
 	} else if req.Schema == "" {
 		return nil, errorcode.Desc(errorcode.DataSourceTypeSchemaNotNull)
 	}
-	// 长沙数据局，schema 一律转为小写
+	// xx数据局，schema 一律转为小写
 	req.Schema, err = uc.DealWithSchema(ctx, req.Schema)
 	if err != nil {
 		return nil, err

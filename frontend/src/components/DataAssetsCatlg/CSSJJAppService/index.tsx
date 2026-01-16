@@ -3,7 +3,7 @@ import * as React from 'react'
 import __ from '../locale'
 import styles from './styles.module.less'
 
-// 长沙数据局专有的应用服务 tab
+// xx数据局专有的应用服务 tab
 const CSSJJAppService: React.FC = () => {
     return (
         <iframe

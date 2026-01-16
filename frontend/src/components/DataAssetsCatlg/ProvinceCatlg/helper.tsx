@@ -1516,7 +1516,7 @@ export enum PCatlgCreditCodeEnum {
     DZYY = '12430000MB1K856063',
     // 湖南省地方志编纂院
     DZBYJ = '124300004448799099',
-    // 长沙海关
+    // xx海关
     CGSG = '111000000061232047',
     // 湖南省乡村振兴局
     XZJ = '11430000MB1D67401T',
@@ -1755,7 +1755,7 @@ export const pCatlgCreditCodeList: Array<any> = [
     },
     {
         key: PCatlgCreditCodeEnum.CGSG,
-        label: '长沙海关',
+        label: 'xx海关',
     },
     {
         key: PCatlgCreditCodeEnum.XZJ,

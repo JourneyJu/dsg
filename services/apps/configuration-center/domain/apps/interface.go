@@ -45,7 +45,7 @@ const (
 )
 const (
 	MarkCommon = "common" // 通用、正常创建
-	MarkCssjj  = "cssjj"  // 长沙数据集注册使用
+	MarkCssjj  = "cssjj"  // xx数据集注册使用
 )
 
 type EnumObject struct {
@@ -175,13 +175,13 @@ type CreateReq struct {
 }
 type CreateReqBody struct {
 	Name                   string    `json:"name" binding:"required,lte=32" example:"name"`                                               // 应用名称
-	PassID                 string    `json:"pass_id" binding:"omitempty" example:"passid"`                                                // PassID(仅长沙使用)
+	PassID                 string    `json:"pass_id" binding:"omitempty" example:"passid"`                                                // PassID(仅xx使用)
 	Description            string    `json:"description"  binding:"omitempty,lte=300,VerifyDescriptionReduceSpace" example:"description"` // 应用描述
 	InfoSystem             string    `json:"info_system_id"  binding:"omitempty,uuid"`                                                    // 信息系统id
 	ApplicationDeveloperId string    `json:"application_developer_id"  binding:"omitempty,uuid" example:"application_developer_id"`       // 应用开发者id                                                                // 应用类型
-	AppType                string    `json:"app_type" binding:"omitempty,oneof=micro_type non_micro_type"`                                // 应用类型(仅长沙使用)
-	IpAddrs                []*IpAddr `json:"ip_addr" binding:"omitempty"`                                                                 // ip地址(仅长沙使用)
-	Mark                   string    `json:"mark" binding:"omitempty,oneof=cssjj" example:"mark"`                                         // 标记(标记为长沙客户)
+	AppType                string    `json:"app_type" binding:"omitempty,oneof=micro_type non_micro_type"`                                // 应用类型(仅xx使用)
+	IpAddrs                []*IpAddr `json:"ip_addr" binding:"omitempty"`                                                                 // ip地址(仅xx使用)
+	Mark                   string    `json:"mark" binding:"omitempty,oneof=cssjj" example:"mark"`                                         // 标记(标记为xx客户)
 	AccountName            string    `json:"account_name"  binding:"omitempty,lte=128,VerifyObjectName" example:"account_name"`           // 账号名称
 	Password               string    `json:"password" binding:"required_with=AccountName"`                                                // 账号密码
 	ProvinceApp

@@ -23,7 +23,7 @@ var serviceApplyErrorMap = errorCode{
 		solution:    "",
 	},
 	ServiceApplyNotPassCssjj: {
-		description: "长沙鉴权失败",
+		description: "xx鉴权失败",
 		cause:       "",
 		solution:    "",
 	},

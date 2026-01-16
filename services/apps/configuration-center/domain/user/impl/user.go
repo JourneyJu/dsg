@@ -1811,7 +1811,7 @@ func (u *User) GetUserDefaultMainDeptId(ctx context.Context, userId string) (str
 		currDeptIds = append(currDeptIds, magerDeptIds[positions[len(positions)-1]])
 	}
 	//} else {
-	// TODO 长沙环境一个用户只有一个部门，计算合并多个部门中是否有相同的部门，分叉部门中是否有主部门，如果节点有主部门
+	// TODO xx环境一个用户只有一个部门，计算合并多个部门中是否有相同的部门，分叉部门中是否有主部门，如果节点有主部门
 
 	//}
 	return currDeptIds[0], nil

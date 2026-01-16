@@ -14,7 +14,7 @@ const TableNameMenu = "menu"
 // Menu mapped from table <menu>
 type Menu struct {
 	ID       uint64 `gorm:"column:id;primaryKey;comment:菜单id" json:"id"`                          //菜单id
-	Platform int32  `gorm:"column:platform;not null;comment:菜单归属平台 1：标品 2：长沙数据局" json:"platform"` //菜单归属平台 1：标品 2：长沙数据局
+	Platform int32  `gorm:"column:platform;not null;comment:菜单归属平台 1：标品 2：xx数据局" json:"platform"` //菜单归属平台 1：标品 2：xx数据局
 	Value    string `gorm:"column:value;not null;comment:菜单信息" json:"value"`                      //菜单信息
 }
 

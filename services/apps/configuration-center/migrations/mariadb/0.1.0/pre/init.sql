@@ -629,7 +629,7 @@ CREATE TABLE IF NOT EXISTS `info_system` (
     `description` varchar(300)   DEFAULT NULL COMMENT '信息系统描述',
     `department_id` char(36) NOT NULL COMMENT '部门ID',
     `acceptance_at` bigint(20) unsigned NOT NULL DEFAULT 0 COMMENT '验收时间',
-    `is_register_gateway` tinyint(4) DEFAULT 0 COMMENT '是否注册到网关（长沙使用），bool：0：不是；1：是',
+    `is_register_gateway` tinyint(4) DEFAULT 0 COMMENT '是否注册到网关（xx使用），bool：0：不是；1：是',
     `system_identifier` char(36) DEFAULT NULL COMMENT '系统标识',
     `register_at` datetime(3) DEFAULT NULL COMMENT '注册时间',
     `created_at` datetime NOT NULL default current_timestamp(3)  COMMENT '创建时间',
@@ -788,7 +788,7 @@ CREATE TABLE IF NOT EXISTS  `app_history` (
     `token` char(36)  DEFAULT NULL COMMENT 'token',
     `app_type` char(36)  DEFAULT NULL COMMENT '应用类型',
     `ip_addr` longtext  DEFAULT NULL COMMENT 'json类型字段, 关联ip和port',
-    `is_register_gateway` tinyint(4) DEFAULT 0 COMMENT '是否注册到网关（长沙使用），bool：0：不是；1：是',
+    `is_register_gateway` tinyint(4) DEFAULT 0 COMMENT '是否注册到网关（xx使用），bool：0：不是；1：是',
     `register_at` datetime(3) DEFAULT NULL COMMENT '注册时间',
     -- 账号信息
     `account_id` char(36) DEFAULT NULL  COMMENT '账号ID',

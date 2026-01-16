@@ -152,7 +152,7 @@ const Standardizing: React.FC<IStandardizing> = ({
         useState<boolean>(false)
 
     const platform = getPlatformNumber()
-    // 是否为长沙平台
+    // 是否为xx平台
     const isCSPlatform = useMemo(() => {
         return platform !== LoginPlatform.default
     }, [platform])
@@ -1786,7 +1786,7 @@ const Standardizing: React.FC<IStandardizing> = ({
                     >
                         {__('配置数据元')}
                     </Button>
-                    {/* 长沙项目从项目中创建新建标准任务，非长沙的显示下面的字段新建标准任务 */}
+                    {/* xx项目从项目中创建新建标准任务，非xx的显示下面的字段新建标准任务 */}
                     {!isCSPlatform && (
                         <>
                             <Tooltip
@@ -2011,7 +2011,7 @@ const Standardizing: React.FC<IStandardizing> = ({
                                     {__('智能推荐')}
                                 </Button>
                             </Tooltip>
-                            {/* 长沙项目从项目中创建新建标准任务，非长沙的显示下面的字段新建标准任务 */}
+                            {/* xx项目从项目中创建新建标准任务，非xx的显示下面的字段新建标准任务 */}
 
                             {!isCSPlatform && (
                                 <>

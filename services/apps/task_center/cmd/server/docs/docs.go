@@ -10908,7 +10908,7 @@ const docTemplate = `{
                     "type": "string",
                     "maxLength": 255,
                     "minLength": 0,
-                    "example": "长沙自建房屋统计"
+                    "example": "xx自建房屋统计"
                 },
                 "image": {
                     "description": "图片id，uuid（36）",
@@ -10927,7 +10927,7 @@ const docTemplate = `{
                     "type": "string",
                     "maxLength": 128,
                     "minLength": 0,
-                    "example": "长沙自建房屋统计"
+                    "example": "xx自建房屋统计"
                 },
                 "owner_id": {
                     "description": "项目负责人id，uuid（36）",
@@ -11108,7 +11108,7 @@ const docTemplate = `{
                     "type": "string",
                     "maxLength": 255,
                     "minLength": 0,
-                    "example": "长沙自建房屋统计"
+                    "example": "xx自建房屋统计"
                 },
                 "flowchart_id": {
                     "description": "流水线id，uuid（36）",
@@ -11135,7 +11135,7 @@ const docTemplate = `{
                 "name": {
                     "description": "项目名称",
                     "type": "string",
-                    "example": "长沙自建房屋统计"
+                    "example": "xx自建房屋统计"
                 },
                 "owner_id": {
                     "description": "项目负责人id，uuid（36）",

@@ -103,10 +103,10 @@ func (d *ServiceApplyDomain) ServiceApplyCreate(c context.Context, req *dto.Serv
 		return errorcode.Detail(errorcode.ServiceIDNotExist, err)
 	}
 
-	// 查询是否为长沙数据局项目
+	// 查询是否为xx数据局项目
 	cssjj, err := d.configurationCenterRepo.GetConfigValue(c, microservice.ConfigValueKeyCSSJJ)
 	if err != nil {
-		log.Error("ServiceApplyCreate --> 查询长沙数据局出错：", zap.Error(err))
+		log.Error("ServiceApplyCreate --> 查询xx数据局出错：", zap.Error(err))
 		return err
 	}
 
@@ -119,7 +119,7 @@ func (d *ServiceApplyDomain) ServiceApplyCreate(c context.Context, req *dto.Serv
 	isEnable := config.Using == 1
 
 	if cssjj.Value == microservice.ConfigValueValueTrue {
-		// 长沙数据局项目，无论是否启用数据资源目录，都支持接口上下线
+		// xx数据局项目，无论是否启用数据资源目录，都支持接口上下线
 		exist, err = d.serviceRepo.IsServiceIDStatusExist(c, req.ServiceID, enum.LineStatusOnLine)
 	} else if isEnable {
 		//启用数据资源目录

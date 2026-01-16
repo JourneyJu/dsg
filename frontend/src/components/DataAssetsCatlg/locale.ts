@@ -39,7 +39,7 @@ export default i18n([
     ['搜索目录名称、编码、描述、信息项'],
     ['搜索目录名称、描述、编码、信息项'],
     [
-        '您可以这样搜索：查找闵行区外来人口相关的表',
+        '您可以这样搜索：查找xx区外来人口相关的表',
         '您可以這樣搜尋：尋找閔行區外來人口相關的表',
         `E.g. Find tables related to Minhang District's migrant population`,
     ],

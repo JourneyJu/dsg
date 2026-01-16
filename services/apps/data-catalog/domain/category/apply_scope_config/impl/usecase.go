@@ -24,7 +24,7 @@ func NewUseCase(rel relRepo.Repo, cat catRepo.Repo, tree catRepo.TreeRepo, ccDri
 }
 
 func (u *useCase) Get(ctx context.Context, keyword string) (*domain.GetResp, error) {
-	// 判断是否为长沙环境
+	// 判断是否为xx环境
 	isChangsha, err := u.ccDriven.GetCssjjSwitch(ctx)
 	if err != nil {
 		// 如果获取环境配置失败，记录错误但不影响主流程，默认展示所有模块
@@ -60,7 +60,7 @@ func (u *useCase) Get(ctx context.Context, keyword string) (*domain.GetResp, err
 
 		modules := make([]*domain.Item, 0, len(domain.DefaultApplyScopes))
 		for _, scope := range domain.DefaultApplyScopes {
-			// 非长沙环境：过滤掉"信息资源目录"模块
+			// 非xx环境：过滤掉"信息资源目录"模块
 			if !isChangsha && scope.ID == domain.ScopeInfoResourceCatalog.ID {
 				continue
 			}
@@ -136,7 +136,7 @@ func (u *useCase) Update(ctx context.Context, categoryID string, items []domain.
 		return errors.New("items不能为空")
 	}
 
-	// 判断是否为长沙环境
+	// 判断是否为xx环境
 	isChangsha, err := u.ccDriven.GetCssjjSwitch(ctx)
 	if err != nil {
 		// 如果获取环境配置失败，记录错误但不影响主流程，默认展示所有模块
@@ -149,7 +149,7 @@ func (u *useCase) Update(ctx context.Context, categoryID string, items []domain.
 		if items[i].ApplyScopeID == "" {
 			continue
 		}
-		// 非长沙环境：过滤掉"信息资源目录"模块
+		// 非xx环境：过滤掉"信息资源目录"模块
 		if !isChangsha && items[i].ApplyScopeID == domain.ScopeInfoResourceCatalog.ID {
 			continue
 		}
@@ -181,7 +181,7 @@ func (u *useCase) Update(ctx context.Context, categoryID string, items []domain.
 			continue
 		}
 
-		// 非长沙环境：跳过"信息资源目录"模块的更新
+		// 非xx环境：跳过"信息资源目录"模块的更新
 		if !isChangsha && item.ApplyScopeID == domain.ScopeInfoResourceCatalog.ID {
 			continue
 		}

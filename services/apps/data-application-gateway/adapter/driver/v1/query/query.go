@@ -310,7 +310,7 @@ func (s *QueryController) queryTestReqCheck(req *dto.QueryTestReq) (err error) {
 
 // recordServiceCall 记录服务调用信息
 func (s *QueryController) recordServiceCall(c *gin.Context, req *dto.QueryReq, callStartTime time.Time, httpCode int, callStatus int, errorMessage, cssjj string) {
-	// 长沙环境由里约网关记录
+	// xx环境由里约网关记录
 	if cssjj == "true" {
 		return
 	}
@@ -346,8 +346,8 @@ func (s *QueryController) recordServiceCall(c *gin.Context, req *dto.QueryReq, c
 		recordReq := &domain.RecordServiceCallReq{
 			ServiceID:           req.ServicePath,
 			ServiceDepartmentID: "", // 需要从服务信息中获取
-			ServiceSystemID:     "", // 需要从服务信息中获取,国开分支没有这个属性
-			ServiceAppID:        "", // 需要从服务信息中获取,国开分支没有这个属性
+			ServiceSystemID:     "", // 需要从服务信息中获取
+			ServiceAppID:        "", // 需要从服务信息中获取
 			RemoteAddress:       c.RemoteIP(),
 			ForwardFor:          c.GetHeader("X-Forwarded-For"),
 			UserIdentification:  "", // 需要从外部接口中获取

@@ -110,7 +110,7 @@ type ConfigValueKey string
 
 // ConfigValueKey 代表配置值的 Key
 const (
-	// 长沙数据局
+	// xx数据局
 	ConfigValueKeyCSSJJ ConfigValueKey = "cssjj"
 )
 

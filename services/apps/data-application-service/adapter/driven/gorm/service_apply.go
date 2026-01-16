@@ -385,9 +385,9 @@ func (r *serviceApplyRepo) AuditStatus(ctx context.Context, uid string, serviceI
 
 // Available 返回可用的接口服务，“可用”的定义：
 //
-//   - 长沙数据局：已上线
-//   - 非长沙数据局，数据资源模式：已上线
-//   - 非长沙数据局，数据目录模式：已发布
+//   - xx数据局：已上线
+//   - 非xx数据局，数据资源模式：已上线
+//   - 非xx数据局，数据目录模式：已发布
 func (r *serviceApplyRepo) Available(ctx context.Context, req *dto.AvailableAssetsListReq) (res []*model.ServiceAssociations, count int64, err error) {
 	subject, err := interception.AuthServiceSubjectFromContext(ctx)
 	if err != nil {
@@ -427,10 +427,10 @@ func (r *serviceApplyRepo) Available(ctx context.Context, req *dto.AvailableAsse
 	if len(serviceIDs) == 0 {
 		return nil, 0, nil
 	}
-	// 查询是否为长沙数据局项目
+	// 查询是否为xx数据局项目
 	cssjj, err := r.configurationCenterRepo.GetConfigValue(ctx, microservice.ConfigValueKeyCSSJJ)
 	if err != nil {
-		log.Error("Available --> 查询长沙数据局出错：", zap.Error(err))
+		log.Error("Available --> 查询xx数据局出错：", zap.Error(err))
 		return nil, 0, err
 	}
 
@@ -446,7 +446,7 @@ func (r *serviceApplyRepo) Available(ctx context.Context, req *dto.AvailableAsse
 		Where("service_id in ?", serviceIDs)
 
 	if cssjj.Value == microservice.ConfigValueValueTrue {
-		// 长沙数据局项目，无论是否启用数据资源目录，都支持接口上下线
+		// xx数据局项目，无论是否启用数据资源目录，都支持接口上下线
 		tx = tx.Where("status in ?", enum.ConsideredAsOnlineStatuses)
 	} else if isEnable {
 		//启用数据资源目录

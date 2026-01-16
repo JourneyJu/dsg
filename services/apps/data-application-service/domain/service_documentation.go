@@ -901,7 +901,7 @@ func (u *ServiceDomain) ServiceGetExampleCode(ctx context.Context, serviceId str
 		return nil, err
 	}
 
-	// 判断是否为长沙数据局项目
+	// 判断是否为xx数据局项目
 	cssjj, err := u.IsCSSJJ(ctx)
 	if err != nil {
 		return nil, err
@@ -1062,7 +1062,7 @@ func generateJavaExample(data TemplateData, cssjj bool) string {
 
 // ExportAPIDoc 生成接口文档 PDF（增强错误处理）
 func (d *ServiceDomain) ExportAPIDoc(ctx context.Context, req *dto.ExportAPIDocReq) (*dto.ExportAPIDocResp, error) {
-	// 判断是否为长沙数据局项目
+	// 判断是否为xx数据局项目
 	cssjj, err := d.IsCSSJJ(ctx)
 	if err != nil {
 		return nil, err

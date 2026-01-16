@@ -989,7 +989,7 @@ func (f *formViewUseCase) updateView(ctx context.Context, createViewErrorCh chan
 			} else {
 				selectFields = util.CE(selectFields == "", selectField, fmt.Sprintf("%s,%s", selectFields, selectField)).(string)
 			}
-			//长沙数据据局时 表字段描述变更同步到视图字段业务名称
+			//xx数据据局时 表字段描述变更同步到视图字段业务名称
 			if cssjj && field.FieldComment != "" && oldField.FormViewField.TechnicalName != field.FieldComment {
 				updateFields[len(updateFields)-1].BusinessName = field.FieldComment
 			}
@@ -1065,7 +1065,7 @@ func (f *formViewUseCase) updateView(ctx context.Context, createViewErrorCh chan
 		formViewUpdate = true
 	}
 
-	//长沙数据据局时 表描述变更同步到视图业务名称
+	//xx数据据局时 表描述变更同步到视图业务名称
 	if cssjj && formView.BusinessName != table.Description {
 		formView.BusinessName = table.Description
 		formViewUpdate = true

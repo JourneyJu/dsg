@@ -112,7 +112,7 @@ const CoreBusinessIndicator = ({
     })
 
     const platform = getPlatformNumber()
-    // 是否为长沙平台
+    // 是否为xx平台
     const isCSPlatform = useMemo(() => {
         return platform !== LoginPlatform.default
     }, [platform])
