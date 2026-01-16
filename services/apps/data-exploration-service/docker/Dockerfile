@@ -60,4 +60,4 @@ USER adp
 EXPOSE 8281
 
 # 指定启动命令
-ENTRYPOINT [ "./data-exploration-service-server", "server"]
+ENTRYPOINT [ "./data-exploration-service-server", "server", "--conf", "config/config.yaml", "--addr", "0.0.0.0:8281"]

@@ -59,5 +59,5 @@ USER adp
 # Expose port
 EXPOSE 8163
 
-# 指定启动命令（使用环境变量 CONFIG_PATH）
-ENTRYPOINT [ "./basic-search-server", "server" ]
+# 指定启动命令（明确指定配置路径）
+ENTRYPOINT [ "./basic-search-server", "server", "--conf", "config/config.yaml", "--addr", "0.0.0.0:8163"]

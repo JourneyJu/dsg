@@ -18,8 +18,8 @@ require (
 	github.com/jinzhu/copier v0.4.0
 	github.com/json-iterator/go v1.1.12
 	github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.3
-	github.com/kweaver-ai/idrm-go-common v0.1.2
-	github.com/kweaver-ai/idrm-go-frame v0.1.3-0.20260115055217-6aac59b7f1cb
+	github.com/kweaver-ai/idrm-go-common v0.1.3
+	github.com/kweaver-ai/idrm-go-frame v0.1.3
 	github.com/redis/go-redis/v9 v9.17.2
 	github.com/samber/lo v1.52.0
 	github.com/stretchr/testify v1.11.1
@@ -27,14 +27,15 @@ require (
 	github.com/uptrace/opentelemetry-go-extra/otelgorm v0.3.2
 	go.uber.org/mock v0.6.0
 	go.uber.org/zap v1.27.1
-	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842
+	golang.org/x/exp v0.0.0-20240823005443-9b4947da3948
 	gorm.io/driver/mysql v1.6.0
-	gorm.io/gen v0.3.23
+	gorm.io/gen v0.3.27
 	gorm.io/gorm v1.31.1
 	gorm.io/plugin/soft_delete v1.2.1
 )
 
 require (
+	dario.cat/mergo v1.0.2 // indirect
 	filippo.io/edwards25519 v1.1.0 // indirect
 	gitee.com/tdxmkf123/gorm-driver-dameng v1.0.4 // indirect
 	gitee.com/tdxmkf123/gorm-driver-oracle v1.0.2 // indirect
@@ -188,7 +189,7 @@ require (
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
-	gorm.io/datatypes v1.2.0 // indirect
+	gorm.io/datatypes v1.2.4 // indirect
 	gorm.io/driver/gaussdb v0.1.0 // indirect
 	gorm.io/driver/postgres v1.6.0 // indirect
 	gorm.io/driver/sqlserver v1.6.3 // indirect

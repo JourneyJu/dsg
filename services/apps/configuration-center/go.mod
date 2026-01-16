@@ -22,8 +22,8 @@ require (
 	github.com/jinzhu/copier v0.4.0
 	github.com/json-iterator/go v1.1.12
 	github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.3
-	github.com/kweaver-ai/idrm-go-common v0.1.2
-	github.com/kweaver-ai/idrm-go-frame v0.1.3-0.20260115055217-6aac59b7f1cb
+	github.com/kweaver-ai/idrm-go-common v0.1.3
+	github.com/kweaver-ai/idrm-go-frame v0.1.3
 	github.com/mitchellh/mapstructure v1.5.0
 	github.com/mozillazg/go-pinyin v0.20.0
 	github.com/nsqio/go-nsq v1.1.0
@@ -42,7 +42,7 @@ require (
 	go.opentelemetry.io/otel/trace v1.39.0
 	go.uber.org/mock v0.6.0
 	go.uber.org/zap v1.27.1
-	golang.org/x/exp v0.0.0-20240506185415-9bf2ced13842
+	golang.org/x/exp v0.0.0-20240823005443-9b4947da3948
 	golang.org/x/net v0.48.0
 	golang.org/x/sync v0.19.0
 	golang.org/x/text v0.32.0
@@ -58,6 +58,7 @@ require (
 )
 
 require (
+	dario.cat/mergo v1.0.2 // indirect
 	filippo.io/edwards25519 v1.1.0 // indirect
 	gitee.com/tdxmkf123/gorm-driver-dameng v1.0.4 // indirect
 	gitee.com/tdxmkf123/gorm-driver-oracle v1.0.2 // indirect

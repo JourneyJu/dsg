@@ -417,10 +417,8 @@ github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.3 h1:pE+nTrolc4ddaflWHFa
 github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.3/go.mod h1:UFxm9Z8IHeiOGJwW1ZFtBUGp1UamOBakmMYKqniKpwM=
 github.com/kweaver-ai/TelemetrySDK-Go/span/v2 v2.10.3 h1:RfDAVWBrQ9Beu5kNBCga3HcwWnTjoUSHDX5cxw6DZfI=
 github.com/kweaver-ai/TelemetrySDK-Go/span/v2 v2.10.3/go.mod h1:JrfEsKeZEQG5cic8RTCYqk9L2jBr/T9GhtS9gYini0A=
-github.com/kweaver-ai/idrm-go-common v0.1.2 h1:EqgduWVF5X2clMWf5/p7DEZ69mgIW1II4KM7Udbt+Qg=
-github.com/kweaver-ai/idrm-go-common v0.1.2/go.mod h1:Ib9T5QhM4sunUwHC06rHuttXVCcLKYx+/zpPZauTbfk=
-github.com/kweaver-ai/idrm-go-frame v0.1.3-0.20260115055217-6aac59b7f1cb h1:lYKtNhQJ4TanLJrgL7444eW4VZaZy8K+Zq/7kGoa1uI=
-github.com/kweaver-ai/idrm-go-frame v0.1.3-0.20260115055217-6aac59b7f1cb/go.mod h1:y3GQWLeJhnqLJn5w3dNsq81EF5VdgpDMIqF0Rhu79e4=
+github.com/kweaver-ai/idrm-go-common v0.1.3 h1:HJq5zqaTmjVLhHC0hYbolnPaXwZnzlczxrqN5SkCBzs=
+github.com/kweaver-ai/idrm-go-frame v0.1.3 h1:O44r61aMze8zJFEJsHcCVlISLxm1u/uQ1d6fBOIS7EY=
 github.com/kweaver-ai/proton-mq-sdk-go v1.9.1 h1:pYRw/GS2lqdY41V8W2Kpj0H2Y9mx0aNMzxl36xIgy5Q=
 github.com/kweaver-ai/proton-mq-sdk-go v1.9.1/go.mod h1:f2Jve5kDOMmomCD3pLHgw7GHT0WgDqVZU6Ryeb4Amdc=
 github.com/leodido/go-urn v1.4.0 h1:WT9HwE9SGECu3lg4d/dIA+jxlljEa1/ffXKmRjqdmIQ=

@@ -4,14 +4,14 @@ use (
 	./services/apps/auth-service
 	./services/apps/basic-search
 	./services/apps/configuration-center
+	./services/apps/data-application-gateway
+	./services/apps/data-application-service
 	./services/apps/data-catalog
 	./services/apps/data-exploration-service
 	./services/apps/data-subject
+	./services/apps/data-view
 	./services/apps/session
 	./services/apps/task_center
-	./services/apps/data-view
-	./services/apps/data-application-service
-	./services/apps/data-application-gateway
 )
 
 replace gitee.com/tdxmkf123/gorm-driver-dameng => ./local_patches/gorm-driver-dameng

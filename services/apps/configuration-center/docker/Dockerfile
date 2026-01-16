@@ -41,17 +41,23 @@ ARG GID=1001
 RUN groupadd -r -g $GID adp \
     && useradd -r -u $UID -g $GID adp
 
-COPY --from=builder --chown=$UID:$GID /build/bin /opt/configuration-center
+# 创建目标目录结构
+RUN mkdir -p /opt/configuration-center/config \
+    && mkdir -p /opt/configuration-center/logs \
+    && mkdir -p /opt/configuration-center/cmd/server/static
 
-# 创建配置目录并复制配置文件（从 builder 阶段复制）
-RUN mkdir -p /opt/configuration-center/config
+# 复制二进制文件
+COPY --from=builder --chown=$UID:$GID /build/bin/configuration-center-server /opt/configuration-center/
+
+# 复制配置文件
 COPY --from=builder --chown=$UID:$GID /build/cmd/server/config/config.yaml /opt/configuration-center/config/
 
-# 创建日志目录并设置权限
-RUN mkdir -p /opt/configuration-center/logs && chown -R $UID:$GID /opt/configuration-center/logs
+# 复制静态资源文件（menu.json等），保持 cmd/server/static 目录结构
+COPY --from=builder --chown=$UID:$GID /build/cmd/server/static/menu.json /opt/configuration-center/cmd/server/static/menu.json
+COPY --from=builder --chown=$UID:$GID /build/cmd/server/static/menu.back.json /opt/configuration-center/cmd/server/static/menu.back.json
 
-# 复制静态资源文件（menu.json等）
-COPY --from=builder --chown=$UID:$GID /build/cmd/server/static /opt/configuration-center/cmd/server/static
+# 设置目录权限
+RUN chown -R $UID:$GID /opt/configuration-center/logs
 
 # 指定工作目录
 WORKDIR /opt/configuration-center/

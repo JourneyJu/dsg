@@ -59,5 +59,5 @@ USER adp
 # Expose port
 EXPOSE 8153
 
-# 指定启动命令
-ENTRYPOINT [ "./data-catalog-server", "server" ]
+# 指定启动命令（明确指定配置路径）
+ENTRYPOINT [ "./data-catalog-server", "server", "--conf", "config/config.yaml", "--addr", "0.0.0.0:8153"]

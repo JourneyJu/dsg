@@ -240,6 +240,11 @@ services:
       - AUDIT_ENABLED=false
       - LOG_LEVEL=info
       - GOPRIVATE=github.com/kweaver-ai/*
+      - OSS_APP=configuration-center
+      - OSS_HOST=${OSS_HOST:-localhost}
+      - OSS_PROTOCOL=${OSS_PROTOCOL:-http}
+      - OSS_IS_DEFAULT=${OSS_IS_DEFAULT:-true}
+      - OSS_BUCKET=${OSS_BUCKET:-dsg-bucket}
     volumes:
       - ../services/apps/configuration-center/cmd/server/config/config.yaml:/opt/configuration-center/config/config.yaml:ro
       - configuration-center-logs:/opt/configuration-center/logs
@@ -323,6 +328,9 @@ services:
       - DB_TYPE=mysql
       - REDIS_HOST=redis:6379
       - REDIS_PASSWORD=
+      - REDIS_DB=${REDIS_DB:-0}
+      - REDIS_SENTINEL_PASSWORD=${REDIS_SENTINEL_PASSWORD:-}
+      - REDIS_CONNECT_TYPE=${REDIS_CONNECT_TYPE:-direct}
       - KAFKA_URI=kafka:9092
       - KAFKA_USERNAME=admin
       - KAFKA_PASSWORD=admin123
@@ -334,6 +342,21 @@ services:
       - TRACE_ENABLED=false
       - LOG_LEVEL=info
       - GOPRIVATE=github.com/kweaver-ai/*
+      - KAFKA_CONSUMER_GROUP=${KAFKA_CONSUMER_GROUP:-data-exploration-group}
+      - EXPLORE_CACHE_EXPIRE_TIME=${EXPLORE_CACHE_EXPIRE_TIME:-3600}
+      - EXPLORE_GROUP_LIMIT=${EXPLORE_GROUP_LIMIT:-100}
+      - REPORT_DEFAULT_OVER_TIME=${REPORT_DEFAULT_OVER_TIME:-300}
+      - VIRTUAL_QUERY_RESULT_TOPIC=${VIRTUAL_QUERY_RESULT_TOPIC:-virtual-query-result}
+      - VIRTUAL_ENGINE_TIMEOUT=${VIRTUAL_ENGINE_TIMEOUT:-60}
+      - concurrency_enable=${concurrency_enable:-true}
+      - concurrency_limit=${concurrency_limit:-10}
+      - concurrency_task_limit=${concurrency_task_limit:-100}
+      - retry_count=${retry_count:-3}
+      - retry_wait_time=${retry_wait_time:-1}
+      - retry_time_out=${retry_time_out:-30}
+      - mdl_uni_query_client_time_out=${mdl_uni_query_client_time_out:-60}
+      - DOC_HOST=${DOC_HOST:-localhost:8281}
+      - POD_IP=${POD_IP:-127.0.0.1}
     volumes:
       - ../services/apps/data-exploration-service/cmd/server/config/config.yaml:/opt/data-exploration-service/config/config.yaml:ro
       - data-exploration-service-logs:/opt/data-exploration-service/logs
@@ -381,6 +404,38 @@ services:
       - TRACE_ENABLED=false
       - LOG_LEVEL=info
       - GOPRIVATE=github.com/kweaver-ai/*
+      - KAFKA_HOST=${KAFKA_HOST:-kafka}
+      - KAFKA_PORT=${KAFKA_PORT:-9092}
+      - KAFKA_LOOKUPD_HOST=${KAFKA_LOOKUPD_HOST:-}
+      - KAFKA_LOOKUPD_PORT=${KAFKA_LOOKUPD_PORT:-}
+      - WORKFLOW_MQ_TYPE=${WORKFLOW_MQ_TYPE:-kafka}
+      - WORKFLOW_MQ_CHANNEL=${WORKFLOW_MQ_CHANNEL:-workflow}
+      - SERVER_VERSION=${SERVER_VERSION:-1.0.0}
+      - KAFKA_VERSION=${KAFKA_VERSION:-2.8.0}
+      - DOC_HOST=${DOC_HOST:-localhost:8155}
+      - SERVER_NAME=${SERVER_NAME:-auth-service}
+      - TRACE_URL=${TRACE_URL:-}
+      - LOG_URL=${LOG_URL:-}
+      - REDIS_MASTER_NAME=${REDIS_MASTER_NAME:-}
+      - KAFKA_CLIENT_ID=${KAFKA_CLIENT_ID:-auth-service}
+      - KAFKA_GROUP_ID=${KAFKA_GROUP_ID:-auth-service-group}
+      - VIRTUAL_ENGINE=${VIRTUAL_ENGINE:-}
+      - DATA_CATALOG=${DATA_CATALOG:-}
+      - METADATA_MANAGE=${METADATA_MANAGE:-}
+      - GLOSSARY_SERVICE=${GLOSSARY_SERVICE:-}
+      - USER_MANAGEMENT=${USER_MANAGEMENT:-}
+      - WORKFLOW_REST=${WORKFLOW_REST:-}
+      - DATA_APPLICATION_SERVICE=${DATA_APPLICATION_SERVICE:-}
+      - BASIC_SEARCH=${BASIC_SEARCH:-}
+      - DATA_SUBJECT=${DATA_SUBJECT:-}
+      - DATA_VIEW=${DATA_VIEW:-}
+      - DOC_AUDIT_REST=${DOC_AUDIT_REST:-}
+      - NSQ_HOST=${NSQ_HOST:-}
+      - NSQ_PORT=${NSQ_PORT:-}
+      - NSQ_LOOKUPD_HOST=${NSQ_LOOKUPD_HOST:-}
+      - NSQ_LOOKUPD_PORT=${NSQ_LOOKUPD_PORT:-}
+      - NSQ_HTTP_HOST=${NSQ_HTTP_HOST:-}
+      - NSQ_HTTP_PORT=${NSQ_HTTP_PORT:-}
     volumes:
       - ../services/apps/auth-service/cmd/server/config/config.yaml:/opt/auth-service/config/config.yaml:ro
       - auth-service-logs:/opt/auth-service/logs
