@@ -55,12 +55,12 @@ depServices:
     host: mariadb-mariadb-master.resource
     port: 3330
     user: anyshare
-    password: eisoo.com123
+    password: password
     database: af_data_catalog
     migrationPath: /usr/local/bin/af/infrastructure/repository/db/gen/migration
   redis:
     host: proton-redis-proton-redis.resource:6379
-    password: eisoo.com123
+    password: password
     database: 1
     minIdleConns: 8
   configuration-center:
@@ -91,7 +91,7 @@ depServices:
   mq:
     kafkaHost: kafka-external-31000.resource:9098
     kafkaUser: kafkaclient
-    kafkaPassword: eisoo.com123
+    kafkaPassword: password
     mqHost: proton-mq-nsq-nsqd.resource
     mqPort: 4150
     mqHttpHost: proton-mq-nsq-nsqd.resource
@@ -142,9 +142,9 @@ depServices:
   anyData:
     url: https://10.4.132.124:8444
     accountType: email
-    user: af@aishu.cn
-    password: RWlzb28uS2FudC4hQCMx
-    searchServiceID: 16385748c9b94b9faa58c7ed13dada1f
+    user: 
+    password: 
+    searchServiceID: 
   openai:
     url: https://anyfabric-dev.openai.azure.com/
     key: 01823c5e56174144bdd9b4dfdf83c826

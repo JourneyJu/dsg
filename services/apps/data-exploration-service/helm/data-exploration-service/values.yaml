@@ -57,14 +57,14 @@ depServices:
     host: mariadb-mariadb-master.resource
     port: 3330
     user: anyshare
-    password: eisoo.com123
+    password: password
     database: af_data_exploration
     migrationPath: /usr/local/bin/af/infrastructure/repository/db/gen/migration  
   redis:
     addr: proton-redis-proton-redis-sentinel.resource:26379
     db: 3
-    password: eisoo.com123
-    sentinelPassword: eisoo.com123
+    password: password
+    sentinelPassword: password
     masterName: mymaster
   configCenterService:
     host: configuration-center
@@ -90,7 +90,7 @@ depServices:
     uri: kafka-external-31000.resource:9098
     mechanism: PLAIN
     username: kafkaclient
-    password: eisoo.com123
+    password: password
     groupId: af.data_exploration
 
 # 修改pod资源限制：cpu示例:0.5/500m/1/1000m;memory示例:512Mi/1Gi
