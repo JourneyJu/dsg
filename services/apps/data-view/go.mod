@@ -7,7 +7,7 @@ require (
 	github.com/Shopify/sarama v1.38.1
 	github.com/avast/retry-go v3.0.0+incompatible
 	github.com/cheerego/go-redisson v0.0.6
-	github.com/gin-gonic/gin v1.11.0
+	github.com/gin-gonic/gin v1.10.1
 	github.com/go-playground/locales v0.14.1
 	github.com/go-playground/universal-translator v0.18.1
 	github.com/go-playground/validator/v10 v10.30.1
@@ -18,7 +18,7 @@ require (
 	github.com/jinzhu/copier v0.4.0
 	github.com/json-iterator/go v1.1.12
 	github.com/jung-kurt/gofpdf v1.16.2
-	github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.3
+	github.com/kweaver-ai/TelemetrySDK-Go/exporter/v2 v2.10.2
 	github.com/kweaver-ai/idrm-go-common v0.1.3
 	github.com/kweaver-ai/idrm-go-frame v0.1.3
 	github.com/samber/lo v1.52.0
@@ -38,7 +38,7 @@ require (
 	go.uber.org/zap v1.27.1
 	golang.org/x/exp v0.0.0-20240823005443-9b4947da3948
 	golang.org/x/net v0.48.0
-	google.golang.org/protobuf v1.36.11
+	google.golang.org/protobuf v1.34.2
 	gorm.io/driver/mysql v1.6.0
 	gorm.io/gen v0.3.27
 	gorm.io/gorm v1.31.1
@@ -202,12 +202,9 @@ require (
 require (
 	dario.cat/mergo v1.0.2 // indirect
 	github.com/emirpasic/gods v1.18.1 // indirect
-	github.com/goccy/go-yaml v1.18.0 // indirect
 	github.com/google/pprof v0.0.0-20250208200701-d0013a598941 // indirect
-	github.com/onsi/ginkgo/v2 v2.22.2 // indirect
-	github.com/onsi/gomega v1.36.2 // indirect
-	github.com/quic-go/qpack v0.6.0 // indirect
-	github.com/quic-go/quic-go v0.58.0 // indirect
+	github.com/onsi/ginkgo/v2 v2.22.0 // indirect
+	github.com/onsi/gomega v1.34.2 // indirect
 	github.com/thoas/go-funk v0.8.0 // indirect
 	go.uber.org/mock v0.6.0 // indirect
 )
