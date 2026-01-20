@@ -83,7 +83,7 @@ build-linux:
 MYSQL_HOST=mariadb-mariadb-master.resource
 MYSQL_PORT=3330
 MYSQL_USERNAME=anyshare
-MYSQL_PASSWORD=eisoo.com123
+MYSQL_PASSWORD=xxx
 MYSQL_DB=af_auth
 
 SQL_PATH='infrastructure/repository/db/gen/migration'

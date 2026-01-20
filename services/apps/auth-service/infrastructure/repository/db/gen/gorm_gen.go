@@ -4,10 +4,6 @@ import (
 	"bufio"
 	"flag"
 	"fmt"
-	"github.com/kweaver-ai/dsg/services/apps/auth-service/infrastructure/repository/db/gen/custom_method"
-	"gorm.io/driver/mysql"
-	"gorm.io/gen"
-	"gorm.io/gorm"
 	"io"
 	"log"
 	"os"
@@ -15,6 +11,11 @@ import (
 	"path/filepath"
 	"runtime"
 	"strings"
+
+	"github.com/kweaver-ai/dsg/services/apps/auth-service/infrastructure/repository/db/gen/custom_method"
+	"gorm.io/driver/mysql"
+	"gorm.io/gen"
+	"gorm.io/gorm"
 )
 
 var ExcludeTables = []string{
@@ -37,7 +38,7 @@ func main() {
 	flag.Parse()
 
 	if len(dsn) == 0 {
-		dsn = "root:eisoo.com123@(10.4.108.86:3330)/af_main?charset=utf8mb4&parseTime=True&loc=Local"
+		dsn = "root:xxx@(10.4.108.86:3330)/af_main?charset=utf8mb4&parseTime=True&loc=Local"
 	}
 
 	if len(dsn) == 0 {
