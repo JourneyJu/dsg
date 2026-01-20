@@ -30,6 +30,14 @@ service:
   port: 80
   oauthClientID: ""
   oauthClientSecret: ""
+  telemetry:
+    log:
+      enabled: false
+      endpoint: http://feed-ingester-service:13031/api/feed_ingester/v1/jobs/job-4d42d761dbf0ea95/events
+      level: INFO
+    trace:
+      enabled: false
+      endpoint: http://feed-ingester-service:13031/api/feed_ingester/v1/jobs/job-a2491f67d02e482c/events
 
 depServices:
   rds:

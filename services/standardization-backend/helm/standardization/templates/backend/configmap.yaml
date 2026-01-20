@@ -137,6 +137,14 @@ data:
       department-id: 8fd85070-3c6c-11f0-9815-12b58a7f919c/8fdbed3e-3c6c-11f0-9815-12b58a7f919c/9060f92a-3c6c-11f0-9815-12b58a7f919c
       third-dept-id: zctc6m9par2s4nbg5wxbua
     hostAliases: []
+    anyrobot:
+      log:
+        enabled: {{ .Values.service.telemetry.log.enabled | quote }}
+        endpoint: {{ .Values.service.telemetry.log.endpoint | quote }}
+        level: {{ .Values.service.telemetry.log.level | quote }}
+      trace:
+        enabled: {{ .Values.service.telemetry.trace.enabled | quote }}
+        endpoint: {{ .Values.service.telemetry.trace.endpoint | quote }}
     oss:
       ossApp:  {{ .Values.oss.ossApp | quote }}
       ossHost:  {{ .Values.oss.ossHost | quote }}
