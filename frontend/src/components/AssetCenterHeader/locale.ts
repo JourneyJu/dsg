@@ -45,4 +45,5 @@ export default i18n([
     ['数据应用', '數據應用', 'Data Application'],
     ['问数助手', '問數助手', 'Question Number Assistant'],
     ['评估任务', '評估任務', 'Evaluation Task'],
+    ['找数助手', '找數助手', 'Find Data Assistant'],
 ])

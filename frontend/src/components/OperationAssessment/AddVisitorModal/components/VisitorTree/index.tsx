@@ -23,7 +23,6 @@ import {
     searchUserDepart,
 } from '@/core'
 import VisitorLabel from '../VisitorLabel'
-import { getDepartLabelByDepartments } from '../../helper'
 import { DataNode, OptionType } from '../../const'
 import __ from './locale'
 import styles from './styles.module.less'

@@ -1,8 +1,7 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as departmentIconSvg } from './svg/outlined/department.svg'
+import FontIcon from './FontIcon'
 
 const DepartmentOutlined = (props: any) => (
-    <Icon component={departmentIconSvg} {...props} />
+    <FontIcon name="icon-bumen" {...props} />
 )
 
 export default DepartmentOutlined

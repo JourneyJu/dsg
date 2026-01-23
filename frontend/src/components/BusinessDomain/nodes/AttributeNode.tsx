@@ -651,7 +651,7 @@ const AttributeNodeComponent: React.FC<IAttributeNodeComponent> = ({
 
     const handleSelected = async (eleData) => {
         try {
-            const res = await formsQueryStandardItem({ id: eleData.code })
+            const res = await formsQueryStandardItem({ code: eleData.code })
             const labelData = eleData.label_id
                 ? {
                       label_id: eleData.label_id,

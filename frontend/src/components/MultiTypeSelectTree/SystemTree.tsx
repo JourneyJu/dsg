@@ -95,7 +95,7 @@ const SystemTree = ({
             <div
                 className={classnames(
                     styles['dirtree-content-data-top'],
-                    selectedNode === '' ? styles.checked : '',
+                    selectedNode?.id === '' ? styles.checked : '',
                     'dirtree-content-data-top',
                 )}
                 onClick={() => {

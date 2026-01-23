@@ -11,17 +11,10 @@ import { cloneDeep, noop } from 'lodash'
 import classnames from 'classnames'
 import styles from './styles.module.less'
 import __ from './locale'
-import {
-    getMetaDataFields,
-    formatError,
-    getDatasheetViewDetails,
-    dataTypeMapping,
-} from '@/core'
+import { getDatasheetViewDetails, dataTypeMapping } from '@/core'
 import { typeOptoins, infoItemsFormData, infoItemsLabelTips } from './const'
 import { IFormItem } from '@/components/SearchLayout/const'
 import FormLayout from '../FormLayout'
-import { TipsLabel } from './BaseInfo'
-import { OperateType } from '@/utils'
 
 interface Item {
     key: string

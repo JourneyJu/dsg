@@ -27,7 +27,7 @@ import {
     CreateType,
     colorList,
     generateData,
-    sensitiveOptoins,
+    sensitiveOptions,
     classifiedOptoins,
     shareTypeOptoins,
 } from './const'
@@ -255,12 +255,7 @@ const AddTag: React.FC<IAddTag> = ({
                                             </div>
                                             <div>
                                                 {__(
-                                                    '预设选项：若目录信息项分级为当前级别，则信息项的部分属性，自动选择预设的值，不勾选配置则不做要求。',
-                                                )}
-                                            </div>
-                                            <div>
-                                                {__(
-                                                    '另外，读取预设选项后，用户仍然可调整，最终以用户设置为准。',
+                                                    '预设值：编目时，目录信息项选择的属性条件若符合当前级别的预设值，则信息项级别自动归类到当前分级；若不设置预设值或3个预设值均相同，则分级就高不就低（分级标签管理列表中，标签顺序越靠上的级别越高）。',
                                                 )}
                                             </div>
                                         </div>
@@ -281,7 +276,7 @@ const AddTag: React.FC<IAddTag> = ({
                             {hasSensitive ? (
                                 <Form.Item label="" name="sensitive_attri">
                                     <CustomRadio
-                                        options={sensitiveOptoins}
+                                        options={sensitiveOptions}
                                         canCancel={false}
                                     />
                                 </Form.Item>

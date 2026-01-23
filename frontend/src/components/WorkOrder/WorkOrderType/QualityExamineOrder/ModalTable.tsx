@@ -1,11 +1,5 @@
 import { Button, Popover, Space, Table, Tooltip } from 'antd'
-import {
-    MoreOutlined,
-    CaretUpOutlined,
-    CaretDownOutlined,
-    UpOutlined,
-    DownOutlined,
-} from '@ant-design/icons'
+import { UpOutlined, DownOutlined } from '@ant-design/icons'
 import React, { useEffect, useMemo, useState, useRef } from 'react'
 import classnames from 'classnames'
 import { useAntdTable } from 'ahooks'

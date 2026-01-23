@@ -4,7 +4,7 @@ import moment from 'moment'
 import { RightOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
 import { noop, toNumber, has } from 'lodash'
-import { DownloadOutlined, FontIcon } from '@/icons'
+import { FontIcon } from '@/icons'
 import { IconType as FontIconType } from '@/icons/const'
 import AuthInfo from '@/components/MyAssets/AuthInfo'
 import styles from './styles.module.less'
@@ -36,10 +36,6 @@ import AccessModal from '@/components/AccessPolicy/AccessModal'
 import { DataRescTypeMap, getDataRescTypeIcon, getOtherInfo } from './helper'
 import ApplyChooseModal from '@/components/ResourceSharing/Apply/ApplyChooseModal'
 import { CreateObjection } from '@/components/ObjectionMgt'
-import {
-    PrvcCatlgRescTypeList,
-    ServiceStatusEnum,
-} from '../ProvinceCatlg/helper'
 import FavoriteOperation, {
     UpdateFavoriteParams,
 } from '@/components/Favorite/FavoriteOperation'
@@ -104,17 +100,18 @@ export const renderOtherInfo = (
 
     return otherInfo?.map((infoItem) => {
         const { infoKey, infoRawKey, icon, toolTipTitle } = infoItem
-        let tipContent = item[infoKey]
+        const tipContent = item[infoKey]
         let content = item[infoRawKey]
-        if (
-            type === DataRescType.PROVINCE_DATACATLG &&
-            infoRawKey === 'relate_resc_type'
-        ) {
-            const rescLabelList =
-                relateRescType?.map((rKey) => PrvcCatlgRescTypeList[rKey]) || []
-            content = rescLabelList.join('、')
-            tipContent = content
-        } else if (infoRawKey === 'api_type') {
+        // if (
+        //     type === DataRescType.PROVINCE_DATACATLG &&
+        //     infoRawKey === 'relate_resc_type'
+        // ) {
+        //     const rescLabelList =
+        //         relateRescType?.map((rKey) => PrvcCatlgRescTypeList[rKey]) || []
+        //     content = rescLabelList.join('、')
+        //     tipContent = content
+        // } else
+        if (infoRawKey === 'api_type') {
             content = serviceTypeList?.find(
                 (sItem) => sItem.value === content,
             )?.label
@@ -185,7 +182,7 @@ interface IDataRescListItem {
     is_publish?: boolean
     is_online?: boolean
     // 省级目录-资源状态，1：生效中，0：已撤销，上报无需传
-    status?: ServiceStatusEnum
+    status?: '1' | '0'
     // 发布状态
     published_status?: string
     // 上线状态
@@ -243,6 +240,8 @@ interface IDataRescItem {
     onAddFavorite?: ({ is_favored, favor_id }: UpdateFavoriteParams) => void
     // 取消收藏
     onCancelFavorite?: ({ is_favored, favor_id }: UpdateFavoriteParams) => void
+    // 是否显示类型文本
+    showTypeText?: boolean
 }
 
 const DataRescItem: React.FC<IDataRescItem> = ({
@@ -267,6 +266,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
     onAddFavorite = noop,
     showCard,
     filterOperationList,
+    showTypeText = true,
     onCancelFavorite = noop,
 }: IDataRescItem) => {
     const [userId] = useCurrentUser('ID')
@@ -442,7 +442,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
     const getFieldLabelData = (_type: DataRescType, count = 0) => {
         switch (_type) {
             case DataRescType.LOGICALVIEW:
-                return __('字段信息(${count}):', {
+                return __('字段(${count}):', {
                     count: (count || 0).toString(),
                 })
             case DataRescType.INTERFACE:
@@ -542,6 +542,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                         {getDataRescTypeIcon({
                             type: item.type,
                             indicator_type: item.indicator_type,
+                            showTypeText,
                         })}
                         <div className={styles.nameWrapper}>
                             {hasDataOperRole &&
@@ -621,8 +622,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                     </span>
                                 )}
                                 {type === DataRescType.PROVINCE_DATACATLG &&
-                                    status?.toString() ===
-                                        ServiceStatusEnum.REVOKED && (
+                                    status?.toString() === '0' && (
                                         <div className={styles.cancelStatus}>
                                             {__('已撤销')}
                                         </div>
@@ -790,156 +790,6 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                             )}
                         </Space>
                     </div>
-                    {/* 一行展示尽可能多的字段信息，结尾显示“+n”标签标识超出标签个数 */}
-                    {/* {!!item?.fields?.length && (
-                        <SizeMe>
-                            {({ size: outerSize }) => (
-                                <div
-                                    className={classnames(
-                                        styles.fieldTagWrapper,
-                                        !isTagExpand && styles.isUnExpand,
-                                    )}
-                                >
-                                    <span className={styles.fieldWrapperField}>
-                                        {type === DataRescType.LOGICALVIEW
-                                            ? __('字段信息:')
-                                            : __('出参字段:')}
-                                    </span>
-                                    <SizeMe>
-                                        {({ size: innerSize }) => {
-                                            const shwoExpand =
-                                                (outerSize?.width || 0) - 50 ===
-                                                innerSize.width
-                                            return (
-                                                <div
-                                                    className={
-                                                        styles.fieldInfoWrap
-                                                    }
-                                                >
-                                                    <div
-                                                        className={
-                                                            styles.fieldInfo
-                                                        }
-                                                        id={id}
-                                                    >
-                                                        {item?.fields?.map(
-                                                            (fItem, index) => {
-                                                                const {
-                                                                    business_name:
-                                                                        nameCn,
-                                                                    raw_business_name:
-                                                                        rawNameCn,
-                                                                    technical_name:
-                                                                        nameEn,
-                                                                    raw_technical_name:
-                                                                        rawNameEn,
-                                                                } = fItem
-                                                                return (
-                                                                    <Tooltip
-                                                                        color="#fff"
-                                                                        title={
-                                                                            <div
-                                                                                style={{
-                                                                                    color: '#000',
-                                                                                }}
-                                                                            >
-                                                                                <div
-                                                                                    dangerouslySetInnerHTML={{
-                                                                                        __html: `${__(
-                                                                                            '业务名称：',
-                                                                                        )}${
-                                                                                            nameCn ||
-                                                                                            '--'
-                                                                                        }`,
-                                                                                    }}
-                                                                                />
-                                                                                <div
-                                                                                    dangerouslySetInnerHTML={{
-                                                                                        __html: `${__(
-                                                                                            '技术名称：',
-                                                                                        )}${
-                                                                                            nameEn ||
-                                                                                            '--'
-                                                                                        }`,
-                                                                                    }}
-                                                                                />
-                                                                            </div>
-                                                                        }
-                                                                        // dangerouslySetInnerHTML={{
-                                                                        //     __html:
-                                                                        //         `${fItem?.business_name}${fItem?.technical_name}` ||
-                                                                        //         '--',
-                                                                        // }}
-                                                                    >
-                                                                        <div
-                                                                            className={
-                                                                                styles.fieldTag
-                                                                            }
-                                                                            // title={
-                                                                            //     `${rawNameCn} | ${rawNameEn}` ||
-                                                                            //     '--'
-                                                                            // }
-                                                                            id={`fieldTag${id}${index}`}
-                                                                            aria-setsize={
-                                                                                document.getElementById(
-                                                                                    `fieldTag${id}${index}`,
-                                                                                )
-                                                                                    ?.offsetTop
-                                                                            }
-                                                                        >
-                                                                            {
-                                                                                document.getElementById(
-                                                                                    `fieldTag${index}`,
-                                                                                )
-                                                                                    ?.offsetTop
-                                                                            }
-                                                                            {
-                                                                                rawNameCn
-                                                                            }
-                                                                        </div>
-                                                                    </Tooltip>
-                                                                )
-                                                            },
-                                                        )}
-                                                    </div>
-
-                                                    <div
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                            setIsTagExpand(
-                                                                !isTagExpand,
-                                                            )
-                                                        }}
-                                                        className={
-                                                            styles.expandIcon
-                                                        }
-                                                        style={{
-                                                            visibility:
-                                                                shwoExpand
-                                                                    ? 'visible'
-                                                                    : 'hidden',
-                                                            flex: 1,
-                                                        }}
-                                                    >
-                                                        +
-                                                        {Array.prototype.filter.call(
-                                                            document.getElementById(
-                                                                id,
-                                                            )?.childNodes || [],
-                                                            (n) =>
-                                                                n?.getAttribute(
-                                                                    'aria-setsize',
-                                                                ) !== '0',
-                                                        )?.length || 0}
-                                                    </div>
-                                                </div>
-                                            )
-                                        }}
-                                    </SizeMe>
-                                </div>
-                            )}
-                        </SizeMe>
-                    )} */}
                     <div className={styles.otherInfo}>
                         <div>
                             {type === DataRescType.PROVINCE_DATACATLG
@@ -986,7 +836,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                         />
                     ) : (
                         <div className={styles.nameBtn}>
-                            {(isOwner || canAuth) &&
+                            {/* {(isOwner || canAuth) &&
                                 isPubOrOnline &&
                                 (isShowRequestPath ||
                                     isMicroWidget({ microWidgetProps })) &&
@@ -1013,7 +863,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                             }}
                                         />
                                     </Tooltip>
-                                )}
+                                )} */}
                             {/* 申请共享 */}
                             {/* {item.is_online &&
                                 item.api_type === 'service_register' &&
@@ -1126,7 +976,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                         />
                                     </Tooltip>
                                 )}
-                            {item?.type === DataRescType.LOGICALVIEW && (
+                            {/* {item?.type === DataRescType.LOGICALVIEW && (
                                 <Tooltip
                                     title={
                                         has_permission
@@ -1139,13 +989,14 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                     }
                                     placement="bottom"
                                 >
-                                    <DownloadOutlined
+                                    <FontIcon
                                         className={classnames(
                                             styles.itemOprIcon,
                                             (!has_permission ||
                                                 !hasOwnedRoles) &&
                                                 styles.itemOprDiabled,
                                         )}
+                                        name="icon-xiazai"
                                         onClick={(e) => {
                                             e.preventDefault()
                                             e.stopPropagation()
@@ -1196,23 +1047,23 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                     />
                                 </Tooltip>
                             )} */}
-                            {item?.type === DataRescType.LOGICALVIEW &&
+                            {/* {item?.type === DataRescType.LOGICALVIEW &&
                                 is_online &&
                                 (actions?.includes('read') || isOwner) && (
                                     <AddDataset
                                         item={item.id}
                                         className={styles.itemOprIcon}
                                     />
-                                )}
-                            {showFeedbackBtn && (
+                                )} */}
+                            {/* {showFeedbackBtn && (
                                 <FeedbackOperation
                                     item={item}
                                     type="button"
                                     resType={transformResType(item.type)}
                                 />
-                            )}
+                            )} */}
                             {/* 电子证照 使用目录模式的收藏 */}
-                            {showFavoriteBtn && (
+                            {/* {showFavoriteBtn && (
                                 <FavoriteOperation
                                     item={item}
                                     // className={styles.itemOprIcon}
@@ -1221,7 +1072,7 @@ const DataRescItem: React.FC<IDataRescItem> = ({
                                     onAddFavorite={onAddFavorite}
                                     onCancelFavorite={onCancelFavorite}
                                 />
-                            )}
+                            )} */}
                         </div>
                     )}
                 </div>

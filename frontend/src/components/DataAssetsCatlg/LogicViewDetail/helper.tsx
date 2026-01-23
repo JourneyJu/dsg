@@ -1,5 +1,5 @@
 import Icon, { InfoCircleOutlined, LoadingOutlined } from '@ant-design/icons'
-import { Tooltip, Spin } from 'antd'
+import { Tooltip, Spin, Divider } from 'antd'
 import moment from 'moment'
 import { isString } from 'lodash'
 import { useEffect, useState } from 'react'
@@ -12,6 +12,11 @@ import { monthsReg, chineseReg } from '@/utils'
 import { IconType } from '@/icons/const'
 import Loader from '@/ui/Loader'
 import { PolicyActionEnum, getBusinessUpdateTime, formatError } from '@/core'
+import {
+    openTypeList,
+    shareTypeList,
+    updateCycleOptions,
+} from '@/components/ResourcesDir/const'
 
 // 业务逻辑实体列表项参数
 export const itemOtherInfo = [
@@ -41,18 +46,18 @@ export const itemOtherInfo = [
         ),
         toolTipTitle: `${__('数据Owner：')}`,
     },
-    {
-        infoKey: 'access',
-        title: (
-            <FontIcon
-                name="icon-ziyuanquanxian"
-                className={styles.commonIcon}
-                type={IconType.FONTICON}
-                style={{ fontSize: 16, marginRight: '8px' }}
-            />
-        ),
-        toolTipTitle: `${__('权限：')}`,
-    },
+    // {
+    //     infoKey: 'access',
+    //     title: (
+    //         <FontIcon
+    //             name="icon-ziyuanquanxian"
+    //             className={styles.commonIcon}
+    //             type={IconType.FONTICON}
+    //             style={{ fontSize: 16, marginRight: '8px' }}
+    //         />
+    //     ),
+    //     toolTipTitle: `${__('权限：')}`,
+    // },
 ]
 
 // 列表-库表卡片-参数详情项
@@ -85,6 +90,33 @@ export const viewCardBaiscInfoList = [
         label: __('描述：'),
         value: '',
         key: 'description',
+        span: 24,
+    },
+    {
+        key: 'update_cycle',
+        label: `${__('更新周期')}：`,
+        options: updateCycleOptions,
+        value: '',
+        span: 24,
+    },
+    {
+        key: 'info_system',
+        label: `${__('关联系统')}：`,
+        value: '',
+        span: 24,
+    },
+    {
+        key: 'shared_type',
+        label: `${__('共享属性')}：`,
+        options: shareTypeList,
+        value: '',
+        span: 24,
+    },
+    {
+        key: 'open_type',
+        label: `${__('开放属性')}：`,
+        options: openTypeList,
+        value: '',
         span: 24,
     },
 ]
@@ -298,4 +330,61 @@ export const getDisabledTooltip = ({
     }
 
     return ''
+}
+export const showDivder = (divdStyle?: any) => {
+    return (
+        <Divider
+            style={{
+                height: '12px',
+                borderRadius: '1px',
+                borderLeft: '1px solid rgba(0,0,0,0.24)',
+                margin: '0px 2px 0px 12px',
+                ...divdStyle,
+            }}
+            type="vertical"
+        />
+    )
+}
+
+export const getShareAndOpenType = (data: any) => {
+    const items: any[] = [
+        {
+            key: 'update_cycle',
+            title: __('更新周期'),
+            options: updateCycleOptions,
+            value: '',
+        },
+        {
+            key: 'shared_type',
+            title: __('共享属性'),
+            options: shareTypeList,
+            value: '',
+        },
+        {
+            key: 'open_type',
+            title: __('开放属性'),
+            options: openTypeList,
+            value: '',
+        },
+    ]
+    return (
+        <div className={styles.itemOtherInfoBox}>
+            {items.map((item, index) => {
+                const value =
+                    item?.options?.find((v) => v.value === data?.[item.key])
+                        ?.label || '--'
+                return (
+                    <>
+                        <div className={styles.itemDetailInfo}>
+                            <span>{item.title}：</span>
+                            <span className={styles.ruleText}>{value}</span>
+                        </div>
+                        <span className={styles.divider}>
+                            {index < items.length - 1 && showDivder()}
+                        </span>
+                    </>
+                )
+            })}
+        </div>
+    )
 }

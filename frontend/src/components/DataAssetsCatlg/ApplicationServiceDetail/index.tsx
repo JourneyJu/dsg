@@ -11,7 +11,7 @@ import {
     Divider,
     Tooltip,
 } from 'antd'
-import Icon, { LeftOutlined, DownloadOutlined } from '@ant-design/icons'
+import Icon, { LeftOutlined } from '@ant-design/icons'
 import { noop } from 'lodash'
 import moment from 'moment'
 import { useUnmount } from 'ahooks'
@@ -1321,29 +1321,6 @@ const ApplicationServiceDetail = ({
                                             </Tooltip>
                                         </div>
                                     </div>
-                                    {/* <div className={styles.vistInfos}>
-                                        <span className={styles.label}>
-                                            <VisitOutlined
-                                                className={styles.icon}
-                                            />
-                                            <span className={styles.text}>
-                                                {__('访问量：')}
-                                            </span>
-                                            {applicationInfo?.service_info
-                                                ?.preview_num || '0'}
-                                        </span>
-                                        <span className={styles.label}>
-                                            <InterfaceOutlined
-                                                className={styles.icon}
-                                                style={{ fontSize: 14 }}
-                                            />
-                                            <span className={styles.text}>
-                                                {__('调用次数：')}
-                                            </span>
-                                            {applicationInfo?.service_info
-                                                ?.apply_num || '0'}
-                                        </span>
-                                    </div> */}
                                 </div>
                             </Space>
                         </div>

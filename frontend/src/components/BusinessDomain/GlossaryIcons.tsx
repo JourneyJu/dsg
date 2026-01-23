@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { Badge, Tooltip } from 'antd'
 import {
     GlossaryStatus,
@@ -8,7 +8,6 @@ import {
 import CommonIcon from '../CommonIcon'
 import { ReactComponent as L1Svg } from '@/icons/svg/outlined/L1.svg'
 import { ReactComponent as L2Svg } from '@/icons/svg/outlined/L2.svg'
-import { ReactComponent as L3Svg } from '@/icons/svg/outlined/L3.svg'
 import { ReactComponent as zhutiyuSvg } from '@/icons/svg/outlined/zhutiyu.svg'
 import { ReactComponent as gantanhaoSvg } from '@/icons/svg/outlined/gantanhao.svg'
 import { ReactComponent as gantanhao1Svg } from '@/icons/svg/outlined/gantanhao1.svg'

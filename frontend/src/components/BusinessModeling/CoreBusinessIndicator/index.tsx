@@ -112,7 +112,7 @@ const CoreBusinessIndicator = ({
     })
 
     const platform = getPlatformNumber()
-    // 是否为xx平台
+    // 是否为cs 平台
     const isCSPlatform = useMemo(() => {
         return platform !== LoginPlatform.default
     }, [platform])

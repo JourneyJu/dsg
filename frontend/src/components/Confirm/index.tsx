@@ -6,7 +6,6 @@ import {
 import { Modal, Button, Space, ModalProps, ConfigProvider } from 'antd'
 import { ExclamationCircleFilled } from '@ant-design/icons'
 import { noop } from 'lodash'
-import { getPopupContainer } from '@/utils/microApp'
 import styles from './styles.module.less'
 import __ from './locale'
 
@@ -33,12 +32,7 @@ const Confirm: React.FC<IConfirm> = ({
 }) => {
     return (
         <div className={styles.container}>
-            <Modal
-                width={width}
-                footer={null}
-                {...rest}
-                getContainer={getPopupContainer()}
-            >
+            <Modal width={width} footer={null} {...rest} getContainer={false}>
                 <div className={styles.title}>
                     {icon}
                     <div className={styles.text}>{title}</div>
@@ -98,7 +92,7 @@ export const Confirm2: React.FC<IConfirm> = ({
             className={styles.confirm2Wrap}
             bodyStyle={{ padding: 32 }}
             {...modalProps}
-            getContainer={getPopupContainer()}
+            getContainer={false}
         >
             <div className={styles.cf2}>
                 <div className={styles.cf2_icon}>{icon}</div>

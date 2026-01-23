@@ -3,34 +3,21 @@ import { Layout, Menu, MenuProps } from 'antd'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useSize } from 'ahooks'
 import { drop, findIndex } from 'lodash'
-import { title } from 'process'
 import {
-    HomeColored,
-    AssetsViewColored,
     DataAssetsColored,
-    MyAssetsColored,
-    WorkCenterColored,
-    HomeOutlined,
-    AssetsViewOutlined,
     DataAssetsNewOutlined,
-    MyAssetsOutlined,
-    WorkCenterOutlined,
     ConfigCenterOutlined,
     OperationCenterOutlined,
     OperationCenterColored,
     EllipsisOutlined,
-    ApplicationViewColored,
 } from '@/icons'
 import Items from './Items'
 import styles from './styles.module.less'
 import __ from './locale'
 import { MessageContext } from '@/context'
-import { formatError, getReviewCount } from '@/core'
+import { formatError } from '@/core'
 import { getTasks } from '@/core/apis/taskCenter'
-import ShenJiZhongXinColored from '@/icons/ShenJiZhongXinColored'
-import ShenJiZhongXinOutlined from '@/icons/ShenJiZhongXinOutlined'
 import EllipsisColored from '@/icons/EllipsisColored'
-import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import {
     findFirstPathByKeys,
     findFirstPathByModule,
@@ -46,8 +33,6 @@ const AssetCenterSider = () => {
     const { pathname } = useLocation()
     const ref = useRef(null)
     const size = useSize(ref)
-    const [hasHomeAccess, setHasHomeAccess] = useState<boolean>(true)
-    const [{ local_app }] = useGeneralConfig()
     const [menus] = useMenus()
 
     const getMessages = async () => {
@@ -70,32 +55,6 @@ const AssetCenterSider = () => {
 
     const menuItems: MenuProps['items'] = useMemo(() => {
         const items: any[] = [
-            // {
-            //     title: __('首页'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={HomeColored}
-            //             CurrentIcon={HomeOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="asset-center"
-            //             title={__('首页')}
-            //         />
-            //     ),
-            //     key: 'asset-center',
-            // },
-            // {
-            //     title: __('资产全景'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={AssetsViewColored}
-            //             CurrentIcon={AssetsViewOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="asset-view"
-            //             title={__('资产全景')}
-            //         />
-            //     ),
-            //     key: 'asset-view',
-            // },
             {
                 title: __('数据服务超市'),
                 label: (
@@ -109,45 +68,6 @@ const AssetCenterSider = () => {
                 ),
                 key: 'data-assets',
             },
-            // {
-            //     title: __('应用概览'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={ApplicationViewColored}
-            //             CurrentIcon={ApplicationViewColored}
-            //             selectedKey={selectedKey}
-            //             currentKey="application-overview"
-            //             title={__('应用概览')}
-            //         />
-            //     ),
-            //     key: 'application-overview',
-            // },
-            // {
-            //     title: __('应用中心'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={WorkCenterColored}
-            //             CurrentIcon={WorkCenterOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="app-center"
-            //             title={__('应用中心')}
-            //         />
-            //     ),
-            //     key: 'app-center',
-            // },
-            // {
-            //     title: __('数据应用'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={WorkCenterColored}
-            //             CurrentIcon={WorkCenterOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="dataProduct"
-            //             title={__('数据应用')}
-            //         />
-            //     ),
-            //     key: 'dataProduct',
-            // },
             {
                 title: __('运营中心'),
                 label: (
@@ -165,19 +85,6 @@ const AssetCenterSider = () => {
                 ),
                 key: 'work-center',
             },
-            // {
-            //     title: __('我的'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={MyAssetsColored}
-            //             CurrentIcon={MyAssetsOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="my-assets"
-            //             title={__('我的')}
-            //         />
-            //     ),
-            //     key: 'my-assets',
-            // },
             {
                 title: __('配置中心'),
                 label: (
@@ -191,19 +98,6 @@ const AssetCenterSider = () => {
                 ),
                 key: 'config-center',
             },
-            // {
-            //     title: __('审计中心'),
-            //     label: (
-            //         <Items
-            //             SelectedIcon={ShenJiZhongXinColored}
-            //             CurrentIcon={ShenJiZhongXinOutlined}
-            //             selectedKey={selectedKey}
-            //             currentKey="audit-center"
-            //             title={__('审计中心')}
-            //         />
-            //     ),
-            //     key: 'audit-center',
-            // },
         ].filter((info) => menus.find((item) => item.key === info.key))
         if (size?.height) {
             let showNumber = Math.floor((Math.max(size.height, 176) - 28) / 68)

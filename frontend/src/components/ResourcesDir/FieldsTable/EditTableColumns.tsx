@@ -27,7 +27,7 @@ import {
     shareTypeList,
     OpenTypeEnum,
     openTypeList,
-    sensitiveOptoins,
+    sensitiveOptions,
     typeOptoins,
     classifiedOptoins,
 } from '../const'
@@ -421,7 +421,7 @@ export const getEditTableColumns = ({
                             <Select
                                 placeholder={__('多项值')}
                                 style={{ width: '92px' }}
-                                options={sensitiveOptoins}
+                                options={sensitiveOptions}
                                 getPopupContainer={(element) =>
                                     parentNode || element.parentNode
                                 }
@@ -446,7 +446,7 @@ export const getEditTableColumns = ({
                     <Select
                         placeholder={__('请选择')}
                         style={{ width: '92px' }}
-                        options={sensitiveOptoins}
+                        options={sensitiveOptions}
                         getPopupContainer={(element) =>
                             parentNode || element.parentNode
                         }

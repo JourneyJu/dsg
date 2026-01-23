@@ -214,7 +214,7 @@ const FavoriteTable: React.FC<{
                 },
             },
             {
-                title: __('所属主题'),
+                title: __('所属业务对象'),
                 dataIndex: 'subjects',
                 key: 'subjects',
                 ellipsis: true,

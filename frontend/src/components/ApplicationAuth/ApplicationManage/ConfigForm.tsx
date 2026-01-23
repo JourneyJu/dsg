@@ -1151,7 +1151,7 @@ const ConfigForm: FC<ConfigFormProps> = ({
             getDepartmentDetail(values.department_id)
         }
         if (formKeys.includes('ip_addr')) {
-            // xx平台默认取第一个IP
+            // cs 默认取第一个IP
             if (
                 platform !== LoginPlatform.default &&
                 values.ip_addr[0] &&

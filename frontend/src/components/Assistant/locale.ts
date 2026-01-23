@@ -51,9 +51,12 @@ export default i18n([
         'No assistant found, please select an assistant',
     ],
     ['错误', '錯誤', 'Error'],
+    ['关联分类', '關聯分類', 'Associate Category'],
+    ['分类已更新', '分類已更新', 'Category updated'],
     [
-        '找不到业务域，请选择一个业务域',
-        '找不到业务域，请选择一个业务域',
-        'No business domain found, please select a business domain',
+        '最多只能选择${num}个分类',
+        '最多只能選擇${num}個分類',
+        'You can only select ${num} categories',
     ],
+    ['请选择分类', '請選擇分類', 'Please select category'],
 ])

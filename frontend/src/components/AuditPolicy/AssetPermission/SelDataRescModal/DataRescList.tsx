@@ -256,7 +256,7 @@ const DataRescList = (props: any) => {
             let dataListTemp: any[] = []
             let total_count = 0
             const { id: nodeId } = selectedNode || {}
-            // 资源版展示已上线资源；（xx配置）目录版展示已发布资源
+            // 资源版展示已上线资源；（cs 配置）目录版展示已发布资源
             if (tabActiveKey === PolicyDataRescType.LOGICALVIEW) {
                 if (using === 1) {
                     reqParams.publish_status = LogicViewPublishState.Published

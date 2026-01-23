@@ -1,8 +1,6 @@
 import React, { CSSProperties, ReactNode } from 'react'
 import { Button, Tooltip } from 'antd'
 import styles from './styles.module.less'
-import { ReactComponent as tongyishuaxin } from '@/icons/svg/outlined/tongyishuaxin.svg'
-import CommonIcon from '@/components/CommonIcon'
 import __ from './locale'
 import { FontIcon } from '@/icons'
 

@@ -1,11 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import {
-    DepartmentOutlined,
-    FontIcon,
-    OrganizationOutlined,
-    UserOutlined,
-} from '@/icons'
+import { DepartmentOutlined, FontIcon, OrganizationOutlined } from '@/icons'
 import styles from './styles.module.less'
 import { getDepartLabelByDepartments } from '../../helper'
 import __ from './locale'

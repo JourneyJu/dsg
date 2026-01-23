@@ -58,7 +58,6 @@ const ReportDrawer = ({
             /** 获取探查报告 */
             getExploreReport({
                 id: dataViewId!,
-                // third_party: !!cssjj,  xx暂时不调用第三方报告
                 version,
             }),
             /** 查询探查状态 */

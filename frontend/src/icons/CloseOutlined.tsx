@@ -1,6 +1,5 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as addIconSvg } from './svg/outlined/close.svg'
+import FontIcon from './FontIcon'
 
-const CloseOutlined = (props: any) => <Icon component={addIconSvg} {...props} />
+const CloseOutlined = (props: any) => <FontIcon name="icon-yichu" {...props} />
 
 export default CloseOutlined

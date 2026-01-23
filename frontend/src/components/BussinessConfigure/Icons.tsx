@@ -1,7 +1,5 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import {
-    LimitModellined,
-    LimitFieldlined,
     LimitDatellined,
     StringTypeOutlined,
     NumberTypeOutlined,
@@ -10,10 +8,6 @@ import {
     UnkownTypeOutlined,
 } from '@/icons'
 import styles from './styles.module.less'
-import CommonIcon from '../CommonIcon'
-import { ReactComponent as timestamp } from '@/icons/svg/outlined/timestamp.svg'
-import { ReactComponent as dateIcon } from '@/icons/svg/outlined/dateIcon.svg'
-import { ReactComponent as datetime } from '@/icons/svg/outlined/datetime.svg'
 import __ from './locale'
 import { dataTypeMapping } from '@/core'
 

@@ -1,27 +1,8 @@
 import { HTMLProps } from 'react'
-import {
-    ClickHouseColored,
-    ClickHouseOutlined,
-    DorisColored,
-    DorisOutlined,
-    FontIcon,
-    HiveColored,
-    HiveOutlined,
-    MariaDBOutlined,
-    MariadbColored,
-    MysqlColored,
-    MysqlOutlined,
-    OracleColored,
-    OracleOutlined,
-    PostgreColored,
-    PostgresqlOutlined,
-    SQLServerColored,
-    SqlServerOutlined,
-} from '@/icons'
+import { FontIcon } from '@/icons'
 import { IDataBaseType, getConnectors } from '../apis'
 import { formatError } from '../errors'
 import { StaticDataType, dataBaseIconsList, defaultDataBaseType } from './base'
-import UnKnowDataSourceOutlined from '@/icons/UnKnowDataSourceOutlined'
 import { IconType } from '@/icons/const'
 
 interface IDataBaseIcon extends HTMLProps<HTMLSpanElement> {

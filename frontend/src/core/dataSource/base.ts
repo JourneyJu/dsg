@@ -1,11 +1,3 @@
-/*
- * @Author: ju.zhao ju.zhao@aishu.cn
- * @Date: 2024-01-25 10:02:01
- * @LastEditors: ju.zhao ju.zhao@aishu.cn
- * @LastEditTime: 2024-01-25 10:02:02
- * @FilePath: /AnyFabrik/any-fabric-front-end/src/core/dataSource/base.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import { IDataBaseType } from '../apis'
 
 export class StaticDataType {

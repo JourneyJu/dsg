@@ -1,17 +1,9 @@
-import { useEffect, useState } from 'react'
-import { Spin } from 'antd'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useUpdateEffect } from 'ahooks'
 import styles from '../styles.module.less'
-import {
-    formatError,
-    getProject,
-    goEffectivePath,
-    allRoleList,
-    HasAccess,
-} from '@/core'
+import { formatError, getProject, goEffectivePath, allRoleList } from '@/core'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
-import InitConfig from '@/components/InitConfig'
 import { useMenus } from '@/hooks/useMenus'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
 import { Loader } from '@/ui'

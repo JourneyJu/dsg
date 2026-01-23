@@ -29,6 +29,7 @@ import DataCatlgContent from '@/components/DataAssetsCatlg/DataCatlgContent'
 import InfoCatlgDetails from '@/components/DataAssetsCatlg/InfoResourcesCatlg/InfoCatlgDetails'
 import LicenseDetail from '@/components/DataAssetsCatlg/ElectronicLicense/Detail'
 import ApplicationServiceDetail from '@/components/DataAssetsCatlg/ApplicationServiceDetail'
+import LogicViewDetail from '@/components/DataAssetsCatlg/LogicViewDetail'
 
 const FavoriteTable: React.FC<{
     menu: ResType
@@ -52,6 +53,8 @@ const FavoriteTable: React.FC<{
         useState(false)
     // 接口服务详情弹窗
     const [interfaceSvcVisible, setInterfaceSvcVisible] = useState(false)
+    // 库表详情
+    const [logicViewVisible, setLogicViewVisible] = useState(false)
     // 搜索条件
     const [searchCondition, setSearchCondition] =
         useState<IGetFavoriteListParams>()
@@ -113,6 +116,10 @@ const FavoriteTable: React.FC<{
         setOperateItem(record)
         switch (key) {
             case FavoriteOperate.Details:
+                // 如果资源已下线，不允许查看详情（只有 ONLINE 状态才允许）
+                if (record?.is_online !== true) {
+                    return
+                }
                 if (menu === ResType.InfoCatalog) {
                     setInfoCatalogVisible(true)
                 } else if (menu === ResType.DataCatalog) {
@@ -121,6 +128,8 @@ const FavoriteTable: React.FC<{
                     setElecLicenceCatalogVisible(true)
                 } else if (menu === ResType.InterfaceSvc) {
                     setInterfaceSvcVisible(true)
+                } else if (menu === ResType.DataView) {
+                    setLogicViewVisible(true)
                 }
                 break
 
@@ -134,12 +143,16 @@ const FavoriteTable: React.FC<{
     }
 
     // 表格操作项
-    const getTableOptions = () => {
+    const getTableOptions = (record?: IFavoriteItem) => {
+        // 判断资源是否在线：只有 ONLINE 状态才允许查看详情
+        const isOnline = record?.is_online === true
         const allOptionMenus = [
             {
                 key: FavoriteOperate.Details,
                 label: __('详情'),
                 menuType: OptionMenuType.Menu,
+                disabled: !isOnline,
+                title: !isOnline ? __('资源已下线，无法查看详情') : '',
             },
             {
                 key: FavoriteOperate.CancelFavorite,
@@ -239,7 +252,7 @@ const FavoriteTable: React.FC<{
                 render: (_, record) => {
                     return (
                         <OptionBarTool
-                            menus={getTableOptions() as any[]}
+                            menus={getTableOptions(record) as any[]}
                             onClick={(key, e) => {
                                 e.preventDefault()
                                 e.stopPropagation()
@@ -409,6 +422,16 @@ const FavoriteTable: React.FC<{
                     serviceCode={operateItem?.res_id || ''}
                     isIntroduced={false}
                     hasAsst
+                />
+            )}
+            {logicViewVisible && (
+                <LogicViewDetail
+                    open={logicViewVisible}
+                    onClose={() => {
+                        setLogicViewVisible(false)
+                    }}
+                    id={operateItem?.res_id}
+                    showDataConsanguinity={false}
                 />
             )}
         </div>

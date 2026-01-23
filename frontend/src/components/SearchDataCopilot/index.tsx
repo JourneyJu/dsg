@@ -4,16 +4,26 @@ import { MessageOutlined } from '@ant-design/icons'
 import Cookies from 'js-cookie'
 // 使用 @kweaver-ai/chatkit 的 Assistant 组件作为 Copilot 实现
 // 注：文档中提到的 Copilot 组件，实际在包中导出为 Assistant
-import { Copilot, type CopilotProps } from '@kweaver-ai/chatkit'
+import {
+    Assistant,
+    type AssistantProps,
+    BlockRegistry,
+} from '@kweaver-ai/chatkit'
 import qaColored from '@/assets/qaColored.png'
 import { useMicroAppProps } from '@/context'
 import { getSearchAgentInfo } from '@/core/apis/afSailorService'
 import { Loader } from '@/ui'
 import styles from './styles.module.less'
+import DataCatlgDrawer from './DataCatlgDrawer'
+import MicroAppHeader from '../MicroAppHeader'
+import { FontIcon } from '@/icons'
+import { IconType } from '@/icons/const'
 
 const SearchDataCopilot: React.FC = () => {
     const [visible, setVisible] = useState(false)
+    const [blockData, setBlockData] = useState<any[]>([])
     const [loading, setLoading] = useState(false)
+    const [openResource, setOpenResource] = useState(false)
     const [agentInfo, setAgentInfo] = useState<{
         adp_agent_key: string
         adp_business_domain_id: string
@@ -40,6 +50,40 @@ const SearchDataCopilot: React.FC = () => {
         }
     }, [microAppProps?.token])
 
+    useEffect(() => {
+        BlockRegistry.registerTools([
+            {
+                name: 'af_sailor',
+                Icon: (
+                    <FontIcon
+                        name="icon-wenjianjia"
+                        type={IconType.COLOREDICON}
+                        style={{ fontSize: 22, color: '#128ee3' }}
+                    />
+                ),
+                onClick: (blockInfo) => {
+                    const data = blockInfo?.data || []
+                    setBlockData(data as any[])
+                    setOpenResource(true)
+                },
+            },
+            {
+                name: 'datasource_filter',
+                Icon: (
+                    <FontIcon
+                        name="icon-wenjianjia"
+                        type={IconType.COLOREDICON}
+                        style={{ fontSize: 22, color: '#128ee3' }}
+                    />
+                ),
+                onClick: (blockInfo) => {
+                    const data = blockInfo?.data || []
+                    setBlockData(data as any[])
+                    setOpenResource(true)
+                },
+            },
+        ])
+    }, [])
     // 获取 Agent 信息
     useEffect(() => {
         if (visible && !agentInfo) {
@@ -86,19 +130,38 @@ const SearchDataCopilot: React.FC = () => {
             {/* Copilot 抽屉 */}
             <Drawer
                 open={visible}
-                onClose={handleClose}
                 placement="right"
-                width={480}
                 maskClosable={false}
-                closable
+                closable={false}
                 destroyOnClose={false}
                 getContainer={false}
                 className={styles.copilotDrawer}
+                title={null}
+                headerStyle={{ display: 'none' }}
                 bodyStyle={{
                     padding: 0,
-                    height: '100%',
+                    height: '100vh',
+                    width: '100vw',
+                    overflow: 'hidden',
                 }}
+                style={{
+                    position: 'fixed',
+                    width: '100vw',
+                    height: '100vh',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    zIndex: 1000,
+                }}
+                width="100%"
+                push={false}
+                mask={false}
             >
+                <MicroAppHeader
+                    isFromSearchCopilot
+                    onServiceMarketClick={() => setVisible(false)}
+                />
                 {loading ? (
                     <div className={styles.loadingContainer}>
                         <Loader tip="加载中..." />
@@ -106,7 +169,7 @@ const SearchDataCopilot: React.FC = () => {
                 ) : agentInfo ? (
                     <div className={styles.copilotContainer}>
                         {React.createElement(
-                            Copilot as any,
+                            Assistant as any,
                             {
                                 title: '数据搜索助手',
                                 visible: true,
@@ -116,13 +179,21 @@ const SearchDataCopilot: React.FC = () => {
                                 refreshToken: assistantRefreshToken,
                                 businessDomain:
                                     agentInfo.adp_business_domain_id,
-                            } as CopilotProps,
+                            } as AssistantProps,
                         )}
                     </div>
                 ) : (
                     <div className={styles.errorContainer}>
                         <p>获取 Agent 信息失败，请稍后重试</p>
                     </div>
+                )}
+                {openResource && (
+                    <DataCatlgDrawer
+                        open={openResource}
+                        data={blockData}
+                        onClose={() => setOpenResource(false)}
+                        placement="right"
+                    />
                 )}
             </Drawer>
         </>

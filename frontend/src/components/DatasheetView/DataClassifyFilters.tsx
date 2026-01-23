@@ -1,7 +1,7 @@
 import { Badge } from 'antd'
 import React, { useMemo } from 'react'
 import { FontIcon } from '@/icons'
-import { ClassifyType } from './const'
+import { ClassifyType, classifiedOptoins, sensitiveOptions } from './const'
 import __ from './locale'
 import { IformItem, SearchType } from '@/ui/LightweightSearch/const'
 import { IGradeLabel } from '@/core'
@@ -20,6 +20,10 @@ const DataClassifyFilters: React.FC<IDataClassifyFilters> = ({
     onChange,
     isButton = false,
 }) => {
+    const unCategorized = {
+        value: 0,
+        label: __('未分类'),
+    }
     const filters = [
         {
             label: __('不限'),
@@ -50,12 +54,22 @@ const DataClassifyFilters: React.FC<IDataClassifyFilters> = ({
     ]
 
     const searchData: IformItem[] = useMemo(() => {
-        const tag: IformItem = {
-            label: __('字段分级'),
-            key: 'label_id',
-            options: tagData
-                ? [...tagData, { name: __('未分级'), id: '', icon: '' }].map(
-                      (item) => {
+        const sd: IformItem[] = [
+            {
+                label: __('字段分类'),
+                key: 'classfity_type',
+                options: filters,
+                type: SearchType.Radio,
+                show: true,
+            },
+            {
+                label: __('字段分级'),
+                key: 'label_id',
+                options: tagData
+                    ? [
+                          ...tagData,
+                          { name: __('未分级'), id: '', icon: '' },
+                      ].map((item) => {
                           return {
                               label: item.name,
                               value: item.id,
@@ -66,23 +80,26 @@ const DataClassifyFilters: React.FC<IDataClassifyFilters> = ({
                                   />
                               ) : null,
                           }
-                      },
-                  )
-                : [],
-            type: SearchType.MultipleSelect,
-        }
-
-        const sd: IformItem[] = [
+                      })
+                    : [],
+                type: SearchType.MultipleSelect,
+                show: isStart,
+            },
             {
-                label: __('字段分类'),
-                key: 'classfity_type',
-                options: filters,
+                label: __('字段敏感属性'),
+                key: 'sensitive_type',
+                options: [...sensitiveOptions, unCategorized],
                 type: SearchType.Radio,
+                show: true,
+            },
+            {
+                label: __('字段涉密属性'),
+                key: 'secret_type',
+                options: [...classifiedOptoins, unCategorized],
+                type: SearchType.Radio,
+                show: true,
             },
         ]
-        if (isStart) {
-            sd.push(tag)
-        }
         return sd
     }, [tagData, isStart])
 

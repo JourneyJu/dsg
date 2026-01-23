@@ -106,6 +106,8 @@
         height: 100%;
 
         .leftTips {
+            display: flex;
+            align-items: center;
             margin: 16px 20px 6px;
             font-weight: 550;
         }
@@ -377,6 +379,12 @@
     .exploreContentBox {
         display: flex;
         align-items: center;
+
+        :global {
+            .any-fabric-ant-space-item {
+                line-height: 14px;
+            }
+        }
 
         .icon {
             display: inline-flex;
@@ -1957,6 +1965,7 @@
                     color: rgb(0 0 0 / 65%);
 
                     .infoSystemSelect {
+                        max-width: calc(100% - 100px);
                         flex: 1;
                     }
                 }
@@ -2069,7 +2078,7 @@
     }
 
     &.isMarket {
-        height: 100%;
+        height: auto;
         margin: 0;
     }
 

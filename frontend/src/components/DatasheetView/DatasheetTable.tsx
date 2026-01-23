@@ -345,7 +345,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
             task_id,
             project_id,
             keyword,
-            include_sub_subject,
+            include_sub_department,
             datasource_source_type,
             ...searchObj
         } = searchCondition || {}
@@ -370,8 +370,8 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
         const dataSourceHeight =
             defalutHeight +
             searchConditionHeight +
-            (using === 1 ? 0 : allSearchHeight) -
-            (platform === LoginPlatform.default ? 0 : 46)
+            (using === 1 ? 0 : allSearchHeight)
+        // (platform === LoginPlatform.default ? 0 : 46)
         // 自定义库表
         const customHeight = defalutHeight + searchConditionHeight - 44
         // 逻辑实体库表
@@ -719,6 +719,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
                     </span>
                 </div>
             ),
+            fixed: FixedType.LEFT,
             dataIndex: 'business_name',
             key: 'business_name',
             width: 220,

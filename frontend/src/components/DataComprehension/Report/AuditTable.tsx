@@ -107,14 +107,15 @@ const AuditTable = ({ target }: { target: AuditType }) => {
                 const title = it?.title
                 return (
                     <div
-                        className={classnames(styles.line, styles.catlgName)}
+                        //  styles.catlgName
+                        className={classnames(styles.line)}
                         title={title}
-                        onClick={() => {
-                            handleOperate(OperateType.PREVIEW, {
-                                ...record,
-                                detail: it,
-                            })
-                        }}
+                        // onClick={() => {
+                        //     handleOperate(OperateType.PREVIEW, {
+                        //         ...record,
+                        //         detail: it,
+                        //     })
+                        // }}
                     >
                         {title || '--'}
                     </div>
@@ -224,6 +225,7 @@ const AuditTable = ({ target }: { target: AuditType }) => {
                                     ...tableProps.pagination,
                                     showSizeChanger: false,
                                     hideOnSinglePage: true,
+                                    current: searchCondition.offset,
                                 }}
                                 bordered={false}
                                 locale={{

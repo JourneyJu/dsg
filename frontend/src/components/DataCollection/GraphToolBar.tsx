@@ -8,7 +8,6 @@ import {
     Button,
     Dropdown,
     Divider,
-    message,
     Tooltip,
     Modal,
 } from 'antd'
@@ -16,27 +15,17 @@ import {
     LeftOutlined,
     DownOutlined,
     LoadingOutlined,
-    InfoCircleOutlined,
     ExclamationCircleFilled,
 } from '@ant-design/icons'
 import { noop } from 'lodash'
-import { Background } from '@antv/x6/lib/registry'
 import { Node } from '@antv/x6'
-import { formatError, getConfigPaths } from '@/core'
-import { IAssemblyLineEditParams } from '@/core/apis/assemblyLine/index.d'
+import { getConfigPaths } from '@/core'
 import styles from './styles.module.less'
-import {
-    InfotipOutlined,
-    LargeOutlined,
-    LocationOutlined,
-    NarrowOutlined,
-} from '@/icons'
-import { getActualUrl } from '@/utils'
+import { LargeOutlined, LocationOutlined, NarrowOutlined } from '@/icons'
 import __ from './locale'
-import { combQuery, combUrl } from '../FormGraph/helper'
+import { combUrl } from '../FormGraph/helper'
 import FlowchartIconOutlined from '@/icons/FlowchartOutlined'
 import { ViewModel } from './const'
-import { fixedPaths } from '../Home/helper'
 
 const { Header: AntdHeader } = Layout
 
@@ -325,8 +314,7 @@ const GraphToolBar = ({
                                             )
                                             if (pathData) {
                                                 window.open(
-                                                    pathData.addr +
-                                                        fixedPaths.DataProcessing,
+                                                    `${pathData.addr}/dolphinscheduler/ui/projects/list`,
                                                 )
                                             }
                                         }}

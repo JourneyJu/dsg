@@ -3,7 +3,7 @@ import classnames from 'classnames'
 import { Modal, Button, message, notification } from 'antd'
 import styles from './styles.module.less'
 import __ from './locale'
-import scanGif from '@/assets/scan.gif'
+// import scanGif from '@/assets/scan.gif'
 
 interface IScanConfirm {
     open: boolean
@@ -50,11 +50,11 @@ const ScanConfirm: React.FC<IScanConfirm> = ({
             >
                 <div className={styles.confirmBox}>
                     <div>
-                        <img
-                            src={scanGif}
-                            alt=""
-                            className={styles.confirmLeftImg}
-                        />
+                        {/* <img
+                                src={scanGif}
+                                alt=""
+                                className={styles.confirmLeftImg}
+                            /> */}
                     </div>
                     {totalSum > 1 ? (
                         <div>

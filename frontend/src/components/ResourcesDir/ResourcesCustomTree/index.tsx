@@ -474,6 +474,11 @@ const ResourcesCustomTree: FC<ResourcesCustomTreeType> = ({
                         onChange={(value) => {
                             setIsLoading(true)
                             setSelectedMenu(value)
+                            setSelectedNode({
+                                id: '',
+                                type: value,
+                                name: __('全部'),
+                            })
                             setSelectedInfo({
                                 id: '',
                                 type: value,

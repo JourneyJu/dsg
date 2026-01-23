@@ -1,11 +1,3 @@
-/*
- * @Author: ju.zhao ju.zhao@aishu.cn
- * @Date: 2024-01-22 16:07:01
- * @LastEditors: ju.zhao ju.zhao@aishu.cn
- * @LastEditTime: 2024-01-24 14:31:44
- * @FilePath: /AnyFabrik/any-fabric-front-end/src/components/FormTableMode/FieldsTable.tsx
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import {
     FC,
     forwardRef,

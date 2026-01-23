@@ -1,28 +1,8 @@
 import React, { useState, useEffect, useContext, useRef, useMemo } from 'react'
-import { create, isNumber, toNumber, trim } from 'lodash'
-import {
-    Button,
-    Divider,
-    List,
-    Table,
-    Tooltip,
-    Input,
-    Select,
-    Space,
-    AutoComplete,
-    Spin,
-    Progress,
-    Popover,
-} from 'antd'
+import { toNumber, trim } from 'lodash'
+import { Button, Divider, List, Table, Input, Progress } from 'antd'
 import { ColumnsType } from 'antd/lib/table'
-import {
-    DownOutlined,
-    InfoCircleFilled,
-    InfoCircleOutlined,
-    PlusOutlined,
-    RightSquareOutlined,
-    UpOutlined,
-} from '@ant-design/icons'
+import { InfoCircleFilled } from '@ant-design/icons'
 import classnames from 'classnames'
 import { useDebounceFn } from 'ahooks'
 import {
@@ -34,47 +14,30 @@ import {
 } from '@/ui'
 import { RefreshBtn } from '@/components/ToolbarComponents'
 import {
-    getStdToBeExecTask,
-    IStdToBeExecTask,
     IStdToBeExecTaskItem,
     formatError,
-    getConfigPaths,
-    ICommonRes,
     TaskStatus,
     formsQueryStandards,
-    formsQueryStandardItem,
     CatalogType,
     IDataItem,
     formsEnumConfig,
     IFormEnumConfigModel,
-    IDataElement,
-    IDirItem,
     getStdTaskBusinTable,
     getStdTaskBusinFieldTable,
     IStdTaskBusinTable,
     submitDataEle,
 } from '@/core'
-import {
-    formatTime,
-    getActualUrl,
-    OperateType,
-    stardOrignizeTypeList,
-} from '@/utils'
+import { stardOrignizeTypeList } from '@/utils'
 import styles from './styles.module.less'
 import Empty from '@/ui/Empty'
 import dataEmpty from '@/assets/dataEmpty.svg'
 import Loader from '@/ui/Loader'
-import { configPathsCommon, fixedPaths, IPath } from '../Home/helper'
 import __ from './locale'
-import { reqStandSearchData } from '../Forms/helper'
-import { TabKey } from '../ResourcesDir/const'
 import { BlankFormColored, DSFormColored, ProgressCheckOutlined } from '@/icons'
 import { NewFormType } from '../Forms/const'
 import { FieldState, stdTaskSearchData } from './const'
 import SelDataByTypeModal from '../SelDataByTypeModal'
 import DataEleDetails from '../DataEleManage/Details'
-import EditDataEleForm from '../DataEleManage/EditDataEleForm'
-import { StdOption } from './helper'
 import { TaskInfoContext } from '@/context'
 
 interface IStdToBeExecTaskProps {

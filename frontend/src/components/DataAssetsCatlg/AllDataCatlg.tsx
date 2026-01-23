@@ -1,29 +1,16 @@
-import React, { useEffect, useMemo, useState, ReactNode } from 'react'
-import { Radio, Tabs } from 'antd'
-import classnames from 'classnames'
+import React, { useMemo, useState, ReactNode, useRef } from 'react'
+import { Tabs } from 'antd'
 import styles from './styles.module.less'
 import __ from './locale'
 import { getPlatformNumber, useQuery } from '@/utils'
 import { ServiceType } from './helper'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import DataCatlg from './DataCatlg'
-import ProvinceCatlg from './ProvinceCatlg'
 import InfoResourcesCatlg from './InfoResourcesCatlg'
-import { FontIcon } from '@/icons'
-import {
-    formatError,
-    SSZDSyncTaskEnum,
-    getSSZDHasSynchTask,
-    createSSZDSynchTask,
-    HasAccess,
-} from '@/core'
 import ElectronicLicense from './ElectronicLicense'
 import Interface from './Interface'
-import { useUserPermCtx } from '@/context/UserPermissionProvider'
-import { catlgViewOptions } from './const'
 import { useRescProviderContext } from './RescProvider'
-import CSSJJAppService from './CSSJJAppService'
-import CSSJJSpatialService from './CSSJJSpatialService'
+import ApplicationService from './ApplicationService'
 
 interface IAllDataCatlgProps {
     ref?: any
@@ -45,52 +32,30 @@ const AllDataCatlg: React.FC<IAllDataCatlgProps> = (props: any, ref) => {
         searchRender,
     } = props
     const query = useQuery()
-    const [{ governmentSwitch, local_app }] = useGeneralConfig()
+    const [{ governmentSwitch, local_app, using }] = useGeneralConfig()
     const platform = getPlatformNumber()
+    const applicationServiceRef = useRef<any>()
 
     const [activeKey, setActiveKey] = useState<string>()
 
     const catlgItems = useMemo(() => {
         const tabs = [
-            // {
-            //     label: __('信息资源目录'),
-            //     key: ServiceType.INFORESOURCESDATACATLG,
-            // },
+            {
+                label: __('库表'),
+                key: ServiceType.LOGICVIEW,
+                show: using === 2,
+            },
             {
                 label: __('数据资源目录'),
                 key: ServiceType.DATACATLG,
+                show: using === 1,
             },
             {
                 label: __('接口服务'),
                 key: ServiceType.APPLICATIONSERVICE,
+                show: using === 2 || using === 1,
             },
-            // {
-            //     label: __('电子证照目录'),
-            //     key: ServiceType.LICENSE,
-            // },
-            governmentSwitch?.on
-                ? {
-                      label: __('省级数据目录'),
-                      key: ServiceType.PROVINCEDATACATLG,
-                  }
-                : undefined,
-            governmentSwitch?.on
-                ? {
-                      label: __('应用服务'),
-                      key: ServiceType.CSSJJ_APPSVC,
-                  }
-                : undefined,
-            governmentSwitch?.on
-                ? {
-                      label: __('空间地理服务'),
-                      key: ServiceType.CSSJJ_SPATIALSVC,
-                  }
-                : undefined,
-            // {
-            //     label: __('AI服务'),
-            //     key: ServiceType.AISERVICE,
-            // },
-        ]?.filter((item) => item) as Array<{
+        ]?.filter((item) => item?.show) as Array<{
             key: string
             label: ReactNode
         }>
@@ -98,50 +63,7 @@ const AllDataCatlg: React.FC<IAllDataCatlgProps> = (props: any, ref) => {
         return tabs
     }, [governmentSwitch?.on, platform])
 
-    // 同步中-true为正在同步
-    const [isSynchzing, setIsSynchzing] = useState(false)
-    // 该同步类型上次同步时间戳（ms），从未同步过返回0
-    const [lastUpdTime, setLastUpdTime] = useState<number>(0)
-
-    // 页面loading
-    const [isSynchzingLoading, setIsSynchzingLoading] = useState(true)
-    const { checkPermissions } = useUserPermCtx()
-
-    const hasBusinessRoles = useMemo(
-        () => checkPermissions(HasAccess.isHasBusiness),
-        [checkPermissions],
-    )
-
-    const { catlgView, setCatlgView, resetCatlgView } = useRescProviderContext()
-
-    const checkSSZDHasSynchTask = async () => {
-        try {
-            setIsSynchzingLoading(true)
-            const res = await getSSZDHasSynchTask(SSZDSyncTaskEnum.Catalog)
-            setIsSynchzing(!!res?.id)
-            setLastUpdTime(res?.last_sync_time || 0)
-        } catch (e) {
-            formatError(e)
-        } finally {
-            setIsSynchzingLoading(false)
-        }
-    }
-
-    useEffect(() => {
-        if (!hasBusinessRoles && !local_app && governmentSwitch?.on) {
-            setActiveKey(ServiceType.PROVINCEDATACATLG)
-        }
-    }, [hasBusinessRoles, local_app, governmentSwitch?.on])
-
-    const handleSynchBtnClick = async () => {
-        try {
-            setIsSynchzing(true)
-            await createSSZDSynchTask(SSZDSyncTaskEnum.Catalog)
-            // messageSuccess(__('同步完成'))
-        } catch (e) {
-            formatError(e)
-        }
-    }
+    const { resetCatlgView } = useRescProviderContext()
 
     return (
         <>
@@ -156,8 +78,19 @@ const AllDataCatlg: React.FC<IAllDataCatlgProps> = (props: any, ref) => {
                 onChange={(key) => {
                     setActiveKey(key)
                     resetCatlgView?.()
-                    if (key === ServiceType.PROVINCEDATACATLG) {
-                        checkSSZDHasSynchTask()
+                    if (using === 2) {
+                        applicationServiceRef.current?.refresh(
+                            key === ServiceType.APPLICATIONSERVICE
+                                ? 'interface_svc'
+                                : ServiceType.LOGICVIEW,
+                        )
+                    }
+                    if (using === 2) {
+                        applicationServiceRef.current?.refresh(
+                            key === ServiceType.APPLICATIONSERVICE
+                                ? 'interface_svc'
+                                : ServiceType.LOGICVIEW,
+                        )
                     }
                 }}
                 getPopupContainer={(node) => node}
@@ -166,48 +99,27 @@ const AllDataCatlg: React.FC<IAllDataCatlgProps> = (props: any, ref) => {
                 destroyInactiveTabPane
                 className={styles.serviceTabs}
                 tabBarExtraContent={{
-                    right:
-                        // activeKey === ServiceType.DATACATLG ? (
-                        //     <div className={styles.checkoutViewWrapper}>
-                        //         <Radio.Group
-                        //             options={catlgViewOptions}
-                        //             onChange={(e) =>
-                        //                 setCatlgView(e.target?.value)
-                        //             }
-                        //             value={catlgView}
-                        //             optionType="button"
-                        //         />
-                        //     </div>
-                        // ) :
-                        activeKey === ServiceType.PROVINCEDATACATLG ? (
-                            <div
-                                className={classnames(
-                                    styles.tabRightSynchBtn,
-                                    isSynchzing && styles.tabRightSynchingBtn,
-                                )}
-                                onClick={
-                                    isSynchzing
-                                        ? undefined
-                                        : handleSynchBtnClick
-                                }
-                            >
-                                <FontIcon
-                                    name="icon-shujutongbu"
-                                    className={styles.synchIcon}
-                                />
-                                <div className={styles.synchBtn}>
-                                    {isSynchzing
-                                        ? __('省级数据目录同步中…')
-                                        : __('同步省级数据目录')}
-                                </div>
-                            </div>
-                        ) : null,
+                    right: null,
                 }}
             />
 
             {/* 信息资源目录 */}
             {activeKey === ServiceType.INFORESOURCESDATACATLG && (
                 <InfoResourcesCatlg />
+            )}
+            {using === 2 && (
+                <ApplicationService
+                    ref={applicationServiceRef}
+                    searchKey={searchKey}
+                    isIntroduced={isIntroduced}
+                    getClickAsset={getClickAsset}
+                    getAddAsset={getAddAsset}
+                    resourceType={
+                        activeKey === ServiceType.APPLICATIONSERVICE
+                            ? 'interface_svc'
+                            : ServiceType.LOGICVIEW
+                    }
+                />
             )}
             {/* 数据资源目录 */}
             {activeKey === ServiceType.DATACATLG && (
@@ -222,26 +134,11 @@ const AllDataCatlg: React.FC<IAllDataCatlgProps> = (props: any, ref) => {
                 />
             )}
             {/* 接口服务 */}
-            {activeKey === ServiceType.APPLICATIONSERVICE && <Interface />}
-            {activeKey === ServiceType.AISERVICE && <Interface isAIService />}
+            {activeKey === ServiceType.APPLICATIONSERVICE && using === 1 && (
+                <Interface />
+            )}
             {/* 电子证照目录 */}
             {activeKey === ServiceType.LICENSE && <ElectronicLicense />}
-            {/* 省级目录 */}
-            {activeKey === ServiceType.PROVINCEDATACATLG && (
-                <ProvinceCatlg
-                    // ref={dataRef}
-                    searchKey={searchKey}
-                    isIntroduced={isIntroduced}
-                    isSynchzing={isSynchzing}
-                    isSynchzingLoading={isSynchzingLoading}
-                    lastUpdTime={lastUpdTime}
-                    // searchRender={searchRender}
-                />
-            )}
-            {activeKey === ServiceType.CSSJJ_APPSVC && <CSSJJAppService />}
-            {activeKey === ServiceType.CSSJJ_SPATIALSVC && (
-                <CSSJJSpatialService />
-            )}
         </>
     )
 }

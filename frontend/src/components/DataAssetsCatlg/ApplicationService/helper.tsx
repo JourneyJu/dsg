@@ -15,13 +15,13 @@ export enum ViewMode {
 }
 
 export const viewModeOptions = [
-    { label: __('主题域'), value: ViewMode.Domain },
+    { label: __('业务对象'), value: ViewMode.Domain },
     { label: __('组织架构'), value: ViewMode.Architecture },
 ]
 
 // 数据资源-资源类型
 export enum DataRescType {
-    NOLIMIT = singleSelDefVal,
+    NOLIMIT = '',
     // 省级目录-前端定义类型以进行类型区分
     PROVINCE_DATACATLG = 'prvc_catalog',
     // 库表

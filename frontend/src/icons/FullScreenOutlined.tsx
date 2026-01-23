@@ -1,8 +1,8 @@
-import Icon from '@ant-design/icons'
+import FontIcon from './FontIcon'
 import { ReactComponent as expandIconSvg } from './svg/outlined/expand2.svg'
 
 const FullScreenOutlined = (props: any) => (
-    <Icon component={expandIconSvg} {...props} />
+    <FontIcon name="icon-zhankai1" {...props} />
 )
 
 export default FullScreenOutlined

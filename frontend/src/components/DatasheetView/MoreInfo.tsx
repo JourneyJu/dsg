@@ -191,18 +191,18 @@ const MoreInfo: React.FC<IMoreInfo> = ({
             setInfoSystem(moreInfoData?.info_system_id)
         }
         const list = moreInfoContent.map((item) => {
-            const includesKeys: string[] = []
+            const filterKes: string[] = []
             if (using === 1) {
-                includesKeys.push('online_status')
+                filterKes.push('online_status')
             }
             if (!hasTimestamp) {
-                includesKeys.push('data_updated_at')
+                filterKes.push('data_updated_at')
             }
             if (isValueEvaluation) {
-                includesKeys.push('source_sign')
+                filterKes.push('source_sign')
             }
             const detailsField = item.list.filter(
-                (o) => !includesKeys.includes(o.key),
+                (o) => !filterKes.includes(o.key),
             )
             return {
                 ...item,
@@ -212,8 +212,6 @@ const MoreInfo: React.FC<IMoreInfo> = ({
                         value = moment(moreInfoData?.[it.key]).format(
                             'YYYY-MM-DD HH:mm:ss',
                         )
-                    } else if (it.key === 'owners') {
-                        value = '--'
                     } else if (it.key === 'source_sign') {
                         value =
                             sourceSignOpions?.find(
@@ -225,23 +223,35 @@ const MoreInfo: React.FC<IMoreInfo> = ({
                     const obj = {
                         ...it,
                         value,
-                        render: () =>
-                            it.key === 'status' ? (
+                    }
+                    switch (it.key) {
+                        case 'status':
+                            obj.render = () =>
                                 getState(
                                     moreInfoData?.last_publish_time
                                         ? 'publish'
                                         : 'unpublished',
                                 )
-                            ) : it.key === 'online_status' ? (
+                            break
+                        case 'online_status':
+                            obj.render = () =>
                                 getState(
                                     moreInfoData?.online_status,
                                     onLineStatusList,
                                 )
-                            ) : it.key === 'data_updated_at' ? (
+                            break
+                        case 'data_updated_at':
+                            obj.render = () => (
                                 <TimeRender formViewId={datasheetInfo?.id} />
-                            ) : it.key === 'owners' ? (
+                            )
+                            break
+                        case 'owners':
+                            obj.render = () => (
                                 <OwnerDisplay value={moreInfoData?.owners} />
-                            ) : undefined,
+                            )
+                            break
+                        default:
+                            break
                     }
                     return obj
                 }),
@@ -316,7 +326,9 @@ const MoreInfo: React.FC<IMoreInfo> = ({
                                     {__('来源所属数据源，不可直接更改')}
                                 </span> */}
                                 <div className={styles.infoSystem}>
-                                    <div>{__('关联信息系统')}：</div>
+                                    <div style={{ flexShrink: 0 }}>
+                                        {__('关联信息系统')}：
+                                    </div>
                                     <ScrollLoadSelect
                                         className={styles.infoSystemSelect}
                                         fetchOptions={getInfoSystem}

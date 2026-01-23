@@ -20,6 +20,7 @@ import { IconType } from '@/icons/const'
 import { Empty, Loader } from '@/ui'
 import AddAssistant from './AddAssistant'
 import { listedSearchParams } from './helper'
+import Category from './Category'
 
 const Assistant: React.FC = () => {
     // 搜索参数
@@ -121,6 +122,7 @@ const Assistant: React.FC = () => {
         try {
             const res = await getMenuResourceActions({
                 resource_id: 'smartDataQuery',
+                resource_type: 'smart_data_query',
             })
             setMenuActions(res?.actions || [])
         } catch (error) {
@@ -132,13 +134,13 @@ const Assistant: React.FC = () => {
         getMenuResourceActionsFn()
     }, [])
 
-    // 是否有上架、下架权限
-    const canOnline = useMemo(
-        () => menuActions.includes('online'),
-        [menuActions],
-    )
-    const canOffline = useMemo(
-        () => menuActions.includes('offline'),
+    // 权限判断（可扩展）
+    const permissions = useMemo(
+        () => ({
+            online: menuActions.includes('online'),
+            offline: menuActions.includes('offline'),
+            classify: menuActions.includes('classify'),
+        }),
         [menuActions],
     )
 
@@ -156,7 +158,7 @@ const Assistant: React.FC = () => {
                     <div className={styles.title}>{__('全部助手')}</div>
                 </div>
                 <div className={styles.rightSection}>
-                    {canOnline && (
+                    {permissions.online && (
                         <Button type="primary" onClick={handleAddAssistant}>
                             {__('上架新助手')}
                         </Button>
@@ -198,9 +200,23 @@ const Assistant: React.FC = () => {
         return null
     }
 
+    // 选择助手分类
+    const handleCategoryChange = (selected: Record<string, string | null>) => {
+        const categoryIds = Object.values(selected).filter(
+            (id): id is string => id !== null,
+        )
+
+        searchParamsRef.current = {
+            ...searchParamsRef.current,
+            category_ids: categoryIds,
+        }
+        reload()
+    }
+
     return (
         <div className={styles.assistantContainer}>
             {renderHeader()}
+            <Category onChange={handleCategoryChange} />
             {loading ? (
                 <Loader tip={__('加载中...')} />
             ) : assistantList.length > 0 ? (
@@ -212,7 +228,7 @@ const Assistant: React.FC = () => {
                                 data={item}
                                 onClick={handleCardClick}
                                 onRemove={handleRemoveAssistant}
-                                canOffline={canOffline}
+                                permissions={permissions}
                             />
                         ))}
                     </div>
@@ -225,7 +241,7 @@ const Assistant: React.FC = () => {
                             searchName ? __('暂未找到相关数据') : __('暂无数据')
                         }
                     />
-                    {!searchName && canOnline && (
+                    {!searchName && permissions.online && (
                         <Button
                             type="primary"
                             className={styles.emptyAddBtn}

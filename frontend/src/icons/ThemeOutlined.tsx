@@ -1,8 +1,7 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as themeIconSvg } from './svg/outlined/theme.svg'
+import FontIcon from './FontIcon'
 
 const ThemeOutlined = (props: any) => (
-    <Icon component={themeIconSvg} {...props} />
+    <FontIcon name="icon-suoshuzhuti-xianxing" {...props} />
 )
 
 export default ThemeOutlined

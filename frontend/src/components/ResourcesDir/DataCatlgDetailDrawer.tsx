@@ -1,8 +1,6 @@
 import React, { useRef } from 'react'
 import { Drawer } from 'antd'
 import { noop } from 'lodash'
-import styles from './styles.module.less'
-import __ from '../OpenCatalog/locale'
 import DirDetailContent from './DirDetailContent'
 
 interface IDataCatlgDetailDrawer {

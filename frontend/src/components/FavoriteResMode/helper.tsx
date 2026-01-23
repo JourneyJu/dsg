@@ -334,7 +334,7 @@ export const MultiColumn = ({
     )
 }
 
-// 所属主题
+// 所属业务对象
 export const SubjectView = ({ record }: { record: IFavoriteItem }) => {
     const { subjects } = record
     const map = [

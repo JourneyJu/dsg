@@ -415,7 +415,7 @@ const DatasheetView = (props: IDatasheetView) => {
                                             }}
                                         >
                                             {__(
-                                                '仅展示已扫描过且存在库表的数据源，若库表被清空，则不再显示此数据源',
+                                                '仅展示已扫描过且存在库表的数据源',
                                             )}
                                         </span>
                                     }

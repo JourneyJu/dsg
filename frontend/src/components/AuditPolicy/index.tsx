@@ -9,8 +9,14 @@ import { getPlatformNumber } from '@/utils'
 import DataUnderstandingReport from './DataUnderstandingReport'
 import WorkOrderQuality from './WorkOrderQuality'
 import WorkOrderQualityExamine from './WorkOrderQualityExamine'
+import DataView from './DataView'
 
 const MenuItems = [
+    {
+        key: 'data-view',
+        label: __('库表'),
+        children: <DataView />,
+    },
     {
         key: 'data-catalog',
         label: __('数据资源目录'),
@@ -27,14 +33,14 @@ const MenuItems = [
         children: <DataUnderstandingReport />,
     },
     {
-        key: 'work-order-quality',
-        label: __('数据质量整改'),
-        children: <WorkOrderQuality />,
-    },
-    {
         key: 'work-order-data-quality-audit',
         label: __('质量检测工单'),
         children: <WorkOrderQualityExamine />,
+    },
+    {
+        key: 'work-order-quality',
+        label: __('数据质量整改'),
+        children: <WorkOrderQuality />,
     },
 ]
 
@@ -47,6 +53,10 @@ const AuditPolicy: React.FC<IConfirm> = () => {
     const [activeMenu, setActiveMenu] = useState<any>()
     const platform = getPlatformNumber()
     const menus = useMemo(() => {
+        const isResource = using === 2
+        const filterKeys = isResource
+            ? ['data-understanding-report', 'data-understanding-report']
+            : []
         return MenuItems.filter(
             (item) =>
                 governmentSwitch.on ||
@@ -70,9 +80,10 @@ const AuditPolicy: React.FC<IConfirm> = () => {
                         'tag-management',
                     ].includes(item.key)
                 }
-                // xx项目，过滤掉data-requirement，显示city-demand
+                // cs ，过滤掉data-requirement，显示city-demand
                 return item.key !== 'data-requirement'
             })
+            .filter((item) => !filterKeys.includes(item.key))
     }, [using, governmentSwitch.on, platform])
 
     useEffect(() => {

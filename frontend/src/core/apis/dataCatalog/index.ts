@@ -1660,12 +1660,14 @@ export const getFeedbackDetailResMode = (
 }
 
 // 目录反馈列表
-export const getFeedbackCountResMode = (): Promise<{
+export const getFeedbackCountResMode = (
+    params: any,
+): Promise<{
     total_num: number
     pending_num: number
     replied_num: number
 }> => {
-    return get(`/api/data-catalog/v1/data-resource/feedback/count`)
+    return get(`/api/data-catalog/v1/data-resource/feedback/count`, params)
 }
 
 // 开放数据目录 -- start

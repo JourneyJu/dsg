@@ -1,11 +1,3 @@
-/*
- * @Author: ju.zhao ju.zhao@aishu.cn
- * @Date: 2024-01-19 14:05:13
- * @LastEditors: ju.zhao ju.zhao@aishu.cn
- * @LastEditTime: 2024-01-25 17:54:59
- * @FilePath: /AnyFabrik/any-fabric-front-end/src/components/FormTableMode/locale.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
- */
 import { i18n } from '@/utils'
 
 export default i18n([

@@ -1,5 +1,4 @@
-import { UpOutlined, DownOutlined } from '@ant-design/icons'
-import { Typography, Tag, Button } from 'antd'
+import { Typography, Tag } from 'antd'
 import { useState, useEffect } from 'react'
 import { noop } from 'lodash'
 import { IformItem, SearchType } from '@/ui/LightweightSearch/const'
@@ -164,76 +163,3 @@ export enum SubmitActionType {
     // 提交发布
     SUBMIT = 'submit',
 }
-
-// 以下是测试数据
-export const delRescCatlgData = [
-    {
-        id: '151bcb65-48ce-4b62-973f-0bb6685f9cb8',
-        name: '组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构',
-        is_auto_related: true,
-    },
-    {
-        id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
-        is_auto_related: true,
-    },
-    {
-        id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-        name: '爱数128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-    },
-    {
-        id: '00000000-0000-0000-0000-000000000000',
-        name: '未分类00000000-0000-0000-0000-00000000000000000000-0000-0000-0000-000000000000',
-    },
-    {
-        id: '151bcb65-48ce-4b62-973f-0bb6685f9cb8',
-        name: '组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构',
-    },
-    {
-        id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
-    },
-    {
-        id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-        name: '爱数128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-    },
-    {
-        id: '00000000-0000-0000-0000-000000000000',
-        name: '未分类00000000-0000-0000-0000-00000000000000000000-0000-0000-0000-000000000000',
-    },
-    {
-        id: '151bcb65-48ce-4b62-973f-0bb6685f9cb8',
-        name: '组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构组织结构',
-    },
-    {
-        id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: 'xxee5b77fc-9b3c-11ef-a661-123822610600ee5b77fc-9b3c-11ef-a661-123822610600',
-    },
-    {
-        id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-        name: '爱数128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-    },
-    {
-        id: '00000000-0000-0000-0000-000000000000',
-        name: '未分类00000000-0000-0000-0000-00000000000000000000-0000-0000-0000-000000000000',
-    },
-]
-
-export const delInfoCatlgData = [
-    {
-        id: '151bcb65-48ce-4b62-973f-0bb6685f9cb8',
-        name: '组织结构',
-    },
-    {
-        id: 'ee5b77fc-9b3c-11ef-a661-123822610600',
-        name: 'xx',
-    },
-    {
-        id: '128b33ba-99a3-11ef-9a89-ce9dc4e1dd39',
-        name: '爱数',
-    },
-    {
-        id: '00000000-0000-0000-0000-000000000000',
-        name: '未分类',
-    },
-]

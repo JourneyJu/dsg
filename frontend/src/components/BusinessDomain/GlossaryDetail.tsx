@@ -35,7 +35,6 @@ import {
 import DropdownOperate from './DropdownOperate'
 import Empty from '@/ui/Empty'
 import dataEmpty from '@/assets/dataEmpty.svg'
-import emptyAdd from '@/assets/emptyAdd.svg'
 import { ClossaryStatusList, GlossaryStatus } from '../BusinessGlossary/const'
 import {
     getCategoriesDetails,

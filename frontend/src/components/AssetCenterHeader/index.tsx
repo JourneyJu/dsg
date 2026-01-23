@@ -15,8 +15,6 @@ import {
     OperationCenterColored,
 } from '@/icons'
 
-import logo from '@/assets/logo1.png'
-import csLogo from '@/assets/csLogo.png'
 import styles from './styles.module.less'
 import UserInfoCard from '../UserInfoCard'
 import AssetsLibrary from '../SeriveMarketHeader/AssetsLibrary'
@@ -33,9 +31,6 @@ import __ from './locale'
 import { getActualUrl, getPlatformNumber } from '@/utils'
 import { homeRouteKeys } from '@/routers/config'
 import GlobalMenu from '../GlobalMenu'
-import { SearchInput } from '@/ui'
-import HistoryDropdown from '../HistoryDropdown'
-import SearchHeader from '../CognitiveSearch/components/SearchHeader'
 import MyTaskDrawer from './MyTaskDrawer'
 import { useCongSearchContext } from '../CognitiveSearch/CogSearchProvider'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
@@ -45,7 +40,6 @@ import {
     findFirstPathByKeys,
     findFirstPathByModule,
     getRootMenuByPath,
-    getRouteByAttr,
     getRouteByKeys,
     useMenus,
     hasDataAssetsMenus,
@@ -498,7 +492,7 @@ const AssetCenterHeader = (props: {
                         </div>
                     )}
 
-                    {[LoginPlatform.default].includes(platform) &&
+                    {/* {[LoginPlatform.default].includes(platform) &&
                         showApplyList &&
                         hasDemandApplyPerm &&
                         using === 2 && (
@@ -535,7 +529,7 @@ const AssetCenterHeader = (props: {
                                     </span>
                                 </div>
                             </div>
-                        )}
+                        )} */}
 
                     {/* 市州共享申请 */}
                     {[LoginPlatform.default, LoginPlatform.drmp].includes(

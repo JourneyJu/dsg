@@ -28,7 +28,6 @@ import { ReactComponent as techLevel1 } from '@/assets/DataAssetsCatlg/techLevel
 import { ReactComponent as techLevel2 } from '@/assets/DataAssetsCatlg/techLevel2.svg'
 import { ReactComponent as techLevel3 } from '@/assets/DataAssetsCatlg/techLevel3.svg'
 
-import { ReactComponent as assetsDataVolumn } from '@/assets/DataAssetsCatlg/assetsDataVolumn.svg'
 import { ReactComponent as viewCount } from '@/assets/DataAssetsCatlg/viewCount.svg'
 import { ReactComponent as applyCount } from '@/assets/DataAssetsCatlg/applyCount.svg'
 
@@ -72,7 +71,6 @@ import { SearchType } from '@/ui/LightweightSearch/const'
  * 服务类型
  * @param BUSINESSASSETS   业务对象
  * @param DATACATLG    数据目录
- * @param PROVINCEDATACATLG    省级数据目录
  * @param TECHNOLOGICALASSETS  技术资源
  * @param INDICATORASSETS  指标资源
  * @param APPLICATIONSERVICE  数据资源-接口
@@ -83,15 +81,11 @@ export enum ServiceType {
     // BUSINESSASSETS = 'businessAssets',
     INFORESOURCESDATACATLG = 'infoResourcesDataCatlg',
     DATACATLG = 'dataCatlg',
-    PROVINCEDATACATLG = 'provinceDataCatlg',
     TECHNOLOGICALASSETS = 'technologicalAssets',
     INDICATORASSETS = 'indicatorAssets',
     APPLICATIONSERVICE = 'applicationService',
     LOGICVIEW = 'data_view',
     LICENSE = 'license',
-    CSSJJ_APPSVC = 'cssjj_app_svc', // xx数据据项目独有，新增了一个叫 应用服务 的 Tab 2025-07-14
-    CSSJJ_SPATIALSVC = 'cssjj_Spatial_svc', // xx数据据项目独有，新增了一个叫 空间地理服务 的 Tab 2025-09-29
-    AISERVICE = 'aiService', // AI服务
 }
 
 export const DataRescToServiceType = {

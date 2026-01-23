@@ -1,8 +1,12 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as comSvg } from './svg/colored/businessDomainGroup.svg'
+import { IconType } from './const'
+import FontIcon from './FontIcon'
 
 const BusinessDomainGroupColored = (props: any) => (
-    <Icon component={comSvg} {...props} />
+    <FontIcon
+        name="icon-yewuyufenzu16"
+        type={IconType.COLOREDICON}
+        {...props}
+    />
 )
 
 export default BusinessDomainGroupColored

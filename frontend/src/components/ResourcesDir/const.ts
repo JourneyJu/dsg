@@ -309,7 +309,7 @@ export const classifiedOptoins = [
     { label: '涉密', value: 1, key: 1, color: '#FF4D4F' },
     { label: '非涉密', value: 0, key: 0, color: 'rgba(0,0,0,0.25)' },
 ]
-export const sensitiveOptoins = [
+export const sensitiveOptions = [
     { label: '敏感', value: 1, key: 1, color: '#FF4D4F' },
     { label: '不敏感', value: 0, key: 0, color: 'rgba(0,0,0,0.25)' },
 ]
@@ -1562,7 +1562,7 @@ export const infoItemsFormData: any[] = [
         key: 'sensitive_flag',
         type: SearchType.Select,
         itemProps: {
-            options: sensitiveOptoins,
+            options: sensitiveOptions,
             allowClear: true,
         },
     },
@@ -1704,7 +1704,7 @@ export const InfoItemsDetail: any[] = [
         value: '',
         key: 'sensitive_flag',
         span: 24,
-        options: sensitiveOptoins,
+        options: sensitiveOptions,
     },
     {
         label: __('共享属性'),

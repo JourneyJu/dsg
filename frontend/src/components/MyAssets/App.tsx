@@ -4,7 +4,6 @@ import { getPlatformNumber } from '@/utils'
 import AssetsVisitorList from './AssetsVisitorList'
 import __ from './locale'
 import { LoginPlatform } from '@/core'
-import GatewayAppMgt from '@/components/DataServiceMgt/GatewayAppMgt'
 import styles from './styles.module.less'
 
 enum AppType {
@@ -31,11 +30,6 @@ const App = () => {
                                 updateAssetList={setIsAppDeveloperEmpty}
                             />
                         ),
-                    },
-                    {
-                        label: __('网关应用'),
-                        key: AppType.GATEWAY_APP,
-                        children: <GatewayAppMgt />,
                     },
                 ]}
             />

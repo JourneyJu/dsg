@@ -66,7 +66,7 @@ export const classifiedOptoins = [
     { label: __('涉密'), value: 'secret' },
     { label: __('非涉密'), value: 'non-secret' },
 ]
-export const sensitiveOptoins = [
+export const sensitiveOptions = [
     { label: __('敏感'), value: 'sensitive' },
     { label: __('不敏感'), value: 'insensitive' },
 ]
