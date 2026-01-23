@@ -22,7 +22,7 @@ data:
   KAFKA_USERNAME: "{{ .Values.depServices.mq.auth.username }}"
   KAFKA_PASSWORD: "{{ .Values.depServices.mq.auth.password }}"
   KAFKA_MECHANISM: "{{ .Values.depServices.mq.auth.mechanism }}"
-  KAFKA_VERSION: "{{ .Values.depServices.mq.deployTrait.version }}"
+  KAFKA_VERSION: 3.4.0
   NSQ_TYPE: "{{ .Values.depServices.mq.nsq.type }}"
   NSQ_HOST: "{{ .Values.depServices.mq.nsq.host }}"
   NSQ_PORT: "{{ .Values.depServices.mq.nsq.port }}"
