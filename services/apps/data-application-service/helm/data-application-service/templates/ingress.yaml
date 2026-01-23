@@ -3,6 +3,9 @@ kind: Ingress
 metadata:
   name: {{ .Chart.Name}}
   namespace: {{ .Values.namespace}}
+  annotations:
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "*"
 spec:
   ingressClassName: {{ index .Values.depServices "class-443" "ingressClass" }}
   rules:
@@ -12,20 +15,13 @@ spec:
           service:
             name: {{.Values.service.name}}
             port:
-              number: 8157
-        path: /api/data-application-gateway
+              number: 8156
+        path: /api/data-application-service
         pathType: ImplementationSpecific
       - backend:
           service:
             name: {{.Values.service.name}}
             port:
-              number: 8157
-        path: /data-application-gateway
-        pathType: ImplementationSpecific
-      - backend:
-          service:
-            name: {{.Values.service.name}}
-            port:
-              number: 8157
-        path: /swagger/data-application-gateway
+              number: 8156
+        path: /swagger/data-application-service
         pathType: ImplementationSpecific

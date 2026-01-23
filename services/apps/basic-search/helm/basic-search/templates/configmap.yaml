@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.name }}-cm
+  namespace: {{ .Values.namespace }}
+data:
+  {{- with .Values }}
+  DOC_HOST: "0.0.0.0:8163"
+  HYDRA_HOST: "http://{{ .depServices.hydra.administrativeHost}}:{{ .depServices.hydra.administrativePort}}"
+  USER_MANAGE_HOST: "http://{{index .depServices "user-management" "privateHost"}}:{{index .depServices "user-management" "privatePort"}}"
+  ANYROBOT_TRACE_URL: "{{.depServices.anyRobotTraceUrl}}"
+  OPENSEARCH_READ_URI: "{{.depServices.opensearch.readUri}}"
+  OPENSEARCH_WRITE_URI: "{{.depServices.opensearch.writeUri}}"
+  OPENSEARCH_USERNAME: "{{.depServices.opensearch.username}}"
+  OPENSEARCH_PASSWORD: "{{.depServices.opensearch.password}}"
+  KAFKA_VERSION: "{{.depServices.kafka.version}}"
+  KAFKA_URI: "{{.depServices.kafka.uri}}"
+  KAFKA_CLIENT_ID: "{{.depServices.kafka.clientId}}"
+  KAFKA_USERNAME: "{{.depServices.kafka.username}}"
+  KAFKA_PASSWORD: "{{.depServices.kafka.password}}"
+  KAFKA_GROUP_ID: "{{.depServices.kafka.groupId}}"
+  CONFIG_CENTER_HOST: "http://{{index  .depServices "configuration-center" "host"}}:{{index .depServices "configuration-center" "port"}}"
+  TRACE_URL: "{{ .service.telemetry.trace.endpoint}}"
+  TRACE_ENABLED: "{{ .service.telemetry.trace.enabled}}"
+  LOG_LEVEL: "{{ .service.telemetry.log.level}}"
+  LOG_URL: "{{ .service.telemetry.log.endpoint}}"
+  LOG_ENABLED: "{{ .service.telemetry.log.enabled}}"
+  SERVER_NAME: "{{ .service.name}}"
+  SERVER_VERSION: "{{ .service.version}}"
+  {{- end }}

@@ -36,14 +36,14 @@ data:
   {{- end }}
 
   {{- with .Values.depServices.mq }}
-  KAFKA_TYPE: "{{ .kafka.type }}"
-  KAFKA_HOST: "{{ .kafka.host }}"
-  KAFKA_PORT: "{{ .kafka.port }}"
-  KAFKA_LOOKUPD_HOST: "{{ .kafka.lookupdHost }}"
-  KAFKA_LOOKUPD_PORT: "{{ .kafka.lookupdPort }}"
-  KAFKA_USERNAME: "{{ .kafka.username }}"
-  KAFKA_PASSWORD: "{{ .kafka.password }}"
-  KAFKA_MECHANISM: "{{ .kafka.mechanism }}"
+  KAFKA_TYPE: "{{ .mq_type }}"
+  KAFKA_HOST: "{{ .mq_hosts }}"
+  KAFKA_PORT: "{{ .mq_port }}"
+  KAFKA_LOOKUPD_HOST: "{{ .mq_hosts }}"
+  KAFKA_LOOKUPD_PORT: "{{ .mq_port }}"
+  KAFKA_USERNAME: "{{ .auth.username }}"
+  KAFKA_PASSWORD: "{{ .auth.password }}"
+  KAFKA_MECHANISM: "{{ .auth.mechanism }}"
   NSQ_TYPE: "{{ .nsq.type }}"
   NSQ_HOST: "{{ .nsq.host }}"
   NSQ_PORT: "{{ .nsq.port }}"

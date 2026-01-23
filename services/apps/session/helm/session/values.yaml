@@ -64,23 +64,21 @@ depServices:
     connectType: sentinel
     database: 0
   mq:
-    kafka:
-      type: kafka
-      host: kafka-headless.resource
-      port: 9097
-      lookupdHost: kafka-headless.resource
-      lookupdPort: 9097
-      username: kafkaclient
-      password: xxx
+    auth:
       mechanism: PLAIN
+      password: xxx
+      username: anyrobot
+    mq_hosts: kafka-headless.resource.svc.cluster.local.
+    mq_port: 9097
+    mq_type: kafka
+    source_type: internal
     nsq:
       type: nsq
       host: proton-mq-nsq-nsqd.resource
       port: 4150
       httpHost: proton-mq-nsq-nsqd.resource
       httpPort: 4151
-      lookupdHost: proton-mq-nsq-nsqlookupd.resource
-      lookupdPort: 4161
+      lookupdHost: proto
   hydra:
     publicHost: hydra-public
     publicPort: 4444

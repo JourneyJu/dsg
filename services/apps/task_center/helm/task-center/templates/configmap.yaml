@@ -28,7 +28,7 @@ data:
   KAFKA_URI:  {{ .kafka.uri | quote}}
   KAFKA_CLIENT_ID:  {{ .kafka.clientId | quote}}
   KAFKA_USERNAME:  {{ .kafka.username | quote}}
-  KAFKA_PASSWORD:  {{ .kafka.password | quote}}
+  KAFKA_PASSWORD:  {{ .depServices.mq.auth.password | quote }}
   KAFKA_GROUP_ID:  {{ .kafka.groupId | quote}}
   CONFIG_CENTER_HOST: "{{index .depServices "configuration-center" "host"}}:{{index .depServices "configuration-center" "port"}}"
   HYDRA_HOST: "{{index .depServices "hydraService" "administrativeHost"}}:{{index .depServices "hydraService" "administrativePort"}}"
