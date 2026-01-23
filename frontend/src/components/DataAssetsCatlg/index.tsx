@@ -293,18 +293,18 @@ const DataAssetsCatlg: React.FC<IDataAssetsCatlg> = ({
                         className={styles.serviceTabs}
                     /> */}
 
-                        {using === 1 ? (
-                            <AllDataCatlg
-                                ref={dataRef}
-                                searchKey={searchKey}
-                                getClickAsset={getClickAsset}
-                                getAddAsset={getAddAsset}
-                                addedAssets={addedAssets}
-                                isIntroduced={isIntroduced}
-                                searchRender={searchRender}
-                            />
-                        ) : null}
-                        {using === 2 ? (
+                        {/* {using === 1 ? ( */}
+                        <AllDataCatlg
+                            ref={dataRef}
+                            searchKey={searchKey}
+                            getClickAsset={getClickAsset}
+                            getAddAsset={getAddAsset}
+                            addedAssets={addedAssets}
+                            isIntroduced={isIntroduced}
+                            searchRender={searchRender}
+                        />
+                        {/* ) : null} */}
+                        {/* {using === 2 ? (
                             <ApplicationService
                                 ref={dataRef}
                                 searchKey={searchKey}
@@ -313,7 +313,7 @@ const DataAssetsCatlg: React.FC<IDataAssetsCatlg> = ({
                                 getAddAsset={getAddAsset}
                                 searchRender={searchRender}
                             />
-                        ) : null}
+                        ) : null} */}
                     </div>
 
                     {/* {!isIntroduced && (
@@ -367,7 +367,7 @@ const DataAssetsCatlg: React.FC<IDataAssetsCatlg> = ({
                     />
                 )}
 
-                {/* <SearchDataCopilot /> */}
+                <SearchDataCopilot />
             </div>
         </RescProvider>
     )

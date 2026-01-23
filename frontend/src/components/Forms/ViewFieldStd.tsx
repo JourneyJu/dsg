@@ -17,8 +17,6 @@ import { useDebounceFn, useGetState } from 'ahooks'
 import { trim } from 'lodash'
 import styles from './styles.module.less'
 import {
-    formsQueryStandardItem,
-    formsQueryStandardRecommend,
     formsQueryStandards,
     formsQueryCreateStandardTaskList,
     formatError,

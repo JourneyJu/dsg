@@ -49,7 +49,7 @@ import {
     FormatDataType,
     OpenTypeEnum,
     openTypeList,
-    sensitiveOptoins,
+    sensitiveOptions,
     ShareTypeEnum,
     shareTypeList,
     typeOptoins,
@@ -1486,7 +1486,7 @@ const InfoItemEditTable = forwardRef(
                             <Select
                                 placeholder={__('批量配置')}
                                 style={{ width: '100px' }}
-                                options={getColorOptions(sensitiveOptoins)}
+                                options={getColorOptions(sensitiveOptions)}
                                 getPopupContainer={selectGetPopupContainer}
                                 value={sensitiveType}
                                 onChange={(val) => {
@@ -1507,7 +1507,7 @@ const InfoItemEditTable = forwardRef(
                             }
                             placeholder={__('请选择')}
                             style={{ width: '100px' }}
-                            options={getColorOptions(sensitiveOptoins)}
+                            options={getColorOptions(sensitiveOptions)}
                             getPopupContainer={selectGetPopupContainer}
                             value={text}
                             onChange={(val) => {

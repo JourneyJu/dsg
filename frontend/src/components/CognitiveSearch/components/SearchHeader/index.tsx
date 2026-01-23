@@ -156,61 +156,6 @@ function SearchHeader() {
                         <TableSearchOutlined />
                     </div> */}
                     <div className={styles['search-wrapper-switch']}>
-                        {/* <div
-                        className={styles['search-wrapper-switch-tags']}
-                        onClick={(e) => {
-                            setIsFocus(true)
-                            e.stopPropagation()
-                        }}
-                        style={{
-                            visibility: isShowTag ? 'visible' : 'hidden',
-                            zIndex: 20,
-                        }}
-                    >
-                        <ParticipleTag
-                            data={tags}
-                            onStopKeys={(words) => setStopWord(words)}
-                        />
-                        {tags?.length && (
-                            <div className={styles['tag-close']}>
-                                <CloseCircleFilled
-                                    onClick={() => {
-                                        setKeyword('')
-                                        setTags([])
-                                        setIsFocus(true)
-                                    }}
-                                />
-                            </div>
-                        )}
-                    </div>
-                    {!isShowTag && (
-                        <SearchInput
-                            style={{
-                                zIndex: 50,
-                            }}
-                            placeholder={__(
-                                '您可以这样搜索：查找xx区外来人口相关的表',
-                            )}
-                            showIcon={false}
-                            value={keyword}
-                            onChange={(e) => {
-                                const kw = e.target?.value
-                                setKeyword(kw)
-                                if (tags?.length) {
-                                    setTags([])
-                                }
-                            }}
-                            onPressEnter={(e: any) =>
-                                handleSearch(e.target?.value)
-                            }
-                            className={styles['search-wrapper-switch-input']}
-                            maxLength={100}
-                            bordered={false}
-                            autoFocus={isFocus}
-                            onFocus={(e) => setIsFocus(true)}
-                            onBlur={() => setIsFocus(false)}
-                        />
-                    )} */}
                         <SearchInput
                             style={{
                                 zIndex: 50,

@@ -2437,6 +2437,8 @@ export interface IFavoriteItem {
     publish_at: string
     // 指标类型
     indicator_type: IndicatorType
+    // 是否在线
+    is_online: boolean
 }
 
 export interface IFavoriteListRes {

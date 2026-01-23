@@ -13,7 +13,12 @@
                 > div
                 > div
                 > div:first-child
-                > span:not(.disabledValue) {
+                > span:not(
+                    .disabledValue,
+                    [class*='disabledValue'],
+                    .offlineTips,
+                    [class*='offlineTips']
+                ) {
                 color: #3a8ff0;
             }
         }
@@ -122,6 +127,11 @@
     color: rgb(255 77 79 / 100%);
     font-size: 12px;
     white-space: nowrap;
+
+    &:hover,
+    &:active {
+        color: rgb(255 77 79 / 100%);
+    }
 }
 
 .subTitle {

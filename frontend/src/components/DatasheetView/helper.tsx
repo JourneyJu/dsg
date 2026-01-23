@@ -31,6 +31,11 @@ import {
 import { confirm, info } from '@/utils/modalHelper'
 import { BusinessDomainType } from '../BusinessDomain/const'
 import { TreeType, UNGROUPED } from '../MultiTypeSelectTree/const'
+import {
+    openTypeList,
+    shareTypeList,
+    updateCycleOptions,
+} from '../ResourcesDir/const'
 import { SearchType } from '../SearchLayout/const'
 import {
     contentList,
@@ -1017,6 +1022,10 @@ export const fieldSearchList = [
     //     ),
     // },
 ]
+export const unCategorized = {
+    value: 0,
+    label: __('未分类'),
+}
 export const searchFormData = [
     {
         label: __('库表名称、编码'),
@@ -1195,6 +1204,33 @@ export const searchFormData = [
             placeholder: __('请选择'),
         },
     },
+    {
+        label: __('更新周期'),
+        key: 'update_cycle',
+        type: SearchType.Select,
+        itemProps: {
+            options: [...updateCycleOptions, unCategorized],
+            className: 'has-uncategorized',
+        },
+    },
+    {
+        label: __('共享属性'),
+        key: 'shared_type',
+        type: SearchType.Select,
+        itemProps: {
+            options: [...shareTypeList, unCategorized],
+            className: 'has-uncategorized',
+        },
+    },
+    {
+        label: __('开放属性'),
+        key: 'open_type',
+        type: SearchType.Select,
+        itemProps: {
+            options: [...openTypeList, unCategorized],
+            className: 'has-uncategorized',
+        },
+    },
     // {
     //     label: __('数据Owner'),
     //     key: 'owner_id',
@@ -1254,20 +1290,21 @@ export const timeStrToTimestamp = (searchObj: any) => {
     // eslint-disable-next-line no-restricted-syntax, guard-for-in
     for (const key in searchObj) {
         if (Object.prototype.hasOwnProperty.call(searchObj, key)) {
-            obj[key] = searchObj[key]
-                ? timeFields.includes(key)
-                    ? moment(searchObj[key]).valueOf()
-                    : searchObj[key]
-                : undefined
+            obj[key] =
+                searchObj[key] || searchObj[key] === 0
+                    ? timeFields.includes(key)
+                        ? moment(searchObj[key]).valueOf()
+                        : searchObj[key]
+                    : undefined
         }
     }
     // 上线状态：下线需要单独增加自动下线状态
-    if (
-        searchObj?.online_status_list?.includes(onLineStatus.Offline) &&
-        !searchObj?.online_status_list?.includes(onLineStatus.OfflineAuto)
-    ) {
-        obj.online_status_list = `${searchObj?.online_status_list},${onLineStatus.OfflineAuto}`
-    }
+    // if (
+    //     searchObj?.online_status_list?.includes(onLineStatus.Offline) &&
+    //     !searchObj?.online_status_list?.includes(onLineStatus.OfflineAuto)
+    // ) {
+    //     obj.online_status_list = `${searchObj?.online_status_list},${onLineStatus.OfflineAuto}`
+    // }
     return obj
 }
 

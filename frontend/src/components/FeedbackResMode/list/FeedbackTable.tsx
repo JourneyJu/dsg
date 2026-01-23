@@ -46,7 +46,8 @@ const FeedbackTable: React.FC<{
     menu: FeedbackMenuEnum
     scrollY?: string
     onReplySuccess?: () => void
-}> = ({ menu, scrollY = 'calc(100vh - 292px)', onReplySuccess }) => {
+    resType?: any
+}> = ({ menu, scrollY = 'calc(100vh - 292px)', onReplySuccess, resType }) => {
     // 初始化 load
     const [loading, setLoading] = useState<boolean>(true)
     // 加载数据 load
@@ -88,8 +89,8 @@ const FeedbackTable: React.FC<{
     useEffect(() => {
         // 初始化搜索条件
         const { initSearch } = FeedbackTabMap[menu]
-        setSearchCondition(initSearch)
-    }, [menu])
+        setSearchCondition({ ...initSearch, res_type: resType })
+    }, [menu, resType])
 
     useEffect(() => {
         searchConditionRef.current = searchCondition

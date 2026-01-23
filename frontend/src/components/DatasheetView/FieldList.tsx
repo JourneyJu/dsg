@@ -12,6 +12,8 @@ import {
     ClassifyType,
     getDefaultDataType,
     DefaultDataType,
+    classifiedOptoins,
+    sensitiveOptions,
 } from './const'
 import __ from './locale'
 import styles from './styles.module.less'
@@ -35,6 +37,8 @@ import DelFieldsModal from './DelFieldsModal'
 import { useDataViewContext } from './DataViewProvider'
 import { AutoCompletionIcon } from './AutoCompletion/AutoCompletionIcon'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
+import { getPopupContainer } from '@/utils'
+import { shareTypeList, openTypeList } from '../ResourcesDir/const'
 
 interface IFieldList {
     fieldList: IEditFormData[]
@@ -108,13 +112,14 @@ const FieldList: React.FC<IFieldList> = ({
         return checkPermissions(HasAccess.isGovernOrOperation) ?? false
     }, [checkPermissions])
 
-    const columns = [
+    const columns: any[] = [
         {
             title: __('字段业务名称'),
             dataIndex: 'business_name',
             key: 'business_name',
             ellipsis: true,
             width: 260,
+            fixed: 'left',
             render: (text, record) => {
                 return (
                     <div className={styles.fieldlistName}>
@@ -269,7 +274,7 @@ const FieldList: React.FC<IFieldList> = ({
         },
         {
             title: (
-                <div>
+                <div style={{ display: 'flex', alignItems: 'center ' }}>
                     {__('分类属性')}
                     <Tooltip
                         color="#fff"
@@ -280,7 +285,8 @@ const FieldList: React.FC<IFieldList> = ({
                         }}
                         placement="bottom"
                         getPopupContainer={(n) =>
-                            document.getElementById('customDrawerBody') ||
+                            // document.getElementById('customDrawerBody') ||
+                            // getPopupContainer() ||
                             document.body
                         }
                         title={
@@ -402,6 +408,42 @@ const FieldList: React.FC<IFieldList> = ({
                     </span>
                 </>
             ),
+        },
+        {
+            title: __('共享属性'),
+            dataIndex: 'shared_type',
+            key: 'shared_type',
+            ellipsis: true,
+            width: 100,
+            render: (text) =>
+                shareTypeList.find((o) => o.value === text)?.label || '--',
+        },
+        {
+            title: __('开放属性'),
+            dataIndex: 'open_type',
+            key: 'open_type',
+            ellipsis: true,
+            width: 100,
+            render: (text) =>
+                openTypeList.find((o) => o.value === text)?.label || '--',
+        },
+        {
+            title: __('敏感属性'),
+            dataIndex: 'sensitive_type',
+            key: 'sensitive_type',
+            ellipsis: true,
+            width: 100,
+            render: (text) =>
+                sensitiveOptions.find((o) => o.value === text)?.label || '--',
+        },
+        {
+            title: __('涉密属性'),
+            dataIndex: 'secret_type',
+            key: 'secret_type',
+            ellipsis: true,
+            width: 100,
+            render: (text) =>
+                classifiedOptoins.find((o) => o.value === text)?.label || '--',
         },
     ]
 

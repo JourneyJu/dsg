@@ -346,6 +346,7 @@ export const FeedbackTabMap = {
         defaultSearch: {
             status: '',
             feedback_type: '',
+            res_type: ResType.DataView,
         },
         initSearch: {
             limit: 10,

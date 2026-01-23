@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useMemo } from 'react'
 import { Avatar, Checkbox, Tooltip, Dropdown, MenuProps } from 'antd'
 import { EllipsisOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
@@ -8,6 +8,7 @@ import { formatTime } from '@/utils'
 import { IAgentItem } from '@/core'
 import AgentAvatar from './AgentAvatar'
 import ReturnConfirmModal from '@/ui/ReturnConfirmModal'
+import SelectCategory from './SelectCategory'
 
 interface AssistantCardProps {
     /** 助手数据 */
@@ -26,8 +27,12 @@ interface AssistantCardProps {
     disabled?: boolean
     /** 禁用时的提示文字 */
     disabledTooltip?: string
-    /** 是否有下架权限 */
-    canOffline?: boolean
+    /** 权限对象（可扩展） */
+    permissions?: {
+        offline?: boolean
+        classify?: boolean
+        [key: string]: boolean | undefined
+    }
 }
 
 const Card: React.FC<AssistantCardProps> = ({
@@ -39,8 +44,11 @@ const Card: React.FC<AssistantCardProps> = ({
     onSelect,
     disabled = false,
     disabledTooltip,
-    canOffline = false,
+    permissions = {},
 }) => {
+    // 关联分类弹窗状态
+    const [categoryModalOpen, setCategoryModalOpen] = useState(false)
+
     // 处理下架助手
     const handleRemoveAssistant = (id: string) => {
         ReturnConfirmModal({
@@ -55,21 +63,49 @@ const Card: React.FC<AssistantCardProps> = ({
         })
     }
 
-    // 卡片操作菜单（仅在有下架权限时使用）
-    const getCardMenuItems = (cardId: string): MenuProps['items'] => [
+    // 处理关联分类
+    const handleCategory = (id: string) => {
+        setCategoryModalOpen(true)
+    }
+
+    // 卡片操作菜单配置（可扩展，每个菜单项关联一个权限）
+    const menuConfig = [
+        {
+            key: 'category',
+            label: __('关联分类'),
+            permission: 'classify',
+            onClick: (cardId: string) => handleCategory(cardId),
+        },
         {
             key: 'remove',
             label: __('下架助手'),
-            onClick: ({ domEvent }) => {
-                domEvent.stopPropagation()
-                handleRemoveAssistant(cardId)
-            },
+            permission: 'offline',
+            onClick: (cardId: string) => handleRemoveAssistant(cardId),
         },
-    ]
+    ] as const
+
+    // 根据权限过滤菜单项
+    const getCardMenuItems = (cardId: string): MenuProps['items'] => {
+        return menuConfig
+            .filter((item) => permissions[item.permission])
+            .map((item) => ({
+                key: item.key,
+                label: item.label,
+                onClick: ({ domEvent }: { domEvent: Event }) => {
+                    domEvent.stopPropagation()
+                    item.onClick(cardId)
+                },
+            })) as unknown as MenuProps['items']
+    }
+
+    // 判断是否有可用菜单项（有一个或以上权限时显示 Dropdown）
+    const hasAvailableMenuItems = useMemo(() => {
+        return menuConfig.some((item) => permissions[item.permission])
+    }, [permissions])
 
     // 处理卡片点击
     const handleCardClick = () => {
-        if (disabled) return
+        if (disabled || categoryModalOpen) return
         if (selectable) {
             onSelect?.(data.id, !selected)
         } else {
@@ -155,8 +191,8 @@ const Card: React.FC<AssistantCardProps> = ({
                         {formatTime(data.published_at) || '--'}
                     </span>
                 </div>
-                {/* 操作菜单（非多选模式且有下架权限时显示 Dropdown） */}
-                {!selectable && canOffline && (
+                {/* 操作菜单（非多选模式且有一个或以上权限时显示 Dropdown） */}
+                {!selectable && hasAvailableMenuItems && (
                     <Dropdown
                         menu={{
                             items: getCardMenuItems(data.af_agent_id),
@@ -168,11 +204,21 @@ const Card: React.FC<AssistantCardProps> = ({
                             className={styles.cardOperation}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <EllipsisOutlined style={{ fontSize: '20px' }} />
+                            <EllipsisOutlined
+                                style={{
+                                    fontSize: '20px',
+                                    color: 'rgba(0, 0, 0)',
+                                }}
+                            />
                         </div>
                     </Dropdown>
                 )}
             </div>
+            <SelectCategory
+                open={categoryModalOpen}
+                onClose={() => setCategoryModalOpen(false)}
+                agent={data}
+            />
         </div>
     )
 }

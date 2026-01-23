@@ -33,12 +33,22 @@ import { homeRouteKeys } from '@/routers/config'
 
 const { Header: AntdHeader } = Layout
 
+export interface MicroAppHeaderProps {
+    /** 是否从 SearchDataCopilot 进入 */
+    isFromSearchCopilot?: boolean
+    /** 从 SearchDataCopilot 进入时，点击服务超市的回调 */
+    onServiceMarketClick?: () => void
+}
+
 /**
  * 微应用Header组件
  * 在微应用环境下,使用主应用提供的 renderAppMenu 渲染应用菜单
  * 同时集成 AssetCenterHeader 的布局内容
  */
-const MicroAppHeader: React.FC = () => {
+const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
+    isFromSearchCopilot = false,
+    onServiceMarketClick,
+}) => {
     const { microAppProps } = useMicroAppProps()
     const { checkPermission } = useUserPermCtx()
     const [{ using }] = useGeneralConfig()
@@ -83,12 +93,24 @@ const MicroAppHeader: React.FC = () => {
                 label: __('后台管理'),
             },
         ]
-        // 根据模块下是否有有效路径来过滤显示
+
+        // 如果是从 SearchDataCopilot 进入，添加"找数助手"菜单项
+        if (isFromSearchCopilot) {
+            config.unshift({
+                key: 'search-copilot',
+                label: __('找数助手'),
+            })
+        }
+
+        // 根据模块下是否有有效路径来过滤显示（找数助手菜单项不需要过滤）
         return config.filter((item) => {
+            if (item.key === 'search-copilot') {
+                return true
+            }
             const firstPath = findFirstPathByModule(item.key)
             return !!firstPath
         })
-    }, [menus])
+    }, [menus, isFromSearchCopilot])
 
     // 是否有服务超市菜单
     const hasServiceMarket = hasDataAssetsMenus(menus)
@@ -112,6 +134,13 @@ const MicroAppHeader: React.FC = () => {
         updateActiveMenu()
     }, [checkPermission, pathname])
 
+    // 如果是从 SearchDataCopilot 进入，设置找数助手为激活状态
+    useEffect(() => {
+        if (isFromSearchCopilot) {
+            setActiveMenuKey('search-copilot')
+        }
+    }, [isFromSearchCopilot])
+
     const getRoleHasAccess = () => {
         const systemMgm =
             checkPermission(allRoleList.TCSystemMgm, 'only') ?? false
@@ -119,6 +148,12 @@ const MicroAppHeader: React.FC = () => {
     }
 
     const updateActiveMenu = () => {
+        // 如果是从 SearchDataCopilot 进入，不根据 pathname 更新激活菜单
+        // 激活菜单由 useEffect 中的逻辑控制
+        if (isFromSearchCopilot) {
+            return
+        }
+
         // 获取菜单所属 module
         const rootMenu = getRootMenuByPath(pathname)
         let menuKey = rootMenu?.module?.[0]
@@ -243,10 +278,32 @@ const MicroAppHeader: React.FC = () => {
                             </span>
                             <span>{appName}</span>
                         </span>
+                        {isFromSearchCopilot && (
+                            <>
+                                <span className={styles.appSeparator}>/</span>
+                                <span
+                                    className={styles.appTitle}
+                                    onClick={() => onServiceMarketClick?.()}
+                                >
+                                    {__('数据服务超市')}
+                                </span>
+                                <span className={styles.appSeparator}>/</span>
+                                <span className={styles.appTitle}>
+                                    {__('找数助手')}
+                                </span>
+                            </>
+                        )}
                     </div>
-                    <div className={styles.menuWrapper}>
+                    <div
+                        className={styles.menuWrapper}
+                        hidden={isFromSearchCopilot}
+                    >
                         {menuConfig.map((menu) => {
                             const isActive = activeMenuKey === menu.key
+                            // 从 SearchDataCopilot 进入时，找数助手菜单项不可点击
+                            const isDisabled =
+                                isFromSearchCopilot &&
+                                menu.key === 'search-copilot'
 
                             return (
                                 <div
@@ -254,8 +311,21 @@ const MicroAppHeader: React.FC = () => {
                                     className={classnames(
                                         styles.menuItem,
                                         isActive && styles.menuItemActive,
+                                        isDisabled && styles.menuItemDisabled,
                                     )}
-                                    onClick={() => handleMenuClick(menu.key)}
+                                    onClick={() => {
+                                        if (!isDisabled) {
+                                            handleMenuClick(menu.key)
+                                        }
+                                    }}
+                                    style={
+                                        isDisabled
+                                            ? {
+                                                  cursor: 'not-allowed',
+                                                  opacity: 0.5,
+                                              }
+                                            : undefined
+                                    }
                                 >
                                     <span
                                         className={classnames(

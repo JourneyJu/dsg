@@ -944,9 +944,13 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                                 clickListItemName(item)
                             }}
                         >
-                            <AppDataContentColored
-                                className={styles.itemIcon}
-                            />
+                            <span className={styles.itemTypeTag}>
+                                <AppDataContentColored
+                                    style={{ fontSize: 20 }}
+                                />
+                                {__('目录')}
+                            </span>
+
                             {showPubTag ? (
                                 <PublishStatusTag
                                     status={item?.published_status}
@@ -1231,13 +1235,8 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                         infoData={getMoreInfoData(item)}
                     /> */}
                 </div>
-                <div className={styles.oprContent}>
+                {/* <div className={styles.oprContent}>
                     <div className={styles.oprFirstLine}>
-                        {/* <span className={styles.applyCount}>
-                            {`${__('申请量') + __('：')}${
-                                item?.apply_num || '0'
-                            }`}
-                        </span> */}
 
                         {listContentLt950 ? (
                             <OprDropDown
@@ -1259,8 +1258,7 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                             />
                         ) : (
                             <>
-                                {/* 认知助手 */}
-                                {/* {hasBusinessRoles && (
+                                {hasBusinessRoles && (
                             <Tooltip
                                 placement="bottom"
                                 title={chatTipCatalog(
@@ -1313,10 +1311,10 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                                     }}
                                 />
                             </Tooltip>
-                        )} */}
+                        )}
 
-                                {/* 加入/移出共享清单+共享申请 */}
-                                {/* {item.is_online &&
+                                加入/移出共享清单+共享申请
+                                {item.is_online &&
                                     platform === LoginPlatform.drmp && (
                                         <CityShareOperation
                                             catalog={item}
@@ -1332,9 +1330,9 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                                                 setApplyCatalog(value)
                                             }}
                                         />
-                                    )} */}
+                                    )}
 
-                                {/* <div className={styles.addAssetsToLibrary}>
+                                <div className={styles.addAssetsToLibrary}>
                         {getAddAsset ? (
                             <div className={styles.assetsIconWrapper}>
                                 <Tooltip
@@ -1370,13 +1368,13 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                                 errorCallback={handleError}
                             />
                         )}
-                    </div> */}
+                    </div>
                             </>
                         )}
                     </div>
                     {!listContentLt950 && (
                         <div className={styles.oprSecLine}>
-                            {/* 目录反馈 */}
+                            目录反馈
                             {item.is_online && (
                                 <FeedbackOperation
                                     catalog={item}
@@ -1385,7 +1383,7 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                                 />
                             )}
 
-                            {/* 收藏 */}
+                            收藏
                             {item.is_online && (
                                 <FavoriteOperation
                                     item={item}
@@ -1402,7 +1400,7 @@ const DataCatlg: React.FC<IDataCatlgProps> = forwardRef((props: any, ref) => {
                             )}
                         </div>
                     )}
-                </div>
+                </div> */}
             </List.Item>
         )
     }

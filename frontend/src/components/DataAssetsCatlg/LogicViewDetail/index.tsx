@@ -59,6 +59,7 @@ import {
     ActionText,
     itemOtherInfo,
     TimeRender,
+    getShareAndOpenType,
     getDisabledTooltip,
 } from './helper'
 
@@ -67,8 +68,6 @@ import { getIsNeedPermisControl } from '../helper'
 
 import { BizType, PolicyType } from '@/components/AuditPolicy/const'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
-import qa from '@/assets/qa.png'
-import qaColored from '@/assets/qaColored.png'
 import {
     getPublishStatus,
     OfflineStatusList,
@@ -171,7 +170,7 @@ const LogicViewDetail = ({
     hiddenReturn = false,
     onAddFavorite = noop,
     onCancelFavorite = noop,
-    showDataConsanguinity = true,
+    showDataConsanguinity = false,
     isPersonalCenter = false,
 }: ILogicViewDetail) => {
     const [userId] = useCurrentUser('ID')
@@ -286,7 +285,7 @@ const LogicViewDetail = ({
                 key: detailTabKey.view,
             },
             {
-                label: __('数据血缘'),
+                label: showDataConsanguinity ? __('数据血缘') : '',
                 key: detailTabKey.dataConsanguinity,
             },
             {
@@ -1135,7 +1134,7 @@ const LogicViewDetail = ({
                                                 >
                                                     {__('跳转后台')}
                                                 </Button> */}
-                                                    {(isOwner || canAuth) &&
+                                                    {/* {(isOwner || canAuth) &&
                                                         isOnline &&
                                                         (isShowRequestPath ||
                                                             isMicroWidget({
@@ -1180,7 +1179,7 @@ const LogicViewDetail = ({
                                                                     )}
                                                                 </Button>
                                                             </Tooltip>
-                                                        )}
+                                                        )} */}
                                                     {/* {isShowAuditProcessBtn && (
                                                         <Tooltip
                                                             title={
@@ -1293,7 +1292,7 @@ const LogicViewDetail = ({
                                                         )
                                                     }
                                                 /> */}
-                                                    {/* {!isPersonalCenter && (
+                                                    {!isPersonalCenter && (
                                                         <>
                                                             <FavoriteOperation
                                                                 type="button"
@@ -1346,7 +1345,7 @@ const LogicViewDetail = ({
                                                                 }
                                                             />
                                                         </>
-                                                    )} */}
+                                                    )}
                                                 </>
                                             )}
                                         </div>
@@ -1437,31 +1436,8 @@ const LogicViewDetail = ({
                                             </div>
                                         )}
                                     </div>
-
-                                    {/* <div className={styles.vistInfos}>
-                                        <span className={styles.label}>
-                                            <VisitOutlined
-                                                className={styles.icon}
-                                            />
-                                            <span className={styles.text}>
-                                                {__('访问量：')}
-                                            </span>
-                                            {logicViewInfo?.service_info
-                                                ?.preview_num || '0'}
-                                        </span>
-                                        <span className={styles.label}>
-                                            <InterfaceOutlined
-                                                className={styles.icon}
-                                                style={{ fontSize: 14 }}
-                                            />
-                                            <span className={styles.text}>
-                                                {__('调用次数：')}
-                                            </span>
-                                            {logicViewInfo?.service_info
-                                                ?.apply_num || '0'}
-                                        </span>
-                                    </div> */}
                                 </div>
+                                {getShareAndOpenType(baseInfoData)}
                             </Space>
                         </div>
                     </div>
@@ -1586,7 +1562,7 @@ const LogicViewDetail = ({
                                         height: 'calc(100vh - 267px)',
                                     }}
                                     tableScroll={{
-                                        y: 'calc(100vh - 448px)',
+                                        y: 'calc(100vh - 300px)',
                                     }}
                                     getContainer={document.getElementById(
                                         'serviceWrap',

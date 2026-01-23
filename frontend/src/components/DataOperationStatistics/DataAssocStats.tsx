@@ -1,11 +1,8 @@
 import React, { useEffect, useState, useMemo } from 'react'
-import { Space, Row, Col, Statistic } from 'antd'
+import { Space, Row, Col } from 'antd'
 import { ArrowDownOutlined, ArrowUpOutlined } from '@ant-design/icons'
 import moment from 'moment'
-import StatsHeader from './StatsHeader'
-import CardLayout from './CardLayout'
 import {
-    CardDataLabel,
     ContentLayout,
     ItemCardContainer,
     TimeRangeSelector,

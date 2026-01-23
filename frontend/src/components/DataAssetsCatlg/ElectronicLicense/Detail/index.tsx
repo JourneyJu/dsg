@@ -20,7 +20,6 @@ import { Loader } from '@/ui'
 
 import { MicroWidgetPropsContext } from '@/context'
 import { itemOtherInfo } from './helper'
-import { LicenseTabKey } from '@/components/ElectronicLicense/Detail/helper'
 import { IconType } from '@/icons/const'
 import BasicInfo from './BasicInfo'
 import FavoriteOperation, {

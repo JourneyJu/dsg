@@ -118,6 +118,7 @@
                     // z-index: 999;
                     // top: 64px;
                     overflow: hidden;
+                    height: 50px;
                     margin: 0 51px 16px 64px;
                     background: #fff;
                     background-color: #fff;
@@ -702,6 +703,20 @@
                             height: 24px;
                             color: rgb(0 0 0 / 85%);
                             line-height: 24px;
+                        }
+
+                        .itemTypeTag {
+                            display: flex;
+                            align-items: center;
+                            padding: 2px 4px;
+                            padding-right: 8px;
+                            margin-right: 8px;
+                            background: #59a3ff;
+                            border-radius: 4px;
+                            color: #fff;
+                            font-size: 12px;
+                            gap: 4px;
+                            line-height: 22px;
                         }
                     }
                 }
@@ -3396,10 +3411,11 @@
 // 目录列表顶部过滤条件
 .filterConditionLayout {
     display: flex;
-    width: 100%;
+    // width: 100%;
     height: 22px;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
     line-height: 22px;
 
     .filterItemWrapper {
@@ -3454,7 +3470,7 @@
         cursor: pointer;
 
         .mutilpleContent {
-            max-width: 112px;
+            // max-width: 112px;
             .ellipsis-mixin();
         }
     }
@@ -3894,5 +3910,15 @@
         .yellow {
             color: #f39422;
         }
+    }
+}
+
+.itemOtherInfoBox {
+    display: flex;
+    align-items: center;
+    color: rgba(0 0 0 / 45%);
+
+    .divider {
+        margin-right: 12px;
     }
 }

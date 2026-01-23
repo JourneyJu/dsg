@@ -40,7 +40,7 @@ export const getPopupContainer = (): HTMLElement | false => {
         if (microAppRoot) {
             return microAppRoot
         }
-        return false
+        return document.body
     }
     return document.body
 }

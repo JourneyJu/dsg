@@ -191,7 +191,10 @@ const DataQuality = (props: IDataQuality) => {
                 JobConfigClick()
             }
         } catch (err) {
-            formatError(err)
+            // formatError(err)
+            setExploreReportData({
+                ret_flag: 1,
+            })
         } finally {
             setLoading(false)
         }

@@ -11,7 +11,6 @@ import {
     getDepartmentIntegralTop5,
     getIntegralGrowth,
 } from '@/core'
-import { IntegralIdMap } from '@/components/IntegralConfig/const'
 import { businessModuleDisplay } from '@/components/IntegralConfig/helper'
 
 const Board = () => {

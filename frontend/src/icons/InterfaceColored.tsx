@@ -1,8 +1,7 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as interfaceIconSvg } from './svg/colored/interface.svg'
+import FontIcon from './FontIcon'
 
 const InterfaceColored = (props: any) => (
-    <Icon component={interfaceIconSvg} {...props} />
+    <FontIcon name="icon-jiekoufuwuguanli" type="colored" {...props} />
 )
 
 export default InterfaceColored

@@ -206,6 +206,7 @@ export const DataViewProvider = ({ children }: { children: ReactNode }) => {
     // 保存库表信息
     const onSubmitBasicInfo = async () => {
         try {
+            const updateTypeKeys = ['update_cycle', 'shared_type', 'open_type']
             let data: any = {
                 ...pick(datasheetInfo, [
                     'business_name',
@@ -215,6 +216,7 @@ export const DataViewProvider = ({ children }: { children: ReactNode }) => {
                     'department_id',
                     'owners',
                     'source_sign',
+                    ...updateTypeKeys,
                 ]),
                 form_view_id: datasheetInfo?.id,
             }
@@ -228,7 +230,10 @@ export const DataViewProvider = ({ children }: { children: ReactNode }) => {
                 // 如果已经是对象数组且包含 owner_id，则不做处理
             }
             keys(data).forEach((k) => {
-                data[k] = data[k] || ''
+                data[k] =
+                    updateTypeKeys.includes(k) && !data[k]
+                        ? undefined
+                        : data[k] || ''
             })
             if (logicViewType === LogicViewType.LogicEntity) {
                 data = omit(data, 'subject_id')

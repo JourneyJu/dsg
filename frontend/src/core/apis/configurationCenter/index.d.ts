@@ -719,7 +719,7 @@ export interface IAppInfoParams {
     password?: string
 
     /**
-     * 标记 cssjj xx
+     * 标记 cssjj
      */
     mark?: string
 }

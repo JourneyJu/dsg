@@ -1,7 +1,7 @@
 import { FC, useEffect, useRef, useState, useContext, useMemo } from 'react'
 import moment from 'moment'
 import { Drawer, Space, Tooltip } from 'antd'
-import { CloseOutlined, DownloadOutlined } from '@ant-design/icons'
+import { CloseOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
@@ -266,7 +266,8 @@ const DataAssetsListDrawer: FC<IDataAssetsListDrawer> = ({
                                     }}
                                 />
                             ) : (
-                                <DownloadOutlined
+                                <FontIcon
+                                    name="icon-xiazai"
                                     className={styles.itemOprIcon}
                                     onClick={(e) => {
                                         e.preventDefault()

@@ -26,6 +26,8 @@ export enum FeedbackMenuEnum {
     MyFeedback = 'myFeedback',
     // 我的反馈 - 接口服务
     InterfaceSvc = 'interface-svc',
+    // 我的反馈 - 库表
+    DataView = 'data-view',
 }
 
 // 反馈基础信息

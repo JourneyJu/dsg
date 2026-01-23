@@ -15,7 +15,7 @@ export const getCodeTableList = (params: {
     limit?: number
 }): Promise<ICommonRes<CodeTableInfo>> => {
     return get(
-        `/api/external-plugin-framework/v1/standardization/dataelement/dict`,
+        `/api/standardization/v1/standardization/dataelement/dict`,
         params,
     )
 }
@@ -27,7 +27,7 @@ export const getCodeTableList = (params: {
  */
 export const getCodeTableDetail = (code: string): Promise<CodeTableDetail> => {
     return get(
-        `/api/external-plugin-framework/v1/standardization/dataelement/dict/code/${code}`,
+        `/api/standardization/v1/standardization/dataelement/dict/code/${code}`,
     )
 }
 
@@ -45,6 +45,7 @@ export const getStandardRecommend = (params: any): Promise<any> => {
 
 /**
  * 检索字段标准列表
+ * 需要删除的接口
  * @param params
  * @returns
  */
@@ -62,8 +63,8 @@ export const formsQueryStandards = (params: any): Promise<any> => {
  * @returns
  */
 export const formsQueryStandardItem = (params: any): Promise<any> => {
-    return get(
-        `/api/external-plugin-framework/v1/standardization/dataelement/detail`,
-        params,
-    )
+    return get(`/api/standardization/v1/dataelement/detail`, {
+        type: params?.type || params?.id ? 1 : 2,
+        value: params?.value || params?.id || params?.code,
+    })
 }

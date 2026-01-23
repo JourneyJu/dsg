@@ -15,7 +15,6 @@ import { ReactComponent as kuSvg } from '@/icons/svg/outlined/ku.svg'
 import { ReactComponent as goujianshuSvg } from '@/icons/svg/outlined/goujianshu.svg'
 import { ReactComponent as gerenSvg } from '@/icons/svg/outlined/geren.svg'
 import { ReactComponent as tianchongxingSvg } from '@/icons/svg/colored/tianchongxing.svg'
-import { ReactComponent as gongzuotaiSvg } from '@/icons/svg/outlined/gongzuotai.svg'
 import { ReactComponent as departmentSvg } from '@/icons/svg/outlined/department.svg'
 
 function Icons({ type }: any) {

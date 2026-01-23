@@ -1,12 +1,6 @@
 import React from 'react'
 import classnames from 'classnames'
-import {
-    ResType,
-    CatalogResType,
-    LicenseResType,
-    IFavoriteItem,
-    OnlineStatus,
-} from '@/core'
+import { ResType, CatalogResType, LicenseResType, IFavoriteItem } from '@/core'
 import styles from './styles.module.less'
 import { Empty, Loader } from '@/ui'
 import dataEmpty from '@/assets/dataEmpty.svg'
@@ -97,11 +91,11 @@ export const FavoriteTabMap = {
     [ResType.InterfaceSvc]: {
         name: __('接口服务名称'),
         title: __('收藏列表'),
-        columnKeys: ['res_name', 'org_name', 'online_at', 'action'],
+        columnKeys: ['res_name', 'org_name', 'subjects', 'online_at', 'action'],
         columnTitle: {
             org_name: __('所属部门'),
         },
-        actionMap: [FavoriteOperate.Details, FavoriteOperate.CancelFavorite],
+        actionMap: [FavoriteOperate.CancelFavorite],
         actionWidth: 140,
         iconName: 'icon-jiekoufuwuguanli',
         searchPlaceholder: __('搜索接口服务名称、编码'),
@@ -127,6 +121,23 @@ export const FavoriteTabMap = {
             limit: 10,
             offset: 1,
             res_type: ResType.ElecLicenceCatalog,
+        },
+    },
+    [ResType.DataView]: {
+        name: __('库表'),
+        title: __('收藏列表'),
+        columnKeys: ['res_name', 'org_name', 'subjects', 'online_at', 'action'],
+        columnTitle: {
+            org_name: __('所属部门'),
+        },
+        actionMap: [FavoriteOperate.CancelFavorite],
+        actionWidth: 140,
+        iconName: 'icon-shujubiaoshitu',
+        searchPlaceholder: __('搜索库表名称、编码'),
+        initSearch: {
+            limit: 10,
+            offset: 1,
+            res_type: ResType.DataView,
         },
     },
 }

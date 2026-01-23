@@ -551,8 +551,9 @@ const AddResourcesDir: React.FC<AddResourcesDirProps> = ({
                     },
                     updateBaseInfoKeys,
                 ) ||
-                isMountResourcesChange
-            // upPublishedList.includes(baseInfoForm?.publish_status)
+                isMountResourcesChange ||
+                !!draftId ||
+                upPublishedList.includes(baseInfoForm?.publish_status)
 
             let res: any
             const obj = rowId

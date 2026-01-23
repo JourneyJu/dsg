@@ -5,6 +5,7 @@
  * @LastEditTime: 2024-01-16 18:16:43
  * @Description:
  */
+import { pseudoRandomBytes } from 'crypto'
 import {
     AssetTypeEnum,
     IAuthRequest,
@@ -303,12 +304,9 @@ export const deleteDwhDataAuthRequest = (
 }
 
 // 获取接口列表
-export const getMenuResourceActions = ({
-    resource_id,
-}: {
+export const getMenuResourceActions = (params: {
     resource_id: string
+    resource_type: string
 }) => {
-    return get(
-        `/api/auth-service/v1/menu-resource/actions?resource_id=${resource_id}`,
-    )
+    return get(`/api/auth-service/v1/menu-resource/actions`, params)
 }

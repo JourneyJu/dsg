@@ -66,7 +66,7 @@ const TimeNodeComponent = (props: any) => {
         if (timeValue?.[0] === null || timeValue?.[1] === null) {
             return false
         }
-        return !!nodeData?.dataInfo?.ai_content
+        return !!nodeData?.dataInfo?.ai_content?.length
     }, [nodeData, timeValue])
 
     const handleValueChange = (values) => {

@@ -6,15 +6,10 @@ import React, {
     useRef,
     useState,
 } from 'react'
-import { Dropdown, MenuProps } from 'antd'
-import Icon, {
-    MoreOutlined,
-    DeleteOutlined,
-    EllipsisOutlined,
-} from '@ant-design/icons'
+import { Dropdown } from 'antd'
 import classnames from 'classnames'
 import { useClickAway } from 'ahooks'
-import { EditOutlined, AddOutlined } from '@/icons'
+import { AddOutlined } from '@/icons'
 import styles from './styles.module.less'
 import __ from './locale'
 import MoreHorizontalOutlined from '@/icons/MoreHorizontalOutlined'

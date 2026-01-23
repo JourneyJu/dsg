@@ -12,6 +12,11 @@ import { SearchType } from '@/components/SearchLayout/const'
 import { BusinessDomainType } from '../BusinessDomain/const'
 import { cancelRequest } from '@/utils'
 import { TreeType, UNGROUPED } from '../MultiTypeSelectTree/const'
+import {
+    openTypeList,
+    shareTypeList,
+    updateCycleOptions,
+} from '../ResourcesDir/const'
 
 export interface IDatasourceInfo {
     name: string
@@ -408,7 +413,14 @@ export const fieldTagsTips = {
     [stateType.modify]: __('源数据表更改了此字段，请及时更新库表'),
 }
 export const sourceSignOpions = [{ label: __('手工表'), value: 1 }]
-
+export const classifiedOptoins = [
+    { label: '涉密', value: 1, key: 1, color: '#FF4D4F' },
+    { label: '非涉密', value: 2, key: 2, color: 'rgba(0,0,0,0.25)' },
+]
+export const sensitiveOptions = [
+    { label: '敏感', value: 1, key: 1, color: '#FF4D4F' },
+    { label: '不敏感', value: 2, key: 2, color: 'rgba(0,0,0,0.25)' },
+]
 export const fieldDetailData = (isStart: boolean) => {
     const classificationInfo = isStart
         ? [
@@ -445,6 +457,13 @@ export const fieldDetailData = (isStart: boolean) => {
                     label: __('技术名称'),
                     span: 24,
                 },
+                // {
+                //     label: __('更新周期'),
+                //     value: '',
+                //     key: 'update_cycle',
+                //     options: updateCycleOptions,
+                //     span: 24,
+                // },
             ],
         },
         {
@@ -508,15 +527,43 @@ export const fieldDetailData = (isStart: boolean) => {
             label: __('分类分级信息'),
             fields: classificationInfo,
         },
-        // {
-        //     key: 'templeInfo',
-        //     label: __('样例数据'),
-        //     subTitle: __('（当前字段可能不存在样例数据，以下为AI生成）'),
-        //     fields: [],
-        // },
         {
             key: 'moreInfo',
             label: __('更多信息'),
+            fields: [
+                {
+                    label: __('共享属性'),
+                    value: '',
+                    key: 'shared_type',
+                    options: shareTypeList,
+                    span: 24,
+                },
+                {
+                    label: __('开放属性'),
+                    value: '',
+                    key: 'open_type',
+                    options: openTypeList,
+                    span: 24,
+                },
+                {
+                    label: __('敏感属性'),
+                    value: '',
+                    key: 'sensitive_type',
+                    options: sensitiveOptions,
+                    span: 24,
+                },
+                {
+                    label: __('涉密属性'),
+                    value: '',
+                    key: 'secret_type',
+                    options: classifiedOptoins,
+                    span: 24,
+                },
+            ],
+        },
+        {
+            key: 'timestamp',
+            label: __('业务数据更新时间戳'),
         },
     ]
 }
@@ -541,7 +588,7 @@ export const fieldDetailData = (isStart: boolean) => {
 
 export const moreInfoList = [
     {
-        label: __('基本属性'),
+        label: __('基本信息'),
         list: [
             {
                 label: __('库表业务名称'),
@@ -604,7 +651,33 @@ export const moreInfoList = [
                 span: 24,
             },
             {
-                label: __('数据源名称'),
+                label: __('更新周期'),
+                value: '',
+                key: 'update_cycle',
+                options: updateCycleOptions,
+                span: 24,
+            },
+            {
+                label: __('共享属性'),
+                value: '',
+                key: 'shared_type',
+                options: shareTypeList,
+                span: 24,
+            },
+            {
+                label: __('开放属性'),
+                value: '',
+                key: 'open_type',
+                options: openTypeList,
+                span: 24,
+            },
+        ],
+    },
+    {
+        label: __('来源信息'),
+        list: [
+            {
+                label: __('所属数据源'),
                 value: '',
                 key: 'datasource_name',
                 span: 24,
@@ -630,28 +703,28 @@ export const moreInfoList = [
         ],
     },
     {
-        label: __('其他信息'),
+        label: __('更新信息'),
         list: [
             {
-                label: __('创建人'),
+                label: __('视图创建人'),
                 value: '',
                 key: 'created_by',
                 span: 24,
             },
             {
-                label: __('创建时间'),
+                label: __('视图创建时间'),
                 value: '',
                 key: 'created_at',
                 span: 24,
             },
             {
-                label: __('更新人'),
+                label: __('视图更新人'),
                 value: '',
                 key: 'updated_by',
                 span: 24,
             },
             {
-                label: __('更新时间'),
+                label: __('视图更新时间'),
                 value: '',
                 key: 'updated_at',
                 span: 24,
@@ -725,10 +798,10 @@ export const detailTabItems = [
     //     label: __('影响分析'),
     //     key: detailTabKey.impactAnalysis,
     // },
-    // {
-    //     label: __('数据质量'),
-    //     key: detailTabKey.dataQuality,
-    // },
+    {
+        label: __('数据质量'),
+        key: detailTabKey.dataQuality,
+    },
     // {
     //     label: __('高级配置'),
     //     key: detailTabKey.advancedSettings,

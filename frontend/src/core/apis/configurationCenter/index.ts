@@ -101,7 +101,6 @@ import {
     IFormEnumConfigModel,
     ISmsConfig,
 } from './index.d'
-import { IPath } from '@/components/Home/helper'
 import {
     ICommonRes,
     IDataSourceInfo,
@@ -528,7 +527,12 @@ export const syncOrgObjects = (): Promise<any> => {
  */
 export const getConfigPaths = (
     path: boolean = false,
-): Promise<Array<IPath>> => {
+): Promise<
+    Array<{
+        name: string
+        addr: string
+    }>
+> => {
     return get('/api/configuration-center/v1/third_party_addr', { path })
 }
 

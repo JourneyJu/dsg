@@ -110,6 +110,7 @@ export const AutoCompletionIcon = ({
         <Tooltip title={tips}>
             <div className={styles.autoCompletionIconList}>
                 <Button
+                    style={{ display: 'flex' }}
                     icon={
                         <img
                             src={llm ? qaColored : qa}

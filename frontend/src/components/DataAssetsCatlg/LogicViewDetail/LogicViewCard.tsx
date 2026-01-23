@@ -61,7 +61,6 @@ import { useAuditProcess } from '@/hooks/useAuditProcess'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import {
     CloseOutlined,
-    DownloadOutlined,
     FontIcon,
     FullScreenOutlined,
     InfotipOutlined,
@@ -335,31 +334,31 @@ const LogicViewCard = ({
 
     const detailTabItems = useMemo(() => {
         const score = dataQulityScore || '--'
-        const tabItems = [
+        return [
             {
-                label: __('字段数：${count}', {
+                label: __('字段 (${count})', {
                     count: viewInfo?.fields?.length || 0,
                 }),
                 key: detailTabKey.sampleData,
             },
             {
-                label: __('数据质量评分：${count}', {
+                label: __('质量评分 (${count})', {
                     count: score.toString(),
                 }),
                 key: detailTabKey.dataQuality,
             },
         ]
-        const accessItem = {
-            label: __('权限信息'),
-            key: detailTabKey.accessInfo,
-        }
-        // 仅在规定模块下显示权限Tab
-        return isShowRequestPath ||
-            isMicroWidget({
-                microWidgetProps,
-            })
-            ? [...tabItems, accessItem]
-            : tabItems
+        // const accessItem = {
+        //     label: __('权限信息'),
+        //     key: detailTabKey.accessInfo,
+        // }
+        // // 仅在规定模块下显示权限Tab
+        // return isShowRequestPath ||
+        //     isMicroWidget({
+        //         microWidgetProps,
+        //     })
+        //     ? [...tabItems, accessItem]
+        //     : tabItems
     }, [viewInfo, dataQulityScore, isShowRequestPath, microWidgetProps])
 
     // 是否已上线
@@ -932,7 +931,7 @@ const LogicViewCard = ({
     }
 
     const renderParamsInfo = (info: any) => {
-        const { key } = info
+        const { key, options } = info
         const text = viewInfo?.[key]
         if (key === 'description') {
             return (
@@ -955,6 +954,9 @@ const LogicViewCard = ({
         }
         if (key === 'business_update_time') {
             return <TimeRender formViewId={id} />
+        }
+        if (options?.length) {
+            return options?.find((o) => o.value === text)?.label || '--'
         }
 
         return text || '--'
@@ -1012,14 +1014,13 @@ const LogicViewCard = ({
                         >
                             {fItem.technical_name || '--'}
                         </div>
-                        <div className={styles.sampleData}>
+                        {/* <div className={styles.sampleData}>
                             <div className={styles.sampleDataTitle}>
                                 {sampleOption === SampleOptionValue.Sample
                                     ? __('样例数据：')
                                     : __('合成数据：')}
                             </div>
                             <div className={styles.sampleDataTags}>
-                                {/* 样例数据下库表或行列有权限 或 行列有权限 或 合成数据下 */}
                                 {(sampleOption ===
                                     SampleOptionValue.Synthetic ||
                                     isOwnedFullReadPermis ||
@@ -1040,7 +1041,6 @@ const LogicViewCard = ({
                                     )
                                 ) : (
                                     <span>
-                                        {/* 样例数据为空显示：暂无数据、无权限；合成数据为空显示：库表为空导致无数据 */}
                                         {sampOrSynthError ===
                                         VIEWERRORCODElIST.VIEWTABLEFIELD
                                             ? __(
@@ -1056,7 +1056,7 @@ const LogicViewCard = ({
                                     </span>
                                 )}
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </>
@@ -1151,7 +1151,7 @@ const LogicViewCard = ({
                         {viewInfo?.business_name || '--'}
                     </div>
                     <Space size={4} className={styles.headerBtnWrapper}>
-                        {(isOwner || canAuth) &&
+                        {/* {(isOwner || canAuth) &&
                             [
                                 OnlineStatus.ONLINE,
                                 OnlineStatus.DOWN_AUDITING,
@@ -1178,7 +1178,7 @@ const LogicViewCard = ({
                                         }}
                                     />
                                 </Tooltip>
-                            )}
+                            )} */}
                         {/* {permisAuditPolicy &&
                             !isOwner &&
                             (isShowRequestPath ||
@@ -1261,7 +1261,7 @@ const LogicViewCard = ({
                                         }}
                                     />
                                 </Tooltip> */}
-                        <Tooltip
+                        {/* <Tooltip
                             title={
                                 hasDownloadPermission
                                     ? __('下载任务')
@@ -1272,7 +1272,8 @@ const LogicViewCard = ({
                             overlayClassName={styles.toolTip}
                             placement="bottom"
                         >
-                            <DownloadOutlined
+                            <FontIcon
+                                name="icon-xiazai"
                                 className={classnames(
                                     styles.downloadIcon,
                                     (!hasDownloadPermission ||
@@ -1294,7 +1295,7 @@ const LogicViewCard = ({
                                     }
                                 }}
                             />
-                        </Tooltip>
+                        </Tooltip> */}
                         {/* 引用资源提问按钮 */}
                         {/* {!inAssetPanorama &&
                             hasBusinessRoles &&
@@ -1368,7 +1369,8 @@ const LogicViewCard = ({
                             })}
                         />
                         <Tooltip title={__('进入全屏')} placement="bottom">
-                            <FullScreenOutlined
+                            <FontIcon
+                                name="icon-zhankai1"
                                 className={styles.fullScreenIcon}
                                 onClick={() => {
                                     message.destroy()

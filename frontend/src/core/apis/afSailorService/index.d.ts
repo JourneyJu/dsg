@@ -537,6 +537,8 @@ export interface IGetAssistantListParams {
      * - 1: 上架
      */
     list_flag: 0 | 1
+    /** 助手分类ID数组 */
+    category_ids?: string[]
 }
 
 /**
@@ -599,3 +601,21 @@ export interface IAgentAppConversationList {
     total_count: number
     entries: IAgentAppConversationItem[]
 }
+
+/**
+ * 助手分类项
+ */
+export interface IWsCategoryItem {
+    config_desc: string
+    config_group: string
+    config_group_type: number
+    config_id: string
+    config_key: string
+    config_value: string
+}
+
+/**
+ * 助手分类列表数据
+ * @description key 是不固定的中文 value 是该分类下的配置项数组
+ */
+export type IWsCategoryListData = Record<string, IWsCategoryItem[]>

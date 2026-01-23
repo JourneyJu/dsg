@@ -291,7 +291,7 @@ export const useMenus = (): [
 ] => {
     const [llm] = useTestLLM()
     const { checkPermissions } = useUserPermCtx()
-    const [{ local_app }] = useGeneralConfig()
+    const [{ using, local_app }] = useGeneralConfig()
     const [menus, setMenus] = useState<any[]>(globalMenus)
     const platform = getPlatformNumber()
     const pathname = getInnerUrl(window.location.pathname)
@@ -323,10 +323,11 @@ export const useMenus = (): [
             globalMenus = filtered
             setMenus(filtered)
         } else {
-            globalMenus = menus
-            setMenus(menus)
+            const felterMenus = filterMenusByBelong(menus)
+            globalMenus = felterMenus
+            setMenus(felterMenus)
         }
-    }, [llm, local_app, applyRoles])
+    }, [llm, local_app, applyRoles, using])
 
     // 重定向登录
     const redirectToLogin = (pf: number = platform) => {
@@ -372,6 +373,39 @@ export const useMenus = (): [
 
             return menu
         })
+    }
+
+    const filterMenusByBelong = (menusData: any[]) => {
+        const resource = using === 2 ? 'resource' : 'catalog'
+
+        const processMenu = (menu: any) => {
+            // 检查当前菜单项是否符合条件
+            if (menu.belong?.length && !menu.belong.includes(resource)) {
+                return null
+            }
+
+            // 递归处理子菜单
+            if (menu.children && menu.children.length > 0) {
+                const filteredChildren = menu.children
+                    .map(processMenu)
+                    .filter(Boolean)
+
+                // 如果子菜单过滤后为空，返回null
+                if (filteredChildren.length === 0) {
+                    return null
+                }
+
+                return {
+                    ...menu,
+                    children: filteredChildren,
+                }
+            }
+
+            // 没有子菜单的菜单项，直接返回
+            return menu
+        }
+
+        return menusData.map(processMenu).filter(Boolean)
     }
 
     const getMenus = useCallback(

@@ -89,9 +89,11 @@ const ImportForm: React.FC<IImportForm> = ({
     const downloadUrl = (): string => {
         switch (tableKind) {
             case FormTableKind.BUSINESS:
-                return '/downloadFiles/业务节点表模板.xlsx'
+                // return '/downloadFiles/业务节点表模板.xlsx'
+                return ''
             case FormTableKind.STANDARD:
-                return '/downloadFiles/业务标准表模板.xlsx'
+                // return '/downloadFiles/业务标准表模板.xlsx'
+                return ''
             default:
                 return ''
         }
@@ -101,11 +103,14 @@ const ImportForm: React.FC<IImportForm> = ({
     const downloadName = (): string => {
         switch (formType) {
             case FormType.ORIGINAL:
-                return __('原始表模板.xlsx')
+                // return __('原始表模板.xlsx')
+                return ''
             case FormType.STANDARD:
-                return __('业务表模板.xlsx')
+                // return __('业务表模板.xlsx')
+                return ''
             case FormType.FUSION:
-                return __('融合表模板.xlsx')
+                // return __('融合表模板.xlsx')
+                return ''
             default:
                 return ''
         }

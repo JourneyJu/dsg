@@ -53,7 +53,7 @@ import {
     findFromData,
     gradeLabelBindInfoTypeMap,
     gradeLabelBindInfoTypes,
-    sensitiveOptoins,
+    sensitiveOptions,
     shareTypeOptoins,
     titleTipsText,
 } from './const'
@@ -183,7 +183,7 @@ const DataClassificationTag = ({ isSecurity }: IDataClassificationTagProps) => {
                     key: 'sensitive_attri',
                     width: 150,
                     render: (text) =>
-                        sensitiveOptoins?.find((o) => o?.value === text)
+                        sensitiveOptions?.find((o) => o?.value === text)
                             ?.label || '--',
                 },
                 {
@@ -196,7 +196,7 @@ const DataClassificationTag = ({ isSecurity }: IDataClassificationTagProps) => {
                             ?.label || '--',
                 },
                 {
-                    title: __('共享条件'),
+                    title: __('共享属性'),
                     dataIndex: 'share_condition',
                     key: 'share_condition',
                     width: 150,

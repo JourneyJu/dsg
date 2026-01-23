@@ -785,9 +785,7 @@ const Apply: React.FC<IApply> = ({ catalogs = [], onClose, basicInfo }) => {
                     style={{ marginBottom: 40 }}
                 >
                     <Input.TextArea
-                        placeholder={__(
-                            '请详细描述计划的业务用途，例如：在我的xxAPP生活服务中开辟专题，市民可查询全xx市已开放的养老院的名称、地址、联系电话等信息。',
-                        )}
+                        placeholder={__('请输入')}
                         autoSize={{
                             minRows: 4,
                             maxRows: 4,
@@ -809,9 +807,7 @@ const Apply: React.FC<IApply> = ({ catalogs = [], onClose, basicInfo }) => {
                     style={{ marginBottom: 40 }}
                 >
                     <Input.TextArea
-                        placeholder={__(
-                            '请填写实施支撑服务政务事项多少个，少填少报信息项多少个，办事减少跑动多少次，产生多少经济价值等可预期效果等，例如：支撑我的xxAPP专题办理。',
-                        )}
+                        placeholder={__('请输入')}
                         autoSize={{
                             minRows: 4,
                             maxRows: 4,

@@ -31,6 +31,11 @@ import {
 import { cancelRequest, lowercaseEnNumNameReg } from '@/utils'
 import { useDataViewContext } from './DataViewProvider'
 import ChooseOwnerModal from '../ChooseOwnerModal'
+import {
+    openTypeList,
+    shareTypeList,
+    updateCycleOptions,
+} from '../ResourcesDir/const'
 
 const { TextArea } = Input
 
@@ -198,7 +203,7 @@ const EditBasicInfoForm: React.FC<IEditBasicInfoForm> = ({
         return res
     }
 
-    const showNameTip = useMemo(() => checkWidth(nameRef, 'input'), [nameSize])
+    // const showNameTip = useMemo(() => checkWidth(nameRef, 'input'), [nameSize])
 
     const queryMainDepartInfo = async () => {
         try {
@@ -311,41 +316,47 @@ const EditBasicInfoForm: React.FC<IEditBasicInfoForm> = ({
                             />
                         </Form.Item>
                     </Col>
+                    <Col span={type === 'modal' ? 12 : 24}>
+                        <Form.Item label={__('编码')} name="code">
+                            {datasheetInfo?.uniform_catalog_code}
+                        </Form.Item>
+                    </Col>
                     <Col span={type === 'modal' ? 12 : 24} ref={nameRef}>
                         <Form.Item
                             label={__('库表技术名称')}
                             name="technical_name"
-                            validateFirst
-                            validateTrigger={['onChange', 'onBlur']}
-                            rules={[
-                                {
-                                    required: !datasourceView,
-                                    message: __('库表技术名称不能为空'),
-                                },
-                                {
-                                    validateTrigger: ['onChange', 'onBlur'],
-                                    pattern: datasourceView
-                                        ? undefined
-                                        : lowercaseEnNumNameReg,
-                                    message: __(
-                                        '仅支持小写字母、数字及下划线，且不能以数字开头',
-                                    ),
-                                    transform: (value) => trim(value),
-                                },
-                                {
-                                    validateTrigger: ['onBlur'],
-                                    validator: datasourceView
-                                        ? undefined
-                                        : (e, value) =>
-                                              validateNameRepeat(
-                                                  value,
-                                                  'technical_name',
-                                              ),
-                                },
-                            ]}
+                            // validateFirst
+                            // validateTrigger={['onChange', 'onBlur']}
+                            // rules={[
+                            //     {
+                            //         required: !datasourceView,
+                            //         message: __('库表技术名称不能为空'),
+                            //     },
+                            //     {
+                            //         validateTrigger: ['onChange', 'onBlur'],
+                            //         pattern: datasourceView
+                            //             ? undefined
+                            //             : lowercaseEnNumNameReg,
+                            //         message: __(
+                            //             '仅支持小写字母、数字及下划线，且不能以数字开头',
+                            //         ),
+                            //         transform: (value) => trim(value),
+                            //     },
+                            //     {
+                            //         validateTrigger: ['onBlur'],
+                            //         validator: datasourceView
+                            //             ? undefined
+                            //             : (e, value) =>
+                            //                   validateNameRepeat(
+                            //                       value,
+                            //                       'technical_name',
+                            //                   ),
+                            //     },
+                            // ]}
                             style={{ marginBottom: type === 'modal' ? 0 : 24 }}
                         >
-                            <Input
+                            {datasheetInfo?.technical_name}
+                            {/* <Input
                                 placeholder={
                                     datasourceView
                                         ? ''
@@ -360,7 +371,7 @@ const EditBasicInfoForm: React.FC<IEditBasicInfoForm> = ({
                                             : __('元数据库表不能调整技术名称')
                                         : undefined
                                 }
-                            />
+                            /> */}
                         </Form.Item>
                     </Col>
                     <Col span={24}>
@@ -537,6 +548,63 @@ const EditBasicInfoForm: React.FC<IEditBasicInfoForm> = ({
                             </Button>
                         </div>
                     </Form.Item>
+                    <Col span={24}>
+                        <Form.Item
+                            label={__('更新周期')}
+                            name="update_cycle"
+                            style={{
+                                marginLeft: '12px',
+                            }}
+                        >
+                            <Select
+                                allowClear
+                                options={updateCycleOptions}
+                                placeholder={`${__('请选择')}${__('更新周期')}`}
+                                getPopupContainer={(node) => node.parentNode}
+                            />
+                        </Form.Item>
+                    </Col>
+                    <Col span={24}>
+                        <Form.Item
+                            label={__('共享属性')}
+                            name="shared_type"
+                            style={{
+                                marginLeft: '12px',
+                            }}
+                        >
+                            <Select
+                                allowClear
+                                options={shareTypeList}
+                                placeholder={`${__('请选择')}${__('共享属性')}`}
+                                getPopupContainer={(node) => node.parentNode}
+                                onChange={(val) => {
+                                    if (val === 3) {
+                                        setDatasheetInfo?.((prev) => ({
+                                            ...prev,
+                                            open_type: 3,
+                                        }))
+                                    }
+                                }}
+                            />
+                        </Form.Item>
+                    </Col>
+                    <Col span={24}>
+                        <Form.Item
+                            label={__('开放属性')}
+                            name="open_type"
+                            style={{
+                                marginLeft: '12px',
+                            }}
+                        >
+                            <Select
+                                allowClear
+                                options={openTypeList}
+                                disabled={datasheetInfo?.shared_type === 3}
+                                placeholder={`${__('请选择')}${__('开放属性')}`}
+                                getPopupContainer={(node) => node.parentNode}
+                            />
+                        </Form.Item>
+                    </Col>
                 </Row>
             </Form>
             {/* <div className={styles.modalDesc}>

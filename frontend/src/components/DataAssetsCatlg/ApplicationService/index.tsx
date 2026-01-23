@@ -73,16 +73,18 @@ import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { dataAssetsIndicatorPath } from '@/components/DataAssetsIndicator/const'
 import { BizType, PolicyType } from '@/components/AuditPolicy/const'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
+import { SearchInput } from '@/ui'
 
 interface IApplicationService {
     ref?: any
     searchKey: string
+    resourceType?: string
     isIntroduced?: boolean
     getClickAsset?: (asset: any, st: ServiceType) => void
     getAddAsset?: (asset: any) => void
-    searchRender?: any
     // 仅指标 服务超市功能
     isOnlyIndicator?: boolean
+    searchRender?: any
 }
 
 const scrollListId = 'scrollableDiv'
@@ -94,10 +96,11 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
     (props: any, ref) => {
         const {
             searchKey,
+            resourceType,
             isIntroduced,
             getClickAsset,
-            searchRender,
             getAddAsset,
+            searchRender,
             isOnlyIndicator,
         } = props
         const { pathname } = useLocation()
@@ -122,20 +125,13 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
         }, [checkPermissions])
 
         const filterConfig = useMemo(() => {
-            return isOnlyIndicator
-                ? rescFilterConditionConfig.filter(
-                      (fItem) => fItem.key !== 'type',
-                  )
-                : hasDataOperRole
-                ? rescFilterConditionConfig
-                : rescFilterConditionConfig.filter(
-                      (fItem) =>
-                          fItem.key !== 'is_publish' &&
-                          fItem.key !== 'is_online',
-                  )
-        }, [hasDataOperRole])
+            return rescFilterConditionConfig.filter(
+                (fItem) => fItem.key === 'online_at',
+            )
+        }, [])
 
         const scrollRef: any = useRef()
+        const filterConditionRef: any = useRef()
         const [loading, setLoading] = useState(false)
         const [listDataLoading, setListDataLoading] = useState(false)
         const [defaultSize, setDefaultSize] = useState<Array<number>>(
@@ -230,6 +226,11 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
             setSearchKeyword(searchKeyword)
         }, [permissions, departmentId, filterParams])
 
+        useEffect(() => {
+            setSearchKeyword('')
+            setFilterParams({})
+        }, [resourceType])
+
         useUpdateEffect(() => {
             if (scrollRef.current) {
                 scrollRef.current.scrollTop = 0
@@ -245,8 +246,9 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
             scrollListId,
         }))
 
-        const refresh = () => {
-            getApplicationData([], searchKeyword)
+        const refresh = (type?: any) => {
+            getApplicationData([], searchKeyword, type)
+            filterConditionRef?.current?.init()
         }
 
         const escFunction = () => {
@@ -275,11 +277,47 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
             }
         }, [interfaceDetailOpen, viewDetailOpen])
 
+        const searchInpRender = () => {
+            return (
+                <div
+                    style={{
+                        marginLeft: '16px',
+                        width: '275px',
+                    }}
+                >
+                    <Tooltip
+                        placement="top"
+                        title={__('搜索资源名称、编码、描述、字段')}
+                        overlayInnerStyle={{
+                            width: 'fit-content',
+                            whiteSpace: 'nowrap',
+                        }}
+                    >
+                        <SearchInput
+                            placeholder={__('搜索资源名称、编码、描述、字段')}
+                            value={searchKeyword}
+                            onKeyChange={(kw: string) => {
+                                setSearchKeyword(kw)
+                            }}
+                            onPressEnter={(e: any) =>
+                                setSearchKeyword(e.target?.value)
+                            }
+                            maxLength={255}
+                        />
+                    </Tooltip>
+                </div>
+            )
+        }
+
         /**
          * 获取接口数据
          * @param preData 之前获取到的数据
          */
-        const getApplicationData = async (preData: Array<any>, keyword) => {
+        const getApplicationData = async (
+            preData: Array<any>,
+            keyword,
+            type?: any,
+        ) => {
             try {
                 setListDataLoading(true)
                 if (!preData || !preData?.length) {
@@ -305,6 +343,7 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
                                 ? false
                                 : undefined,
                     },
+                    type: type || resourceType,
                 }
 
                 // 发布状态
@@ -333,16 +372,19 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
                     filter,
                 }
 
-                let res
-                if (hasDataOperRole) {
-                    res = await getDataRescListByOper(
-                        preData.length ? { ...obj, next_flag: nextFlag } : obj,
-                    )
-                } else {
-                    res = await getDataRescList(
-                        preData.length ? { ...obj, next_flag: nextFlag } : obj,
-                    )
-                }
+                // let res
+                // if (hasDataOperRole) {
+                //     res = await getDataRescListByOper(
+                //         preData.length ? { ...obj, next_flag: nextFlag } : obj,
+                //     )
+                // } else {
+                //     res = await getDataRescList(
+                //         preData.length ? { ...obj, next_flag: nextFlag } : obj,
+                //     )
+                // }
+                const res = await getDataRescList(
+                    preData.length ? { ...obj, next_flag: nextFlag } : obj,
+                )
 
                 const { total_count, next_flag, entries } = res
 
@@ -763,14 +805,6 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
         const renderListContent = () => {
             return (
                 <div className={styles.leftWrapper}>
-                    <div className={styles.total}>
-                        {__('共')}
-                        <span className={styles.totalText}>
-                            {` ${totalCount} `}
-                        </span>
-                        {__('条资源')}
-                    </div>
-
                     <div
                         className={styles.listEmpty}
                         hidden={applicationData?.length > 0}
@@ -979,11 +1013,19 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
                             <div className={styles.container}>
                                 <div className={styles.applicationDataContent}>
                                     <div className={styles.titleBar}>
+                                        <div className={styles.total}>
+                                            {__('共')}
+                                            <span className={styles.totalText}>
+                                                {` ${totalCount} `}
+                                            </span>
+                                            {__('条资源')}
+                                        </div>
                                         <div className={styles.titleBarBox}>
                                             <FilterConditionLayout
                                                 layoutClassName={
                                                     styles.catlgFilterLayout
                                                 }
+                                                ref={filterConditionRef}
                                                 updateList={(
                                                     params: any = {},
                                                 ) => {
@@ -1001,156 +1043,9 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
                                                 }}
                                                 filterConfig={filterConfig}
                                             />
-                                            {/* <div className={styles.searchContent}>
-                                            <Dropdown
-                                                menu={{
-                                                    items: rescTypeOptionList,
-                                                    selectedKeys: [rescType],
-                                                    onClick:
-                                                        handleRescTypeChange,
-                                                }}
-                                                trigger={['click']}
-                                                onOpenChange={(flag) =>
-                                                    setRescTypeOpen(flag)
-                                                }
-                                                open={rescTypeOpen}
-                                                placement="bottomLeft"
-                                                className={
-                                                    styles.filterDropdown
-                                                }
-                                                getPopupContainer={(node) =>
-                                                    node.parentElement || node
-                                                }
-                                            >
-                                                <span
-                                                    className={styles.filterBtn}
-                                                    title={rescFilterTitle}
-                                                >
-                                                    <span
-                                                        className={
-                                                            styles.filterText
-                                                        }
-                                                    >
-                                                        {rescFilterTitle}
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.dropIcon
-                                                        }
-                                                    >
-                                                        {rescTypeOpen ? (
-                                                            <UpOutlined />
-                                                        ) : (
-                                                            <DownOutlined />
-                                                        )}
-                                                    </span>
-                                                </span>
-                                            </Dropdown>
-                                            <Dropdown
-                                                menu={{
-                                                    items: rescSearchData,
-                                                    selectedKeys: [
-                                                        publishState,
-                                                    ],
-                                                    onClick:
-                                                        handleRescTypeChange,
-                                                }}
-                                                trigger={['click']}
-                                                onOpenChange={(flag) =>
-                                                    setRescTypeOpen(flag)
-                                                }
-                                                open={rescTypeOpen}
-                                                placement="bottomLeft"
-                                                className={
-                                                    styles.filterDropdown
-                                                }
-                                                getPopupContainer={(node) =>
-                                                    node.parentElement || node
-                                                }
-                                            >
-                                                <span
-                                                    className={styles.filterBtn}
-                                                    title={rescFilterTitle}
-                                                >
-                                                    <span
-                                                        className={
-                                                            styles.filterText
-                                                        }
-                                                    >
-                                                        {rescFilterTitle}
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.dropIcon
-                                                        }
-                                                    >
-                                                        {rescTypeOpen ? (
-                                                            <UpOutlined />
-                                                        ) : (
-                                                            <DownOutlined />
-                                                        )}
-                                                    </span>
-                                                </span>
-                                            </Dropdown>
-                                            <Dropdown
-                                                menu={{ items: dropdownItems }}
-                                                trigger={['click']}
-                                                onOpenChange={(flag) =>
-                                                    setPubTimeOpen(flag)
-                                                }
-                                                open={pubTimeOpen}
-                                                placement="bottomLeft"
-                                                className={
-                                                    styles.filterDropdown
-                                                }
-                                                getPopupContainer={(node) =>
-                                                    node.parentElement || node
-                                                }
-                                            >
-                                                <span
-                                                    className={styles.filterBtn}
-                                                    title={filterTitle}
-                                                >
-                                                    <span
-                                                        className={
-                                                            styles.filterText
-                                                        }
-                                                    >
-                                                        {filterTitle}
-                                                    </span>
-                                                    <span
-                                                        className={
-                                                            styles.dropIcon
-                                                        }
-                                                    >
-                                                        {pubTimeOpen ? (
-                                                            <UpOutlined />
-                                                        ) : (
-                                                            <DownOutlined />
-                                                        )}
-                                                    </span>
-                                                </span>
-                                            </Dropdown>
+                                            {searchRender?.() ||
+                                                searchInpRender()}
                                         </div>
-                                        <div style={{ display: 'flex' }}>
-                                            {showClearBtn && (
-                                                <div
-                                                    className={styles.clearBtn}
-                                                    onClick={() =>
-                                                        clearCondition()
-                                                    }
-                                                >
-                                                    <CloseOutlined
-                                                        className={
-                                                            styles.clearIcon
-                                                        }
-                                                    />
-                                                    {__('清除条件')}
-                                                </div>
-                                            )}
-                                        </div> */}
-                                        </div>
-                                        {searchRender?.()}
                                     </div>
 
                                     {loading ? (
@@ -1435,6 +1330,7 @@ const ApplicationService: React.FC<IApplicationService> = forwardRef(
                         onCancelFavorite={(res) =>
                             updateFavoriteInfo({ res, item: curDetailResc })
                         }
+                        showDataConsanguinity={false}
                     />
                 )}
                 {indicatorDetailOpen && (

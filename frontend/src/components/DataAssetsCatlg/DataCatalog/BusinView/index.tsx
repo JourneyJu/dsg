@@ -16,7 +16,6 @@ import __ from './locale'
 import { BusinNode } from './nodes/BusinNode'
 import FloatBar from '@/components/DataConsanguinity/FloatBar'
 import {
-    buildTree,
     BusinessView,
     BusinNodeType,
     businViewNodeId,
@@ -29,25 +28,16 @@ import {
     NodeType,
     NodeTypeText,
 } from './nodes/helper'
-import { AssetNodeType } from '@/components/Asset/components/AssetGraph/helper'
 import {
-    getSubjectDomain,
-    getGlossaryCount,
     formatError,
-    getBusinessDomainTree,
-    IBusinessDomainTreeParams,
-    getObjects,
-    getCurUserRoles,
     queryInfoResCatlgList,
     queryInfoResCatlgListFrontend,
 } from '@/core'
-import { Architecture } from '@/components/BusinessArchitecture/const'
 import MindMapData from './nodes/MindMapData'
 import BusinSearch from './BusinSearch'
 import { ViewNode } from './nodes/ViewNode'
 import DataCatlgContent from '../../DataCatlgContent'
 import CatalogCard from '../../CatalogCard'
-import { DataCatlgTabKey } from '../../helper'
 import { BusinViewProvider, useBusinViewContext } from './BusinViewProvider'
 import {
     buildCompleteDepartmentTree,

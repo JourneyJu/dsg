@@ -146,6 +146,8 @@ const FieldsTable = forwardRef((props: IFieldsTable, ref) => {
     const [classifyFilters, setClassifyFilters] = useState<{
         classfity_type: ClassifyType
         label_id: string[]
+        sensitive_type?: number | ''
+        secret_type?: number | ''
     }>()
     const { checkPermission, checkPermissions } = useUserPermCtx()
     const [userInfo] = useCurrentUser()
@@ -390,11 +392,24 @@ const FieldsTable = forwardRef((props: IFieldsTable, ref) => {
             )
         if (classifyFilters) {
             data = data.filter((item) => {
+                // 1 敏感/涉密， 0 未分类，初始值为0
+                const sensitiveFlag =
+                    classifyFilters.sensitive_type === undefined
+                        ? true
+                        : item.sensitive_type === classifyFilters.sensitive_type
+                const secretFlag =
+                    classifyFilters.secret_type === undefined
+                        ? true
+                        : item.secret_type === classifyFilters.secret_type
+                const flag = sensitiveFlag && secretFlag
                 if (classifyFilters.classfity_type === ClassifyType.NotLimit) {
                     if (classifyFilters.label_id.length > 0) {
-                        return classifyFilters.label_id.includes(item.label_id)
+                        return (
+                            classifyFilters.label_id.includes(item.label_id) &&
+                            flag
+                        )
                     }
-                    return true
+                    return flag
                 }
                 if (classifyFilters.classfity_type === ClassifyType.No) {
                     if (classifyFilters.label_id.length > 0) {
@@ -402,21 +417,24 @@ const FieldsTable = forwardRef((props: IFieldsTable, ref) => {
                             classifyFilters.label_id.includes(item.label_id) &&
                             ![ClassifyType.Auto, ClassifyType.Manual].includes(
                                 item.classfity_type,
-                            )
+                            ) &&
+                            flag
                         )
                     }
-                    return !item.classfity_type
+                    return !item.classfity_type && flag
                 }
 
                 if (classifyFilters.label_id.length === 0) {
                     return (
-                        item.classfity_type === classifyFilters.classfity_type
+                        item.classfity_type ===
+                            classifyFilters.classfity_type && flag
                     )
                 }
 
                 return (
                     classifyFilters.label_id.includes(item.label_id) &&
-                    item.classfity_type === classifyFilters.classfity_type
+                    item.classfity_type === classifyFilters.classfity_type &&
+                    flag
                 )
             })
         }

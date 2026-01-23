@@ -202,6 +202,10 @@ const DatasheetDetail = (props: IDatasheetDetail) => {
         'label_id',
         'label_name',
         'grade_type',
+        'shared_type',
+        'open_type',
+        'sensitive_type',
+        'secret_type',
     ]
 
     // 表格字段信息校验属性

@@ -298,6 +298,15 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
     const updateFieldDetail = (isStandardDict?: boolean) => {
         const details = fieldDetailData(isStart)
             .map((item) => {
+                const filterKes: string[] = []
+                if (optionType === 'edit') {
+                    filterKes.push(
+                        'sensitive_type',
+                        'shared_type',
+                        'open_type',
+                        'secret_type',
+                    )
+                }
                 return {
                     ...item,
                     label:
@@ -326,75 +335,86 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
                             item.label
                         ),
                     fields: item?.fields?.map((it) => {
-                        const value =
-                            fieldData[it.key] === 0 ? '--' : fieldData[it.key]
-                        return {
+                        let value = fieldData[it.key]
+                        // fieldData[it.key] === 0 ? '--' : fieldData[it.key]
+                        if (
+                            optionType !== 'view' &&
+                            filterKes.includes(it.key)
+                        ) {
+                            value = fieldData[it.key] || undefined
+                        }
+                        const obj = {
                             ...it,
                             value,
-                            render: () => {
-                                if (it.key === 'business_name') {
-                                    return businessNameRender(value)
-                                }
-                                if (
-                                    it.key === 'technical_name' &&
-                                    dataSourceType === 'excel' &&
-                                    !datasheetInfo.id
-                                ) {
-                                    return technicalNameRender(value)
-                                }
-                                if (it.key === 'code_table') {
-                                    return codeRender(value, isStandardDict)
-                                }
-                                if (it.key === 'standard') {
-                                    return standardRender(value)
-                                }
-                                if (it.key === 'attribute_name') {
-                                    return attributeRender(value, fieldData)
-                                }
-                                // if (it.key === 'grade_name' && isStart) {
-                                //     return labelRender(value, fieldData)
-                                // }
-                                if (it.key === 'label_id' && isStart) {
-                                    return labelRender(value, fieldData)
-                                }
-                                if (it.key === 'grade_name' && !isStart) {
-                                    return null
-                                }
-                                if (it.key === 'data_type') {
-                                    if (
-                                        (dataSourceType === 'excel' &&
-                                            datasheetInfo?.id) ||
-                                        datasheetInfo.publish_status ===
-                                            'published'
-                                    ) {
-                                        return value
-                                    }
-                                    if (dataSourceType === 'excel') {
-                                        return renderDataTypeExcel(value)
-                                    }
-                                    return renderDataType(value, fieldData)
-                                }
-                                if (it.key === 'reset_convert_rules') {
-                                    return renderDataAnalysisRule(
-                                        value,
-                                        fieldData,
-                                    )
-                                }
-                                if (it.key === 'data_length') {
-                                    return dataLengthRender(value, fieldData)
-                                }
-                                if (it.key === 'data_accuracy') {
-                                    return dataAccuracyRender(value, fieldData)
-                                }
-                                if (it.key === 'primary_key') {
-                                    return fieldData[it.key]
-                                        ? __('是')
-                                        : __('否')
-                                }
-                                return value
-                            },
                         }
+                        if (it.key === 'business_name') {
+                            obj.render = () => businessNameRender(value)
+                        }
+                        if (
+                            it.key === 'technical_name' &&
+                            dataSourceType === 'excel' &&
+                            !datasheetInfo.id
+                        ) {
+                            obj.render = () => technicalNameRender(value)
+                        }
+                        if (it.key === 'code_table') {
+                            obj.render = () => codeRender(value, isStandardDict)
+                        }
+                        if (it.key === 'standard') {
+                            obj.render = () => standardRender(value)
+                        }
+                        if (it.key === 'attribute_name') {
+                            obj.render = () => attributeRender(value, fieldData)
+                        }
+                        // if (it.key === 'grade_name' && isStart) {
+                        //     return labelRender(value, fieldData)
+                        // }
+                        if (it.key === 'label_id' && isStart) {
+                            obj.render = () => labelRender(value, fieldData)
+                        }
+                        if (it.key === 'grade_name' && !isStart) {
+                            obj.render = null
+                        }
+                        // if (it.key === 'data_type') {
+                        //     if (
+                        //         (dataSourceType === 'excel' &&
+                        //             datasheetInfo?.id) ||
+                        //         datasheetInfo.publish_status === 'published'
+                        //     ) {
+                        //         obj.render = value
+                        //     }
+                        //     if (dataSourceType === 'excel') {
+                        //         obj.render = () => renderDataTypeExcel(value)
+                        //     }
+                        //     obj.render = () => renderDataType(value, fieldData)
+                        // }
+                        if (it.key === 'reset_convert_rules') {
+                            obj.render = () =>
+                                renderDataAnalysisRule(value, fieldData)
+                        }
+                        if (it.key === 'data_length') {
+                            obj.render = () =>
+                                dataLengthRender(value, fieldData)
+                        }
+                        if (it.key === 'data_accuracy') {
+                            obj.render = () =>
+                                dataAccuracyRender(value, fieldData)
+                        }
+                        if (filterKes.includes(it.key)) {
+                            const disabled =
+                                it.key === 'open_type' &&
+                                fieldData.shared_type === 3
+                            obj.render = () =>
+                                renderShareType(
+                                    it.key,
+                                    value,
+                                    it.options,
+                                    disabled,
+                                )
+                        }
+                        return obj
                     }),
+                    // ?.filter((o) => !filterKes.includes(o.key)),
                 }
             })
             .filter((item) => {
@@ -411,14 +431,14 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
             ...dataTypeMapping.number,
             ...dataTypeMapping.time,
         ]
-        const hideMoreInfo: boolean =
+        const hideTimestamp: boolean =
             (optionType === 'view' && !fieldData?.business_timestamp) ||
             (['create', 'edit'].includes(optionType) &&
                 !timesType.includes(fieldData?.data_type)) ||
             (optionType === 'create' && isCustomOrLogic)
         setFieldDetail(
-            hideMoreInfo
-                ? details.filter((item) => item.key !== 'moreInfo')
+            hideTimestamp
+                ? details.filter((item) => item.key !== 'timestamp')
                 : details,
         )
         setIsTimestamp(businessTimestampField?.id === fieldData?.id)
@@ -868,6 +888,38 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
                     editViewDetails({ data_type: newValue })
                 }}
                 optionLabelProp="showLabel"
+            />
+        )
+    }
+    /**
+     * 渲染更多信息多个属性
+     * @param value
+     * @returns
+     */
+    const renderShareType = (
+        key: string,
+        value: string,
+        ops: any[],
+        disabled?: boolean,
+    ) => {
+        return (
+            <Select
+                style={{ width: '100%' }}
+                getPopupContainer={(node) => node.parentNode}
+                placeholder={__('请选择')}
+                options={ops}
+                value={value}
+                onChange={(newValue: any) => {
+                    const info: any = {
+                        [key]: newValue,
+                    }
+                    if (key === 'shared_type' && newValue === 3) {
+                        info.open_type = 3
+                    }
+                    editViewDetails(info)
+                }}
+                disabled={disabled}
+                // optionLabelProp="showLabel"
             />
         )
     }
@@ -1669,7 +1721,7 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
                                         <div className={styles.templeInfoBox}>
                                             {getTempleInfo()}
                                         </div>
-                                    ) : item.key === 'moreInfo' ? (
+                                    ) : item.key === 'timestamp' ? (
                                         <div className={styles.moreInfoBox}>
                                             {optionType === 'view' ? (
                                                 __('已设置为业务数据更新时间戳')
@@ -1867,6 +1919,7 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
                             setDetailIds([])
                         }
                     }}
+                    zIndex={1001}
                     getContainer={detailGetContainer}
                 />
             )}
@@ -1877,6 +1930,7 @@ const FieldDetail = forwardRef((props: IFieldDetail, ref) => {
                     dataEleId={detailId}
                     onClose={() => setDataEleDetailVisible(false)}
                     dataEleMatchType={dataEleMatchType}
+                    zIndex={1001}
                 />
             )}
             {chooseAttrOpen && (

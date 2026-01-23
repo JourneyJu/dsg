@@ -1,25 +1,13 @@
-import React, { CSSProperties, ReactNode } from 'react'
-import { Badge } from 'antd'
+import React, { CSSProperties } from 'react'
 import { ExclamationCircleOutlined } from '@ant-design/icons'
 import {
-    DatasheetViewColored,
-    MysqlColored,
-    MariadbColored,
-    HiveColored,
-    PostgreColored,
-    OracleColored,
-    SQLServerColored,
     DSFormOutlined,
     StringTypeOutlined,
     LeftArrowOutlined,
     RightArrowOutlined,
-    ClockColored,
-    ClickHouseColored,
-    DorisColored,
     FontIcon,
 } from '@/icons'
 import { IconType } from './const'
-import styles from './styles.module.less'
 import { IconType as FontIconType } from '@/icons/const'
 
 interface IGetIcon {
@@ -41,7 +29,7 @@ const Icons: React.FC<IGetIcon> = (props: any) => {
                         type={FontIconType.COLOREDICON}
                         {...props}
                     />
-                ) // <DatasheetViewColored {...props} />
+                )
             case IconType.STRING:
                 return <StringTypeOutlined {...props} />
             case IconType.LEFTARROW:

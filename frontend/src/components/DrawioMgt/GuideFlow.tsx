@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { Button, Modal, Space } from 'antd'
 import styles from './styles.module.less'
 import __ from './locale'
-import guide1 from '@/assets/guideImage/guide1.gif'
-import guide2 from '@/assets/guideImage/guide2.gif'
-import guide3 from '@/assets/guideImage/guide3.gif'
+// import guide1 from '@/assets/guideImage/guide1.gif'
+// import guide2 from '@/assets/guideImage/guide2.gif'
+// import guide3 from '@/assets/guideImage/guide3.gif'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 
 interface IGuideFlow {
@@ -24,21 +24,21 @@ const GuideFlow: React.FC<IGuideFlow> = ({ visible, onClose }) => {
     const guideInfo = [
         {
             title: '工具栏',
-            img: guide1,
+            // img: guide1,
             desc: [
                 '您可以拖拽或点击工具栏中泳道、流程、判定条件、子流程、文档等工具，绘制所需业务流程图',
             ],
         },
         {
             title: '关联业务节点表',
-            img: guide2,
+            // img: guide2,
             desc: [
                 '点击【配置】按钮展开流程节点配置侧边栏，可通过关联已有业务表、新建业务表、导入业务表的方式将业务表与流程节点进行关联，助于建立业务与数据的关联',
             ],
         },
         {
             title: '流程复用/导入',
-            img: guide3,
+            // img: guide3,
             desc: [
                 '点击【配置】按钮展开子流程节点配置侧边栏，可通过从已有流程中引用、新建流程、导入流程的方式将业务流程添加至当前流程中，实现快速复用。导入的节点若需关联业务表、业务流程，可进行替换操作',
                 '替换方式：拖拽或选中需替换节点后、按Shift键同时点击所需工具栏中节点完成替换',
@@ -135,7 +135,7 @@ const GuideFlow: React.FC<IGuideFlow> = ({ visible, onClose }) => {
                 maxHeight: 488,
             }}
         >
-            <div className={styles.gf_imageWrapper}>
+            {/* <div className={styles.gf_imageWrapper}>
                 <img
                     style={{
                         height: '100%',
@@ -145,7 +145,7 @@ const GuideFlow: React.FC<IGuideFlow> = ({ visible, onClose }) => {
                     src={guideInfo[step].img}
                     alt=""
                 />
-            </div>
+            </div> */}
             <div className={styles.df_descWrapper}>
                 <div className={styles.df_title}>
                     {guideInfo[step].title}

@@ -4,6 +4,7 @@ import { Space, Table, Tooltip, message } from 'antd'
 import { InfoCircleFilled } from '@ant-design/icons'
 import classnames from 'classnames'
 import { isNil } from 'lodash'
+import { FontIcon } from '@/icons'
 import { MicroWidgetPropsContext } from '@/context'
 import {
     getDatasheetViewDetails,
@@ -88,7 +89,7 @@ const SynthData = ({
                         ? await getLogicViewSampleData(catalogId)
                         : await getSynthData(id)
                 setSynthData(res2)
-                setIsAIData(!res2?.type || res2.type !== SampleDataType.Real)
+                // setIsAIData(!res2?.type || res2.type !== SampleDataType.Real)
                 const resColumns =
                     res2?.columns?.map((item) => {
                         return {
@@ -423,7 +424,15 @@ const SynthData = ({
             }}
         >
             {isAIData && (
-                <div>{__('由AI生成, 不能作为真实数据使用，仅供参考。')}</div>
+                <div>
+                    <FontIcon
+                        name="icon-xinxitishi"
+                        style={{ color: '#FF6304', marginRight: 8 }}
+                    />
+                    {__(
+                        '当前样例数据由AI生成，不能作为真实数据使用，仅供参考。',
+                    )}
+                </div>
             )}
             <Watermark
                 content={`${userInfo?.VisionName || ''} ${

@@ -1,8 +1,7 @@
-import Icon from '@ant-design/icons'
-import { ReactComponent as comSvg } from './svg/colored/datasheetView.svg'
+import FontIcon from './FontIcon'
 
 const DatasheetViewColored = (props: any) => (
-    <Icon component={comSvg} {...props} />
+    <FontIcon name="icon-shujubiaoshitu" type="colored" {...props} />
 )
 
 export default DatasheetViewColored

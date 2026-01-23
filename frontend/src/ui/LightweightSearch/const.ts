@@ -27,6 +27,7 @@ export interface IformItem {
     type: SearchType
     initLabel?: string
     separator?: string
+    show?: boolean
     Component?: React.ComponentType<{
         value?: any
         onChange: (value: any) => void

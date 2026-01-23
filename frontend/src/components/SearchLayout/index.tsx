@@ -186,7 +186,10 @@ const SearchLayout: React.FC<IFormData> = forwardRef(
                                 ? domain
                                 : theme
                     } else {
-                        obj[key] = searchData[key] || undefined
+                        obj[key] =
+                            searchData[key] === 0
+                                ? searchData[key]
+                                : searchData[key] || undefined
                     }
                 }
             }
@@ -231,7 +234,7 @@ const SearchLayout: React.FC<IFormData> = forwardRef(
             // eslint-disable-next-line no-restricted-syntax, guard-for-in
             for (const key in data) {
                 if (Object.prototype.hasOwnProperty.call(data, key)) {
-                    if (data[key]) {
+                    if (data[key] || data[key] === 0) {
                         const itemFiled: any =
                             formData.find((item) => item.key === key) || {}
                         if (!itemFiled.isAlone) {

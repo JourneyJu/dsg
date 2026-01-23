@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { Switch } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { noop } from 'lodash'
-import businessView from '@/assets/DataAssetsCatlg/businessView.svg'
-import technologyView from '@/assets/DataAssetsCatlg/technologyView.svg'
 
 import styles from './styles.module.less'
 import __ from './locale'

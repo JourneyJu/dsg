@@ -21,7 +21,7 @@ import searchEmpty from '@/assets/searchEmpty.svg'
 import {
     classifiedOptoins,
     openTypeList,
-    sensitiveOptoins,
+    sensitiveOptions,
     shareTypeList,
     InfoItemsDetail,
     ShareTypeEnum,
@@ -237,7 +237,7 @@ const DirColumnInfo: React.FC<DirColumnInfoProps> = (infoProps: any) => {
             width: 120,
             ellipsis: true,
             render: (item) =>
-                getColorOptions(sensitiveOptoins)?.find(
+                getColorOptions(sensitiveOptions)?.find(
                     (i) => i.value === item.sensitive_flag,
                 )?.label || '--',
         },

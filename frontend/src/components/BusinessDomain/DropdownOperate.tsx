@@ -5,14 +5,12 @@ import React, {
     useMemo,
     useState,
 } from 'react'
-import { Dropdown, MenuProps } from 'antd'
-import { MoreOutlined, DeleteOutlined } from '@ant-design/icons'
-import { EllipsisOutlined, EditOutlined, AddOutlined } from '@/icons'
+import { Dropdown } from 'antd'
+import { EllipsisOutlined, AddOutlined } from '@/icons'
 import styles from './styles.module.less'
 import { GlossaryType } from '../BusinessGlossary/const'
 import __ from './locale'
 import { BusinessDomainType } from './const'
-import MoreHorizontalOutlined from '@/icons/MoreHorizontalOutlined'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
 import { PermissionScope } from '@/core'
 

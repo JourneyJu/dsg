@@ -1,9 +1,10 @@
 import { Tabs } from 'antd'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import classnames from 'classnames'
 import FeedbackTable from './FeedbackTable'
 import FeedbackTableResMode from '@/components/FeedbackResMode/list/FeedbackTable'
 import { FeedbackMenuEnum } from '../helper'
+import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import { FeedbackMenuEnum as FeedbackMenuEnumResMode } from '@/components/FeedbackResMode/helper'
 import styles from '../styles.module.less'
 import __ from '../locale'
@@ -12,6 +13,8 @@ import __ from '../locale'
  * 我的反馈
  */
 const MyFeedbackList = () => {
+    const [{ using }] = useGeneralConfig()
+
     const [activeKey, setActiveKey] = useState<FeedbackMenuEnum>(
         FeedbackMenuEnum.MyFeedback,
     )
@@ -19,6 +22,14 @@ const MyFeedbackList = () => {
     const handleTabChange = (key: FeedbackMenuEnum) => {
         setActiveKey(key)
     }
+
+    useEffect(() => {
+        setActiveKey(
+            using === 2
+                ? FeedbackMenuEnum.DataView
+                : FeedbackMenuEnum.MyFeedback,
+        )
+    }, [using])
 
     const renderTabContent = (key: FeedbackMenuEnum) => {
         if (key !== activeKey) return null
@@ -32,11 +43,15 @@ const MyFeedbackList = () => {
                 />
             )
         }
-        if (key === FeedbackMenuEnum.InterfaceSvc) {
+        if (
+            key === FeedbackMenuEnum.InterfaceSvc ||
+            key === FeedbackMenuEnum.DataView
+        ) {
             return (
                 <FeedbackTableResMode
-                    key={FeedbackMenuEnumResMode.InterfaceSvc}
-                    menu={FeedbackMenuEnumResMode.InterfaceSvc}
+                    key={key}
+                    menu={key as any}
+                    resType={key as any}
                     scrollY="calc(100vh - 343px)"
                 />
             )
@@ -51,6 +66,11 @@ const MyFeedbackList = () => {
                 onChange={(key) => handleTabChange(key as FeedbackMenuEnum)}
                 items={[
                     {
+                        label: __('库表'),
+                        key: FeedbackMenuEnum.DataView,
+                        children: renderTabContent(FeedbackMenuEnum.DataView),
+                    },
+                    {
                         label: __('数据资源目录'),
                         key: FeedbackMenuEnum.MyFeedback,
                         children: renderTabContent(FeedbackMenuEnum.MyFeedback),
@@ -62,7 +82,11 @@ const MyFeedbackList = () => {
                             FeedbackMenuEnum.InterfaceSvc,
                         ),
                     },
-                ]}
+                ].filter((item) =>
+                    using === 2
+                        ? item?.key !== FeedbackMenuEnum.MyFeedback
+                        : item?.key !== FeedbackMenuEnum.DataView,
+                )}
                 className={styles.feedbackTabs}
             />
         </div>

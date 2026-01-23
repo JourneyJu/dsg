@@ -20,7 +20,6 @@ import { RefreshBtn } from '@/components/ToolbarComponents'
 import {
     CatalogType,
     formatError,
-    formsQueryStandardItem,
     formsStandardFieldsList,
     getDatasheetViewDetails,
     getStandardRecommend,

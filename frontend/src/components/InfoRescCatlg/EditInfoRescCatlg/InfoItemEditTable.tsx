@@ -39,7 +39,7 @@ import {
     openTypeList,
     ShareTypeEnum,
     OpenTypeEnum,
-    sensitiveOptoins,
+    sensitiveOptions,
     classifiedOptoins,
     DataProcessingList,
     belongSystemClassifyList,
@@ -1032,7 +1032,7 @@ const InfoItemEditTable = forwardRef(
                                     <Select
                                         placeholder={__('多项值')}
                                         style={{ width: '92px' }}
-                                        options={sensitiveOptoins}
+                                        options={sensitiveOptions}
                                         getPopupContainer={(element) =>
                                             parentNode || element.parentNode
                                         }
@@ -1062,7 +1062,7 @@ const InfoItemEditTable = forwardRef(
                                 }
                                 placeholder={__('请选择')}
                                 style={{ width: '92px' }}
-                                options={sensitiveOptoins}
+                                options={sensitiveOptions}
                                 getPopupContainer={(element) =>
                                     parentNode || element.parentNode
                                 }

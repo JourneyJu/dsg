@@ -100,27 +100,38 @@ export const getDataRescTypeIcon = (
     props: {
         type?: DataRescType
         indicator_type?: string
+        // 是否显示类型文本
+        showTypeText?: boolean
     },
     fontSize: number = 22,
 ) => {
-    const { type, indicator_type } = props
+    const { type, indicator_type, showTypeText } = props
+    let IconComponent
+    let color: string = ''
+    let text: string = ''
     switch (type) {
         case DataRescType.INTERFACE:
-            return (
+            IconComponent = (
                 <InterfaceColored
                     className={styles.itemIcon}
                     fontSize={fontSize}
                 />
             )
+            text = __('接口')
+            color = '#ffba30'
+            break
         case DataRescType.LOGICALVIEW:
-            return (
+            IconComponent = (
                 <DatasheetViewColored
                     className={styles.itemIcon}
                     fontSize={fontSize}
                 />
             )
+            text = __('库表')
+            color = '#14ceaa'
+            break
         case DataRescType.INDICATOR:
-            return indicator_type ? (
+            IconComponent = indicator_type ? (
                 <IndicatorIcons type={indicator_type} fontSize={fontSize} />
             ) : (
                 <FontIcon
@@ -131,8 +142,12 @@ export const getDataRescTypeIcon = (
                     type={IconType.COLOREDICON}
                 />
             )
+            // '#0091ff'
+            color = indicator_type ? '#0096ff' : '#3ac4ff'
+            text = __('指标')
+            break
         case DataRescType.PROVINCE_DATACATLG:
-            return (
+            IconComponent = (
                 <FontIcon
                     name="icon-shujumuluguanli1"
                     style={{
@@ -141,8 +156,10 @@ export const getDataRescTypeIcon = (
                     type={IconType.COLOREDICON}
                 />
             )
+            color = '#0096ff'
+            break
         case DataRescType.INFO_RESC_CATLG:
-            return (
+            IconComponent = (
                 <FontIcon
                     name="icon-xinximulu1"
                     style={{
@@ -151,8 +168,10 @@ export const getDataRescTypeIcon = (
                     type={IconType.COLOREDICON}
                 />
             )
+            color = '#0096ff'
+            break
         case DataRescType.DATA_RESC_CATLG:
-            return (
+            IconComponent = (
                 <FontIcon
                     name="icon-shujumuluguanli1"
                     style={{
@@ -161,8 +180,11 @@ export const getDataRescTypeIcon = (
                     type={IconType.COLOREDICON}
                 />
             )
+            text = __('数据目录')
+            color = '#0096ff'
+            break
         case DataRescType.LICENSE_CATLG:
-            return (
+            IconComponent = (
                 <FontIcon
                     name="icon-dianzizhengzhaomulu"
                     style={{
@@ -171,7 +193,29 @@ export const getDataRescTypeIcon = (
                     type={IconType.COLOREDICON}
                 />
             )
+            color = '#0096ff'
+            text = __('授权目录')
+            break
         default:
-            return ''
+            return null
     }
+    return showTypeText ? (
+        <span
+            style={{
+                display: 'flex',
+                alignItems: 'center',
+                background: color,
+                color: '#fff',
+                padding: '2px 6px 2px 2px',
+                fontSize: 12,
+                borderRadius: '4px',
+                gap: '4px',
+            }}
+        >
+            {IconComponent}
+            {text}
+        </span>
+    ) : (
+        IconComponent
+    )
 }

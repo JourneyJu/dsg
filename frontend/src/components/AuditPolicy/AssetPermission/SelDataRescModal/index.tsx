@@ -20,7 +20,6 @@ import Icon, {
 import { uniqBy } from 'lodash'
 import __ from './locale'
 import styles from './styles.module.less'
-import { ReactComponent as basicInfo } from '@/assets/DataAssetsCatlg/basicInfo.svg'
 import { ViewType, unCategorizedKey, viewOptionList } from './helper'
 import ArchitectureDirTree from '@/components/BusinessArchitecture/ArchitectureDirTree'
 import GlossaryDirTree from '@/components/BusinessDomain/GlossaryDirTree'

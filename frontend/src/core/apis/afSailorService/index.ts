@@ -13,6 +13,8 @@ import {
     IPullOffAssistantParams,
     IPullOffAssistantResult,
     IAgentAppConversationList,
+    IWsCategoryListData,
+    IWsCategoryItem,
 } from './index.d'
 import { ICommonRes } from '../common'
 
@@ -349,21 +351,30 @@ export const recommendModelList = (params: {
 export const getAssistantList = (
     params: IGetAssistantListParams,
 ): Promise<IAgentList> => {
-    return post(`/api/af-sailor-service/v1/assistant/agent/list`, params)
+    return post(`/api/af-sailor-agent/assistant/agent/list`, params)
 }
 
 /** 上架智能体 */
 export const putOnAssistant = (
     params: IPutOnAssistantParams,
 ): Promise<IPutOnAssistantResult> => {
-    return put(`/api/af-sailor-service/v1/assistant/agent/put-on`, params)
+    return put(`/api/af-sailor-agent/assistant/agent/put-on`, params)
 }
 
 /** 下架智能体 */
 export const pullOffAssistant = (
     params: IPullOffAssistantParams,
 ): Promise<IPullOffAssistantResult> => {
-    return put(`/api/af-sailor-service/v1/assistant/agent/pull-off`, params)
+    return put(`/api/af-sailor-agent/assistant/agent/pull-off`, params)
+}
+
+/** 获取助手分类详情 */
+export const getAssistantCategoryDetail = (
+    category_id: string,
+): Promise<ICommonRes<IWsCategoryItem>> => {
+    return get(
+        `/api/af-sailor-agent/assistant/agent/category/detail/${category_id}`,
+    )
 }
 
 /**
@@ -400,4 +411,22 @@ export const getSearchAgentInfo = (): Promise<{
     }
 }> => {
     return get(`/api/af-sailor-agent/v1/assistant/search/info`)
+}
+
+/** 获取分类列表 */
+export const getWsCategoryList = (): Promise<{ data: IWsCategoryListData }> => {
+    return get(`/api/af-sailor-agent/system/config/ws-category-list`)
+}
+
+/** 关联分类 */
+export const updateAssistantCategory = (
+    agent_id: string,
+    params: {
+        category_ids: string[]
+    },
+): Promise<any> => {
+    return put(
+        `/api/af-sailor-agent/assistant/agent/update-category/${agent_id}`,
+        params,
+    )
 }

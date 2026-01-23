@@ -102,10 +102,6 @@ export const TabsList: ITabsList[] = [
     },
 ]
 
-// xxx-待后端给模板文件xlsx
-const interfaceDocUrl = '/downloadFiles/指标模板.xlsx'
-const interfaceDocName = '接口文档模板.xlsx'
-
 export const copyToClipboard = (str: string) => {
     return navigator?.clipboard?.writeText(str).catch((err) => {
         const el = document.createElement('textarea')

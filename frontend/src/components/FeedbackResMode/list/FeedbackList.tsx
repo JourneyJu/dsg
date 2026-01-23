@@ -10,7 +10,8 @@ import __ from '../locale'
 /**
  * 反馈列表
  */
-const FeedbackList = () => {
+const FeedbackList = (props: any) => {
+    const { resType } = props
     const [activeKey, setActiveKey] = useState(FeedbackMenuEnum.Pending)
     const [numMap, setNumMap] = useState({
         total_num: 0,
@@ -23,7 +24,7 @@ const FeedbackList = () => {
     }, [])
 
     const getData = async () => {
-        const res = await getFeedbackCountResMode()
+        const res = await getFeedbackCountResMode({ res_type: resType })
         setNumMap(res)
     }
 
@@ -40,6 +41,7 @@ const FeedbackList = () => {
                 menu={key}
                 onReplySuccess={getData}
                 scrollY="calc(100vh - 301px)"
+                resType={resType}
             />
         )
     }
