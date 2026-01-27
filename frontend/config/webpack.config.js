@@ -126,14 +126,19 @@ const entryFiles = [
         htmlFilename: 'afPluginFrameworkForAs.html',
     },
     {
-        name: "anyFabricMicroApp",
-        template: paths.anyFabricMicroAppHtml,
-        htmlFilename: 'anyFabricMicroApp.html',
+        name: "smartDataFind",
+        template: paths.smartDataFindHtml,
+        htmlFilename: 'smartDataFind.html',
     },
     {
         name: "smartDataQuery",
         template: paths.smartDataQueryHtml,
         htmlFilename: 'smartDataQuery.html',
+    },
+    {
+        name: "semanticGovernance",
+        template: paths.semanticGovernanceHtml,
+        htmlFilename: 'semanticGovernance.html',
     },
 ]
 
@@ -281,7 +286,8 @@ module.exports = function (webpackEnv) {
             download: paths.downloadIndexJs,
             dmdAudit: paths.dmdAuditIndexJs,
             afPluginFrameworkForAs: paths.afPluginFrameworkForAsIndexJs,
-            anyFabricMicroApp: paths.anyFabricMicroAppIndexJs,
+            smartDataFind: paths.smartDataFindIndexJs,
+            semanticGovernance: paths.semanticGovernanceIndexJs,
             smartDataQuery: paths.smartDataQueryIndexJs,
         },
         output: {

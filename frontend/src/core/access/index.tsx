@@ -1,6 +1,11 @@
 import Cookies from 'js-cookie'
 import { getActualUrl, getPlatformPrefix } from '@/utils'
-import { findFirstPathByKeys, findFirstPathByModule } from '@/hooks/useMenus'
+import {
+    findFirstPath,
+    findFirstPathByKeys,
+    findFirstPathByModule,
+    getRouteByModuleWithGroups,
+} from '@/hooks/useMenus'
 import { adminRouteKey, homeRouteKeys } from '@/routers/config'
 
 export const filterMenuAccess = (
@@ -69,13 +74,12 @@ export const goEffectivePath = (
     isOnlySystemMgm,
     navigate?,
 ) => {
-    // 按优先级检查菜单：数据服务超市 -> 数据运营管理 -> 后台管理
+    // 按优先级检查菜单：数据服务超市 -> 数据运营管理 -> 应用配置
     const menuPriority = [
         { key: 'data-market' }, // 数据服务超市
         { key: 'work-center' }, // 数据运营管理
-        { key: 'config-center' }, // 后台管理
+        { key: 'config-center' }, // 应用配置
     ]
-
     // 尝试找到第一个有有效路径的菜单
     let targetPath = null
     menuPriority.some(({ key }) => {
@@ -83,7 +87,8 @@ export const goEffectivePath = (
         if (!menu) return false
 
         // 检查菜单本身是否有有效 path（非模块容器）
-        const firstPath = findFirstPathByModule(key)
+        // 传入完整的 menus 数组作为路由数据源
+        const firstPath = findFirstPathByModule(key, menus)
 
         if (firstPath) {
             targetPath = firstPath
@@ -91,6 +96,27 @@ export const goEffectivePath = (
         }
         return false // 继续查找下一个菜单
     })
+
+    // 如果通过 findFirstPathByModule 找不到路径，尝试直接使用 getRouteByModuleWithGroups
+    // 这种情况通常发生在 globalMenus 还未完全同步时
+    if (!targetPath) {
+        menuPriority.some(({ key }) => {
+            const menu = menus.find((item) => item.key === key)
+            if (!menu) return false
+
+            // 直接调用 getRouteByModuleWithGroups 获取该模块下的路由
+            const moduleRoutes = getRouteByModuleWithGroups(key, menus)
+            if (moduleRoutes && moduleRoutes.length > 0) {
+                // 调用 findFirstPath 查找第一个有效路径
+                const firstPath = findFirstPath(moduleRoutes, true)
+                if (firstPath) {
+                    targetPath = firstPath
+                    return true
+                }
+            }
+            return false
+        })
+    }
 
     if (targetPath) {
         if (navigate) {

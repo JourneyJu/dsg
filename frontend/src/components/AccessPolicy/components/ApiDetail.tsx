@@ -11,19 +11,12 @@ import {
     detailFrontendServiceOverview,
     formatError,
 } from '@/core'
-import {
-    APIColored,
-    AppApiColored,
-    ApplicationAssetColored,
-    CopyOutlined,
-    InterfaceOutlined,
-} from '@/icons'
+import { CopyOutlined } from '@/icons'
 import JSONCodeView from '@/ui/JSONCodeView'
 import styles from './styles.module.less'
 import { ResIcon, getLastText, itemOtherInfo } from '../helper'
 import { ServiceTypeList } from '../const'
 import { TextAreaView } from '@/components/AutoFormView/baseViewComponents'
-import AuthInfo from '@/components/MyAssets/AuthInfo'
 import { copyToClipboard } from '@/components/MyAssets/helper'
 
 interface TitleBarType {

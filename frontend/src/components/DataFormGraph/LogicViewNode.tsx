@@ -1,40 +1,18 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { register } from '@antv/x6-react-shape'
-import { Cell, Shape } from '@antv/x6'
 import {
     CloseCircleFilled,
     SearchOutlined,
-    CloseOutlined,
     LeftOutlined,
     RightOutlined,
     CaretUpOutlined,
     CaretDownOutlined,
 } from '@ant-design/icons'
-import {
-    Button,
-    Checkbox,
-    ConfigProvider,
-    Input,
-    Modal,
-    Space,
-    Tooltip,
-    Divider,
-} from 'antd'
+import { Button, Checkbox, ConfigProvider, Space, Tooltip } from 'antd'
 import classnames from 'classnames'
 import { useDebounce } from 'ahooks'
-import {
-    CopyOutlined,
-    DeadlineOutlined,
-    ExpandOutlined,
-    FormDetailOutlined,
-    QuoteOutlined,
-    RecycleBinOutlined,
-    StandardOutlined,
-    UnexpandOutlined,
-    XlsColored,
-} from '@/icons'
-import { FormFiled } from '@/core/apis/businessGrooming/index.d'
+import { CopyOutlined, FormDetailOutlined, RecycleBinOutlined } from '@/icons'
 import styles from './styles.module.less'
 import {
     ExpandStatus,
@@ -48,10 +26,9 @@ import {
     OptionType,
     searchFieldData,
 } from './helper'
-import { getCommonDataType, getFormInfo, getFormQueryItem } from '@/core'
+import { getCommonDataType } from '@/core'
 import __ from './locale'
 import { SearchInput } from '@/ui'
-import Icons from '../ImportFromDataSource/Icons'
 import { useGraphContext } from './GraphContext'
 import { useQuery } from '@/utils'
 import { formatDataType, getFieldTypeIcon } from '../DatasheetView/helper'

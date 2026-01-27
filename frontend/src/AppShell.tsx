@@ -48,6 +48,7 @@ ConfigProvider.config({
 interface AppShellProps {
     mode: AppRuntimeMode
     microAppProps?: IMicroAppProps
+    containerId?: string
 }
 
 const MicroAppAuthSync: React.FC<{ mode: AppRuntimeMode }> = ({ mode }) => {
@@ -85,7 +86,10 @@ const getAntdLocal = (lang: string) => {
     }
 }
 
-const AppShellInner: React.FC<{ mode: AppRuntimeMode }> = ({ mode }) => {
+const AppShellInner: React.FC<{
+    mode: AppRuntimeMode
+    containerId?: string
+}> = ({ mode, containerId }) => {
     const { microAppProps } = useMicroAppProps()
     const language: string = getLanguage() || 'zh-cn'
     const { pathname } = window.location
@@ -97,8 +101,8 @@ const AppShellInner: React.FC<{ mode: AppRuntimeMode }> = ({ mode }) => {
         return getStandaloneBasename(pathname)
     }, [microAppProps?.route?.basename, pathname])
 
-    const popupContainerId =
-        mode === 'micro-app' ? 'anyfabric-micro-app' : 'root'
+    const popupContainerId: string =
+        mode === 'micro-app' ? (containerId as string) : 'root'
 
     useMemo(() => {
         i18n.setup({
@@ -233,10 +237,14 @@ const AppShellInner: React.FC<{ mode: AppRuntimeMode }> = ({ mode }) => {
     )
 }
 
-const AppShell: React.FC<AppShellProps> = ({ mode, microAppProps = {} }) => {
+const AppShell: React.FC<AppShellProps> = ({
+    mode,
+    microAppProps = {},
+    containerId,
+}) => {
     return (
         <MicroAppPropsProvider initMicroAppProps={microAppProps}>
-            <AppShellInner mode={mode} />
+            <AppShellInner mode={mode} containerId={containerId} />
         </MicroAppPropsProvider>
     )
 }

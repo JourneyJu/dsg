@@ -7,7 +7,6 @@ import {
     message,
     Modal,
     ModalProps,
-    Row,
     Select,
 } from 'antd'
 import { noop, trim } from 'lodash'
@@ -15,8 +14,6 @@ import {
     ErrorInfo,
     getActualUrl,
     getPlatformNumber,
-    keyboardCharactersReg,
-    nameReg,
     OperateType,
 } from '@/utils'
 import styles from './styles.module.less'
@@ -34,12 +31,10 @@ import {
     LoginPlatform,
     updateCoreBusiness,
 } from '@/core'
-import { Architecture, DataNode } from '../BusinessArchitecture/const'
 import { UNGROUPED, ViewMode } from './const'
 import { TaskInfoContext } from '@/context'
 import __ from './locale'
 import Details from './Details'
-import BusinessDomainSelect from '../BusiArchitecture/BusinessDomainSelect'
 import BusinessProcessSelect from './BusinessProcessSelect'
 import { AddOutlined } from '@/icons'
 import { useBusinessModelContext } from './BusinessModelProvider'

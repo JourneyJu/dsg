@@ -90,7 +90,7 @@ const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
             },
             {
                 key: 'config-center',
-                label: __('后台管理'),
+                label: __('应用配置'),
             },
         ]
 
@@ -116,7 +116,8 @@ const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
     const hasServiceMarket = hasDataAssetsMenus(menus)
 
     // 是否有我的任务(菜单不为空时显示)
-    const shouldShowTask = hasMyTaskMenus(menus)
+    const shouldShowTask = false
+    // const shouldShowTask = hasMyTaskMenus(menus)
 
     // 是否有需求申请权限
     const hasDemandApplyPerm = useMemo(() => {
@@ -229,6 +230,11 @@ const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
             microAppProps?.application?.name,
         ]
     }, [microAppProps])
+
+    const gotoPersonalCenter = (e) => {
+        e.preventDefault()
+        navigate('/personal-center')
+    }
 
     return (
         <>
@@ -360,7 +366,11 @@ const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
                         </div>
                     )}
 
-                    {[LoginPlatform.default].includes(platform) &&
+                    <div onClick={(e) => {}}>
+                        <a onClick={gotoPersonalCenter}>{__('个人中心')}</a>
+                    </div>
+
+                    {/* {[LoginPlatform.default].includes(platform) &&
                         showApplyList &&
                         hasDemandApplyPerm &&
                         using === 2 && (
@@ -397,7 +407,7 @@ const MicroAppHeader: React.FC<MicroAppHeaderProps> = ({
                                     </span>
                                 </div>
                             </div>
-                        )}
+                        )}  */}
 
                     {/* 市州共享申请 */}
                     {!isOnlySystemMgm &&

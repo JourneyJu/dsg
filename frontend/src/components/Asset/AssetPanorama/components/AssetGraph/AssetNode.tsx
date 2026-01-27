@@ -8,7 +8,7 @@ import { usePanoramaContext } from '../../PanoramaProvider'
 import { AssetIcons, AssetNodes } from '../../helper'
 import { AssetNodeType, NodeType, NodeTypeText } from './helper'
 import styles from './styles.module.less'
-import { AssetLogicViewOutlined, FontIcon, InterfaceColored } from '@/icons'
+import { FontIcon } from '@/icons'
 import { IconType } from '@/icons/const'
 
 /**

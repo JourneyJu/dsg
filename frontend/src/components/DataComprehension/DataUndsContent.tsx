@@ -1,25 +1,15 @@
 import { useContext, useEffect, useState } from 'react'
-import {
-    BackTop,
-    Button,
-    Col,
-    Divider,
-    Row,
-    Tabs,
-    Tooltip,
-    message,
-} from 'antd'
+import { BackTop, Button, Col, Divider, Row, Tabs, Tooltip } from 'antd'
 import { LeftOutlined } from '@ant-design/icons'
 import { Graph } from '@antv/x6'
 import { useNavigate } from 'react-router-dom'
-import { useQuery, getActualUrl } from '@/utils'
+import { useQuery } from '@/utils'
 import {
     formatError,
     formsEnumConfig,
     getDataComprehensionDetails,
     IdimensionModel,
     IFormEnumConfigModel,
-    TaskExecutableStatus,
     updateComprehensionMark,
 } from '@/core'
 import styles from './styles.module.less'
@@ -32,13 +22,9 @@ import Report from './Report'
 import ReportAnchor from './ReportAnchor'
 import DataUndsGraph from './DataUndsGraph'
 import { ReturnTopOutlined } from '@/icons'
-import { Confirm2 } from '../Confirm'
 import GlobalMenu from '../GlobalMenu'
 import ReturnConfirmModal from '@/ui/ReturnConfirmModal'
-import {
-    UndsGraphProvider,
-    useUndsGraphContext,
-} from '@/context/UndsGraphProvider'
+import { useUndsGraphContext } from '@/context/UndsGraphProvider'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
 
 const DataUndsContent = () => {

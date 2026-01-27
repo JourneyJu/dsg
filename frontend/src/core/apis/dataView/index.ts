@@ -106,6 +106,9 @@ export const batchScanDatasource = (params?: IScanDatasource) => {
 export const getDatasheetView = (params?: IDatasheetView) => {
     return get('/api/data-view/v1/form-view', params)
 }
+export const getDatasheetPublishedView = (params?: IDatasheetView) => {
+    return get('/api/data-view/v1/form-view/published', params)
+}
 // /**
 //  * 编辑库表时间戳字段 -- 删除
 //  * @param params

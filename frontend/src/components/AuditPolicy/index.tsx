@@ -14,13 +14,8 @@ import DataView from './DataView'
 const MenuItems = [
     {
         key: 'data-view',
-        label: __('库表'),
+        label: __('库表上线'),
         children: <DataView />,
-    },
-    {
-        key: 'data-catalog',
-        label: __('数据资源目录'),
-        children: <DataResource />,
     },
     {
         key: 'api-service',
@@ -28,20 +23,25 @@ const MenuItems = [
         children: <ApiService />,
     },
     {
+        key: 'data-catalog',
+        label: __('数据资源目录'),
+        children: <DataResource />,
+    },
+    {
         key: 'data-understanding-report',
         label: __('数据理解报告'),
         children: <DataUnderstandingReport />,
     },
-    {
-        key: 'work-order-data-quality-audit',
-        label: __('质量检测工单'),
-        children: <WorkOrderQualityExamine />,
-    },
-    {
-        key: 'work-order-quality',
-        label: __('数据质量整改'),
-        children: <WorkOrderQuality />,
-    },
+    // {
+    //     key: 'work-order-data-quality-audit',
+    //     label: __('质量检测工单'),
+    //     children: <WorkOrderQualityExamine />,
+    // },
+    // {
+    //     key: 'work-order-quality',
+    //     label: __('数据质量整改'),
+    //     children: <WorkOrderQuality />,
+    // },
 ]
 
 interface IConfirm {

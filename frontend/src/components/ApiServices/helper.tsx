@@ -41,12 +41,16 @@ export enum CatlgOperateType {
 
 export interface ILabelTitle {
     label: string | React.ReactNode
+    extra?: React.ReactNode
 }
-export const LabelTitle = ({ label }: ILabelTitle) => {
+export const LabelTitle = ({ label, extra }: ILabelTitle) => {
     return (
         <div className={styles.labelTitleWrapper}>
-            <span className={styles.labelLine} />
-            <span>{label}</span>
+            <div className={styles.left}>
+                <span className={styles.labelLine} />
+                <span>{label}</span>
+            </div>
+            <div className={styles.right}>{extra}</div>
         </div>
     )
 }

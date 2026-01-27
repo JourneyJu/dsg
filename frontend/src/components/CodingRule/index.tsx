@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useMemo, useState } from 'react'
-import { Button } from 'antd'
+import { Button, Tooltip } from 'antd'
 import __ from './locale'
 import styles from './styles.module.less'
 import { RuleType, RuleTypeIcon, getCodeExample, getCodeRule } from './helper'
@@ -19,6 +19,7 @@ const RuleItem = memo(
         item: ICCRuleItem
         onEdit?: (value: ICCRuleItem) => void
     }) => {
+        const [{ using }] = useGeneralConfig()
         const startEndValue = useMemo(() => {
             const len = item?.digital_code_width || 6
             const start = String(item?.digital_code_starting || 1).padStart(
@@ -30,6 +31,29 @@ const RuleItem = memo(
             return { start, end }
         }, [item])
 
+        const getLabelByType = (type: string) => {
+            const text =
+                type === RuleType.LogicView ? __('通用') : __('应用：智能找数')
+
+            const tooltip =
+                type === RuleType.LogicView
+                    ? undefined
+                    : using
+                    ? __('仅对应用“智能找数”生效，若未安装此应用，可忽略配置。')
+                    : __(
+                          '仅对应用“智能找数”生效，若未安装此应用或无编目场景，可忽略配置。',
+                      )
+
+            return (
+                <span
+                    className={styles['rule-item-head-label']}
+                    title={tooltip}
+                >
+                    {text}
+                </span>
+            )
+        }
+
         return (
             <div className={styles['rule-item']}>
                 <div className={styles['rule-item-head']}>
@@ -37,7 +61,10 @@ const RuleItem = memo(
                         {RuleTypeIcon?.[item.type]}
                     </div>
                     <div className={styles['rule-item-head-info']}>
-                        <div>{item.name}</div>
+                        <div>
+                            {item.name}
+                            {getLabelByType(item.type)}
+                        </div>
                         <div>
                             {__('编码示例')}: {getCodeExample(item)}
                         </div>

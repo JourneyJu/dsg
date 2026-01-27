@@ -19,8 +19,6 @@ import {
 } from '../../helper'
 import __ from '../../locale'
 import styles from './styles.module.less'
-import { HistoryOutlined } from '@/icons'
-import { GlossaryIcon } from '@/components/BusinessDomain/GlossaryIcons'
 import { usePanoramaContext } from '../../PanoramaProvider'
 
 /** 历史记录Key */

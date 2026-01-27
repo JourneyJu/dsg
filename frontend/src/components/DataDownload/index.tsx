@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import { Button, Popconfirm, Space, message, Tooltip } from 'antd'
 import moment from 'moment'
 import { InfoCircleFilled } from '@ant-design/icons'
@@ -27,7 +27,6 @@ import {
 import { DatasheetViewColored, FontIcon } from '@/icons'
 import { IconType } from '@/icons/const'
 import { getState } from '@/components/BusinessDiagnosis/helper'
-import { downloadFile } from '@/utils'
 
 const DataDownload = () => {
     const [tableSort, setTableSort] = useState<{

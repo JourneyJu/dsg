@@ -1,9 +1,6 @@
-import Icon from '@ant-design/icons'
 import __ from './locale'
-import { DepartmentOutlined, FontIcon, ThemeOutlined } from '@/icons'
+import { DepartmentOutlined, FontIcon } from '@/icons'
 import styles from '../styles.module.less'
-import { IconType } from '@/icons/const'
-import { DivisionCodeList } from '@/components/ResourcesDir/const'
 
 // 业务逻辑实体列表项参数
 export const itemOtherInfo = [

@@ -42,6 +42,7 @@ import {
     scanDatasource,
     SortDirection,
     TaskExecutableStatus,
+    getDatasheetPublishedView,
     TaskStatus,
 } from '@/core'
 import { databaseTypesEleData } from '@/core/dataSource'
@@ -50,7 +51,13 @@ import { useGradeLabelState } from '@/hooks/useGradeLabelState'
 import { AddOutlined, AvatarOutlined, FontIcon } from '@/icons'
 import { IconType } from '@/icons/const'
 import { Empty, Loader } from '@/ui'
-import { getPlatformNumber, getSource, OperateType, useQuery } from '@/utils'
+import {
+    getPlatformNumber,
+    getSource,
+    OperateType,
+    useQuery,
+    isSemanticGovernanceApp,
+} from '@/utils'
 import { confirm } from '@/utils/modalHelper'
 import MyTaskDrawer from '../AssetCenterHeader/MyTaskDrawer'
 import { BusinessDomainType } from '../BusinessDomain/const'
@@ -109,6 +116,7 @@ interface IDatasheetTable {
     logicType?: LogicViewType
     // 业务对象信息
     subDomainData?: any
+    selectedNode?: any
 }
 
 const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
@@ -121,6 +129,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
         datasourceData,
         selectedDatasources,
         logicType = LogicViewType.DataSource,
+        selectedNode,
         subDomainData,
     } = props
     const navigator = useNavigate()
@@ -146,7 +155,8 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
 
     const commonTableRef: any = useRef()
     const searchRef: any = useRef()
-
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
     const [searchIsExpansion, setSearchIsExpansion] = useState<boolean>(false)
     const [moreExpansionStatus, setMoreExpansionStatus] =
         useState<boolean>(false)
@@ -454,19 +464,21 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
     }, [searchCondition, listEmpty, subDomainData, creatable])
 
     const searchForm = useMemo(() => {
-        const serForm =
-            using === 1
-                ? formData.filter(
-                      (item) =>
-                          (selectedDatasources?.type !== 'excel' ||
-                              item.key !== 'status_list') &&
-                          item.key !== 'online_status_list',
-                  )
-                : formData.filter(
-                      (item) =>
-                          selectedDatasources?.type !== 'excel' ||
-                          item.key !== 'status_list',
-                  )
+        const filterKeys: string[] = []
+        if (isSemanticGovernance) {
+            filterKeys.push('online_status_list')
+        } else {
+            filterKeys.push('publish_status')
+        }
+        if (using === 1) {
+            filterKeys.push('online_status_list')
+        }
+        if (using === 2 || selectedDatasources?.type !== 'excel') {
+            filterKeys.push('status_list')
+        }
+        const serForm = formData.filter(
+            (item) => !filterKeys.includes(item.key),
+        )
         if (isValueEvaluation) {
             return serForm.filter((item) =>
                 ['keyword', 'department_id', 'times', 'updateTime'].includes(
@@ -500,7 +512,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
             )
         }
         return serForm
-    }, [formData, selectedDatasources, isValueEvaluation])
+    }, [formData, selectedDatasources, isValueEvaluation, isSemanticGovernance])
 
     const emptyExcludeField = useMemo(() => {
         let field = [
@@ -1046,7 +1058,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
         {
             title: __('操作'),
             key: 'action',
-            width: using === 2 ? 300 : 204,
+            width: using === 2 && isSemanticGovernance ? 300 : 204,
             fixed: FixedType.RIGHT,
             render: (text: string, record) => {
                 // 以下状态文案为'编辑'，其他为'变更'
@@ -1095,7 +1107,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
                         // label: editTextByPublish.includes(record.publish_status)? __('编辑') : __('变更'),
                         label: !published ? __('编辑') : __('变更'),
                         status: OperateType.EDIT,
-                        show: true,
+                        show: true && isSemanticGovernance,
                         disable:
                             auditingByPublish.includes(record.publish_status) ||
                             auditingByOnline.includes(record.online_status) ||
@@ -1108,7 +1120,7 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
                     {
                         label: __('探查'),
                         status: OperateType.EXECUTE,
-                        show: true,
+                        show: true && isSemanticGovernance,
                         disable: record.status === stateType.delete,
                         disableTips: __('源表已删除，不能做此操作'),
                     },
@@ -1719,7 +1731,10 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
     }
 
     const getDatasheetViewByType = async (params) => {
-        return getDatasheetView(
+        const actions = isSemanticGovernance
+            ? getDatasheetPublishedView
+            : getDatasheetView
+        return actions(
             selectedDatasources?.type === 'excel'
                 ? {
                       ...params,
@@ -1798,99 +1813,132 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
                                 getMoreExpansionStatus={setMoreExpansionStatus}
                                 ref={searchRef}
                                 prefixNode={
-                                    dataType === DsType.unknown &&
-                                    selectedIds.length ? (
-                                        <div className={styles.rigthOptions}>
-                                            <Button
-                                                onClick={() =>
-                                                    setDelVisible(true)
-                                                }
-                                            >
-                                                {__('批量删除')}
-                                            </Button>
-                                            <Button
-                                                type="link"
-                                                className={
-                                                    styles.rigthOptionsCancel
-                                                }
-                                                onClick={() =>
-                                                    setSelectedIds([])
-                                                }
-                                            >
-                                                {__('取消批量选择')}
-                                            </Button>
-                                        </div>
-                                    ) : type === 'task' && showTaskScanBtn ? (
-                                        <div className={styles.taskPrefix}>
-                                            <Button
-                                                type="primary"
-                                                onClick={() =>
-                                                    setScanModalOpen(true)
-                                                }
-                                                icon={<ScanOutlined />}
-                                            >
-                                                {__('扫描数据源')}
-                                            </Button>
+                                    // dataType === DsType.unknown &&
+                                    // selectedIds.length ? (
+                                    //     <div className={styles.rigthOptions}>
+                                    //         <Button
+                                    //             onClick={() =>
+                                    //                 setDelVisible(true)
+                                    //             }
+                                    //         >
+                                    //             {__('批量删除')}
+                                    //         </Button>
+                                    //         <Button
+                                    //             type="link"
+                                    //             className={
+                                    //                 styles.rigthOptionsCancel
+                                    //             }
+                                    //             onClick={() =>
+                                    //                 setSelectedIds([])
+                                    //             }
+                                    //         >
+                                    //             {__('取消批量选择')}
+                                    //         </Button>
+                                    //     </div>
+                                    // ) : type === 'task' && showTaskScanBtn ? (
+                                    //     <div className={styles.taskPrefix}>
+                                    //         <Button
+                                    //             type="primary"
+                                    //             onClick={() =>
+                                    //                 setScanModalOpen(true)
+                                    //             }
+                                    //             icon={<ScanOutlined />}
+                                    //         >
+                                    //             {__('扫描数据源')}
+                                    //         </Button>
+                                    //         <span
+                                    //             className={
+                                    //                 styles.taskPrefixText
+                                    //             }
+                                    //         >
+                                    //             {__(
+                                    //                 '您可以通过【扫描数据源】来获取库表并进行信息的完善和发布',
+                                    //             )}
+                                    //         </span>
+                                    //     </div>
+                                    // ) : logicType &&
+                                    //   [
+                                    //       LogicViewType.Custom,
+                                    //       LogicViewType.LogicEntity,
+                                    //   ].includes(logicType) ? (
+                                    //     <>
+                                    //         <Tooltip
+                                    //             title={
+                                    //                 logicType ===
+                                    //                 LogicViewType.LogicEntity
+                                    //                     ? __(
+                                    //                           '一个逻辑实体只能有一个库表，无法继续新建',
+                                    //                       )
+                                    //                     : ''
+                                    //             }
+                                    //         >
+                                    //             <Button
+                                    //                 type="primary"
+                                    //                 onClick={
+                                    //                     handleCreateLogicView
+                                    //                 }
+                                    //                 icon={<AddOutlined />}
+                                    //                 disabled={!creatable}
+                                    //                 hidden={!showCreate}
+                                    //             >
+                                    //                 {__('新建库表')}
+                                    //             </Button>
+                                    //         </Tooltip>
+                                    //         {logicType ===
+                                    //             LogicViewType.LogicEntity &&
+                                    //             subDomainData?.type !==
+                                    //                 BusinessDomainType.logic_entity &&
+                                    //             !isEmpty && (
+                                    //                 <span
+                                    //                     style={{
+                                    //                         color: 'rgb(0 0 0 / 45%)',
+                                    //                         fontSize: 12,
+                                    //                     }}
+                                    //                 >
+                                    //                     {__(
+                                    //                         '需要从左侧主题架构中，选中逻辑实体，才能创建库表',
+                                    //                     )}
+                                    //                 </span>
+                                    //             )}
+                                    //     </>
+                                    // ) : (
+                                    //     <div className={styles.rigthTitle}>
+                                    //         {__('元数据库表')}
+                                    //     </div>
+                                    // )
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                            marginRight: 16,
+                                        }}
+                                    >
+                                        <div
+                                            title={selectedNode.name}
+                                            className={styles.searchLeftTitle}
+                                        >
                                             <span
                                                 className={
-                                                    styles.taskPrefixText
+                                                    styles.searchLeftTitleText
                                                 }
                                             >
-                                                {__(
-                                                    '您可以通过【扫描数据源】来获取库表并进行信息的完善和发布',
-                                                )}
+                                                {selectedNode?.name}
                                             </span>
                                         </div>
-                                    ) : logicType &&
-                                      [
-                                          LogicViewType.Custom,
-                                          LogicViewType.LogicEntity,
-                                      ].includes(logicType) ? (
-                                        <>
-                                            <Tooltip
-                                                title={
-                                                    logicType ===
-                                                    LogicViewType.LogicEntity
-                                                        ? __(
-                                                              '一个逻辑实体只能有一个库表，无法继续新建',
-                                                          )
-                                                        : ''
-                                                }
+                                        {!isSemanticGovernance && (
+                                            <Button
+                                                type="link"
+                                                onClick={() => {
+                                                    window.open(
+                                                        '/studio/mmdl/data-connect',
+                                                    )
+                                                }}
                                             >
-                                                <Button
-                                                    type="primary"
-                                                    onClick={
-                                                        handleCreateLogicView
-                                                    }
-                                                    icon={<AddOutlined />}
-                                                    disabled={!creatable}
-                                                    hidden={!showCreate}
-                                                >
-                                                    {__('新建库表')}
-                                                </Button>
-                                            </Tooltip>
-                                            {logicType ===
-                                                LogicViewType.LogicEntity &&
-                                                subDomainData?.type !==
-                                                    BusinessDomainType.logic_entity &&
-                                                !isEmpty && (
-                                                    <span
-                                                        style={{
-                                                            color: 'rgb(0 0 0 / 45%)',
-                                                            fontSize: 12,
-                                                        }}
-                                                    >
-                                                        {__(
-                                                            '需要从左侧主题架构中，选中逻辑实体，才能创建库表',
-                                                        )}
-                                                    </span>
-                                                )}
-                                        </>
-                                    ) : (
-                                        <div className={styles.rigthTitle}>
-                                            {__('元数据库表')}
-                                        </div>
-                                    )
+                                                {__('管理库表>>')}
+                                            </Button>
+                                        )}
+                                    </div>
                                 }
                                 suffixNode={
                                     <SortBtn
@@ -1978,7 +2026,11 @@ const DatasheetTable = forwardRef((props: IDatasheetTable, ref) => {
                                               (item.key !== 'excel_file_name' ||
                                                   selectedDatasources?.type ===
                                                       'excel' ||
-                                                  !selectedDatasources?.id),
+                                                  !selectedDatasources?.id) &&
+                                              (isSemanticGovernance
+                                                  ? item.key !== 'online_status'
+                                                  : item.key !==
+                                                    'publish_status'),
                                       ),
                                 scroll: {
                                     x: 1300,

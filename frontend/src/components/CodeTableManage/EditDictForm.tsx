@@ -43,7 +43,6 @@ import {
     getDictDetailById,
     IDataItem,
     IDictItem,
-    IDictValueItem,
     IDirItem,
     IDirQueryType,
     formatError,
@@ -53,16 +52,12 @@ import {
     checkDictNameUnique,
     CatalogOption,
 } from '@/core'
-import { SearchInput } from '@/ui'
 import CustomDrawer from '../CustomDrawer'
 import styles from './styles.module.less'
 import __ from './locale'
 
 import { validateEmpty, validateValueLegitimacy } from './validate'
-import { AddOutlined, RecycleBinOutlined } from '@/icons'
-import emptyAdd from '@/assets/emptyAdd.svg'
-import EditDirModal from '../Directory/EditDirModal'
-import Empty from '@/ui/Empty'
+import { AddOutlined } from '@/icons'
 import Loader from '@/ui/Loader'
 import FileDetails from '../File/Details'
 import { findDirByKey, StdTreeDataOpt } from '../StandardDirTree/const'

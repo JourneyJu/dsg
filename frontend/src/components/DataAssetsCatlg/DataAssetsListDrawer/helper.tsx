@@ -1,5 +1,4 @@
 import {
-    AssetBusinessObjectOutlined,
     AssetLogicEntitiesOutlined,
     AssetSubjectDomainOutlined,
     AssetSubjectGroupOutlined,

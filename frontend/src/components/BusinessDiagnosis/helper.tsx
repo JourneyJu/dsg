@@ -1,19 +1,13 @@
 import { Tooltip, Progress, Spin, Table } from 'antd'
 import classnames from 'classnames'
 import {
-    QuestionCircleOutlined,
     CheckCircleFilled,
     WarningFilled,
     ExclamationCircleFilled,
 } from '@ant-design/icons'
-import { HTMLAttributes } from 'react'
 import { isEmpty, isNil } from 'lodash'
 import { v4 } from 'uuid'
-import {
-    BusinessModelOutlined,
-    BusinessProcessColored,
-    ViewInfoOutlined,
-} from '@/icons'
+import { BusinessModelOutlined, BusinessProcessColored } from '@/icons'
 import {
     StateItem,
     IconsType,

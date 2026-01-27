@@ -1648,10 +1648,10 @@ export const importAddressBook = (params: FormData): Promise<any> => {
 
 /**
  * 获取菜单
- * @param un_filter 不过滤，获取当前平台所有菜单
+ * @param resource_type 资源类型，获取当前资源所有菜单
  */
-export const getAllMenus = () => {
-    return get(`/api/configuration-center/v1/menus`)
+export const getAllMenus = (params?: { resource_type?: string }) => {
+    return get(`/api/configuration-center/v1/menus`, params)
 }
 
 /**

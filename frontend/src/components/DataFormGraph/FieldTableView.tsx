@@ -1,30 +1,18 @@
 import * as React from 'react'
 import { useState, useEffect, useMemo } from 'react'
-import { Button, Input, Modal, ModalProps, Table } from 'antd'
+import { Modal, ModalProps } from 'antd'
 import { Node } from '@antv/x6'
-import { CloseOutlined, SearchOutlined } from '@ant-design/icons'
-import { useDebounce } from 'ahooks'
-import type { ColumnsType } from 'antd/es/table'
 import styles from './styles.module.less'
 import __ from './locale'
 import { FontIcon, XlsColored } from '@/icons'
 import {
-    getFormInfo,
     getFormQueryItem,
     formsEnumConfig,
     IFormEnumConfigModel,
     transformQuery,
 } from '@/core'
-import { StandardStatusLabel } from '../Forms/helper'
-import {
-    OpenAttributeOption,
-    SecurityClassificationOption,
-    SensibilityOption,
-    SharedAttributeOption,
-} from './helper'
 import Empty from '@/ui/Empty'
 import dataEmpty from '../../assets/dataEmpty.svg'
-import { SearchInput } from '@/ui'
 import ViewFieldsTable from '../FormTableMode/ViewFieldsTable'
 import { StandardDataDetail } from '../FormTableMode/const'
 import { FormTableKind } from '../Forms/const'

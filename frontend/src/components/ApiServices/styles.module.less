@@ -463,6 +463,7 @@
     width: 100%;
     height: 40px;
     align-items: center;
+    justify-content: space-between;
     padding: 5px 0;
     // margin: 10px 0;
     margin: 20px 0;
@@ -471,12 +472,22 @@
     font-size: 16px;
     font-weight: 550;
 
-    .labelLine {
-        display: inline-block;
-        width: 2px;
-        height: 20px;
-        margin-right: 18px;
-        background: #126ee3;
+    .left {
+        display: flex;
+        align-items: center;
+
+        .labelLine {
+            display: inline-block;
+            width: 2px;
+            height: 20px;
+            margin-right: 18px;
+            background: #126ee3;
+        }
+    }
+
+    .right {
+        flex: 1;
+        text-align: right;
     }
 }
 

@@ -1,24 +1,12 @@
 import * as React from 'react'
 import { useState, useEffect, useRef, useMemo } from 'react'
-import {
-    Button,
-    Drawer,
-    Space,
-    Form,
-    Input,
-    Select,
-    Checkbox,
-    Tooltip,
-} from 'antd'
+import { Button, Drawer, Space, Form, Input } from 'antd'
 import { CloseOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
-import { noop, slice, trim } from 'lodash'
+import { noop, trim } from 'lodash'
 import styles from './styles.module.less'
 import __ from './locale'
-import { checkNameCorrect, checkNormalInput } from './helper'
-import { validateName } from '@/utils/validate'
 import {
-    DataRangeOptions,
     FormTableKind,
     FormTableKindOptions,
     dataKindOptions,
@@ -37,7 +25,6 @@ import {
 import { checkNameRepeat } from '../Forms/helper'
 
 import Icons from '../BusinessArchitecture/Icons'
-import BusinessTagsSelect from '../Forms/BusinessTagsSelect'
 import { Architecture } from '../BusinessArchitecture/const'
 import { TableInfoTitle } from './const'
 import SelFileByType from '../CAFileManage/SelFileByType'

@@ -1,7 +1,5 @@
 import React, { ReactNode } from 'react'
 import {
-    LimitModellined,
-    LimitFieldlined,
     LimitDatellined,
     StringTypeOutlined,
     NumberTypeOutlined,

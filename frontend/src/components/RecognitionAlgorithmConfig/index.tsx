@@ -16,7 +16,7 @@ const RecognitionAlgorithmConfig = () => {
                             <div className={styles.title}>{__('算法模版')}</div>
                             <div>
                                 {__(
-                                    '对识别数据类型（身份证、手机号等）要用的算法进行定义，已定义好的算法模版可直接被其他规则使用（如：脱敏规则和自动识别分类分级规则，都需要使用识别算法来识别数据）。',
+                                    '对识别数据类型（身份证、手机号等）要用的算法进行定义，已定义好的算法模版可直接被其他规则使用（如：自动识别分类分级规则，需要使用识别算法来识别数据）。',
                                 )}
                             </div>
                             {/* <div className={styles.descriptionWrapper}>

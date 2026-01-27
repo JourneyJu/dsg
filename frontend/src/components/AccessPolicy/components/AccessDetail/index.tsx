@@ -19,7 +19,6 @@ import {
 import styles from './styles.module.less'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { ResIcon } from '../../helper'
-import SubviewAccess from './SubviewAccess'
 import { FontIcon, UserOutlined } from '@/icons'
 
 export const AccessUserItem = memo(({ item, isOwner, isMe }: any) => {

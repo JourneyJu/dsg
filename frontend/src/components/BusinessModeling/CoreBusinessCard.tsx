@@ -1,23 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Dropdown, message, Modal, Space, Tooltip } from 'antd'
-import { ExclamationCircleFilled } from '@ant-design/icons'
+import { Dropdown, message, Space, Tooltip } from 'antd'
 import classnames from 'classnames'
 import moment from 'moment'
 import {
     EllipsisOutlined,
     BusinessFormCountOutlined,
-    DomainFilledOutlined,
     FlowchartOutlined,
     IndicatorTaskColored,
     NewCoreBizColored,
     BusinessProcessOutlined,
-    LockColored,
     BusinessSystemOutlined,
     DepartmentOutlined,
 } from '@/icons'
 import styles from './styles.module.less'
-import { OperateType, getActualUrl, getPlatformNumber } from '@/utils'
+import { OperateType, getPlatformNumber } from '@/utils'
 import {
     BizModelType,
     deleteCoreBusiness,
@@ -30,10 +27,7 @@ import {
     getModalVersions,
 } from '@/core'
 import { TabKey, ViewMode } from './const'
-import Icons from '../BusinessArchitecture/Icons'
-import { Architecture, nodeInfo } from '../BusinessArchitecture/const'
 import __ from './locale'
-import { createTypeText } from '../TaskComponents/helper'
 import Confirm from '../Confirm'
 import ModelLock from './ModelLock'
 import { useBusinessModelContext } from './BusinessModelProvider'

@@ -51,6 +51,8 @@ export interface IMicroAppProps {
     ) => () => void
     /** 容器DOM */
     container?: HTMLElement
+    /** 显示侧边栏 */
+    toggleSideBarShow?: (show: boolean) => void
 }
 
 interface IMicroAppPropsContext {

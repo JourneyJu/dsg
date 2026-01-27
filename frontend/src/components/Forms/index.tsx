@@ -1,30 +1,16 @@
-import React, {
-    forwardRef,
-    useContext,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useRef,
-    useState,
-} from 'react'
+import React, { useContext, useEffect, useMemo, useRef, useState } from 'react'
 import {
     Button,
     Dropdown,
-    Input,
     MenuProps,
     message,
     Pagination,
-    Select,
     Space,
     Table,
     Tooltip,
     Typography,
 } from 'antd'
-import {
-    ExclamationCircleOutlined,
-    SearchOutlined,
-    CaretDownOutlined,
-} from '@ant-design/icons'
+import { ExclamationCircleOutlined, CaretDownOutlined } from '@ant-design/icons'
 import { DefaultOptionType } from 'antd/lib/select'
 import { ColumnsType } from 'antd/lib/table'
 import { SortOrder } from 'antd/lib/table/interface'
@@ -39,7 +25,6 @@ import {
     FormTableKindOptions,
     FormType,
     formTypeArr,
-    IInfoSystem,
     menus,
     menusStd,
     NewFormType,
@@ -52,26 +37,20 @@ import DropDownFilter from '../DropDownFilter'
 import {
     AddOutlined,
     BlankFormColored,
-    DSFormColored,
     FontIcon,
-    ImportOutlined,
     StandardOutlined,
 } from '@/icons'
 import {
-    formsCount,
     formsDelete,
     formsEnumConfig,
     formsExport,
     formsQuery,
     formsQueryItem,
-    formsQueryStandardUnreadTaskList,
-    formsQueryStandardMarkReadTaskLists,
     IFormEnumConfigModel,
     IFormItem,
     IFusionFormItem,
     IFormQueryCountModel,
     formatError,
-    getMsgToast,
     getCoreBusinessDetails,
     ICoreBusinessDetails,
     IStandardEnum,
@@ -80,7 +59,6 @@ import {
     TaskStatus,
     TaskType,
     messageSuccess,
-    messageError,
     getPendingBusinTable,
     BizModelType,
     LoginPlatform,
@@ -89,12 +67,10 @@ import {
 import empty from '@/assets/emptyAdd.svg'
 import Empty from '@/ui/Empty'
 import {
-    formatCount,
     formatTime,
     getPlatformNumber,
     OperateType,
     streamToFile,
-    useQuery,
 } from '@/utils'
 import Confirm from '../Confirm'
 import Details from './Details'
@@ -105,7 +81,6 @@ import dataEmpty from '../../assets/dataEmpty.svg'
 import Standardizing from './Standardizing'
 import ReqAddStandard from './ReqAddStandard'
 import { FieldsInfoProvider, getFormOptions } from './helper'
-import { getStandradRate } from '../Standard/const'
 import __ from './locale'
 import CreateForm from './CreateForm'
 import EditForm from './EditForm'
@@ -114,13 +89,7 @@ import { OptionBarTool, OptionMenuType, SearchInput } from '@/ui'
 import { useTaskCheck } from '@/hooks/useTaskCheck'
 import CreateTaskSelect from '../TaskComponents/CreateTaskSelect'
 import CreateTask from '../TaskComponents/CreateTask'
-import { createTypeText } from '../TaskComponents/helper'
-import ImportFromDataSource from './ImportFromDataSource'
-import ChooseInfoSystems from './ChooseInfoSystems'
 import ModelOperate from '../BusinessModeling/ModelOperate'
-import { SourceType } from '../FormGraph/helper'
-import Icons from '../BusinessArchitecture/Icons'
-import { Architecture } from '../BusinessArchitecture/const'
 import MultiLabelDisplay from './MultiLabelDisplay'
 import { IconType } from '@/icons/const'
 import { useBusinessModelContext } from '../BusinessModeling/BusinessModelProvider'
@@ -1942,7 +1911,7 @@ const Forms: React.FC<IForms> = ({
                             setCreateTaskType(undefined)
                         }}
                     />
-                    <ImportFromDataSource
+                    {/* <ImportFromDataSource
                         open={importFromDSOpen}
                         onClose={() => setImportFromDSOpen(false)}
                         mid={modelId}
@@ -1950,7 +1919,7 @@ const Forms: React.FC<IForms> = ({
                         taskId={taskInfo.taskId}
                         taskType={taskInfo.taskType}
                         pMbid={pMbid}
-                    />
+                    /> */}
                     {/* 完善业务表 */}
                     {completeFormOpen && (
                         <CreateForm

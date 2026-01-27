@@ -12,7 +12,6 @@ import {
 } from '@/icons'
 import {
     InfoTypeEnum,
-    resourceTypeList,
     ShareTypeEnum,
     typeOptoins,
     updateCycleOptions as dirUpdateCycleOptions,

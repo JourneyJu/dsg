@@ -1,39 +1,26 @@
 import * as React from 'react'
 import { useState, useEffect, FC } from 'react'
 import { register } from '@antv/x6-react-shape'
-import { ConfigProvider, Image, Modal, Tooltip } from 'antd'
+import { ConfigProvider, Image, Tooltip } from 'antd'
 import classnames from 'classnames'
 import { Graph, Node } from '@antv/x6'
 import { LeftOutlined, RightOutlined } from '@ant-design/icons'
 import sourceSvg from '@/assets/sourceSyncForm.svg'
 import processFormLineSvg from '@/assets/processFormLine.svg'
 import DataTypeIcons from '../../DataSynchronization/Icons'
-import DataSourcIcons from '../../DataSource/Icons'
-import Icons from '../../BusinessArchitecture/Icons'
-import { Architecture } from '../../BusinessArchitecture/const'
 import styles from '../styles.module.less'
 import __ from '../locale'
-import ConfigModal from './ConfigModal'
-import { ChangeFormOutlined, DataOriginConfigOutlined } from '@/icons'
+import { ChangeFormOutlined } from '@/icons'
 import { getCurrentShowData } from '../../FormGraph/helper'
 import {
-    changeDataFieldType,
-    changeTypeMySQLToHive,
-    formatFieldData,
     getDataFormFieldType,
     getFieldLengthByBussiness,
     searchFieldData,
 } from '../helper'
-import {
-    FormType,
-    NotChangedToHive,
-    VIRTUALENGINTYPE,
-} from '../../DataSynchronization/const'
+import { FormType, VIRTUALENGINTYPE } from '../../DataSynchronization/const'
 import { getDataBaseDetails } from '@/core'
 import SelectBussinessForm from './SelectBussinessForm'
-import { DataBaseType } from '@/components/DataSource/const'
 import { changeFieldDataBaseType } from '@/components/DataSynchronization/helper'
-import { databaseTypesEleData } from '@/core/dataSource'
 
 let callbackColl: any = {}
 interface DataBussinessFormType {

@@ -144,8 +144,30 @@
         .rightTop {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            border-bottom: 1px solid rgb(0 0 0 / 10%);
             margin-bottom: 8px;
+            font-weight: 700;
+            line-height: 32px;
+
+            .rightSubTitle {
+                color: @text-color-third;
+                font-size: 12px;
+            }
+
+            .rightTopBtn {
+                display: flex;
+                margin-left: auto;
+                text-align: right;
+
+                .rightTopBtnItem {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 20px;
+                    cursor: pointer;
+                    font-weight: 400;
+                    gap: 8px;
+                }
+            }
 
             .rightTopleft {
                 display: flex;
@@ -262,6 +284,11 @@
 }
 
 .datasheetTableWrapper {
+    .searchLeftTitle {
+        max-width: 300px;
+        .ellipsis-mixin();
+    }
+
     .rigthTitle {
         font-weight: 550;
     }

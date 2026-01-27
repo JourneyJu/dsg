@@ -10,11 +10,10 @@ import {
     Spin,
     TreeSelect,
 } from 'antd'
-import { DownOutlined, ExclamationCircleFilled } from '@ant-design/icons'
+import { DownOutlined } from '@ant-design/icons'
 import type { RcFile, UploadFile, UploadProps } from 'antd/es/upload/interface'
 import axios, { CancelTokenSource } from 'axios'
-import moment from 'moment'
-import { UploadOutlined, XlsColored, DeleteColored } from '@/icons'
+import { XlsColored, DeleteColored } from '@/icons'
 import styles from './styles.module.less'
 import __ from './locale'
 

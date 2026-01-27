@@ -7,24 +7,17 @@ import {
     LeftOutlined,
     RightOutlined,
     SearchOutlined,
-    ExclamationCircleOutlined,
-    ShrinkOutlined,
-    ArrowsAltOutlined,
     DownOutlined,
     UpOutlined,
-    PlusCircleOutlined,
-    PlusCircleFilled,
 } from '@ant-design/icons'
 import classnames from 'classnames'
-import { Button, ConfigProvider, Input, Tooltip } from 'antd'
+import { ConfigProvider, Tooltip } from 'antd'
 import { useDebounce } from 'ahooks'
 import { trim } from 'lodash'
 import {
     BusinessSystemOutlined,
     LibraryOutlined,
-    DataAcquisitionOutlined,
     LargeOutlined,
-    BaseFormOutlined,
     StringTypeOutlined,
     NumberTypeOutlined,
     LimitDatellined,
@@ -35,15 +28,10 @@ import {
     FontIcon,
 } from '@/icons'
 import styles from './styles.module.less'
-import {
-    ExpandStatus,
-    getCurrentShowData,
-    newFieldTemplate,
-    OptionType,
-} from '../FormGraph/helper'
+import { ExpandStatus, getCurrentShowData } from '../FormGraph/helper'
 import __ from './locale'
-import { NodeAttribute, ViewModel, ViewType } from './const'
-import { checkCurrentFormOutFields, searchFieldData } from './helper'
+import { ViewType } from './const'
+import { searchFieldData } from './helper'
 import { SearchInput } from '@/ui'
 import { dataTypeMapping } from '@/core'
 

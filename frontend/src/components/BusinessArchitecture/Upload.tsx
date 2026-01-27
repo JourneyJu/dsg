@@ -1,29 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import {
-    Button,
     Dropdown,
     MenuProps,
     message,
     Progress,
-    Space,
-    Tooltip,
     Upload,
     UploadProps,
 } from 'antd'
-import { RcFile, UploadFile } from 'antd/es/upload/interface'
-import { DownloadOutlined, FolderOpenOutlined } from '@ant-design/icons'
+import { RcFile } from 'antd/es/upload/interface'
+import { FolderOpenOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
 import Cookies from 'js-cookie'
-import { EllipsisOutlined, RecycleBinOutlined, UploadOutlined } from '@/icons'
+import { EllipsisOutlined } from '@/icons'
 import __ from './locale'
 import styles from './styles.module.less'
-import {
-    downloadObjFile,
-    formatError,
-    messageError,
-    updateObjAttribute,
-} from '@/core'
-import { downloadFile, OperateType, streamToFile } from '@/utils'
+import { downloadObjFile, formatError, updateObjAttribute } from '@/core'
+import { OperateType, streamToFile } from '@/utils'
 
 interface IUploadObjFile {
     nodeId: string

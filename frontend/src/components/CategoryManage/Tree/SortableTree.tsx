@@ -46,15 +46,12 @@ import {
     ICategoryItem,
     deleteCategoryTreesNodeItem,
     formatError,
-    getUserListByPermission,
-    messageError,
     postCategoryTreesNode,
     putCategoryTreesNode,
     putCategoryTreesNodeItem,
     userInfo,
 } from '@/core'
-import { ownerRoleId } from '@/components/BusinessDomain/const'
-import { AddOutlined, InfotipOutlined } from '@/icons'
+import { AddOutlined } from '@/icons'
 import __ from '../locale'
 import styles from './styles.module.less'
 import dataEmpty from '@/assets/dataEmpty.svg'

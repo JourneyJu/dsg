@@ -19,7 +19,6 @@ import {
     DatasheetViewColored,
     DepartmentOutlined,
     InterfaceColored,
-    InterfaceOutlined,
     ThemeOutlined,
 } from '@/icons'
 import IndicatorManagementOutlined from '@/icons/IndicatorManagementOutlined'

@@ -9,14 +9,10 @@ import {
     Table,
     Tooltip,
 } from 'antd'
-import { CaretDownOutlined, SearchOutlined } from '@ant-design/icons'
 import { useAntdTable, useDebounce, useUpdateEffect } from 'ahooks'
 import { trim } from 'lodash'
-import { EllipsisOutlined, AddOutlined } from '@/icons'
 import { OperateType } from '@/utils'
-import empty from '@/assets/emptyAdd.svg'
 import dataEmpty from '@/assets/dataEmpty.svg'
-import ArchitectureTree from './ArchitectureTree'
 import Details from './Details'
 import {
     Architecture,

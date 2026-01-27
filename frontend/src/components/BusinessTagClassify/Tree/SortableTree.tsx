@@ -8,8 +8,6 @@ import React, {
 } from 'react'
 import { createPortal } from 'react-dom'
 import {
-    DndContext,
-    closestCenter,
     PointerSensor,
     useSensor,
     useSensors,
@@ -23,14 +21,9 @@ import {
     Modifier,
     defaultDropAnimation,
 } from '@dnd-kit/core'
-import {
-    SortableContext,
-    arrayMove,
-    verticalListSortingStrategy,
-} from '@dnd-kit/sortable'
+import { arrayMove } from '@dnd-kit/sortable'
 import { CSS } from '@dnd-kit/utilities'
-import { v4 as uuidv4 } from 'uuid'
-import { Button, Input, Popover, Spin, message } from 'antd'
+import { Button, Input, Spin } from 'antd'
 import { useGetState } from 'ahooks'
 import classnames from 'classnames'
 import {
@@ -49,8 +42,7 @@ import {
 } from './utilities'
 import type { FlattenedItem, SensorContext, TreeItems } from './types'
 import { SortableTreeItem } from './SortableTreeItem'
-import { deleteCategoryTreesNodeItem, formatError, userInfo } from '@/core'
-import { ownerRoleId } from '@/components/BusinessDomain/const'
+import { formatError } from '@/core'
 import { AddOutlined } from '@/icons'
 import __ from '../locale'
 import styles from './styles.module.less'

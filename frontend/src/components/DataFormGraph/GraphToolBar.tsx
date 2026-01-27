@@ -24,12 +24,7 @@ import { Background } from '@antv/x6/lib/registry'
 import { formatError } from '@/core'
 import { IAssemblyLineEditParams } from '@/core/apis/assemblyLine/index.d'
 import styles from './styles.module.less'
-import {
-    InfotipOutlined,
-    LargeOutlined,
-    LocationOutlined,
-    NarrowOutlined,
-} from '@/icons'
+import { LargeOutlined, LocationOutlined, NarrowOutlined } from '@/icons'
 import { getActualUrl, useQuery } from '@/utils'
 import __ from './locale'
 import EditFormInfo from './EditFormInfo'

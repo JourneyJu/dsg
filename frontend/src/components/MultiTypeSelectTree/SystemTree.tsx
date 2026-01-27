@@ -9,7 +9,6 @@ import { formatError, ISystemItem, reqInfoSystemList } from '@/core'
 import styles from './styles.module.less'
 import { UNGROUPED } from './const'
 import __ from './locale'
-import { itemOtherInfo } from '../CognitiveSearch/helper'
 import { Empty, Loader, SearchInput } from '@/ui'
 
 const selectAllNode = {

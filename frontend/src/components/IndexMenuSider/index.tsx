@@ -7,17 +7,23 @@ import {
     MenuUnfoldOutlined,
     MenuFoldOutlined,
     CaretLeftOutlined,
+    LeftOutlined,
 } from '@ant-design/icons'
 import { useSize, useUpdateEffect } from 'ahooks'
 import { SizeMe } from 'react-sizeme'
 import { some } from 'lodash'
 import styles from './styles.module.less'
 import __ from './locale'
-import { getActualUrl, getPlatformNumber } from '@/utils'
-import { MessageContext } from '@/context'
+import {
+    getActualUrl,
+    getPlatformNumber,
+    isSemanticGovernanceApp,
+} from '@/utils'
+import { MessageContext, useMicroAppProps } from '@/context'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import {
     findFirstPathByKeys,
+    findFirstPathByModule,
     findMenuTreeByKey,
     findParentMenuByKey,
     flatRoute,
@@ -30,12 +36,14 @@ import {
 } from '@/hooks/useMenus'
 import { formatError, getWorkOrderProcessing } from '@/core'
 import actionType from '@/redux/actionType'
+import { FontIcon } from '@/icons'
 
 interface IIndexMenuSider {
     resizable?: boolean // 是否可以拖拽, 默认false
 }
 
 const IndexMenuSider = ({ resizable = false }: IIndexMenuSider) => {
+    const { microAppProps } = useMicroAppProps()
     const [menus] = useMenus()
     const [selectedKey, setSelectedKey] = useState<string>('')
     const [menusType, setMenusType] = useState<string>('')
@@ -53,6 +61,10 @@ const IndexMenuSider = ({ resizable = false }: IIndexMenuSider) => {
     const menusCountConfigs = useSelector(
         (state: any) => state?.menusCountConfigsReducer,
     )
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
+    const [moduleCategories, setModuleCategories] = useState<Array<any>>([])
+    const [selectedModuleKey, setSelectedModuleKey] = useState<string>('')
 
     useEffect(() => {
         setMenusType(getRootMenuByPath(pathname)?.module?.[0] || '')
@@ -66,6 +78,24 @@ const IndexMenuSider = ({ resizable = false }: IIndexMenuSider) => {
             getDefaultSelectKey()
         }
     }, [menusType])
+
+    // semanticGovernance 专用：初始化模块分类
+    useEffect(() => {
+        if (isSemanticGovernance && menus.length > 0) {
+            // 提取所有 type === 'module' 的菜单项作为分类
+            const categories = menus.filter(
+                (menu) => menu.type === 'module' && !menu.hide,
+            )
+            setModuleCategories(categories)
+
+            // 如果还没有选中的模块，默认选中第一个
+            if (!selectedModuleKey && categories.length > 0) {
+                const firstCategory = categories[0]
+                setSelectedModuleKey(firstCategory.key)
+                setMenusType(firstCategory.key)
+            }
+        }
+    }, [isSemanticGovernance, menus, selectedModuleKey])
 
     useUpdateEffect(() => {
         adaptMenu()
@@ -677,50 +707,125 @@ const IndexMenuSider = ({ resizable = false }: IIndexMenuSider) => {
         }
     }
 
+    // semanticGovernance 专用：切换模块分类
+    const handleModuleCategoryClick = (moduleKey: string) => {
+        setSelectedModuleKey(moduleKey)
+        setMenusType(moduleKey)
+        // 切换模块时清空选中的菜单
+        setSelectedKey('')
+        setOpenKeys([])
+
+        // 自动跳转到该模块下的第一个有权限的菜单
+        const firstUrl = findFirstPathByModule(moduleKey)
+        if (firstUrl) {
+            navigate(firstUrl)
+        }
+    }
+
+    const handleBackClick = () => {
+        // 跳转到宿主根目录
+        window.location.href = '/studio'
+        // microAppProps?.toggleSideBarShow?.(true)
+    }
+
     return (
         <div
             className={classNames(
                 styles.indexMenuSiderWrapper,
                 collapsed && styles.collapsedMenu,
                 resizable && styles.resizableMenu,
+                isSemanticGovernance && styles.withCategoryBar,
             )}
             ref={ref}
         >
-            <Menu
-                mode="inline"
-                defaultOpenKeys={[selectedKey]}
-                selectedKeys={[selectedKey]}
-                className={styles.menu}
-                items={menuItems}
-                inlineCollapsed={collapsed}
-                openKeys={openKeys}
-                onClick={handleMenuClick}
-                onOpenChange={onOpenChange}
-                style={{
-                    width: resizable ? '100%' : collapsed ? '50px' : '232px',
-                }}
-            />
-            {!resizable && (
-                <div className={styles.collapsedBtn}>
-                    <Button
-                        type="text"
-                        onClick={toggleCollapsed}
-                        className={styles.btn}
-                    >
-                        {collapsed ? (
-                            <MenuUnfoldOutlined />
-                        ) : (
-                            <MenuFoldOutlined />
-                        )}
-                        <span className={styles.btnTips}>
-                            <CaretLeftOutlined className={styles.tipsIcon} />
-                            <span className={styles.tipsText}>
-                                {collapsed ? __('展开') : __('收起')}
+            {/* semanticGovernance 专用 */}
+            {isSemanticGovernance && moduleCategories.length > 0 && (
+                <div className={styles.categoryBar}>
+                    <Tooltip title="返回" placement="right">
+                        <div
+                            className={styles.categoryItem}
+                            onClick={handleBackClick}
+                        >
+                            <span className={styles.categoryIcon}>
+                                <LeftOutlined />
                             </span>
-                        </span>
-                    </Button>
+                        </div>
+                    </Tooltip>
+                    {moduleCategories.map((category) => (
+                        <Tooltip
+                            key={category.key}
+                            title={category.label}
+                            placement="right"
+                        >
+                            <div
+                                className={classNames(
+                                    styles.categoryItem,
+                                    selectedModuleKey === category.key &&
+                                        styles.categoryItemActive,
+                                )}
+                                onClick={() =>
+                                    handleModuleCategoryClick(category.key)
+                                }
+                            >
+                                {category.attribute?.iconFont ? (
+                                    <span className={styles.categoryIcon}>
+                                        <FontIcon
+                                            name={category?.attribute?.iconFont}
+                                        />
+                                    </span>
+                                ) : (
+                                    <span className={styles.categoryLabel}>
+                                        {category.label?.substring(0, 4)}
+                                    </span>
+                                )}
+                            </div>
+                        </Tooltip>
+                    ))}
                 </div>
             )}
+            <div className={styles.menuWrapper}>
+                <Menu
+                    mode="inline"
+                    defaultOpenKeys={[selectedKey]}
+                    selectedKeys={[selectedKey]}
+                    className={styles.menu}
+                    items={menuItems}
+                    inlineCollapsed={collapsed}
+                    openKeys={openKeys}
+                    onClick={handleMenuClick}
+                    onOpenChange={onOpenChange}
+                    style={{
+                        width: resizable
+                            ? '100%'
+                            : collapsed
+                            ? '50px'
+                            : '232px',
+                    }}
+                />
+                {!resizable && (
+                    <div className={styles.collapsedBtn}>
+                        <Button
+                            type="text"
+                            onClick={toggleCollapsed}
+                            className={styles.btn}
+                        >
+                            {collapsed ? (
+                                <MenuUnfoldOutlined />
+                            ) : (
+                                <MenuFoldOutlined />
+                            )}
+                            <span className={styles.btnTips}>
+                                <CaretLeftOutlined
+                                    className={styles.tipsIcon}
+                                />
+                                <span className={styles.tipsText}>
+                                    {collapsed ? __('展开') : __('收起')}
+                                </span>
+                            </span>
+                        </Button>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

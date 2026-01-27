@@ -8,13 +8,7 @@ import {
     updateFormRelatedAttribute,
 } from '@/core'
 import styles from './styles.module.less'
-import { BusinessDomainType } from '../BusinessDomain/const'
-import {
-    ActivityL3Outlined,
-    AddOutlined,
-    ObjL3Outlined,
-    RecycleBinOutlined,
-} from '@/icons'
+import { RecycleBinOutlined } from '@/icons'
 import __ from './locale'
 import Confirm from '../Confirm'
 import { GlossaryIcon } from '../BusinessDomain/GlossaryIcons'

@@ -77,11 +77,11 @@ export const menus = [
         key: 'myRating',
         icon: <FontIcon name="icon-wodepingfen" type={IconType.COLOREDICON} />,
     },
-    {
-        label: __('我的消息'),
-        key: 'myMsg',
-        icon: <FontIcon name="icon-wodexiaoxi" type={IconType.COLOREDICON} />,
-    },
+    // {
+    //     label: __('我的消息'),
+    //     key: 'myMsg',
+    //     icon: <FontIcon name="icon-wodexiaoxi" type={IconType.COLOREDICON} />,
+    // },
     // {
     //     label: __('积分概览'),
     //     key: 'pointsOverview',

@@ -1,7 +1,5 @@
-import Icon from '@ant-design/icons'
 import __ from '../locale'
 import { DepartmentOutlined, FontIcon, ThemeOutlined } from '@/icons'
-import { ReactComponent as userOutlined } from '@/assets/DataAssetsCatlg/userOutlined.svg'
 import styles from '../styles.module.less'
 import JSONCodeView from '@/ui/JSONCodeView'
 import { IconType } from '@/icons/const'

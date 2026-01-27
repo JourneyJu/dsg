@@ -1,6 +1,6 @@
 import { DrawerProps, Input, List, message } from 'antd'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
-import { redirect, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useGetState, useLocalStorageState } from 'ahooks'
 import { trim } from 'lodash'
 import styles from './styles.module.less'
@@ -21,7 +21,6 @@ import FlowchartInfoManager, {
     CellInfosType,
     formMenuItems,
     metricMenuItems,
-    metricMenuItemsNoAccess,
     getViewmode,
     noticeDrawioChangeFormCount,
     openWindowPreviewFlow,
@@ -40,7 +39,6 @@ import CiteFlow from './CiteFlow'
 import ImportForm from '../Forms/ImportForm'
 import Empty from '@/ui/Empty'
 import dataEmpty from '../../assets/dataEmpty.svg'
-import addEmpty from '@/assets/emptyAdd.svg'
 
 import CreateForm from '../Forms/CreateForm'
 import FieldTableView from '../FormGraph/FieldTableView'
@@ -51,9 +49,7 @@ import ViewMetricModal from '../BussinessConfigure/ViewMetricModal' // 创建指
 import SelectMetricList from './SelectMetricList' // 选择关联指标
 import { OptionModel } from '../MetricModel/const'
 
-import ImportFromDataSource from '../Forms/ImportFromDataSource'
 import { FormTableKind, NewFormType } from '../Forms/const'
-import { TabKey } from '../BusinessModeling/const'
 import { useBusinessModelContext } from '../BusinessModeling/BusinessModelProvider'
 
 interface ICellInfos extends DrawerProps {
@@ -1122,7 +1118,7 @@ const CellInfos: React.FC<ICellInfos> = ({
                 onClose={() => setImportFormVisible(false)}
                 onlyShowTableKind={FormTableKind.BUSINESS}
             />
-            <ImportFromDataSource
+            {/* <ImportFromDataSource
                 open={importFromDSOpen}
                 onClose={() => setImportFromDSOpen(false)}
                 mid={getDf()?.rootMid}
@@ -1135,7 +1131,7 @@ const CellInfos: React.FC<ICellInfos> = ({
                 pMbid={pMbid || ''}
                 isDrawio
                 flowchartId={flowchartId}
-            />
+            /> */}
             <FieldTableView
                 visible={preFormVisible}
                 formId={formItem?.id}

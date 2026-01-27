@@ -36,7 +36,7 @@ import { useCurrentUser } from '@/hooks/useCurrentUser'
 import { FontIcon } from '@/icons'
 import { SearchInput } from '@/ui'
 import Empty from '@/ui/Empty'
-import { useQuery } from '@/utils'
+import { useQuery, isSemanticGovernanceApp } from '@/utils'
 import { info } from '@/utils/modalHelper'
 import { highLight } from '../ApiServices/const'
 import { AutoCompletionIcon } from './AutoCompletion/AutoCompletionIcon'
@@ -117,7 +117,8 @@ const FieldsTable = forwardRef((props: IFieldsTable, ref) => {
 
     const { optionType, completeStatus, logicViewType, dataOriginType } =
         useDataViewContext()
-
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
     const [dataviewInfo, setDataviewInfo] = useState<any>()
     const [tableList, setTableList] = useState<any[]>([])
     const [fieldSearchData, setFieldSearchData] =
@@ -683,7 +684,8 @@ const FieldsTable = forwardRef((props: IFieldsTable, ref) => {
             {dataOriginType !== 'excel' || datasheetInfo ? (
                 <div className={styles.tableContainer}>
                     <div className={styles.tableHeader}>
-                        {logicViewType === LogicViewType.DataSource &&
+                        {isSemanticGovernance &&
+                            logicViewType === LogicViewType.DataSource &&
                             !taskIsCompleted && (
                                 <AutoCompletionIcon
                                     viewModal="table"

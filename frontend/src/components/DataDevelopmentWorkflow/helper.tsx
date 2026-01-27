@@ -32,7 +32,6 @@ import {
 } from '@/icons'
 import DataProcessingColored from '@/icons/DataProcessingColored'
 import DataSyncColored from '@/icons/DataSyncColored'
-import DataSourcIcons from '../DataSource/Icons'
 import { DataColoredBaseIcon } from '@/core/dataSource'
 
 /**

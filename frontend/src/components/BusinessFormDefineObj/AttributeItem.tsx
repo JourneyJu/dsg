@@ -1,14 +1,8 @@
-import { Dropdown, Input, MenuProps, Popconfirm, Tooltip } from 'antd'
+import { Dropdown, MenuProps, Popconfirm, Tooltip } from 'antd'
 import React, { useEffect, useMemo, useState } from 'react'
 import { CheckOutlined, InfoCircleFilled } from '@ant-design/icons'
 import classNames from 'classnames'
-import {
-    EllipsisOutlined,
-    FontIcon,
-    RecycleBinOutlined,
-    StandardOutlined,
-    UniqueFlagColored,
-} from '@/icons'
+import { EllipsisOutlined, FontIcon, UniqueFlagColored } from '@/icons'
 import __ from './locale'
 import styles from './styles.module.less'
 import { OperateType } from '../BusinessDomain/const'
@@ -16,14 +10,10 @@ import InputWithValidator from './InputWithValidator'
 import StandardDetails from './StandardDetails'
 import {
     DataGradeLabelType,
-    GradeLabelStatusEnum,
     IGradeLabel,
     LoginEntityAttribute,
     formatError,
-    getDataGradeLabel,
-    getDataGradeLabelStatus,
 } from '@/core'
-import { ErrorInfo, nameReg } from '@/utils'
 import TagDetails from './TagDetails'
 import { getTargetTag } from './const'
 import { useGradeLabelState } from '@/hooks/useGradeLabelState'

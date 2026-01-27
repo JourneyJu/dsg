@@ -37,7 +37,7 @@ import DelFieldsModal from './DelFieldsModal'
 import { useDataViewContext } from './DataViewProvider'
 import { AutoCompletionIcon } from './AutoCompletion/AutoCompletionIcon'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
-import { getPopupContainer } from '@/utils'
+import { getPopupContainer, isSemanticGovernanceApp } from '@/utils'
 import { shareTypeList, openTypeList } from '../ResourcesDir/const'
 
 interface IFieldList {
@@ -97,6 +97,8 @@ const FieldList: React.FC<IFieldList> = ({
     const [openDelFields, setOpenDelFields] = useState<boolean>(false)
     const { checkPermissions } = useUserPermCtx()
     const { completeStatus, optionType, logicViewType } = useDataViewContext()
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
 
     useEffect(() => {
         if (fieldList) {
@@ -284,11 +286,7 @@ const FieldList: React.FC<IFieldList> = ({
                             width: 320,
                         }}
                         placement="bottom"
-                        getPopupContainer={(n) =>
-                            // document.getElementById('customDrawerBody') ||
-                            // getPopupContainer() ||
-                            document.body
-                        }
+                        getPopupContainer={(n) => getPopupContainer() as any}
                         title={
                             <div
                                 className={styles['attribute-title-container']}
@@ -588,7 +586,8 @@ const FieldList: React.FC<IFieldList> = ({
                             </span>
                         </div>
                     )}
-                    {logicViewType === LogicViewType.DataSource &&
+                    {isSemanticGovernance &&
+                        logicViewType === LogicViewType.DataSource &&
                         showCompletion &&
                         !taskIsCompleted && (
                             <AutoCompletionIcon

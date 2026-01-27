@@ -1,4 +1,4 @@
-import { FC, useEffect, useRef, useState, CSSProperties } from 'react'
+import { FC, useEffect, useState, CSSProperties } from 'react'
 import { Button } from 'antd'
 import {
     CodeStatus,
@@ -10,7 +10,6 @@ import {
     CatalogType,
     formatError,
     getCodeRuleDetails,
-    getCodeTableByIds,
     getDataEleDetailById,
     getDictDetailById,
 } from '@/core'
@@ -19,7 +18,6 @@ import __ from './locale'
 import styles from './styles.module.less'
 
 import ViewRuleRegular from '../FormTableMode/ViewRuleRegular'
-import { RuleCustomType, RuleMethod } from '../CodeRulesComponent/const'
 import CodeStatusLabel from '../FormTableMode/CodeStatusLabel'
 import { StateType } from '@/utils'
 import DataEleDetails, { DataEleMatchType } from '../DataEleManage/Details'

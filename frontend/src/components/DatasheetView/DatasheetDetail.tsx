@@ -45,7 +45,12 @@ import { SearchInput } from '@/ui'
 import Empty from '@/ui/Empty'
 import Loader from '@/ui/Loader'
 import ReturnConfirmModal from '@/ui/ReturnConfirmModal'
-import { OperateType, getPlatformNumber, useQuery } from '@/utils'
+import {
+    OperateType,
+    getPlatformNumber,
+    useQuery,
+    isSemanticGovernanceApp,
+} from '@/utils'
 import { info } from '@/utils/modalHelper'
 import { BusinessDomainType } from '../BusinessDomain/const'
 import ConsanguinityGraph from '../ConsanguinityGraph'
@@ -117,7 +122,8 @@ const DatasheetDetail = (props: IDatasheetDetail) => {
     const [openDropdown, setOpenDropdown] = useState<boolean>(false)
     const [openDelFields, setOpenDelFields] = useState<boolean>(false)
     const [{ using }] = useGeneralConfig()
-
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
     const [dataList, setDataList] = useState<any[]>([])
     const [fillteDataList, setFillteDataList] = useState<any[]>([])
     const [currentData, setCurrentData] = useState<any>({})
@@ -1131,51 +1137,53 @@ const DatasheetDetail = (props: IDatasheetDetail) => {
                                         </Popconfirm>
                                     </div>
                                 )}
-                            {optionType === 'view' && showEditBtn && (
-                                <Tooltip
-                                    title={
-                                        baseInfoData?.status ===
-                                        stateType.delete
-                                            ? __('源表已删除，无法编辑')
-                                            : ''
-                                    }
-                                >
-                                    <div
-                                        className={classnames(
-                                            styles.detailsEditBtn,
+                            {optionType === 'view' &&
+                                showEditBtn &&
+                                isSemanticGovernance && (
+                                    <Tooltip
+                                        title={
                                             baseInfoData?.status ===
-                                                stateType.delete &&
-                                                styles.disbale,
-                                        )}
-                                        onClick={() => {
-                                            if (
-                                                baseInfoData?.status ===
-                                                stateType.delete
-                                            ) {
-                                                return
-                                            }
-                                            onEdit()
-                                        }}
-                                        // disabled={
-                                        //     detailsData?.status ===
-                                        //     stateType.delete
-                                        // }
+                                            stateType.delete
+                                                ? __('源表已删除，无法编辑')
+                                                : ''
+                                        }
                                     >
                                         <div
-                                            className={
-                                                styles.detailsEditBtnIcon
-                                            }
+                                            className={classnames(
+                                                styles.detailsEditBtn,
+                                                baseInfoData?.status ===
+                                                    stateType.delete &&
+                                                    styles.disbale,
+                                            )}
+                                            onClick={() => {
+                                                if (
+                                                    baseInfoData?.status ===
+                                                    stateType.delete
+                                                ) {
+                                                    return
+                                                }
+                                                onEdit()
+                                            }}
+                                            // disabled={
+                                            //     detailsData?.status ===
+                                            //     stateType.delete
+                                            // }
                                         >
-                                            <EditOutlined />
+                                            <div
+                                                className={
+                                                    styles.detailsEditBtnIcon
+                                                }
+                                            >
+                                                <EditOutlined />
+                                            </div>
+                                            <div>
+                                                {currentData?.publish_at
+                                                    ? __('变更库表')
+                                                    : __('编辑库表')}
+                                            </div>
                                         </div>
-                                        <div>
-                                            {currentData?.publish_at
-                                                ? __('变更库表')
-                                                : __('编辑库表')}
-                                        </div>
-                                    </div>
-                                </Tooltip>
-                            )}
+                                    </Tooltip>
+                                )}
                             {optionType === 'view' && (
                                 <div className={styles.detailFieldsRadio}>
                                     <Radio.Group

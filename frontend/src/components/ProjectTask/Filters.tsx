@@ -1,21 +1,14 @@
 import React, { useState, useMemo, useEffect } from 'react'
 import { Dropdown, Select, Badge, Button, Space, Checkbox } from 'antd'
 import classnames from 'classnames'
-import {
-    projectStatus,
-    statusInfo,
-    priorityList,
-    priorityInfo,
-    getUserName,
-} from '../ProjectManage/const'
+import { projectStatus, statusInfo, getUserName } from '../ProjectManage/const'
 import { ProjectStatus, Priority } from '../ProjectManage/types'
 import { IFilter } from './types'
 import { IMember, TaskType } from '@/core'
-import { FiltersOutlined, FontIcon, NormalTaskColored } from '@/icons'
+import { FontIcon } from '@/icons'
 import { Dimension } from './const'
 import __ from './locale'
 import styles from './styles.module.less'
-import { getTaskTypeIcon, TaskTypeLabel } from '../TaskComponents/helper'
 import { PrioritySelect } from '../TaskComponents/PrioritySelect'
 import { CheckType } from '../Graph/NodeConfigInfo'
 

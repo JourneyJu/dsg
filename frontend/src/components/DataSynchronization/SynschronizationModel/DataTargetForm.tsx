@@ -9,15 +9,13 @@ import {
     CloseOutlined,
     ExclamationCircleOutlined,
     LeftOutlined,
-    MailOutlined,
     RightOutlined,
     SearchOutlined,
 } from '@ant-design/icons'
 import { useDebounce, useUnmount } from 'ahooks'
-import { trim, trimEnd } from 'lodash'
+import { trim } from 'lodash'
 import targetSvg from '@/assets/targetSyncForm.svg'
 import DataTypeIcons from '../Icons'
-import DataSourcIcons from '../../DataSource/Icons'
 import Icons from '../../BusinessArchitecture/Icons'
 import styles from '../styles.module.less'
 import __ from '../locale'
@@ -30,12 +28,11 @@ import {
     comboDataLength,
     searchFieldData,
 } from '../helper'
-import { FieldErrorType, FormType, NotChangedToHive } from '../const'
+import { FieldErrorType, FormType } from '../const'
 import { enBeginNameRegNew } from '@/utils'
-import { DataSourceFromType, getDataBaseDetails } from '@/core'
+import { getDataBaseDetails } from '@/core'
 import { Architecture } from '../../BusinessArchitecture/const'
 import { SearchInput } from '@/ui'
-import { DataBaseType } from '@/components/DataSource/const'
 
 let callbackColl: any = []
 interface DataTargetFormType {

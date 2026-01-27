@@ -10,7 +10,6 @@ import React, {
 import classNames from 'classnames'
 import { Input, InputRef, Popconfirm, Select, Tooltip } from 'antd'
 import { trim } from 'lodash'
-import { useDebounce } from 'ahooks'
 import {
     InfoCircleFilled,
     MinusOutlined,
@@ -19,7 +18,6 @@ import {
 import styles from './styles.module.less'
 import { DragOutlined } from '@/icons'
 import __ from '../locale'
-import { commReg } from '@/utils'
 import { formatError, getCategoryTreesNodeItem, userInfo } from '@/core'
 
 export interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'id'> {

@@ -32,7 +32,6 @@ import {
     SearchInput,
 } from '@/ui'
 import Empty from '@/ui/Empty'
-import { DatasheetViewColored } from '@/icons'
 import {
     DsType,
     LogicViewPublishState,

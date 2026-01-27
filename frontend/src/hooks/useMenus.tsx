@@ -14,7 +14,13 @@ import WorkflowManagePage from '@/pages/WorkflowManagePage'
 import { useTestLLM } from './useTestLLM'
 import { useGeneralConfig } from './useGeneralConfig'
 import { dataAssetsIndicatorPath } from '@/components/DataAssetsIndicator/const'
-import { getActualUrl, getInnerUrl, getPlatformNumber } from '@/utils'
+import {
+    getActualUrl,
+    getInnerUrl,
+    getPlatformNumber,
+    getCurrentMicroAppType,
+    MicroAppType,
+} from '@/utils'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
 
 let globalMenus: any[] = [] // 权限路由
@@ -119,7 +125,7 @@ const defaultRoute = [
     },
     {
         path: 'no-permission',
-        layoutElement: 'AssetCenterLayout',
+        layoutElement: 'IndexRouterLayout',
         key: 'no-permission',
         children: [
             {
@@ -149,91 +155,133 @@ const defaultRoute = [
             },
         ],
     },
-
-    {
-        label: '数据服务超市',
-        layoutElement: 'IndexRouterLayout',
-        key: 'data-market',
-        path: '',
-        type: 'module',
-        module: ['data-market'],
-    },
-    {
-        // 超市默认有权限
-        label: '数据服务超市',
-        path: 'data-assets',
-        layoutElement: 'IndexRouterLayout',
-        key: 'data-assets',
-        children: [
-            {
-                key: 'data-assets-index',
-                path: '',
-                element: 'DataCatlg',
-                index: true,
-            },
-        ],
-        belong: ['resource', 'catalog'],
-        module: ['data-market'],
-    },
-    {
-        label: '数据运营管理',
-        layoutElement: 'IndexRouterLayout',
-        key: 'work-center',
-        path: '',
-        type: 'module',
-        module: ['work-center'],
-    },
-    {
-        label: '数据资源管理',
-        path: '',
-        key: 'dataAssetManageGroup',
-        type: 'group',
-        module: ['work-center'],
-    },
-    {
-        label: '数据质量管理',
-        path: '',
-        key: 'dataQualityManageGroup',
-        type: 'group',
-        module: ['work-center'],
-    },
-    {
-        label: '标准管理',
-        path: '',
-        key: 'standardManageGroup',
-        type: 'group',
-        module: ['work-center'],
-    },
-    {
-        label: '后台管理',
-        path: '',
-        type: 'module',
-        key: 'config-center',
-        module: ['config-center'],
-        hide: true,
-    },
-    {
-        label: '扩展配置',
-        path: '',
-        key: 'extendedConfig',
-        type: 'group',
-        module: ['config-center'],
-    },
-    {
-        label: '数据安全配置',
-        path: '',
-        key: 'dataSecurity',
-        type: 'group',
-        module: ['config-center'],
-    },
-    {
-        label: '系统与审核',
-        path: '',
-        key: 'systemAndReview',
-        type: 'group',
-        module: ['config-center'],
-    },
 ]
+
+/** 分组菜单 */
+const groupMenus = {
+    [MicroAppType.SmartDataFind]: [
+        {
+            label: '数据服务超市',
+            layoutElement: 'IndexRouterLayout',
+            key: 'data-market',
+            path: '',
+            type: 'module',
+            module: ['data-market'],
+        },
+        {
+            // 超市默认有权限
+            label: '数据服务超市',
+            path: 'data-assets',
+            layoutElement: 'IndexRouterLayout',
+            key: 'data-assets',
+            children: [
+                {
+                    key: 'data-assets-index',
+                    path: '',
+                    element: 'DataCatlg',
+                    index: true,
+                },
+            ],
+            belong: ['resource', 'catalog'],
+            module: ['data-market'],
+        },
+        {
+            label: '数据运营管理',
+            layoutElement: 'IndexRouterLayout',
+            key: 'work-center',
+            path: '',
+            type: 'module',
+            module: ['work-center'],
+        },
+        {
+            label: '应用配置',
+            path: '',
+            type: 'module',
+            key: 'config-center',
+            module: ['config-center'],
+            hide: true,
+        },
+        {
+            label: '服务管理',
+            path: '',
+            key: 'serviceManageGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+        {
+            label: '数据资源目录管理',
+            path: '',
+            key: 'dataAssetManageGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+        {
+            label: '库表直供',
+            path: '',
+            key: 'dataSheetGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+    ],
+    [MicroAppType.SemanticGovernance]: [
+        {
+            label: '数据语义治理',
+            layoutElement: 'IndexRouterLayout',
+            key: 'work-center',
+            path: '',
+            type: 'module',
+            module: ['work-center'],
+            attribute: {
+                iconFont: 'icon-shujuyuyizhili',
+            },
+        },
+        {
+            label: '配置',
+            path: '',
+            type: 'module',
+            key: 'config-center',
+            module: ['config-center'],
+            attribute: {
+                iconFont: 'icon-shezhi',
+            },
+        },
+        {
+            label: '库表管理',
+            path: '',
+            key: 'sheetViewManageGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+        {
+            label: '数据质量管理',
+            path: '',
+            key: 'dataQualityManageGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+        {
+            label: '标准管理',
+            path: '',
+            key: 'standardManageGroup',
+            type: 'group',
+            module: ['work-center'],
+        },
+        {
+            label: '扩展配置',
+            path: '',
+            key: 'extendedConfig',
+            type: 'group',
+            module: ['config-center'],
+        },
+        {
+            label: '分级配置',
+            path: '',
+            key: 'levelManageGroup',
+            type: 'group',
+            module: ['config-center'],
+        },
+    ],
+}
 
 // 适配菜单 -- 将方法提取出来
 export const getRouters = (routers: any, parentKey?: string) => {
@@ -427,10 +475,26 @@ export const useMenus = (): [
                     globalMenus = routers
                     setMenus(routers)
                 } else {
-                    const res = await getAllMenus()
+                    // 根据微应用类型决定 resource_type
+                    const microAppType = getCurrentMicroAppType()
+                    let resourceType = 'smart_data_find' // 默认值
+
+                    if (microAppType === MicroAppType.SmartDataFind) {
+                        resourceType = 'smart_data_find'
+                    } else if (
+                        microAppType === MicroAppType.SemanticGovernance
+                    ) {
+                        resourceType = 'idrm_menus'
+                    }
+                    // 默认type与智能找数一致
+                    const groupType = microAppType || MicroAppType.SmartDataFind
+                    const res = await getAllMenus({
+                        resource_type: resourceType,
+                    })
                     const backendMenus = res?.menus || []
                     const routers = getRouters([
                         ...defaultRoute,
+                        ...(groupType ? groupMenus[groupType] : []),
                         ...backendMenus,
                     ])
                     globalMenus = routers
@@ -707,16 +771,19 @@ export const findFirstPath = (
             menu.children &&
             menu.children.some((child) => child.index)
 
-        if (
-            menu.path &&
-            (!ignoreDeveloping || !menu.isDeveloping) &&
-            !isTopLevelModuleContainer
-        ) {
-            return menu.path?.substring(0, 1) === '/'
-                ? menu.path
-                : `/${menu.path}`
+        // 修改判断逻辑：path 为空字符串时，优先递归查找 children
+        if (menu.path && menu.path !== '') {
+            if (
+                (!ignoreDeveloping || !menu.isDeveloping) &&
+                !isTopLevelModuleContainer
+            ) {
+                return menu.path?.substring(0, 1) === '/'
+                    ? menu.path
+                    : `/${menu.path}`
+            }
         }
-        // 如果有 children，递归查找
+
+        // 如果有 children，递归查找（即使 path 不为空也要查找，因为可能被标记为 isDeveloping）
         if (menu.children && menu.children.length > 0) {
             const result = findFirstPath(menu.children, ignoreDeveloping)
             if (result) {
@@ -1125,7 +1192,7 @@ export const isMenusEmpty = (menus: any[]): boolean => {
         'standardManageGroup',
         'dataAssetManageGroup',
         'dataQualityManageGroup',
-        // 后台管理分组
+        // 应用配置分组
         'extendedConfig',
         'dataSecurity',
         'systemAndReview',

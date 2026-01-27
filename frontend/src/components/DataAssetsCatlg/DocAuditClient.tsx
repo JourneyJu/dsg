@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-import Icon, { LeftOutlined, ReloadOutlined } from '@ant-design/icons'
+import { LeftOutlined, ReloadOutlined } from '@ant-design/icons'
 import { Divider, Tooltip } from 'antd'
 import styles from './styles.module.less'
 
 import __ from './locale'
-import Loader from '@/ui/Loader'
 import CustomDrawer from '../CustomDrawer'
 import { ReviewColored } from '@/icons'
 

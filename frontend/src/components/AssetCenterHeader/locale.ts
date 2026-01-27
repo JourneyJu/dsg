@@ -7,7 +7,7 @@ export default i18n([
     ['配置中心', '配置中心', 'Configuration Center'],
     ['数据服务超市', '數據服務超級市場', 'Data Service Supermarket'],
     ['数据运营管理', '數據運營管理', 'Data Operations Management'],
-    ['后台管理', '後台管理', 'Backend Management'],
+    ['应用配置', '應用配置', 'Application Configuration'],
     ['下载任务', '下載任務', 'Download Task'],
     ['搜索', '搜尋', 'Search'],
     ['应用中心', '應用中心', 'Applications'],
@@ -46,4 +46,5 @@ export default i18n([
     ['问数助手', '問數助手', 'Question Number Assistant'],
     ['评估任务', '評估任務', 'Evaluation Task'],
     ['找数助手', '找數助手', 'Find Data Assistant'],
+    ['个人中心', '個人中心', 'Personal Center'],
 ])

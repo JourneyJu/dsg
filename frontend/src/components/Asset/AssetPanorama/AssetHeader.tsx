@@ -1,12 +1,8 @@
-import { Tooltip } from 'antd'
 import { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LeftOutlined } from '@ant-design/icons'
-import { AssetShrinkOutlined } from '@/icons'
-import { usePanoramaContext } from './PanoramaProvider'
-import AssetCard from './components/AssetCard'
 import AssetSearch from './components/AssetSearch'
-import { ICardItem, IDataViewItem } from './helper'
+import { IDataViewItem } from './helper'
 import __ from './locale'
 import styles from './styles.module.less'
 

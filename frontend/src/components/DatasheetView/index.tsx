@@ -25,7 +25,7 @@ import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import { AddOutlined, ClockColored, FontIcon } from '@/icons'
 import Empty from '@/ui/Empty'
 import Loader from '@/ui/Loader'
-import { getSource, useQuery } from '@/utils'
+import { getSource, useQuery, isSemanticGovernanceApp } from '@/utils'
 import { confirm } from '@/utils/modalHelper'
 import DragBox from '../DragBox'
 import MultiTypeSelectTree from '../MultiTypeSelectTree'
@@ -54,6 +54,8 @@ import Icons from './Icons'
 import __ from './locale'
 import ScanConfirm from './ScanConfirm'
 import ScanModal from './ScanModal'
+import MyTaskDrawer from '../AssetCenterHeader/MyTaskDrawer'
+import FieldBlackList from './FieldBlackList'
 import styles from './styles.module.less'
 
 interface IDatasheetView {
@@ -78,6 +80,7 @@ const DatasheetView = (props: IDatasheetView) => {
     const [datasourceInfo, setDatasourceInfo] = useState<IDatasourceInfo>(
         datasourceTitleData[dataType],
     )
+    const isSemanticGovernance = isSemanticGovernanceApp()
 
     const [scanModalOpen, setScanModalOpen] = useState<boolean>(false)
     const [scanModalType, setScanModalType] = useState<scanType>(scanType.init)
@@ -91,6 +94,8 @@ const DatasheetView = (props: IDatasheetView) => {
     const [scanConfirmOpen, setScanConfirmOpen] = useState<boolean>(false)
     const [isScaning, setIsScaning] = useState<boolean>(false)
     const [isLoading, setIsLoading] = useState<boolean>(true)
+    const [showMytask, setShowMytask] = useState<boolean>(false)
+    const [showFieldBlackList, setShowFieldBlackList] = useState<boolean>(false)
     const { auditProcessStatus, hasExcelDataView, setIsValueEvaluation } =
         useDataViewContext()
     const [{ using }, updateUsing] = useGeneralConfig()
@@ -481,13 +486,40 @@ const DatasheetView = (props: IDatasheetView) => {
                         </div>
                         {/* )} */}
                     </div>
-                    <div
-                        className={classnames(
-                            styles.right,
-                            // !searchIsExpansion && styles.isExpansion,
-                        )}
-                    >
+                    <div className={styles.right}>
                         <div className={styles.rightTop}>
+                            {__('元数据库表')}
+                            {!isSemanticGovernance && (
+                                <div className={styles.rightSubTitle}>
+                                    {__(
+                                        '（未发布的库表不能上线，不展示未发布库表）',
+                                    )}
+                                </div>
+                            )}
+                            {isSemanticGovernance && (
+                                <div className={styles.rightTopBtn}>
+                                    <span
+                                        className={styles.rightTopBtnItem}
+                                        onClick={() => {
+                                            setShowMytask(true)
+                                        }}
+                                    >
+                                        <FontIcon name="icon-tancharenwu2" />
+                                        {__('探查任务')}
+                                    </span>
+                                    <span
+                                        className={styles.rightTopBtnItem}
+                                        onClick={() => {
+                                            setShowFieldBlackList(true)
+                                        }}
+                                    >
+                                        <FontIcon name="icon-tancharenwu2" />
+                                        {__('字段黑名单')}
+                                    </span>
+                                </div>
+                            )}
+                        </div>
+                        {/* <div className={styles.rightTop}>
                             <div
                                 className={classnames(
                                     styles.rightTopleft,
@@ -567,7 +599,7 @@ const DatasheetView = (props: IDatasheetView) => {
                                                     />
                                                 </Tooltip>
                                             </Button>
-                                            {/* {(selectedNode.nodeType as string) !==
+                                            {(selectedNode.nodeType as string) !==
                                                 'excel' && (
                                                 <Popconfirm
                                                     title={__(
@@ -601,7 +633,7 @@ const DatasheetView = (props: IDatasheetView) => {
                                                         {__('重新扫描')}
                                                     </Button>
                                                 </Popconfirm>
-                                            )} */}
+                                            )}
                                         </Space>
                                     ) : null}
                                 </div>
@@ -618,7 +650,7 @@ const DatasheetView = (props: IDatasheetView) => {
                                         </Button>
                                     </div>
                                 )}
-                        </div>
+                        </div> */}
 
                         <DatasheetTable
                             datasourceData={datasourceData}
@@ -628,6 +660,7 @@ const DatasheetView = (props: IDatasheetView) => {
                                 setIsEmpty(flag && datasourceData?.length === 0)
                                 setIsLoading(false)
                             }}
+                            selectedNode={selectedNode}
                             selectedDatasources={tableParams}
                             getTableList={setTableList}
                             ref={datasheetTableRef}
@@ -737,6 +770,23 @@ const DatasheetView = (props: IDatasheetView) => {
                               )
                             : ''
                     }
+                />
+            )}
+            {showMytask && (
+                <MyTaskDrawer
+                    open={showMytask}
+                    onClose={() => {
+                        setShowMytask(false)
+                    }}
+                    tabKey="2"
+                />
+            )}
+            {showFieldBlackList && (
+                <FieldBlackList
+                    open={showFieldBlackList}
+                    onClose={() => {
+                        setShowFieldBlackList(false)
+                    }}
                 />
             )}
         </div>

@@ -1,15 +1,14 @@
 /* eslint-disable prettier/prettier */
-import React, { useEffect, useMemo, useState } from 'react'
-import { useLocation, useRoutes, useNavigate } from 'react-router-dom'
 import { Spin } from 'antd'
-import { otherRoutes, loginRoutes } from './config'
-import { getPlatformNumber } from '@/utils'
+import React, { useEffect, useMemo, useState } from 'react'
+import { useLocation, useNavigate, useRoutes } from 'react-router-dom'
 import { useDocumentTitleContext, useMicroAppProps } from '@/context'
-import { addRecentUseRoutes, getRouteByAttr, useMenus } from '@/hooks/useMenus'
-import { useAuthContext } from '@/providers'
-import styles from './styles.module.less'
+import { goEffectivePath, LoginPlatform } from '@/core'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { LoginPlatform } from '@/core'
+import { getRouteByAttr, useMenus } from '@/hooks/useMenus'
+import { useAuthContext } from '@/providers'
+import { loginRoutes, otherRoutes } from './config'
+import styles from './styles.module.less'
 
 interface AnyFabricRoutesProps {
     /** 是否为微应用模式 */
@@ -29,6 +28,8 @@ const AnyFabricRoutes: React.FC<AnyFabricRoutesProps> = ({
     const [userInfo] = useCurrentUser()
     const { microAppProps } = useMicroAppProps()
     const isMicroAppMode = Boolean(microAppProps?.route?.basename)
+    // 记录是否已经执行过初始路由跳转
+    const [hasInitialRouted, setHasInitialRouted] = useState(false)
 
     useEffect(() => {
         setCurrentPath(pathname)
@@ -53,15 +54,36 @@ const AnyFabricRoutes: React.FC<AnyFabricRoutesProps> = ({
             return
         }
 
-        if (pathname === '/' || pathname === '') {
-            const homePath = 'data-assets'
-
-            console.log(
-                `[AnyFabric路由] 微应用根路径访问,重定向到首页: ${homePath}`,
+        // 等待菜单加载完成后再进行路由跳转
+        // 只在首次且 pathname 为根路径时执行
+        if ((pathname === '/' || pathname === '') && !hasInitialRouted) {
+            // 只有当 menus 不为空且包含实际的业务菜单时才执行跳转逻辑
+            // 检查是否有非默认路由、非模块容器的菜单项
+            const hasBusinessMenus = menus.some(
+                (menu) =>
+                    menu.type !== 'module' &&
+                    ![
+                        '/',
+                        'login',
+                        'login-success',
+                        'login-failed',
+                        'logout',
+                        'login-sso',
+                        '403',
+                        '404',
+                        'no-permission',
+                        'personal-center',
+                    ].includes(menu.key),
             )
-            navigator(homePath)
+
+            if (menus && menus.length > 0 && hasBusinessMenus) {
+                // 使用 goEffectivePath 按优先级查找第一个有权限的页面并跳转
+                goEffectivePath(menus, LoginPlatform.default, false, navigator)
+                // 标记已经执行过初始跳转
+                setHasInitialRouted(true)
+            }
         }
-    }, [pathname, navigator, isMicroAppMode])
+    }, [pathname, navigator, isMicroAppMode, menus, hasInitialRouted])
 
     useEffect(() => {
         setMenusData(menus)

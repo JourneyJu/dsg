@@ -6,39 +6,21 @@ import {
     RightOutlined,
     LeftOutlined,
     CloseCircleFilled,
-    CompassFilled,
-    LineChartOutlined,
-    LinkOutlined,
     SearchOutlined,
-    TableOutlined,
     ExclamationCircleOutlined,
     SwapOutlined,
 } from '@ant-design/icons'
 import classnames from 'classnames'
-import {
-    Button,
-    Checkbox,
-    ConfigProvider,
-    Divider,
-    Input,
-    Space,
-    Tooltip,
-} from 'antd'
+import { Button, Checkbox, ConfigProvider, Divider, Tooltip } from 'antd'
 import { useDebounce } from 'ahooks'
 import {
     AddOutlined,
-    DeadlineOutlined,
-    DefineBusinessObjOutlined,
-    DeleteColored,
     FontIcon,
     FormDetailOutlined,
     RecycleBinOutlined,
     StandardOutlined,
     UnQuoteOutlined,
-    UniqueFlagColored,
-    XlsColored,
 } from '@/icons'
-import { FormFiled } from '@/core/apis/businessGrooming/index.d'
 import styles from './styles.module.less'
 import {
     FORM_FIELD_HEIGHT,
@@ -53,9 +35,6 @@ import {
 } from './helper'
 import __ from './locale'
 import { SearchInput } from '@/ui'
-import Icons from '../ImportFromDataSource/Icons'
-import { FormatDataTypeToText } from '../DatasheetView/DataQuality/helper'
-import { getFieldTypeEelment } from '../DatasheetView/helper'
 import { FormTableKind } from '../Forms/const'
 import { useGraphContext } from './GraphContext'
 import { TableCurrentKindLabel } from './const'

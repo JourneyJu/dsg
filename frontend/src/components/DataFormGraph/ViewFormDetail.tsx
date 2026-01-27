@@ -5,7 +5,6 @@ import { CloseOutlined } from '@ant-design/icons'
 import styles from './styles.module.less'
 import __ from './locale'
 import {
-    CyclesOptions,
     DataRangeOptions,
     FormTableKind,
     FormTableKindOptions,
@@ -20,16 +19,7 @@ import {
 } from '@/core'
 import AutoFormView from '../AutoFormView'
 import { DisplayInfoComponentType } from '../AutoFormView/helper'
-import {
-    OpenAttribute,
-    OpenAttributeOption,
-    SharedAttribute,
-    SharedAttributeOption,
-    SharedModeOption,
-    SourceType,
-} from './helper'
 import { TableInfoTitle } from './const'
-import SelFileByType from '../CAFileManage/SelFileByType'
 import { getFileExtension } from '@/utils'
 import FileIcon from '../FileIcon'
 import { FileIconType } from '../File/helper'

@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react'
-import { Button, Input, Pagination, Space, Tooltip } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
-import { useDebounce, useUpdateEffect } from 'ahooks'
+import { useUpdateEffect } from 'ahooks'
 import classnames from 'classnames'
-import { trim } from 'lodash'
 import {
     BizModelType,
     formatError,
@@ -19,39 +16,21 @@ import {
 } from '@/core'
 import { OperateType, useQuery } from '@/utils'
 import { TaskInfoContext } from '@/context'
-import CoreBusinessItem from './CoreBusinessItem'
 import styles from './styles.module.less'
-import ContentTabs from './ContentTabs'
-import DropDownFilter from '../DropDownFilter'
-import {
-    defaultMenu,
-    menus,
-    products,
-    TabKey,
-    TabType,
-    totalOperates,
-    ViewMode,
-} from './const'
-import { AddOutlined } from '@/icons'
+
+import { defaultMenu, products, TabKey, totalOperates, ViewMode } from './const'
 import CreateCoreBusiness from './CreateCoreBusiness'
 import Empty from '@/ui/Empty'
-import empty from '@/assets/emptyAdd.svg'
 import dataEmpty from '@/assets/dataEmpty.svg'
 import __ from './locale'
-import { getTaskDetail } from '@/core/apis/taskCenter'
-import { TaskDetail } from '@/core/apis/taskCenter/index.d'
 import CoreBusinessInfos from './CoreBusinessInfos'
 import Forms from '../Forms'
 import BusinessProcess from '../DrawioMgt/BusinessProcess'
-import BussinessConfigure from '../BussinessConfigure'
 import Report from '../Report'
 import { useTaskCheck } from '@/hooks/useTaskCheck'
 import { DrawioInfoProvider } from '@/context/DrawioProvider'
 import CoreBusinessIndicator from './CoreBusinessIndicator'
-import {
-    BusinessModelContext,
-    useBusinessModelContext,
-} from './BusinessModelProvider'
+import { useBusinessModelContext } from './BusinessModelProvider'
 import DiagnosisCard from './DiagnosisCard'
 import StandardCard from './StandardCard'
 import CombedCard from './CombedCard'

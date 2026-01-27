@@ -1,7 +1,5 @@
 import { Tooltip } from 'antd'
 import React, { useState } from 'react'
-import classNames from 'classnames'
-import { CloseOutlined } from '@ant-design/icons'
 import styles from './styles.module.less'
 import { FontIcon } from '@/icons'
 import __ from './locale'

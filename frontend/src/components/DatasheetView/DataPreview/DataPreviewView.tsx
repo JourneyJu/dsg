@@ -48,7 +48,6 @@ import {
 import __ from './locale'
 import RuleDetail from './RuleDetail'
 import styles from './styles.module.less'
-import SynthData from './SynthData'
 import CheckListCard from './ViewCards/CheckListCard'
 import DimensionScoreCard from './ViewCards/DimensionScoreCard'
 import HistoryTrendCard from './ViewCards/HistoryTrendCard'
@@ -60,7 +59,6 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import { RefreshBtn } from '@/components/ToolbarComponents'
 import { useDataViewContext } from '../DataViewProvider'
-import ScrollFilter from './ScrollFilter'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
 
 /** 仅显示 完整性|唯一性|准确性 */

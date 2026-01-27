@@ -1,10 +1,8 @@
 import {
     AppDataContentColored,
     BusinessSystemColored,
-    DataSourceOutlined,
     DepartmentColored,
     DSFormOutlined,
-    FieldsDownloadColored,
     ObjL3Outlined,
     TagColored,
     User1Colored,

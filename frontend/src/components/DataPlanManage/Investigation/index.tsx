@@ -24,7 +24,7 @@ import {
     getInvestigationReport,
     SortDirection,
 } from '@/core'
-import { CloseOutlined, FontIcon } from '@/icons'
+import { FontIcon } from '@/icons'
 import { IconType } from '@/icons/const'
 import { LightweightSearch, Loader, SearchInput } from '@/ui'
 import Empty from '@/ui/Empty'

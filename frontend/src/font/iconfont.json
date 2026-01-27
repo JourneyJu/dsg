@@ -6,6 +6,62 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "46721107",
+      "name": "探查任务",
+      "font_class": "tancharenwu2",
+      "unicode": "e78f",
+      "unicode_decimal": 59279
+    },
+    {
+      "icon_id": "46720873",
+      "name": "样例数据",
+      "font_class": "yanglishuju",
+      "unicode": "e78e",
+      "unicode_decimal": 59278
+    },
+    {
+      "icon_id": "46709793",
+      "name": "库表上线",
+      "font_class": "kubiaoshangxian",
+      "unicode": "e78d",
+      "unicode_decimal": 59277
+    },
+    {
+      "icon_id": "46699883",
+      "name": "数据语义治理",
+      "font_class": "shujuyuyizhili",
+      "unicode": "e78c",
+      "unicode_decimal": 59276
+    },
+    {
+      "icon_id": "46698318",
+      "name": "饼图",
+      "font_class": "bingtu",
+      "unicode": "e780",
+      "unicode_decimal": 59264
+    },
+    {
+      "icon_id": "46698317",
+      "name": "柱形图",
+      "font_class": "zhuxingtu",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "46698316",
+      "name": "折线图",
+      "font_class": "zhexiantu",
+      "unicode": "e78a",
+      "unicode_decimal": 59274
+    },
+    {
+      "icon_id": "46698315",
+      "name": "环形图",
+      "font_class": "huanxingtu",
+      "unicode": "e78b",
+      "unicode_decimal": 59275
+    },
+    {
       "icon_id": "46511797",
       "name": "数据源信息",
       "font_class": "shujuyuanxinxi",
@@ -18,13 +74,6 @@
       "font_class": "zhiliangbaogao",
       "unicode": "e788",
       "unicode_decimal": 59272
-    },
-    {
-      "icon_id": "46402586",
-      "name": "接口服务",
-      "font_class": "jiekoufuwu",
-      "unicode": "e780",
-      "unicode_decimal": 59264
     },
     {
       "icon_id": "46402587",

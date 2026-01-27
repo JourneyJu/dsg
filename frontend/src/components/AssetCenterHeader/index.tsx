@@ -4,16 +4,7 @@ import { Layout, Badge, InputRef, Tooltip, Button } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { trim } from 'lodash'
 import classnames from 'classnames'
-import { SearchOutlined } from '@ant-design/icons'
-import {
-    ApplyListOutlined,
-    FontIcon,
-    DataAssetsColored,
-    DataAssetsNewOutlined,
-    ConfigCenterOutlined,
-    OperationCenterOutlined,
-    OperationCenterColored,
-} from '@/icons'
+import { FontIcon } from '@/icons'
 
 import styles from './styles.module.less'
 import UserInfoCard from '../UserInfoCard'
@@ -24,7 +15,6 @@ import {
     allRoleList,
     LoginPlatform,
     goEffectivePath,
-    HasAccess,
 } from '@/core'
 import actionType from '@/redux/actionType'
 import __ from './locale'
@@ -43,7 +33,6 @@ import {
     getRouteByKeys,
     useMenus,
     hasDataAssetsMenus,
-    hasMyTaskMenus,
 } from '@/hooks/useMenus'
 import { downloadApiFile } from '../OAuthLogin/helper'
 import { IconType } from '@/icons/const'
@@ -99,7 +88,7 @@ const AssetCenterHeader = (props: {
             },
             {
                 key: 'config-center',
-                label: __('后台管理'),
+                label: __('应用配置'),
             },
         ]
         // 根据模块下是否有有效路径来过滤显示
@@ -113,7 +102,8 @@ const AssetCenterHeader = (props: {
     const hasServiceMarket = hasDataAssetsMenus(menus)
 
     // 是否有我的任务（菜单不为空时显示）
-    const shouldShowTask = showTask && hasMyTaskMenus(menus)
+    // const shouldShowTask = showTask && hasMyTaskMenus(menus)
+    const shouldShowTask = false
 
     // const menuTypeTitle = {
     //     operatingCenter: __('运营中心'),
@@ -317,6 +307,11 @@ const AssetCenterHeader = (props: {
         }
     }
 
+    const gotoPersonalCenter = (e) => {
+        e.preventDefault()
+        navigate('/personal-center')
+    }
+
     return (
         <>
             <AntdHeader
@@ -491,6 +486,10 @@ const AssetCenterHeader = (props: {
                             {__('我的任务')}
                         </div>
                     )}
+
+                    <div onClick={(e) => {}}>
+                        <a onClick={gotoPersonalCenter}>{__('个人中心')}</a>
+                    </div>
 
                     {/* {[LoginPlatform.default].includes(platform) &&
                         showApplyList &&

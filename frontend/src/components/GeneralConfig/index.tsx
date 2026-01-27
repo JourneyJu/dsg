@@ -25,12 +25,12 @@ const GeneralConfig = () => {
         useGeneralConfig()
     // 黑名单
     const [blackList, setBlackList] = useState<string[]>([])
-
     // 是否开启黑名单
-    const showBlacklist = useMemo(
-        () => checkPermission('manageGeneralConfiguration'),
-        [checkPermission],
-    )
+    const showBlacklist = false
+    // const showBlacklist = useMemo(
+    //     () => checkPermission('manageGeneralConfiguration'),
+    //     [checkPermission],
+    // )
     // 是否开启生成本地应用凭证
     const [governmentSwitchStatus, setGovernmentSwitchStatus] =
         useState<boolean>(false)
@@ -44,12 +44,12 @@ const GeneralConfig = () => {
         SampleDataType.Synthetic,
     )
 
-    useEffect(() => {
-        if (showBlacklist) {
-            getBlacklist()
-        }
-        getSampleDataConfig()
-    }, [])
+    // useEffect(() => {
+    //     if (showBlacklist) {
+    //         getBlacklist()
+    //     }
+    //     getSampleDataConfig()
+    // }, [])
 
     useEffect(() => {
         setGovernmentSwitchStatus(governmentSwitch.on)
@@ -164,7 +164,7 @@ const GeneralConfig = () => {
 
     return (
         <div className={styles.generalConfigWrap}>
-            <div className={styles.titleWrap}>{__('通用配置')}</div>
+            {/* <div className={styles.titleWrap}>{__('通用配置')}</div> */}
             {/* <div className={styles.title}>{__('资源配置')}</div>
             <div className={styles.configItem}>
                 <div className={styles.text}>

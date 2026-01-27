@@ -130,11 +130,11 @@ function PopoverContent({ userInfo }: IPopoverContent) {
                 </div>
             </div>
             <div className={styles.operationWrapper}>
-                <div className={styles.item}>
+                {/* <div className={styles.item}>
                     <Link to="/personal-center" className={styles.logoutLink}>
                         {__('个人中心')}
                     </Link>
-                </div>
+                </div> */}
                 {platform === LoginPlatform.drmp && isContentManagement && (
                     <div className={styles.item}>
                         <Link

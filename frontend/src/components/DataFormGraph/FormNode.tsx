@@ -2,42 +2,24 @@ import * as React from 'react'
 import { useState, useEffect, useMemo } from 'react'
 import { register } from '@antv/x6-react-shape'
 import { v4 as uuidv4 } from 'uuid'
-import { Cell, Shape } from '@antv/x6'
 import {
     CloseCircleFilled,
     SearchOutlined,
-    CloseOutlined,
     LeftOutlined,
     RightOutlined,
     CaretUpOutlined,
     CaretDownOutlined,
 } from '@ant-design/icons'
-import {
-    Button,
-    Checkbox,
-    ConfigProvider,
-    Input,
-    Modal,
-    Space,
-    Tooltip,
-    Divider,
-} from 'antd'
+import { Button, Checkbox, ConfigProvider, Tooltip } from 'antd'
 import classnames from 'classnames'
 import { useDebounce } from 'ahooks'
 import {
-    CopyOutlined,
-    DeadlineOutlined,
-    ExpandOutlined,
     FontIcon,
     FormDetailOutlined,
-    QuoteOutlined,
     RecycleBinOutlined,
     StandardOutlined,
-    UnexpandOutlined,
     UniqueFlagColored,
-    XlsColored,
 } from '@/icons'
-import { FormFiled } from '@/core/apis/businessGrooming/index.d'
 import styles from './styles.module.less'
 import {
     ExpandStatus,
@@ -53,17 +35,14 @@ import {
 import {
     FieldTypeIcon,
     getCommonDataType,
-    getFormInfo,
     getFormQueryItem,
     transformQuery,
 } from '@/core'
 import __ from './locale'
 import { SearchInput } from '@/ui'
-import Icons from '../ImportFromDataSource/Icons'
 import { FormTableKind } from '../Forms/const'
-import { getFieldTypeEelment } from '../DatasheetView/helper'
 import { useGraphContext } from './GraphContext'
-import { DestRule, TableCurrentKindLabel, TableFromKindLabel } from './const'
+import { DestRule, TableFromKindLabel } from './const'
 import { useBusinessModelContext } from '../BusinessModeling/BusinessModelProvider'
 import PrimaryKeyLabel from './PrimaryKeyLabel'
 

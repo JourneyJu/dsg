@@ -61,6 +61,7 @@ import DeleteErrorTable from './DeleteErrorTable'
 import DraggableBodyRow from './DraggableBodyRow'
 import __ from './locale'
 import styles from './styles.module.less'
+import { getTabByUsing } from './helper'
 
 export const CustomExpandIcon = ({ expanded, onExpand, record }: any) => {
     return record?.children?.length ? (
@@ -172,7 +173,12 @@ const DataClassificationTag = ({ isSecurity }: IDataClassificationTagProps) => {
             render: (description) => description || '--',
         },
         {
-            title: __('数据资源目录属性预设'),
+            title: (
+                <span>
+                    {__('数据资源目录属性预设')}
+                    {getTabByUsing(using)}
+                </span>
+            ),
             dataIndex: 'data_catalog_attribute_preset',
             ellipsis: true,
             key: 'data_catalog_attribute_preset',

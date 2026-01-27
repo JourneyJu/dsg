@@ -35,6 +35,7 @@ import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import { LabelTitle } from '../ApiServices/helper'
 import CustomRadio from '@/ui/CustomRadio'
 import { TipsLabel } from '../BusinessTagAuthorization/helper'
+import { getTabByUsing } from './helper'
 
 interface IAddTag {
     open: boolean
@@ -262,6 +263,7 @@ const AddTag: React.FC<IAddTag> = ({
                                     }
                                 />
                             }
+                            extra={getTabByUsing(using)}
                         />
                         <div className={styles['checkbox-wrapper']}>
                             <Checkbox

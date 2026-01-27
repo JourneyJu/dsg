@@ -7,13 +7,7 @@ import React, {
 } from 'react'
 import { Tooltip, Divider, Rate, Button } from 'antd'
 import moment from 'moment'
-import {
-    FontIcon,
-    BusinessSystemOutlined,
-    DepartmentOutlined,
-    AppApiColored,
-    DatasheetViewColored,
-} from '@/icons'
+import { FontIcon, BusinessSystemOutlined, DepartmentOutlined } from '@/icons'
 import styles from './styles.module.less'
 import __ from '../locale'
 import { getTextWidth } from '@/components/DatasheetView/DataQuality/helper'

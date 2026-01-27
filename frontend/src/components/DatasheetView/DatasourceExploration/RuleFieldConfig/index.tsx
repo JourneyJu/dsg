@@ -1,13 +1,11 @@
 import React, {
     useEffect,
-    useMemo,
     useState,
     useRef,
     forwardRef,
     useImperativeHandle,
     memo,
 } from 'react'
-import { isEqual } from 'lodash'
 import __ from '../locale'
 import {
     getDatasheetViewDetails,

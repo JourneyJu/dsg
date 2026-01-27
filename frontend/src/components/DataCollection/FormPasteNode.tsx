@@ -23,7 +23,6 @@ import DataSourcIcons from '../DataSource/Icons'
 import { ExpandStatus, getCurrentShowData } from '../FormGraph/helper'
 import __ from './locale'
 import { PasteSourceChecked, ViewModel } from './const'
-import MysqlsqlOutlined from '@/icons/MysqlOutlined'
 
 let callbackColl: any = []
 

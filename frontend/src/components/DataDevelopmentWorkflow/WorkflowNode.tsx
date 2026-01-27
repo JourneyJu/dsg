@@ -7,7 +7,6 @@ import styles from './styles.module.less'
 import { OperateType, deafultPorts, modelTypeInfo } from './const'
 import { PopContent, modelTypeIcon } from './helper'
 import __ from './locale'
-import MoreVerticalOutlined from '@/icons/MoreVerticalOutlined'
 import { hex2rgba } from '@/utils'
 
 let callbackColl: any = []

@@ -8,16 +8,13 @@ import {
     DatasheetViewColored,
     InterfaceOutlined,
     ThemeOutlined,
-    FontIcon,
 } from '@/icons'
 import { AssetType } from '../../const'
 import styles from './styles.module.less'
 import __ from '../../locale'
 import DataDownloadConfig from '@/components/DataAssetsCatlg/DataDownloadConfig'
-import { CogAParamsType } from '@/context'
 import { useCongSearchContext } from '../../CogSearchProvider'
 import { useCurrentUser } from '@/hooks/useCurrentUser'
-import { OnlineStatus } from '@/core'
 
 interface ILogicViewItem {
     item: any

@@ -16,6 +16,8 @@ declare global {
             mount: (props: any) => Promise<void>
             unmount: (props: any) => Promise<void>
         }
+        /** 当前微应用类型标识 */
+        __MICRO_APP_TYPE__?: string
     }
 }
 

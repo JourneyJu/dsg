@@ -1,7 +1,6 @@
 import { Anchor, Drawer } from 'antd'
 import React, { useEffect, useRef, useState, useMemo } from 'react'
 import styles from './styles.module.less'
-import { CloseOutlined } from '@/icons'
 import __ from '../locale'
 import {
     BizModelType,

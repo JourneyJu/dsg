@@ -8,25 +8,17 @@ import React, {
 import { Tabs, Drawer, Tooltip, Button, Space } from 'antd'
 import { CloseOutlined } from '@ant-design/icons'
 import { uniq } from 'lodash'
-import moment from 'moment'
-import classnames from 'classnames'
-import { FontIcon, BusinessSystemOutlined, DepartmentOutlined } from '@/icons'
+import { FontIcon } from '@/icons'
 import styles from './styles.module.less'
 import __ from '../locale'
-import {
-    cardInfoList,
-    getMountResoureList,
-    mountResoureInfoList,
-} from './const'
+import { cardInfoList, getMountResoureList } from './const'
 import { DetailsLabel, Expand, Loader } from '@/ui'
 import {
     CatalogInfoItemDetails,
     CatalogMountResource,
 } from '../CatalogMoreInfo'
 import {
-    getDataCatalogDetails,
     formatError,
-    getDataCatalogMount,
     getDataCatalogMountFrontend,
     reqDataCatlgBasicInfo,
     detailFrontendServiceOverview,
@@ -47,7 +39,6 @@ import {
     resourceTypeList,
     typeOptoins,
 } from '@/components/ResourcesDir/const'
-import { CogAParamsType } from '@/context'
 import CityShareOperation from '../CityShareOperation'
 import FeedbackOperation from '../FeedbackOperation'
 import FavoriteOperation, {

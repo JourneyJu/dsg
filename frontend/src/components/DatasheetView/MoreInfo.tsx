@@ -27,7 +27,7 @@ import __ from './locale'
 import styles from './styles.module.less'
 import { TimeRender } from '../DataAssetsCatlg/LogicViewDetail/helper'
 import { useDataViewContext } from './DataViewProvider'
-import { useQuery } from '@/utils'
+import { useQuery, isSemanticGovernanceApp } from '@/utils'
 import { DetailsLabel } from '@/ui'
 import { useGeneralConfig } from '@/hooks/useGeneralConfig'
 import { useUserPermCtx } from '@/context/UserPermissionProvider'
@@ -88,6 +88,8 @@ const MoreInfo: React.FC<IMoreInfo> = ({
     const [isChanged, setIsChanged] = useState<boolean>(false)
     const [infoSystem, setInfoSystem] = useState<string>()
     const [{ using }] = useGeneralConfig()
+    // semanticGovernance 专用
+    const isSemanticGovernance = isSemanticGovernanceApp()
 
     /**
      * 是否是安全管理员
@@ -200,6 +202,11 @@ const MoreInfo: React.FC<IMoreInfo> = ({
             }
             if (isValueEvaluation) {
                 filterKes.push('source_sign')
+            }
+            if (isSemanticGovernance) {
+                filterKes.push('online_status')
+            } else {
+                filterKes.push('status')
             }
             const detailsField = item.list.filter(
                 (o) => !filterKes.includes(o.key),

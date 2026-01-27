@@ -5,14 +5,11 @@ import {
     AssetBusinessActivityOutlined,
     AssetBusinessObjectOutlined,
     AssetLogicEntitiesOutlined,
-    AssetLogicViewOutlined,
     AssetSubjectDomainOutlined,
     AssetSubjectGroupOutlined,
     FontIcon,
-    InterfaceColored,
 } from '@/icons'
 import __ from './locale'
-import IndicatorManagementOutlined from '@/icons/IndicatorManagementOutlined'
 import styles from './styles.module.less'
 import { IconType } from '@/icons/const'
 import { BusinessDomainType } from '@/components/BusinessDomain/const'

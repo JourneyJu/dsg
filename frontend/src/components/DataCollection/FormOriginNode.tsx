@@ -11,10 +11,9 @@ import {
     ArrowsAltOutlined,
 } from '@ant-design/icons'
 import classnames from 'classnames'
-import { Button, ConfigProvider, Input, Tooltip } from 'antd'
+import { ConfigProvider, Tooltip } from 'antd'
 import { useDebounce } from 'ahooks'
 import { FormDetailOutlined, UnQuoteOutlined, XlsColored } from '@/icons'
-import { FormFiled } from '@/core/apis/businessGrooming/index.d'
 import styles from './styles.module.less'
 import {
     ExpandStatus,
@@ -24,7 +23,7 @@ import {
     searchFieldData,
 } from '../FormGraph/helper'
 import __ from './locale'
-import { getFormInfo, formsEnumConfig } from '@/core'
+import { formsEnumConfig } from '@/core'
 import { ViewModel } from './const'
 import { SearchInput } from '@/ui'
 

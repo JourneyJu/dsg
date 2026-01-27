@@ -1,16 +1,11 @@
-import React, { useMemo, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { register } from '@antv/x6-react-shape'
-import { ConfigProvider, Dropdown, MenuProps } from 'antd'
+import { ConfigProvider } from 'antd'
 import classNames from 'classnames'
 import styles from './styles.module.less'
-import { BusinessDomainType, NodeType, OperateType } from '../const'
+import { NodeType } from '../const'
 import { getAntdLocal, graphDeleteNode } from '../helper'
-import {
-    ActivityL3Outlined,
-    CloseOutlined,
-    ObjL3Outlined,
-    RecycleBinOutlined,
-} from '@/icons'
+import { RecycleBinOutlined } from '@/icons'
 import __ from '../locale'
 import { GlossaryIcon } from '../GlossaryIcons'
 

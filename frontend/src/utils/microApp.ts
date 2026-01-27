@@ -7,8 +7,9 @@
  * 支持的微应用容器 ID 列表
  */
 const MICRO_APP_CONTAINER_IDS = [
-    'anyfabric-micro-app',
+    'smart-data-find',
     'smart-data-query',
+    'semantic-governance',
     'af-plugin-framework-for-as',
 ]
 
@@ -103,4 +104,69 @@ export const getMicroAppRoot = (): HTMLElement | null => {
         return findMicroAppContainer()
     }
     return null
+}
+
+/**
+ * 微应用类型枚举
+ */
+export enum MicroAppType {
+    SmartDataFind = 'smart-data-find',
+    SmartDataQuery = 'smart-data-query',
+    SemanticGovernance = 'semantic-governance',
+    AfPluginFramework = 'af-plugin-framework-for-as',
+}
+
+/**
+ * 获取当前运行的微应用类型
+ * 优先从全局变量读取，然后检测页面中的容器元素
+ */
+export const getCurrentMicroAppType = (): MicroAppType | null => {
+    // 优先检查全局变量（微应用启动时设置）
+    // eslint-disable-next-line no-underscore-dangle
+    const globalType = window.__MICRO_APP_TYPE__
+    if (globalType) {
+        // 根据全局类型返回对应的枚举值
+        switch (globalType) {
+            case 'smart-data-find':
+                return MicroAppType.SmartDataFind
+            case 'smart-data-query':
+                return MicroAppType.SmartDataQuery
+            case 'semantic-governance':
+                return MicroAppType.SemanticGovernance
+            case 'af-plugin-framework-for-as':
+                return MicroAppType.AfPluginFramework
+            default:
+                break
+        }
+    }
+
+    // 检查页面中的容器元素（降级方案）
+    if (document.querySelector('#smart-data-find')) {
+        return MicroAppType.SmartDataFind
+    }
+    if (document.querySelector('#smart-data-query')) {
+        return MicroAppType.SmartDataQuery
+    }
+    if (document.querySelector('#semantic-governance')) {
+        return MicroAppType.SemanticGovernance
+    }
+    if (document.querySelector('#af-plugin-framework-for-as')) {
+        return MicroAppType.AfPluginFramework
+    }
+
+    return null
+}
+
+/**
+ * 判断当前是否在 smartDataFind 微应用中
+ */
+export const isSmartDataFindApp = (): boolean => {
+    return getCurrentMicroAppType() === MicroAppType.SmartDataFind
+}
+
+/**
+ * 判断当前是否在 semanticGovernance 微应用中
+ */
+export const isSemanticGovernanceApp = (): boolean => {
+    return getCurrentMicroAppType() === MicroAppType.SemanticGovernance
 }

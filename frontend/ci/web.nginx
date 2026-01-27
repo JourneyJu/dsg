@@ -39,11 +39,17 @@ server {
         rewrite ^/anyfabric(.*) /$1;
         try_files $uri $uri/ /index.html;
     }
-    # 智能数据资源管理入口配置
-    location = /anyfabric/anyFabricMicroApp.html {
+    # 智能找数入口配置
+    location = /anyfabric/smartDataFind.html {
         root /app/dist/;
         rewrite ^/anyfabric(.*) /$1;
-        try_files $uri $uri/ /anyFabricMicroApp.html;
+        try_files $uri $uri/ /smartDataFind.html;
+    }
+    # 语义治理入口配置
+    location = /anyfabric/semanticGovernance.html {
+        root /app/dist/;
+        rewrite ^/anyfabric(.*) /$1;
+        try_files $uri $uri/ /semanticGovernance.html;
     }
     # 数据运营审核入口配置
     location = /anyfabric/dataOperationAudit.html {

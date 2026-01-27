@@ -1,15 +1,12 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import {
     Button,
     Dropdown,
     Form,
-    Input,
     MenuProps,
     message,
-    Modal,
-    Radio,
     Space,
     Tooltip,
 } from 'antd'
@@ -24,24 +21,14 @@ import {
     DownloadAccess,
     IDataRescItem,
     addRepositorys,
-    applyDownloadBusinessObjectAccess,
-    DownloadBusinessObjectFields,
     formatError,
     getRepositoryIsOnline,
 } from '@/core'
 import actionType from '@/redux/actionType'
 import styles from './styles.module.less'
-import { getActualUrl } from '@/utils'
 import __ from './locale'
-import { AddToListOutlined, ApplyNowOutlined } from '@/icons'
 import { BusinObjOpr } from './const'
-import ConfirmOnline from '../ResourcesDir/ConfirmOnline'
-import {
-    SharedAttribute,
-    SharedAttributeOption,
-    checkNormalInput,
-} from '../FormGraph/helper'
-import { TipsLabel } from '../ResourcesDir/BaseInfo'
+
 import DataDownloadConfig from './DataDownloadConfig'
 import ApplyDownloadPermission from './ApplyDownloadPermission'
 import { RescErrorCodeList } from './helper'

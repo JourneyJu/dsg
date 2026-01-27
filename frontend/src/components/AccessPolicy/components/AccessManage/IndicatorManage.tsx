@@ -2,7 +2,7 @@ import { Button, message, Tooltip } from 'antd'
 import classnames from 'classnames'
 import { memo, useContext, useEffect, useRef, useState } from 'react'
 import { isEmpty, trim, uniqBy } from 'lodash'
-import { ColAndRowColored, DataViewColored } from '@/icons'
+import { ColAndRowColored } from '@/icons'
 import {
     AssetTypeEnum,
     IDatasheetField,
@@ -10,7 +10,6 @@ import {
     formatError,
     getVirtualEngineExample,
     policyRemove,
-    getExploreReport,
     getDimRules,
     getIndicatorDetail,
     deleteIndicatorDimRules,

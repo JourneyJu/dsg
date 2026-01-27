@@ -5,10 +5,8 @@ import { CheckOutlined } from '@ant-design/icons'
 import { BusinessDomainType, BusinessTypeInfo } from './const'
 import __ from './locale'
 import styles from './styles.module.less'
-import { ActivityL3Outlined, ObjL3Outlined } from '@/icons'
 import { GlossaryIcon } from './GlossaryIcons'
 import { getPlatformNumber } from '@/utils'
-import { LoginPlatform } from '@/core'
 
 interface IObjType {
     value?: BusinessDomainType

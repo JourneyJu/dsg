@@ -3,7 +3,6 @@ import { Modal, Form, Button, Input } from 'antd'
 import { noop } from 'lodash'
 import { keyboardCharactersReg } from '@/utils'
 import { validateName, validateTextLegitimacy } from '@/utils/validate'
-import { validateAssemblyLineUniqueness } from '../AssemblyLineMgt/validate'
 import { IAssemblyLineEditParams } from '@/core/apis/assemblyLine/index.d'
 import styles from './styles.module.less'
 import __ from './locale'
@@ -151,12 +150,12 @@ const EditGraphInfo = ({
                             validateTrigger: 'onChange',
                             validator: validateName(),
                         },
-                        {
-                            validateTrigger: 'onBlur',
-                            validator: graphId
-                                ? validateAssemblyLineUniqueness(graphId)
-                                : () => new Promise((resolve, reject) => {}),
-                        },
+                        // {
+                        //     validateTrigger: 'onBlur',
+                        //     validator: graphId
+                        //         ? validateAssemblyLineUniqueness(graphId)
+                        //         : () => new Promise((resolve, reject) => {}),
+                        // },
                     ]}
                 >
                     {editStatus ? (

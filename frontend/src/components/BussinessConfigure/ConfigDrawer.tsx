@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Collapse, Space, Tag, Table, Divider, Tooltip } from 'antd'
-import {
-    CaretDownOutlined,
-    CaretRightOutlined,
-    ExclamationCircleOutlined,
-} from '@ant-design/icons'
+import { CaretDownOutlined, CaretRightOutlined } from '@ant-design/icons'
 import classnames from 'classnames'
 import { LimitModellined, LimitFieldlined, RefreshOutlined } from '@/icons'
 import {

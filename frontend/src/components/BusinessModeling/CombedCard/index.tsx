@@ -32,7 +32,7 @@ import {
 import dataEmpty from '@/assets/dataEmpty.svg'
 import __ from './locale'
 
-import { AddOutlined, FiltersOutlined } from '@/icons'
+import { AddOutlined } from '@/icons'
 
 import styles from './styles.module.less'
 import { LevelTypeNameMap } from '@/components/BusinessDomainLevel/const'

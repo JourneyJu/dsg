@@ -27,15 +27,12 @@ import __ from '@/components/BusinessDiagnosis/locale'
 import styles from './styles.module.less'
 import Empty from '@/ui/Empty'
 import emptyData from '@/assets/dataEmpty.svg'
-import { CloseOutlined, BusinessProcessColored } from '@/icons'
+import { BusinessProcessColored } from '@/icons'
 import {
     diagnosisTips,
     diagnosisCheckboxList,
 } from '@/components/BusinessDiagnosis/helper'
-import BusinessDomainTree from '@/components/BusiArchitecture/BusinessDomainTree'
-import ArchitectureDirTree from '@/components/BusinessArchitecture/ArchitectureDirTree'
-import { Architecture } from '@/components/BusinessArchitecture/const'
-import InfosystemTree from '@/components/BusinessDiagnosis/components/InfosystemTree'
+
 import { DiagnosisType } from '@/components/BusinessDiagnosis/const'
 
 interface ICreateDiagnosis {

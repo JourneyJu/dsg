@@ -1,5 +1,5 @@
 import { CaretRightFilled } from '@ant-design/icons'
-import { FontIcon, MarkGreenColored } from '@/icons'
+import { FontIcon } from '@/icons'
 import __ from './locale'
 import styles from './styles.module.less'
 import { FormTableKind } from '../Forms/const'

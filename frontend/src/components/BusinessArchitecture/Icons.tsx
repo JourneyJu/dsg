@@ -5,10 +5,8 @@ import {
     BusinessSystemOutlined,
     ContainerOutlined,
     CoreBusinessOutlined,
-    DepartmentOutlined,
     DistrictOutlined,
     DomainOutlined,
-    OrganizationOutlined,
     DataCatalogOutlined,
     FontIcon,
 } from '@/icons'

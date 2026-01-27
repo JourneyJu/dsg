@@ -17,7 +17,6 @@ import { AssetNodeType, NodeType, NodeTypeText } from './helper'
 import styles from './styles.module.less'
 import { useGradeLabelState } from '@/hooks/useGradeLabelState'
 import { IHierarchy } from '@/core'
-import { FontIcon } from '@/icons'
 
 const PercentLine = ({
     item,

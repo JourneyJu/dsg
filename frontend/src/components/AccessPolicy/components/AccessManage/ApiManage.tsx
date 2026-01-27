@@ -1,19 +1,10 @@
-import {
-    ReactElement,
-    memo,
-    forwardRef,
-    useContext,
-    useEffect,
-    useImperativeHandle,
-    useRef,
-    useState,
-} from 'react'
+import { memo, useContext, useEffect, useRef, useState } from 'react'
 import { Button, message, Tooltip } from 'antd'
 import classnames from 'classnames'
 
 import { isEmpty, trim } from 'lodash'
 import styles from './styles.module.less'
-import { AppApiColored, ColAndRowColored, DataViewColored } from '@/icons'
+import { AppApiColored, ColAndRowColored } from '@/icons'
 import {
     AssetTypeEnum,
     IDatasheetField,
@@ -25,7 +16,6 @@ import {
     getVirtualEngineExample,
     policyRemove,
     getExploreReport,
-    isMicroWidget,
     detailServiceOverview,
 } from '@/core'
 import SubServiceManage, { SubServicePrefix } from './SubServiceManage'

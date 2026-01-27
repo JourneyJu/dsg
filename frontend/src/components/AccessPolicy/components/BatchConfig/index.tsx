@@ -1,11 +1,8 @@
-import { useEffect } from 'react'
-import { Form, Input, Modal, Select } from 'antd'
+import { Form, Modal } from 'antd'
 import __ from '../../locale'
-import { calcByte, OptType } from '../VisitAccessSelect/helper'
 import VisitAccessSelect from '../VisitAccessSelect'
 import { AssetTypeEnum } from '@/core'
 import ExpiredTimeSelect from '../ExpiredTimeSelect'
-import { FontIcon, UserOutlined } from '@/icons'
 import styles from './styles.module.less'
 import TagsGroup from './TagsGroup'
 

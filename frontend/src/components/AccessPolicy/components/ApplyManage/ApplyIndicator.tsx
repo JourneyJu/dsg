@@ -11,7 +11,7 @@ import {
     getIndicatorDetail,
     getVirtualEngineExample,
 } from '@/core'
-import { ColAndRowColored, DataViewColored } from '@/icons'
+import { ColAndRowColored } from '@/icons'
 import { Loader } from '@/ui'
 import { getTypeText } from '@/utils'
 import { ScopeType, SubViewOptType, SubviewMode } from '../../const'

@@ -1,10 +1,5 @@
 import classNames from 'classnames'
-import {
-    ActivityL3Outlined,
-    AttributeOutlined,
-    LogicEntityColored,
-    ObjL3Outlined,
-} from '@/icons'
+import { AttributeOutlined, LogicEntityColored } from '@/icons'
 import __ from './locale'
 import styles from './styles.module.less'
 import { BusinessDomainType } from './const'

@@ -2,13 +2,11 @@ import { Tooltip } from 'antd'
 import { FC, ReactNode, useRef, useState } from 'react'
 import { noop } from 'lodash'
 import classnames from 'classnames'
-import { BusinessFormOutlined, DragOutlined, FontIcon } from '@/icons'
+import { BusinessFormOutlined, DragOutlined } from '@/icons'
 import { useSelectedDataContext } from './SelectedDataContext'
 import styles from './styles.module.less'
 import __ from '../locale'
-import { formatError, getFormsFieldsList } from '@/core'
-import { FormListTabType } from '../const'
-import { IconType } from '@/icons/const'
+import { formatError } from '@/core'
 
 interface SelectedNodeProps {
     info: any
