@@ -18,18 +18,18 @@ data:
   USER_MANAGE_HOST: "http://{{ .depServices.userManageService.host}}:{{ .depServices.userManageService.port}}"
   MIGRATION_PATH: {{ .depServices.rds.migrationPath | quote }}
   LOG_PATH: {{ .depServices.logPath | quote }}
-  REDIS_HOST: {{ .depServices.redis.addr | quote }}
-  REDIS_PASSWORD: {{ .depServices.redis.password | quote }}
-  REDIS_SENTINEL_PASSWORD: {{ .depServices.redis.sentinelPassword | quote }}
+  REDIS_HOST: "{{ .depServices.redis.connectInfo.sentinelHost }}:{{ .depServices.redis.connectInfo.sentinelPort }}"
+  REDIS_PASSWORD: {{ .depServices.redis.connectInfo.password | quote }}
+  REDIS_SENTINEL_PASSWORD: {{ .depServices.redis.connectInfo.sentinelPassword | quote }}
   REDIS_DB: {{ .depServices.redis.db | quote }}
-  REDIS_MASTER_NAME: {{ .depServices.redis.masterName | quote }}
+  REDIS_MASTER_NAME: {{ .depServices.redis.connectInfo.masterGroupName | quote }}
   DATA_EXPLORATION_SERVICE_HOST: "http://{{.service.name}}.{{.namespace}}:{{.service.port}}"
-  KAFKA_VERSION:  {{ .depServices.kafka.version | quote }}
-  KAFKA_URI:  {{ .depServices.kafka.uri | quote }}
-  KAFKA_MECHANISM: {{ .depServices.kafka.mechanism | quote }}
-  KAFKA_USERNAME:  {{ .depServices.kafka.username | quote }}
-  KAFKA_PASSWORD:  {{ .depServices.kafka.password | quote }}
-  KAFKA_CONSUMER_GROUP: {{ .depServices.kafka.groupId | quote }}
+  KAFKA_VERSION:  {{ .depServices.mq.version | quote }}
+  KAFKA_URI:  "{{ .depServices.mq.mqHost }}:{{ .depServices.mq.mqPort }}"
+  KAFKA_MECHANISM: {{ .depServices.mq.auth.mechanism | quote }}
+  KAFKA_USERNAME: {{ .depServices.mq.auth.username | quote }}
+  KAFKA_PASSWORD: {{ .depServices.mq.auth.password | quote }}
+  KAFKA_CONSUMER_GROUP: {{ .depServices.mq.groupId | quote }}
   TRACE_URL: "{{ .service.telemetry.trace.endpoint}}"
   TRACE_ENABLED: "{{ .service.telemetry.trace.enabled}}"    
   LOG_LEVEL: "{{ .service.telemetry.log.level}}"
