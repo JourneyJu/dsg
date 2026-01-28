@@ -59,8 +59,16 @@ depServices:
     database: af_data_catalog
     migrationPath: /usr/local/bin/af/infrastructure/repository/db/gen/migration
   redis:
-    host: proton-redis-proton-redis.resource:6379
-    password: password
+    connectInfo:
+      masterGroupName: mymaster
+      password: ''
+      sentinelHost: proton-redis-proton-redis-sentinel.resource.svc.cluster.local
+      sentinelPassword: ''
+      sentinelPort: 26379
+      sentinelUsername: root
+      username: root
+    connectType: sentinel
+    sourceType: internal
     database: 1
     minIdleConns: 8
   configuration-center:
@@ -89,20 +97,15 @@ depServices:
     host: af-vega-metadata
     port: 80
   mq:
-    kafkaHost: kafka-external-31000.resource:9098
-    kafkaUser: kafkaclient
-    kafkaPassword: password
-    mqHost: proton-mq-nsq-nsqd.resource
-    mqPort: 4150
-    mqHttpHost: proton-mq-nsq-nsqd.resource
-    mqHttpPort: 4151
-    mqLookupdHost: proton-mq-nsq-nsqlookupd.resource
-    mqLookupdPort: 4161
-    mqType: nsq
     auth:
-      username: ""
-      password: ""
-      mechanism: "PLAIN"
+      mechanism: 'PLAIN'
+      username: 'kafkauser'
+      password: ''
+    mqHost: 'kafka.resource.svc.cluster.local'
+    mqLookupdHost: ""
+    mqLookupdPort: 0
+    mqPort: 9092
+    mqType: kafka
   anyRobotTraceUrl: http://10.4.128.131/api/feed_ingester/v1/jobs/job-dd62796517d6dc66/events
   logPath: /opt/log/af
   virtualizationEngine:

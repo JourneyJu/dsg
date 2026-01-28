@@ -89,18 +89,26 @@ depServices:
     host: external-plugin-framework
     port: 9613
   mq:
-    Type: kafka
-    Host: kafka-0.kafka-headless.resource
-    Port: 9097
-    LookupdHost: kafka-0.kafka-headless.resource
-    LookupdPort: 9097
     auth:
-      username: anyrobot
-      password: xxx
-      mechanism: PLAIN
+      mechanism: 'PLAIN'
+      username: 'kafkauser'
+      password: ''
+    mqHost: 'kafka.resource.svc.cluster.local'
+    mqLookupdHost: ""
+    mqLookupdPort: 0
+    mqPort: 9092
+    mqType: kafka
   redis:
-    host: proton-redis-proton-redis.resource:6379
-    password: xxx
+    connectInfo:
+      masterGroupName: mymaster
+      password: ''
+      sentinelHost: proton-redis-proton-redis-sentinel.resource.svc.cluster.local
+      sentinelPassword: ''
+      sentinelPort: 26379
+      sentinelUsername: root
+      username: root
+    connectType: sentinel
+    sourceType: internal
     database: 1
     minIdleConns: 8
   cron:

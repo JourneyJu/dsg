@@ -58,6 +58,9 @@
             "name": "redis"
         },
         {
+            "name": "mq"
+        },
+        {
             "name": "class-443"
         }
     ]

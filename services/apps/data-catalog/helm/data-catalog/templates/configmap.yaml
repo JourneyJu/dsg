@@ -28,14 +28,14 @@ data:
   USER_MANAGE_HOST: "http://{{index .depServices "user-management" "privateHost"}}:{{ index .depServices "user-management" "privatePort"}}"
   MIGRATION_PATH: {{ .depServices.rds.migrationPath | quote }}
   LOG_PATH: {{ .depServices.logPath | quote }}
-  REDIS_HOST: {{ .depServices.redis.host | quote }}
-  REDIS_PASSWORD: {{ .depServices.redis.password | quote }}
+  REDIS_HOST: "{{ .depServices.redis.connectInfo.sentinelHost }}:{{ .depServices.redis.connectInfo.sentinelPort }}"
+  REDIS_PASSWORD: {{ .depServices.redis.connectInfo.password | quote }}
   REDIS_DB: {{ .depServices.redis.database | quote }}
   REDIS_MIN_IDLE_CONNS: {{ .depServices.redis.minIdleConns | quote }}
   DATA_CATALOG_HOST: "http://{{.service.name}}.{{.namespace}}:{{.service.port}}"
-  KAFKA_MQ_HOST: "{{ .depServices.mq.kafkaHost}}"
-  KAFKA_MQ_USENAME: "{{ .depServices.mq.kafkaUser}}"
-  KAFKA_MQ_PASSWORD: "{{ .depServices.mq.kafkaPassword}}"
+  KAFKA_MQ_HOST: "{{ .depServices.mq.mqHost }}:{{ .depServices.mq.mqPort }}"
+  KAFKA_MQ_USENAME: "{{ .depServices.mq.auth.username }}"
+  KAFKA_MQ_PASSWORD: "{{ .depServices.mq.auth.password }}"
   NSQ_MQ_HOST: "{{ .depServices.mq.mqHost}}:4150"
   NSQ_MQ_HTTP_HOST: "{{ .depServices.mq.mqHttpHost}}:{{ .depServices.mq.mqHttpPort}}"
   NSQ_LOOKUPD_HOST: "{{ .depServices.mq.mqLookupdHost}}:{{ .depServices.mq.mqLookupdPort}}"

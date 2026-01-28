@@ -25,11 +25,11 @@ data:
   OSS_IS_DEFAULT: {{ .depServices.oss.ossIsDefault | quote}}
   OSS_BUCKET: {{ .depServices.oss.ossBucket | quote}}
   EXTERNAL_PLUGIN_FW_ADDR: "{{index .depServices "external-plugin-framework" "host"}}:{{index .depServices "external-plugin-framework" "port"}}"
-  MQ_TYPE: {{ .depServices.mq.Type | quote }}
-  KAFKA_MQ_HOST: "{{ .depServices.mq.Host }}:{{ .depServices.mq.Port }}"
-  MQ_PORT: {{ .depServices.mq.Port | quote }}
-  MQ_LOOKUPD_HOST: {{ .depServices.mq.LookupdHost | quote }}
-  MQ_LOOKUPD_PORT: {{ .depServices.mq.LookupdPort | quote }}
+  MQ_TYPE: {{ .depServices.mq.mqType | quote }}
+  KAFKA_MQ_HOST: "{{ .depServices.mq.mqHost }}:{{ .depServices.mq.mqPort }}"
+  MQ_PORT: {{ .depServices.mq.mqPort | quote }}
+  MQ_LOOKUPD_HOST: {{ .depServices.mq.mqLookupdHost | quote }}
+  MQ_LOOKUPD_PORT: {{ .depServices.mq.mqLookupdPort | quote }}
   KAFKA_MQ_USENAME: {{ .depServices.mq.auth.username | quote }}
   KAFKA_MQ_PASSWORD: {{ .depServices.mq.auth.password | quote }}
   AUTH_MECHANISM: {{ .depServices.mq.auth.mechanism | quote }}
@@ -38,8 +38,8 @@ data:
   LOG_URL: {{.service.telemetry.log.endpoint | quote }}
   TRACE_ENABLED: {{.service.telemetry.trace.enabled| quote }}
   TRACE_URL: {{.service.telemetry.trace.endpoint | quote }}
-  REDIS_HOST: {{ .depServices.redis.host | quote }}
-  REDIS_PASSWORD: {{ .depServices.redis.password | quote }}
+  REDIS_HOST: "{{ .depServices.redis.connectInfo.sentinelHost }}:{{ .depServices.redis.connectInfo.sentinelPort }}"
+  REDIS_PASSWORD: {{ .depServices.redis.connectInfo.password | quote }}
   REDIS_DB: {{ .depServices.redis.database | quote }}
   REDIS_MIN_IDLE_CONNS: {{ .depServices.redis.minIdleConns | quote }}
   CRON_EXPRESSION: {{ .depServices.cron.expression | quote }}

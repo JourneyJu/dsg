@@ -60,28 +60,28 @@ depServices:
   redis:
     connectInfo:
       masterGroupName: mymaster
-      host: proton-redis-proton-redis.resource
-      port: 6379
-      password: xxx
-      sentinelHost: proton-redis-proton-redis-sentinel.resource
-      sentinelPassword: xxx
+      password: ''
+      sentinelHost: proton-redis-proton-redis-sentinel.resource.svc.cluster.local
+      sentinelPassword: ''
       sentinelPort: 26379
       sentinelUsername: root
       username: root
     connectType: sentinel
+    sourceType: internal
     database: 0
-    host: proton-redis-proton-redis.resource:6379
-
   mq:
-    kafka:
-      type: kafka
-      host: kafka-headless.resource
-      port: 9097
-      lookupdHost: kafka-headless.resource
-      lookupdPort: 9097
-      username: kafkaclient
-      password: xxx
-      mechanism: PLAIN
+    auth:
+      mechanism: 'PLAIN'
+      username: 'kafkauser'
+      password: ''
+    mqHost: 'kafka.resource.svc.cluster.local'
+    mqLookupdHost: ""
+    mqLookupdPort: 0
+    mqPort: 9092
+    mqType: kafka
+    version: "2.3.1"
+    clientId: af.auth-service
+    groupId: "af.auth-service"
     nsq:
       type: nsq
       host: proton-mq-nsq-nsqd.resource
@@ -139,14 +139,6 @@ depServices:
     ossProtocol: http
     ossIsDefault: true
     ossBucket: afstorage
-  kafka:
-    version: "2.3.1"
-    uri: kafka-headless.resource:9097
-    clientId: af.auth-service
-    username: "kafkaclient"
-    password: "xxx"
-    groupId: "af.auth-service"
-
 resources:
   requests:
     cpu: 0.1

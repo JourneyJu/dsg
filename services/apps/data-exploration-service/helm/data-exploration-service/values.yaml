@@ -61,10 +61,17 @@ depServices:
     database: af_data_exploration
     migrationPath: /usr/local/bin/af/infrastructure/repository/db/gen/migration  
   redis:
-    addr: proton-redis-proton-redis-sentinel.resource:26379
+    connectInfo:
+      masterGroupName: mymaster
+      password: ''
+      sentinelHost: proton-redis-proton-redis-sentinel.resource.svc.cluster.local
+      sentinelPassword: ''
+      sentinelPort: 26379
+      sentinelUsername: root
+      username: root
+    connectType: sentinel
+    sourceType: internal
     db: 3
-    password: password
-    sentinelPassword: password
     masterName: mymaster
   configCenterService:
     host: configuration-center
@@ -85,12 +92,17 @@ depServices:
     publicHost: hydra-public
     publicPort: 4444
   logPath: /opt/log/af
-  kafka:
+  mq:
+    auth:
+      mechanism: 'PLAIN'
+      username: 'kafkauser'
+      password: ''
+    mqHost: 'kafka.resource.svc.cluster.local'
+    mqLookupdHost: ""
+    mqLookupdPort: 0
+    mqPort: 9092
+    mqType: kafka
     version: 2.3.1
-    uri: kafka-external-31000.resource:9098
-    mechanism: PLAIN
-    username: kafkaclient
-    password: password
     groupId: af.data_exploration
 
 # 修改pod资源限制：cpu示例:0.5/500m/1/1000m;memory示例:512Mi/1Gi
